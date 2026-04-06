@@ -7,7 +7,7 @@ export default async function Page() {
         
     <Box>
         <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Solar System Colonization
+            Solar System Colonization ADR
         </Typography>
     </Box>
     
