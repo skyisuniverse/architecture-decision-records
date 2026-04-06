@@ -54,6 +54,21 @@ import { Train6TParameterModelsInMinutesAdrsList } from './adrs/train-6t-paramet
 import { XAIs100MRubinEquivalentComputeAdrsList } from './adrs/xais-100m-rubin-equivalent-compute-adr/xais-100m-rubin-equivalent-compute-adrs-list';
 import { XAIPoweredEntirelyWithSolarAdrsList } from './adrs/xai-powered-entirely-with-solar-adr/xai-powered-entirely-with-solar-adrs-list';
 import { GenericRandDCenterAdrsList } from './adrs/generic-r&d-center-adr/generic-r&d-center-adrs-list';
+import { AirSeparationAdrsList } from './adrs/air-separation-adr/air-separation-adrs-list';
+import { Falcon9AndHeavyNanoAssemblyAdrsList } from './adrs/falcon-9-and-heavy-nano-assembly-adr/falcon-9-and-heavy-nano-assembly-adrs-list';
+import { FusionPowerPlantAdrsList } from './adrs/fusion-power-plant-adr/fusion-power-plant-adrs-list';
+import { FusionStarshipAdrsList } from './adrs/fusion-starship-adr/fusion-starship-adrs-list';
+import { GrokCADAdrsList } from './adrs/grok-cad-adr/grok-cad-adrs-list';
+import { MassDriverAdrsList } from './adrs/mass-driver-adr/mass-driver-adrs-list';
+import { NanoAssembledGroundWorksAdrsList } from './adrs/nano-assembled-ground-works-adr/nano-assembled-ground-works-adrs-list';
+import { NanoAssembledMechazillaAdrsList } from './adrs/nano-assembled-mechazilla-adr/nano-assembled-mechazilla-adrs-list';
+import { NanoAssembledOrbitalHeatShieldAdrsList } from './adrs/nano-assembled-orbital-heat-shield-adr/nano-assembled-orbital-heat-shield-adrs-list';
+import { NanoAssembledStarlinkAdrsList } from './adrs/nano-assembled-starlink-adr/nano-assembled-starlink-adrs-list';
+import { PropellantGenerationAdrsList } from './adrs/propellant-generation-adr/propellant-generation-adrs-list';
+import { SmartStarbaseAdrsList } from './adrs/smart-starbase-adr/smart-starbase-adrs-list';
+import { SolarSystemColonizationAdrsList } from './adrs/solar-system-colonization-adr/solar-system-colonization-adrs-list';
+import { StarshipInstantReusabilityAdrsList } from './adrs/starship-instant-reusability-adr/starship-instant-reusability-adrs-list';
+import { TerraformingMarsAdrsList } from './adrs/terraforming-mars-adr/terraforming-mars-adrs-list';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -220,7 +235,37 @@ export default function RootLayout({
     currentAdrsList = XAIs100MRubinEquivalentComputeAdrsList;
   } else if (pathname.includes('/generic-r&d-center-adr')) {
     currentAdrsList = GenericRandDCenterAdrsList;
-  } 
+  } else if (pathname.includes('/air-separation-adr')) {
+    currentAdrsList = AirSeparationAdrsList;
+  }  else if (pathname.includes('/falcon-9-and-heavy-nano-assembly-adr')) {
+    currentAdrsList = Falcon9AndHeavyNanoAssemblyAdrsList;
+  }  else if (pathname.includes('/fusion-power-plant-adr')) {
+    currentAdrsList = FusionPowerPlantAdrsList;
+  }  else if (pathname.includes('/fusion-starship-adr')) {
+    currentAdrsList = FusionStarshipAdrsList;
+  }  else if (pathname.includes('/grok-cad-adr')) {
+    currentAdrsList = GrokCADAdrsList;
+  }  else if (pathname.includes('/mass-driver-adr')) {
+    currentAdrsList = MassDriverAdrsList;
+  }  else if (pathname.includes('/nano-assembled-ground-works-adr')) {
+    currentAdrsList = NanoAssembledGroundWorksAdrsList;
+  }  else if (pathname.includes('/nano-assembled-mechazilla-adr')) {
+    currentAdrsList = NanoAssembledMechazillaAdrsList;
+  }  else if (pathname.includes('/nano-assembled-orbital-heat-shield-adr')) {
+    currentAdrsList = NanoAssembledOrbitalHeatShieldAdrsList;
+  }  else if (pathname.includes('/nano-assembled-starlink-adr')) {
+    currentAdrsList = NanoAssembledStarlinkAdrsList;
+  }  else if (pathname.includes('/propellant-generation-adr')) {
+    currentAdrsList = PropellantGenerationAdrsList;
+  }  else if (pathname.includes('/smart-starbase-adr')) {
+    currentAdrsList = SmartStarbaseAdrsList;
+  }  else if (pathname.includes('/solar-system-colonization-adr')) {
+    currentAdrsList = SolarSystemColonizationAdrsList;
+  }  else if (pathname.includes('/starship-instant-reusability-adr')) {
+    currentAdrsList = StarshipInstantReusabilityAdrsList;
+  }  else if (pathname.includes('/terraforming-mars-adr')) {
+    currentAdrsList = TerraformingMarsAdrsList;
+  }  
   // else if (pathname === '/') {
   //   // setCurrentAdr("");
   // }
@@ -321,6 +366,21 @@ export default function RootLayout({
                       <MenuItem value={'train-6t-parameter-models-in-minutes-adr'}>Train 6t parameter models in minutes ADR</MenuItem>
                       <MenuItem value={'xai-powered-entirely-with-solar-adr'}>xAI powered entirely with solar ADR</MenuItem>
                       <MenuItem value={'xais-100m-rubin-equivalent-compute-adr'}>xAIs 100M Rubin equivalent compute ADR</MenuItem>
+                      <MenuItem value={'air-separation-adr'}>Air Separation ADR</MenuItem>
+                      <MenuItem value={'falcon-9-and-heavy-nano-assembly-adr'}>Falcon 9 & Heavy Nano-Assembly ADR</MenuItem>
+                      <MenuItem value={'fusion-power-plant-adr'}>Fusion Power Plant ADR</MenuItem>
+                      <MenuItem value={'fusion-starship-adr'}>Fusion Starship ADR</MenuItem>
+                      <MenuItem value={'grok-cad-adr'}>Grok CAD ADR</MenuItem>
+                      <MenuItem value={'mass-driver-adr'}>Mass Driver ADR</MenuItem>
+                      <MenuItem value={'nano-assembled-ground-works-adr'}>Nano-Assembled Ground Works ADR</MenuItem>
+                      <MenuItem value={'nano-assembled-mechazilla-adr'}>Nano-Assembled Mechazilla ADR</MenuItem>
+                      <MenuItem value={'nano-assembled-orbital-heat-shield-adr'}>Nano-Assembled Orbital Heat Shield ADR</MenuItem>
+                      <MenuItem value={'nano-assembled-starlink-adr'}>Nano-Assembled Starlink ADR</MenuItem>
+                      <MenuItem value={'propellant-generation-adr'}>Propellant Generation ADR</MenuItem>
+                      <MenuItem value={'smart-starbase-adr'}>Smart Starbase ADR</MenuItem>
+                      <MenuItem value={'solar-system-colonization-adr'}>Solar System Colonization ADR</MenuItem>
+                      <MenuItem value={'starship-instant-reusability-adr'}>Starship Instant Reusability ADR</MenuItem>
+                      <MenuItem value={'terraforming-mars-adr'}>Terraforming Mars ADR</MenuItem>
                     </Select>
                   </FormControl>
                   </Box>
