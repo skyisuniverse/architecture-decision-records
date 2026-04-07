@@ -69,6 +69,7 @@ import { SmartStarbaseAdrsList } from './adrs/smart-starbase-adr/smart-starbase-
 import { SolarSystemColonizationAdrsList } from './adrs/solar-system-colonization-adr/solar-system-colonization-adrs-list';
 import { StarshipInstantReusabilityAdrsList } from './adrs/starship-instant-reusability-adr/starship-instant-reusability-adrs-list';
 import { TerraformingMarsAdrsList } from './adrs/terraforming-mars-adr/terraforming-mars-adrs-list';
+import { CompressingMarsTerraformingAdrsList } from './adrs/compressing-mars-terraforming/compressing-mars-terraforming-adrs-list';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -265,7 +266,10 @@ export default function RootLayout({
     currentAdrsList = StarshipInstantReusabilityAdrsList;
   }  else if (pathname.includes('/terraforming-mars-adr')) {
     currentAdrsList = TerraformingMarsAdrsList;
-  }  
+  }  else if (pathname.includes('/compressing-mars-terraforming')) {
+    currentAdrsList = CompressingMarsTerraformingAdrsList;
+  }
+
   // else if (pathname === '/') {
   //   // setCurrentAdr("");
   // }
@@ -375,6 +379,7 @@ export default function RootLayout({
                       
                       <ListSubheader>SpaceX Planet Colonization ADRs</ListSubheader>
                       <MenuItem value={'terraforming-mars-adr'}>Terraforming Mars ADR</MenuItem>
+                      <MenuItem value={'compressing-mars-terraforming'}>Compressing Mars Terraforming from 100,000+ to 10 years</MenuItem>
                       <MenuItem value={'mass-driver-adr'}>Mass Driver ADR</MenuItem>
                       <MenuItem value={'solar-system-colonization-adr'}>Solar System Colonization ADR</MenuItem>
 
