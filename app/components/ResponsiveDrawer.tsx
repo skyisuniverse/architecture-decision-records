@@ -15,7 +15,8 @@ import {
 } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation';
+import { useCurrentADR } from '@/app/hooks/useCurrentADR';
 
 const drawerWidth = 240;
 
@@ -34,11 +35,6 @@ interface ADRItem {
 }
 
 interface Props {
-  /** Injected by the documentation to work in an iframe. Remove when copying. */
-  window?: () => Window;
-  adrsList: ADRItem[];
-  pathname: string;
-  
   // Desktop: persistent + collapsible
   open: boolean;
   onDesktopDrawerClose: () => void;
@@ -46,37 +42,24 @@ interface Props {
   // Mobile: temporary
   mobileOpen: boolean;
   onMobileDrawerClose: () => void;
+
+  /** Injected by the documentation to work in an iframe. Remove when copying. */
+  window?: () => Window;
 }
 
 export default function ResponsiveDrawer(props: Props) {
     const {
         window,
-        adrsList,
-        pathname,
         open,
         onDesktopDrawerClose,
         mobileOpen,
         onMobileDrawerClose,
     } = props;
 
+    const { currentAdrsList } = useCurrentADR();
+    const pathname = usePathname();
+
     const container = window !== undefined ? () => window().document.body : undefined;
-    // const [mobileOpen, setMobileOpen] = React.useState(false);
-    // const [isClosing, setIsClosing] = React.useState(false);
-
-    // const handleDrawerClose = () => {
-    //     setIsClosing(true);
-    //     setMobileOpen(false);
-    // };
-
-    // const handleDrawerTransitionEnd = () => {
-    //     setIsClosing(false);
-    // };
-
-    // const handleDrawerToggle = () => {
-    //     if (!isClosing) {
-    //     setMobileOpen(!mobileOpen);
-    //     }
-    // };
 
     const drawerContent = (onClose: () => void) => (
         <div>
@@ -87,53 +70,21 @@ export default function ResponsiveDrawer(props: Props) {
         </DrawerHeader>
         <Divider />
         <List>
-            {adrsList.map((adr) => (
-            <ListItem key={adr.title} disablePadding>
-                <ListItemButton
-                component={Link}
-                href={adr.link}
-                selected={pathname === adr.link}
-                >
-                <ListItemText primary={adr.title} />
-                </ListItemButton>
-            </ListItem>
+            {currentAdrsList.map((adr: any) => (   // ← type is ADRItem[] in your real lists
+                <ListItem key={adr.title} disablePadding>
+                    <ListItemButton
+                    component={Link}
+                    href={adr.link}
+                    selected={pathname === adr.link}
+                    >
+                    <ListItemText primary={adr.title} />
+                    </ListItemButton>
+                </ListItem>
             ))}
         </List>
         </div>
     );
     
-    // const drawer = (
-    //     <div>
-    //         {/* Header with close button (only visible on mobile) */}
-    //         <Toolbar>
-    //             <Box sx={{ display: { sm: 'none' }, flexGrow: 1 }}>
-    //             <IconButton onClick={onDrawerClose} edge="start">
-    //                 {/* <ChevronLeftIcon /> */}
-    //             </IconButton>
-    //             </Box>
-    //         </Toolbar>
-
-    //         <Divider />
-
-    //         <List>
-    //             {adrsList.map((adr) => (
-    //             <ListItem key={adr.title} disablePadding>
-    //                 <ListItemButton
-    //                     component={Link}
-    //                     href={adr.link}
-    //                     selected={pathname === adr.link}
-    //                 >
-    //                 <ListItemText primary={adr.title} />
-    //                 </ListItemButton>
-    //             </ListItem>
-    //             ))}
-    //         </List>
-    //     </div>
-    // );
-
-    // Remove this const when copying and pasting into your project.
-    // const container = window !== undefined ? () => window().document.body : undefined;
-
     return (
         <Box
             component="nav"
@@ -169,42 +120,5 @@ export default function ResponsiveDrawer(props: Props) {
                 {drawerContent(onDesktopDrawerClose)}
             </Drawer>
         </Box>
-        
-        // <Box
-        //     component="nav"
-        //     sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        //     aria-label="ADR navigation"
-        // >
-        //     {/* Temporary drawer - mobile only */}
-        //     <Drawer
-        //         container={container}
-        //         variant="temporary"
-        //         open={mobileOpen}
-        //         onClose={onDrawerClose}
-        //         sx={{
-        //         display: { xs: 'block', sm: 'none' },
-        //         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-        //         }}
-        //         slotProps={{
-        //         root: {
-        //             keepMounted: true, // Better open performance on mobile
-        //         },
-        //         }}
-        //     >
-        //         {drawer}
-        //     </Drawer>
-
-        //     {/* Permanent drawer - desktop only */}
-        //     <Drawer
-        //         variant="permanent"
-        //         sx={{
-        //         display: { xs: 'none', sm: 'block' },
-        //         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-        //         }}
-        //         open
-        //     >
-        //         {drawer}
-        //     </Drawer>
-        // </Box>
     )
 }
