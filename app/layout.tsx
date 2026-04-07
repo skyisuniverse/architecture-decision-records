@@ -449,7 +449,7 @@ export default function RootLayout({
                     currentAdrsList.map((adr) => (
                       <Link href={adr.link} color="inherit" key={adr.title}>
                         <ListItem disablePadding>
-                          <ListItemButton>
+                          <ListItemButton selected={pathname === adr.link}>
                             <ListItemText primary={adr.title} />
                           </ListItemButton>
                         </ListItem>
