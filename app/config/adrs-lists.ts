@@ -35,6 +35,7 @@ import { SolarSystemColonizationAdrsList } from '../adrs/solar-system-colonizati
 import { StarshipInstantReusabilityAdrsList } from '../adrs/starship-instant-reusability-adr/starship-instant-reusability-adrs-list';
 import { TerraformingMarsAdrsList } from '../adrs/terraforming-mars-adr/terraforming-mars-adrs-list';
 import { CompressingMarsTerraformingAdrsList } from '../adrs/compressing-mars-terraforming/compressing-mars-terraforming-adrs-list';
+import { HealingAutismPerspectiveNeuralinkBCIsAdrsList } from '../adrs/healing-autism-perspective-neuralink-bcis-adr/healing-autism-perspective-neuralink-bcis-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
     'nano-assembly-adr': NanoassemblyAdrsList,
@@ -74,6 +75,7 @@ export const adrsListMap: Record<string, any> = {
     'starship-instant-reusability-adr': StarshipInstantReusabilityAdrsList,
     'terraforming-mars-adr': TerraformingMarsAdrsList,
     'compressing-mars-terraforming': CompressingMarsTerraformingAdrsList,
+    'healing-autism-perspective-neuralink-bcis-adr': HealingAutismPerspectiveNeuralinkBCIsAdrsList
 } as const;
 
 export type AdrSlug = keyof typeof adrsListMap;
