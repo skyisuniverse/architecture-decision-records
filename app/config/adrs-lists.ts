@@ -39,6 +39,7 @@ import { HealingAutismPerspectiveNeuralinkBCIsAdrsList } from '../adrs/healing-a
 import { NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList } from '../adrs/neuralink-bci-overcoming-serial-attention-limitation-adr/neuralink-bci-overcoming-serial-attention-limitation-adrs-list';
 import { NeuromorphicComputingAdrsList } from '../adrs/neuromorphic-computing-adr/neuromorphic-computing-adrs-list';
 import { PhotonicComputingAdrsList } from '../adrs/photonic-computing-adr/photonic-computing-adrs-list';
+import { QuantumComputingAdrsList } from '../adrs/quantum-computing-adr/quantum-computing-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
     'nano-assembly-adr': NanoassemblyAdrsList,
@@ -81,7 +82,8 @@ export const adrsListMap: Record<string, any> = {
     'healing-autism-perspective-neuralink-bcis-adr': HealingAutismPerspectiveNeuralinkBCIsAdrsList,
     'neuralink-bci-overcoming-serial-attention-limitation-adr': NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList,
     'neuromorphic-computing-adr': NeuromorphicComputingAdrsList,
-    'photonic-computing-adr': PhotonicComputingAdrsList
+    'photonic-computing-adr': PhotonicComputingAdrsList,
+    'quantum-computing-adr': QuantumComputingAdrsList
 } as const;
 
 export type AdrSlug = keyof typeof adrsListMap;
