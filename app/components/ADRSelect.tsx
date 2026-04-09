@@ -102,6 +102,7 @@ export default function ADRSelect() {
                 <ListSubheader>xAI ADRs</ListSubheader>
                 <MenuItem value={'alternative-hardware-for-ai-training-adr'}>Alternative hardware for AI Training ADR</MenuItem>
                 <MenuItem value={'neuromorphic-computing-adr'}>Neuromorphic Computing ADR</MenuItem>
+                <MenuItem value={'photonic-computing-adr'}>Photonic Computing ADR</MenuItem>
                 <MenuItem value={'grok-cad-adr'}>Grok CAD ADR</MenuItem>
                 <MenuItem value={'direct-binary-code-generation-adr'}>Direct Bbinary Code Generation ADR</MenuItem>
                 <MenuItem value={'train-6t-parameter-models-in-minutes-adr'}>Train 6t parameter models in minutes ADR</MenuItem>
