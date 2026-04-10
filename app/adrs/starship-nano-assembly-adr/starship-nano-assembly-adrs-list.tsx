@@ -1,241 +1,280 @@
-export type StarshipNanoassemblyAdr = {
-    title: string;
-    description: string;
-    link: string;
-};
-
-export type AdrsList = StarshipNanoassemblyAdr[];
+import { AdrsList } from "@/app/types/adr";
 
 export const StarshipNanoassemblyAdrsList: AdrsList = [
     {
         title: 'Preparation and feedstock acquisition',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition'
+        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Preparation and feedstock acquisition: Raw Material Gathering',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition-raw-material-gathering'
+        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition-raw-material-gathering',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Preparation and feedstock acquisition: Design Input',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition-design-input'
+        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition-design-input',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Preparation and feedstock acquisition: Seed Nanobot Deployment',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition-seed-nanobot-deployment'
+        link: '/adrs/starship-nano-assembly-adr/preparation-and-feedstock-acquisition-seed-nanobot-deployment',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Nanobot replication and swarm formation',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation'
+        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Nanobot replication and swarm formation: Exponential Scaling',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation-exponential-scaling'
+        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation-exponential-scaling',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Nanobot replication and swarm formation: Coordination Setup',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation-coordination-setup'
+        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation-coordination-setup',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Nanobot replication and swarm formation: Site Preparation',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation-site-preparation'
+        link: '/adrs/starship-nano-assembly-adr/nanobot-replication-and-swarm-formation-site-preparation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Bottom-up Component Assembly',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Bottom-up component assembly: Super Heavy Booster',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-super-heavy-booster'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-super-heavy-booster',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building The Super Heavy Booster',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster'
+        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Super Heavy Booster: Engine Integration',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-engine-integration'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-engine-integration',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Super Heavy Booster: Engines and Systems',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-engines-and-systems'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-engines-and-systems',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Super Heavy Booster: Interior Features',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-interior-features'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-interior-features',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Super Heavy Booster: Structural Skeleton',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-structural-skeleton'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-structural-skeleton',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Super Heavy Booster: Tank and Insulation',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-tank-and-insulation'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-super-heavy-booster-tank-and-insulation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building The Super Heavy Booster: Engine Integration',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster-engine-integration'
+        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster-engine-integration',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building The Super Heavy Booster: Structural Skeleton',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster-structural-skeleton'
+        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster-structural-skeleton',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building The Super Heavy Booster: Tank and Insulation',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster-tank-and-insulation'
+        link: '/adrs/starship-nano-assembly-adr/building-the-super-heavy-booster-tank-and-insulation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Bottom-up component assembly: Starship Upper Stage',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-starship-upper-stage'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-starship-upper-stage',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Starship Upper Stage: Structural Skeleton',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-structural-skeleton'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-structural-skeleton',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Starship Upper Stage: Interior Features',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-interior-features'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-interior-features',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Starship Upper Stage: Tank and Insulation',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-tank-and-insulation'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-tank-and-insulation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Starship Upper Stage: Engine Integration',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-engine-integration'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-engine-integration',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Starship Upper Stage: Hull and Heat Shield',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-hull-and-heat-shield'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-hull-and-heat-shield',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Building Starship Upper Stage: Engines and Systems',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-engines-and-systems'
+        link: '/adrs/starship-nano-assembly-adr/bottom-up-component-assembly-building-starship-upper-stage-engines-and-systems',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Super Heavy Booster',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Super Heavy Booster: Stacking the Stages',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster-stacking-the-stages'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster-stacking-the-stages',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Super Heavy Booster: System Wide Integration',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster-system-wide-integration'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster-system-wide-integration',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Super Heavy Booster: Quality Assurance',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster-quality-assurance'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-super-heavy-booster-quality-assurance',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Starship Upper Stage',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Starship Upper Stage: Stacking the Stages',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage-stacking-the-stages'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage-stacking-the-stages',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Starship Upper Stage: System Wide Integration',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage-system-wide-integration'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage-system-wide-integration',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration and Final Assembly: Starship Upper Stage: Quality Assurance',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage-quality-assurance'
+        link: '/adrs/starship-nano-assembly-adr/integration-and-final-assembly-starship-upper-stage-quality-assurance',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Super Heavy Booster',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Super Heavy Booster: Fueling and Activation',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster-fueling-and-activation'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster-fueling-and-activation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Super Heavy Booster: Post-Assembly',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster-post-assembly'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster-post-assembly',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Super Heavy Booster: Scalability',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster-scalability'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-super-heavy-booster-scalability',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Starship Upper Stage',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Starship Upper Stage: Fueling and Activation',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage-fueling-and-activation'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage-fueling-and-activation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Starship Upper Stage: Post-Assembly',
-
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage-post-assembly'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage-post-assembly',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Completion and Launch Readiness: Starship Upper Stage: Scalability',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage-scalability'
+        link: '/adrs/starship-nano-assembly-adr/completion-and-launch-readiness-starship-upper-stage-scalability',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Full monolithically grown Starship with MNT',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/full-monolithically-grown-starship-with-mnt'
+        link: '/adrs/starship-nano-assembly-adr/full-monolithically-grown-starship-with-mnt',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Full Starship Assembly Using MNT',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/full-starship-assembly-using-mnt'
+        link: '/adrs/starship-nano-assembly-adr/full-starship-assembly-using-mnt',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Integration of Starship from Nanoassembled Components',
-        description: '',
-        link: '/adrs/starship-nano-assembly-adr/integration-of-starship-from-nanoassembled-components'
+        link: '/adrs/starship-nano-assembly-adr/integration-of-starship-from-nanoassembled-components',
+        date: 'March 2026',
+        status: 'Draft',
     },
 ];

@@ -1,6 +1,4 @@
 'use client';
-
-import React from 'react';
 import {
   Box,
   Drawer,
@@ -8,7 +6,6 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Toolbar,
   Divider,
   IconButton,
   styled,
@@ -17,6 +14,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCurrentADR } from '@/app/hooks/useCurrentADR';
+import Stack from '@mui/material/Stack';
+import { StatusChip } from './StatusChip';
+import { ADRItem } from '../types/adr';
 
 const drawerWidth = 240;
 
@@ -28,11 +28,6 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 }));
-
-interface ADRItem {
-  title: string;
-  link: string;
-}
 
 interface Props {
   // Desktop: persistent + collapsible
@@ -70,14 +65,17 @@ export default function ResponsiveDrawer(props: Props) {
         </DrawerHeader>
         <Divider />
         <List>
-            {currentAdrsList.map((adr: any) => (   // ← type is ADRItem[] in your real lists
+            {currentAdrsList.map((adr: ADRItem) => (   // ← type is ADRItem[] in your real lists
                 <ListItem key={adr.title} disablePadding>
                     <ListItemButton
-                    component={Link}
-                    href={adr.link}
-                    selected={pathname === adr.link}
-                    >
-                    <ListItemText primary={adr.title} />
+                        component={Link}
+                        href={adr.link}
+                        selected={pathname === adr.link}
+                        >
+                        <Stack spacing={2}>
+                            <ListItemText primary={adr.title} secondary={adr.date}/>
+                            <StatusChip status={adr.status} />
+                        </Stack>
                     </ListItemButton>
                 </ListItem>
             ))}

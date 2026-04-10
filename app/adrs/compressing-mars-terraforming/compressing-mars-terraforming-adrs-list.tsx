@@ -1,75 +1,82 @@
-export type StarshipNanoassemblyAdr = {
-    title: string;
-    description: string;
-    link: string;
-};
-
-export type AdrsList = StarshipNanoassemblyAdr[];
+import { AdrsList } from "@/app/types/adr";
 
 export const CompressingMarsTerraformingAdrsList: AdrsList = [
     {
         title: 'Deployment and Rapid Warming',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/deployment-and-rapid-warming'
+        link: '/adrs/compressing-mars-terraforming/deployment-and-rapid-warming',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Initial Setup',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/initial-setup'
+        link: '/adrs/compressing-mars-terraforming/initial-setup',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Warming Acceleration',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/warming-acceleration'
+        link: '/adrs/compressing-mars-terraforming/warming-acceleration',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'ISRU Scaling and Atmosphere Building',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/isru-scaling-and-atmosphere-building'
+        link: '/adrs/compressing-mars-terraforming/isru-scaling-and-atmosphere-building',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Resource Explosion',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/resource-explosion'
+        link: '/adrs/compressing-mars-terraforming/resource-explosion',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Atmospheric Engineering',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/atmospheric-engineering'
+        link: '/adrs/compressing-mars-terraforming/atmospheric-engineering',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Ecosystem Stabilization and Human Habitation',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/ecosystem-stabilization-and-human-habitation'
+        link: '/adrs/compressing-mars-terraforming/ecosystem-stabilization-and-human-habitation',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Biosphere Introduction',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/biosphere-introduction'
+        link: '/adrs/compressing-mars-terraforming/biosphere-introduction',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Full Integration',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/full-integration'
+        link: '/adrs/compressing-mars-terraforming/full-integration',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'MNT Mastery',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/mnt-mastery'
+        link: '/adrs/compressing-mars-terraforming/mnt-mastery',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Energy Abundance',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/energy-abundance'
+        link: '/adrs/compressing-mars-terraforming/energy-abundance',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'AI Supremacy',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/ai-supremacy'
+        link: '/adrs/compressing-mars-terraforming/ai-supremacy',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Logistics',
-        description: '',
-        link: '/adrs/compressing-mars-terraforming/logistics'
+        link: '/adrs/compressing-mars-terraforming/logistics',
+        date: 'March 2026',
+        status: 'Draft',
     }
 ];

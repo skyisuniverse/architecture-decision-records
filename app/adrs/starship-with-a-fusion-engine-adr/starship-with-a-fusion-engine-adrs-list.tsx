@@ -1,20 +1,16 @@
-export type StarshipNanoassemblyAdr = {
-    title: string;
-    description: string;
-    link: string;
-};
-
-export type AdrsList = StarshipNanoassemblyAdr[];
+import { AdrsList } from "@/app/types/adr";
 
 export const StarshipWithFusionEngineAdrsList: AdrsList = [
     {
         title: 'starship-with-a-fusion-engine-adr-decision-record-1',
-        description: '',
-        link: '/adrs/starship-with-a-fusion-engine-adr/starship-with-a-fusion-engine-adr-decision-record-1'
+        link: '/adrs/starship-with-a-fusion-engine-adr/starship-with-a-fusion-engine-adr-decision-record-1',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'starship-with-a-fusion-engine-adr-decision-record-2',
-        description: '',
-        link: '/adrs/starship-with-a-fusion-engine-adr/starship-with-a-fusion-engine-adr-decision-record-2'
+        link: '/adrs/starship-with-a-fusion-engine-adr/starship-with-a-fusion-engine-adr-decision-record-2',
+        date: 'March 2026',
+        status: 'Draft',
     },
 ];

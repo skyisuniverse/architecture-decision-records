@@ -1,40 +1,40 @@
-export type StarshipNanoassemblyAdr = {
-    title: string;
-    description: string;
-    link: string;
-};
-
-export type AdrsList = StarshipNanoassemblyAdr[];
+import { AdrsList } from "@/app/types/adr";
 
 export const TerraformingMarsAdrsList: AdrsList = [
     {
         title: 'Accelerated Atmospheric Warming and Greenhouse Enhancement',
-        description: '',
-        link: '/adrs/terraforming-mars-adr/accelerated-atmospheric-warming-and-greenhouse-enhancement'
+        link: '/adrs/terraforming-mars-adr/accelerated-atmospheric-warming-and-greenhouse-enhancement',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Temperature and Pressure Increases',
-        description: '',
-        link: '/adrs/terraforming-mars-adr/temperature-and-pressure-increases'
+        link: '/adrs/terraforming-mars-adr/temperature-and-pressure-increases',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Kickstarting a Habitable Cycle',
-        description: '',
-        link: '/adrs/terraforming-mars-adr/kickstarting-a-habitable-cycle'
+        link: '/adrs/terraforming-mars-adr/kickstarting-a-habitable-cycle',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Enhanced In-Situ Resource Utilization (ISRU) for Self-Sustaining Colonies',
-        description: '',
-        link: '/adrs/terraforming-mars-adr/enhanced-in-situ-resource-utilization-for-self-sustaining-colonies'
+        link: '/adrs/terraforming-mars-adr/enhanced-in-situ-resource-utilization-for-self-sustaining-colonies',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Resource Production and Colony Support',
-        description: '',
-        link: '/adrs/terraforming-mars-adr/resource-production-and-colony-support'
+        link: '/adrs/terraforming-mars-adr/resource-production-and-colony-support',
+        date: 'March 2026',
+        status: 'Draft',
     },
     {
         title: 'Terraforming Synergies',
-        description: '',
-        link: '/adrs/terraforming-mars-adr/terraforming-synergies'
+        link: '/adrs/terraforming-mars-adr/terraforming-synergies',
+        date: 'March 2026',
+        status: 'Draft',
     },
 ];
