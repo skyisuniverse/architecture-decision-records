@@ -8,7 +8,7 @@ import { DirectBinaryCodeGenerationAdrsList } from '../adrs/direct-binary-code-g
 import { FasterFactoriesWithOptimusSemiCybercabAdrsList } from '../adrs/faster-factories-with-optimus-semi-cybercab-adr/faster-factories-with-optimus-semi-cybercab-adrs-list';
 import { NanoAssembledCybercabAdrsList } from '../adrs/nano-assembled-cybercab-adr/nano-assembled-cybercab-adrs-list';
 import { NanoAssembledOptimusAdrsList } from '../adrs/nano-assembled-optimus-adr/nano-assembled-optimus-adrs-list';
-import { NanoAssembledSemiAdrsList } from '../adrs/nano-assembled-semi/nano-assembled-semis-list';
+import { NanoAssembledSemiAdrsList } from '../adrs/nano-assembled-semi-adr/nano-assembled-semis-list';
 import { NanoAssemblyBoostedSpaceXAdrsList } from '../adrs/nanoassembly-boosted-spacex-adr/nanoassembly-boosted-spacex-adrs-list';
 import { SolarPoweredTeslaAdrsList } from '../adrs/solar-powered-tesla-adr/solar-powered-tesla-adrs-list';
 import { SpaceXAutomatedWithOptimiAdrsList } from '../adrs/spacex-automated-with-optimi-adr/spacex-automated-with-optimi-adrs-list';
@@ -52,7 +52,7 @@ export const adrsListMap: Record<string, any> = {
     'faster-factories-with-optimus-semi-cybercab-adr': FasterFactoriesWithOptimusSemiCybercabAdrsList,
     'nano-assembled-cybercab-adr': NanoAssembledCybercabAdrsList,
     'nano-assembled-optimus-adr': NanoAssembledOptimusAdrsList,
-    'nano-assembled-semi': NanoAssembledSemiAdrsList,
+    'nano-assembled-semi-adr': NanoAssembledSemiAdrsList,
     'nanoassembly-boosted-spacex-adr': NanoAssemblyBoostedSpaceXAdrsList,
     'solar-powered-tesla-adr': SolarPoweredTeslaAdrsList,
     'spacex-automated-with-optimi-adr': SpaceXAutomatedWithOptimiAdrsList,

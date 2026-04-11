@@ -94,7 +94,7 @@ export default function ADRSelect() {
                 <ListSubheader>Tesla ADRs</ListSubheader>
                 <MenuItem value={'nano-assembled-optimus-adr'}>Nano-assembled Optimus ADR</MenuItem>
                 <MenuItem value={'nano-assembled-cybercab-adr'}>Nano-assembled Cybercab ADR</MenuItem>
-                <MenuItem value={'nano-assembled-semi'}>Nano-assembled Semi ADR</MenuItem>
+                <MenuItem value={'nano-assembled-semi-adr'}>Nano-assembled Semi ADR</MenuItem>
                 <MenuItem value={'faster-factories-with-optimus-semi-cybercab-adr'}>Faster Factories With Optimus Semi Cybercab ADR</MenuItem>
                 <MenuItem value={'solar-powered-tesla-adr'}>Solar-powered Tesla ADR</MenuItem>
                 <MenuItem value={'tesla-automated-with-optimi-adr'}>Tesla automated with Optimi ADR</MenuItem>
