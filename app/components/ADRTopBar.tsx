@@ -1,9 +1,6 @@
 'use client';
-
-import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import {
-  AppBar,
   Toolbar,
   IconButton,
   Typography,
@@ -13,11 +10,9 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import ADRSelect from './ADRSelect';
-
 import MuiAppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
-
-const drawerWidth = 240;
+import { drawerWidth } from './ResponsiveDrawer';
 
 interface AppBarProps {
   open?: boolean;

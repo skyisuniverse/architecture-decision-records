@@ -1,8 +1,7 @@
 'use client';
 
 import { styled } from '@mui/material/styles';
-
-const drawerWidth = 240;
+import { drawerWidth } from './ResponsiveDrawer';
 
 export const StyledMain = styled('main', {
   shouldForwardProp: (prop) => prop !== 'open',

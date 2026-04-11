@@ -18,7 +18,7 @@ import Stack from '@mui/material/Stack';
 import { StatusChip } from './StatusChip';
 import { ADRItem } from '../types/adr';
 
-const drawerWidth = 240;
+export const drawerWidth = 240;
 
 export const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
