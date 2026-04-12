@@ -43,34 +43,34 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.variable}>
       <body className="min-h-full flex flex-col">
-        <ThemeProvider theme={theme}>
-          <AppRouterCacheProvider
+        <AppRouterCacheProvider
             options={{ key: 'css' }}
           >
-            <Box sx={{ display: 'flex' }}>
+          <ThemeProvider theme={theme}>
               <CssBaseline />
-              
-              <ADRTopBar
-                open={open}
-                onDrawerOpen={handleDrawerOpen}
-                onMobileDrawerToggle={handleMobileDrawerToggle}
-              />
+              <Box sx={{ display: 'flex' }}>
+                
+                <ADRTopBar
+                  open={open}
+                  onDrawerOpen={handleDrawerOpen}
+                  onMobileDrawerToggle={handleMobileDrawerToggle}
+                />
 
-              <ResponsiveDrawer
-                open={open}
-                onDesktopDrawerClose={handleDesktopDrawerClose}
-                mobileOpen={mobileOpen}
-                onMobileDrawerClose={handleMobileDrawerClose}
-              />
+                <ResponsiveDrawer
+                  open={open}
+                  onDesktopDrawerClose={handleDesktopDrawerClose}
+                  mobileOpen={mobileOpen}
+                  onMobileDrawerClose={handleMobileDrawerClose}
+                />
 
-              <StyledMain open={open}>
-                <DrawerHeader />
-                {children}
-              </StyledMain>
+                <StyledMain open={open}>
+                  <DrawerHeader />
+                  {children}
+                </StyledMain>
 
-            </Box>
+              </Box>
+            </ThemeProvider>
           </AppRouterCacheProvider>
-        </ThemeProvider>
       </body>
     </html>
   );
