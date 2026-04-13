@@ -12,6 +12,10 @@ export const DesignToManufacturingPipeline = [
         href: '/adrs/chip-design-tool-adr',
     },
     {
+        title: 'Simulation Tool',
+        href: '/adrs/simulation-tool-adr',
+    },
+    {
         title: 'Nano-Assembly',
         href: '/adrs/nano-assembly-adr',
     },

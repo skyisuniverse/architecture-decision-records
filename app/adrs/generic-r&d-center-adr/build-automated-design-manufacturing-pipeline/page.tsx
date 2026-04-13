@@ -128,6 +128,10 @@ export default function Page() {
                 </Typography>
 
                 <Typography variant="body1" gutterBottom marginTop={5}>
+                    Run simulations of a 3D-model in Simulation Tool {`>>`}
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
                     Define manufacturing process for Nano-Assembly / 3D-Printing {`>>`}
                 </Typography>
 
@@ -146,10 +150,11 @@ export default function Page() {
                 </Typography>
 
                 <Typography variant="body1" gutterBottom marginTop={5}>
-                    Watch design of a 3D-Model of an object done in Grok CAD, 
-                    Design 3D-Model / Circuits / Die of a chip in Chip Design Tool,
-                    Definition (selection?) of manufacturing process for Nano-Assembly / 3D-Printing 
-                    done in *** tool with AI-Agents, {`>>`}
+                    Watch design of a 3D-Model of an object done in Grok CAD with AI-Agents {`>>`}
+                    Design 3D-Model / Circuits / Die of a chip done in Chip Design Tool with AI-Agents {`>>`}
+                    Run simulations of a 3D-model done in Simulation Tool with AI-Agents {`>>`}
+                    Definition (selection?) of manufacturing process for Nano-Assembly / 3D-Printing
+                    done in *** tool with AI-Agents {`>>`}
                 </Typography>
 
                 <Typography variant="body1" gutterBottom marginTop={5}>

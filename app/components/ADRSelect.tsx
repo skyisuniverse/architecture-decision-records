@@ -109,6 +109,7 @@ export default function ADRSelect() {
                 <MenuItem value={'quantum-computing-adr'}>Quantum Computing ADR</MenuItem>
                 <MenuItem value={'grok-cad-adr'}>Grok CAD ADR</MenuItem>
                 <MenuItem value={'chip-design-tool-adr'}>Chip Design Tool ADR</MenuItem>
+                <MenuItem value={'simulation-tool-adr'}>Simulation Tool ADR</MenuItem>
                 <MenuItem value={'direct-binary-code-generation-adr'}>Direct Bbinary Code Generation ADR</MenuItem>
                 <MenuItem value={'train-6t-parameter-models-in-minutes-adr'}>Train 6t parameter models in minutes ADR</MenuItem>
                 <MenuItem value={'xai-powered-entirely-with-solar-adr'}>xAI powered entirely with solar ADR</MenuItem>
