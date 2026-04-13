@@ -45,6 +45,7 @@ import { NanoAssemblerAdrsList } from '../adrs/nano-assembler-adr/nano-assembler
 import { ThreeDPrinterAdrsList } from '../adrs/3d-printer-adr/3d-printer-adrs-list';
 import { ChipDesignToolAdrsList } from '../adrs/chip-design-tool-adr/chip-design-tool-adrs-list';
 import { SimulationToolAdrsList } from '../adrs/simulation-tool-adr/simulation-tool-adrs-list';
+import { AutomatedDesignManufacturingPipelineAdrsList } from '../adrs/automated-design-manufacturing-pipeline-adr/automated-design-manufacturing-pipeline-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
     'nano-assembly-adr': NanoassemblyAdrsList,
@@ -53,6 +54,7 @@ export const adrsListMap: Record<string, any> = {
     '3d-printer-adr': ThreeDPrinterAdrsList,
     'chip-design-tool-adr': ChipDesignToolAdrsList,
     'simulation-tool-adr': SimulationToolAdrsList,
+    'automated-design-manufacturing-pipeline-adr': AutomatedDesignManufacturingPipelineAdrsList,
     'instantly-reusable-launchpad-adr': InstantlyReusableLaunchpadAdrsList,
     'starship-nano-assembly-adr': StarshipNanoassemblyAdrsList,
     '3d-printer-for-starships-adr': ThreeDPrinterForStarshipsAdrsList,

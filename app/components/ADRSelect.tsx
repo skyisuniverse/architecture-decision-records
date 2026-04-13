@@ -60,6 +60,7 @@ export default function ADRSelect() {
                 <MenuItem value={'nano-assembler-adr'}>Nano-assembler ADR</MenuItem>
                 <MenuItem value={'3d-printing-adr'}>3D-Printing ADR</MenuItem>
                 <MenuItem value={'3d-printer-adr'}>3D-Printer ADR</MenuItem>
+                <MenuItem value={'automated-design-manufacturing-pipeline-adr'}>Automated Design-Manufacturing Pipeline ADR</MenuItem>
 
                 <ListSubheader>SpaceX Falcon ADRs</ListSubheader>
                 <MenuItem value={'falcon-9-and-heavy-nano-assembly-adr'}>Falcon 9 & Heavy Nano-Assembly ADR</MenuItem>

@@ -31,6 +31,10 @@ export const DesignToManufacturingPipeline = [
         title: '3D Printer',
         href: '/adrs/3d-printer-adr',
     },
+    {
+        title: 'Automated Design-Manufacturing Pipeline ADR',
+        href: '/adrs/automated-design-manufacturing-pipeline-adr',
+    },
 ];
 
 export const DesignToManufacturingProducts = [
