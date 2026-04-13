@@ -7,7 +7,7 @@ export default async function Page() {
         <>
             <ADRHeader />
             <Box>
-                {/* <Typography variant="h6" sx={{ marginBottom: 2 }}>
+                <Typography variant="h6" sx={{ marginBottom: 2 }}>
                     <Link 
                         href="https://rd-center.vercel.app/nano-assembly/scientific-breakthroughs-for-nano-assembly"
                         color="inherit"
@@ -18,20 +18,9 @@ export default async function Page() {
                     </Link>
                 </Typography>
 
-                <Typography variant="h6" sx={{ marginBottom: 2 }}>
-                    4. Computing and AI Breakthroughs
-                </Typography>
-
                 <Typography sx={{ marginBottom: 2 }}>
-                    Designing and controlling MNT requires immense computational power.
+                    Nano-Assembler Decision 1
                 </Typography>
-
-                <Typography sx={{ marginBottom: 2 }}>
-                    - AI-Driven System Design: Automate the blueprinting of nanobot behaviors and assembly sequences.
-                    Breakthrough: Advanced AI (e.g., integrating machine learning with genetic algorithms) that designs
-                    self-replicating systems, optimizes for efficiency, and incorporates error correction codes,
-                    drawing from structural biology.
-                </Typography> */}
             </Box>
         </>
     )

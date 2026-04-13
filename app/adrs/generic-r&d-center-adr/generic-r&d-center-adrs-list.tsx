@@ -7,4 +7,16 @@ export const GenericRandDCenterAdrsList: AdrsList = [
         date: 'April 2026',
         status: 'Draft',
     },
+    {
+        title: 'Use 3D-Printing for production',
+        link: '/adrs/generic-r&d-center-adr/use-3d-printing-for-production',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Build automated design-manufacturing pipeline',
+        link: '/adrs/generic-r&d-center-adr/build-automated-design-manufacturing-pipeline',
+        date: 'April 2026',
+        status: 'Draft',
+    },
 ];

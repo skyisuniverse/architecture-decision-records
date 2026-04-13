@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
-import { NanoAssemblableDomains, NanoAssemblablyTools } from './nano-assembly-for-production';
+import { DesignToManufacturingPipeline, DesignToManufacturingProducts } from './design-manufacturing-pipeline';
 
 export default function Page() {
     
@@ -16,11 +16,11 @@ export default function Page() {
             <ADRHeader />
             <Box>
                 <Typography variant="body1" gutterBottom>
-                    Use nano-assembly for production of:
+                    Automated pipeline from design to manufacturing could possibly include:
                 </Typography>
 
                 <Grid container spacing={3}>
-                    {NanoAssemblableDomains.map((item) => (
+                    {DesignToManufacturingPipeline.map((item) => (
                         <Grid key={item.href} size={{ xs: 12, sm: 6, md: 4 }}>
                             <Card
                                 sx={{
@@ -56,11 +56,11 @@ export default function Page() {
                 </Grid>
 
                 <Typography variant="body1" gutterBottom marginTop={5}>
-                    with devices / tools:
+                    and possibly enable automated production of products:
                 </Typography>
 
                 <Grid container spacing={3}>
-                    {NanoAssemblablyTools.map((item) => (
+                    {DesignToManufacturingProducts.map((item) => (
                         <Grid key={item.href} size={{ xs: 12, sm: 6, md: 4 }}>
                             <Card
                                 sx={{
@@ -94,6 +94,10 @@ export default function Page() {
                         </Grid>
                     ))}
                 </Grid>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    etc.
+                </Typography>
             </Box>
         </>
     )

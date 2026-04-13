@@ -57,6 +57,9 @@ export default function ADRSelect() {
                 <ListSubheader>R&D Center ADRs (Generic for other ADRs)</ListSubheader>
                 <MenuItem value={'generic-r&d-center-adr'}>Generic R&D Center ADR</MenuItem>
                 <MenuItem value={'nano-assembly-adr'}>Nano-assembly ADR</MenuItem>
+                <MenuItem value={'nano-assembler-adr'}>Nano-assembler ADR</MenuItem>
+                <MenuItem value={'3d-printing-adr'}>3D-Printing ADR</MenuItem>
+                <MenuItem value={'3d-printer-adr'}>3D-Printer ADR</MenuItem>
 
                 <ListSubheader>SpaceX Falcon ADRs</ListSubheader>
                 <MenuItem value={'falcon-9-and-heavy-nano-assembly-adr'}>Falcon 9 & Heavy Nano-Assembly ADR</MenuItem>
@@ -95,7 +98,7 @@ export default function ADRSelect() {
                 <MenuItem value={'nano-assembled-optimus-adr'}>Nano-assembled Optimus ADR</MenuItem>
                 <MenuItem value={'nano-assembled-cybercab-adr'}>Nano-assembled Cybercab ADR</MenuItem>
                 <MenuItem value={'nano-assembled-semi-adr'}>Nano-assembled Semi ADR</MenuItem>
-                <MenuItem value={'faster-factories-with-optimus-semi-cybercab-adr'}>Faster Factories With Optimus Semi Cybercab ADR</MenuItem>
+                <MenuItem value={'80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adr'}>80%-Faster 60%-Cheaper Factories With Optimus Semi Cybercab ADR</MenuItem>
                 <MenuItem value={'solar-powered-tesla-adr'}>Solar-powered Tesla ADR</MenuItem>
                 <MenuItem value={'tesla-automated-with-optimi-adr'}>Tesla automated with Optimi ADR</MenuItem>
                 
@@ -105,6 +108,7 @@ export default function ADRSelect() {
                 <MenuItem value={'photonic-computing-adr'}>Photonic Computing ADR</MenuItem>
                 <MenuItem value={'quantum-computing-adr'}>Quantum Computing ADR</MenuItem>
                 <MenuItem value={'grok-cad-adr'}>Grok CAD ADR</MenuItem>
+                <MenuItem value={'chip-design-tool-adr'}>Chip Design Tool ADR</MenuItem>
                 <MenuItem value={'direct-binary-code-generation-adr'}>Direct Bbinary Code Generation ADR</MenuItem>
                 <MenuItem value={'train-6t-parameter-models-in-minutes-adr'}>Train 6t parameter models in minutes ADR</MenuItem>
                 <MenuItem value={'xai-powered-entirely-with-solar-adr'}>xAI powered entirely with solar ADR</MenuItem>

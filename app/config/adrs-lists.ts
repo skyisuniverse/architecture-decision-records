@@ -5,7 +5,7 @@ import { ThreeDPrinterForStarshipsAdrsList } from '../adrs/3d-printer-for-starsh
 import { ThreeDPrintingStarshipsAdrsList } from '../adrs/3d-printing-starships-adr/3d-printing-starships-adrs-list';
 import { AlternativeHardwareForAITrainingAdrsList } from '../adrs/alternative-hardware-for-ai-training-adr/alternative-hardware-for-ai-training-adrs-list';
 import { DirectBinaryCodeGenerationAdrsList } from '../adrs/direct-binary-code-generation-adr/direct-binary-code-generation-adrs-list';
-import { FasterFactoriesWithOptimusSemiCybercabAdrsList } from '../adrs/faster-factories-with-optimus-semi-cybercab-adr/faster-factories-with-optimus-semi-cybercab-adrs-list';
+import { FasterFactoriesWithOptimusSemiCybercabAdrsList } from '../adrs/80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adr/80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adrs-list';
 import { NanoAssembledCybercabAdrsList } from '../adrs/nano-assembled-cybercab-adr/nano-assembled-cybercab-adrs-list';
 import { NanoAssembledOptimusAdrsList } from '../adrs/nano-assembled-optimus-adr/nano-assembled-optimus-adrs-list';
 import { NanoAssembledSemiAdrsList } from '../adrs/nano-assembled-semi-adr/nano-assembled-semis-list';
@@ -40,16 +40,24 @@ import { NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList } from '../adrs
 import { NeuromorphicComputingAdrsList } from '../adrs/neuromorphic-computing-adr/neuromorphic-computing-adrs-list';
 import { PhotonicComputingAdrsList } from '../adrs/photonic-computing-adr/photonic-computing-adrs-list';
 import { QuantumComputingAdrsList } from '../adrs/quantum-computing-adr/quantum-computing-adrs-list';
+import { ThreeDPrintingAdrsList } from '../adrs/3d-printing-adr/3d-printing-adrs-list';
+import { NanoAssemblerAdrsList } from '../adrs/nano-assembler-adr/nano-assembler-adrs-list';
+import { ThreeDPrinterAdrsList } from '../adrs/3d-printer-adr/3d-printer-adrs-list';
+import { ChipDesignToolAdrsList } from '../adrs/chip-design-tool-adr/chip-design-tool-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
     'nano-assembly-adr': NanoassemblyAdrsList,
+    'nano-assembler-adr': NanoAssemblerAdrsList,
+    '3d-printing-adr': ThreeDPrintingAdrsList,
+    '3d-printer-adr': ThreeDPrinterAdrsList,
+    'chip-design-tool-adr': ChipDesignToolAdrsList,
     'instantly-reusable-launchpad-adr': InstantlyReusableLaunchpadAdrsList,
     'starship-nano-assembly-adr': StarshipNanoassemblyAdrsList,
     '3d-printer-for-starships-adr': ThreeDPrinterForStarshipsAdrsList,
     '3d-printing-starships-adr': ThreeDPrintingStarshipsAdrsList,
     'alternative-hardware-for-ai-training-adr': AlternativeHardwareForAITrainingAdrsList,
     'direct-binary-code-generation-adr': DirectBinaryCodeGenerationAdrsList,
-    'faster-factories-with-optimus-semi-cybercab-adr': FasterFactoriesWithOptimusSemiCybercabAdrsList,
+    '80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adr': FasterFactoriesWithOptimusSemiCybercabAdrsList,
     'nano-assembled-cybercab-adr': NanoAssembledCybercabAdrsList,
     'nano-assembled-optimus-adr': NanoAssembledOptimusAdrsList,
     'nano-assembled-semi-adr': NanoAssembledSemiAdrsList,

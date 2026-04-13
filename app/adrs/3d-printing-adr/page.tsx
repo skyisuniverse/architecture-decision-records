@@ -7,7 +7,7 @@ export default async function Page() {
         
     <Box>
         <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Faster factories with Optimus, Semi & Cybercab ADR
+            3D Printing ADR
         </Typography>
     </Box>
     
