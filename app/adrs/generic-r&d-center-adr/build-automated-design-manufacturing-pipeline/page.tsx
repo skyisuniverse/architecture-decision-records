@@ -1,6 +1,6 @@
 'use client';
 import { ADRHeader } from '@/app/components/ADRHeader';
-import { Grid, Link as MuiLink } from '@mui/material';
+import { Divider, Grid, Link as MuiLink } from '@mui/material';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -97,6 +97,63 @@ export default function Page() {
 
                 <Typography variant="body1" gutterBottom marginTop={5}>
                     etc.
+                </Typography>
+
+                <Divider />
+
+                <Typography variant="h6" gutterBottom marginTop={5}>
+                    1. Manual flow
+                </Typography>
+
+                <Typography variant="h6" gutterBottom marginTop={5}>
+                    2. Agentic flow
+                </Typography>
+
+                <Divider />
+
+                <Typography variant="h6" gutterBottom marginTop={5}>
+                    1. Manual flow
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Design 3D-Model of an object in Grok CAD {`>>`}
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Design 3D-Model of a Starship in Starship Forge-AI {`>>`}
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Design 3D-Model / Circuits / Die of a chip in Chip Design Tool  {`>>`}
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Define manufacturing process for Nano-Assembly / 3D-Printing {`>>`}
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Assemble physical object with Nano-Assembler / printed with  3D-Printer
+                </Typography>
+
+                <Divider />
+
+                <Typography variant="h6" gutterBottom marginTop={5}>
+                    2. Agentic flow
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Write a text-prompt {`>>`}
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Watch design of a 3D-Model of an object done in Grok CAD, 
+                    Design 3D-Model / Circuits / Die of a chip in Chip Design Tool,
+                    Definition (selection?) of manufacturing process for Nano-Assembly / 3D-Printing 
+                    done in *** tool with AI-Agents, {`>>`}
+                </Typography>
+
+                <Typography variant="body1" gutterBottom marginTop={5}>
+                    Get physical object assembled with Nano-Assembler / printed with 3D-Printer
                 </Typography>
             </Box>
         </>
