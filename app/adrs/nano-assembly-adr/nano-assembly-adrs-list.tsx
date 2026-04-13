@@ -146,4 +146,10 @@ export const NanoassemblyAdrsList: AdrsList = [
         date: 'March 2026',
         status: 'Draft',
     },
+    {
+        title: 'Define hardware sufficient for nano-assembly computing tasks',
+        link: '/adrs/nano-assembly-adr/define-hardware-sufficient-for-nano-assembly-computing',
+        date: 'April 2026',
+        status: 'Draft',
+    },
 ];
