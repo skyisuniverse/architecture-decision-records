@@ -46,6 +46,7 @@ import { ThreeDPrinterAdrsList } from '../adrs/3d-printer-adr/3d-printer-adrs-li
 import { ChipDesignToolAdrsList } from '../adrs/chip-design-tool-adr/chip-design-tool-adrs-list';
 import { SimulationToolAdrsList } from '../adrs/simulation-tool-adr/simulation-tool-adrs-list';
 import { AutomatedDesignManufacturingPipelineAdrsList } from '../adrs/automated-design-manufacturing-pipeline-adr/automated-design-manufacturing-pipeline-adrs-list';
+import { WarpDriveWithoutNegativeEnergyAdrsList } from '../adrs/warp-drive-without-negative-energy-adr/warp-drive-without-negative-energy-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
     'nano-assembly-adr': NanoassemblyAdrsList,
@@ -95,7 +96,8 @@ export const adrsListMap: Record<string, any> = {
     'neuralink-bci-overcoming-serial-attention-limitation-adr': NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList,
     'neuromorphic-computing-adr': NeuromorphicComputingAdrsList,
     'photonic-computing-adr': PhotonicComputingAdrsList,
-    'quantum-computing-adr': QuantumComputingAdrsList
+    'quantum-computing-adr': QuantumComputingAdrsList,
+    'warp-drive-without-negative-energy-adr': WarpDriveWithoutNegativeEnergyAdrsList
 } as const;
 
 export type AdrSlug = keyof typeof adrsListMap;
