@@ -9,7 +9,7 @@ export default async function Page() {
             <Box>
                 <Typography variant="h6" sx={{ marginBottom: 2 }}>
                     <Link 
-                        href="https://rd-center.vercel.app//theoretical-physics/warp-drive/warp-drive-without-negative-energy"
+                        href="https://rd-center.vercel.app/theoretical-physics/warp-drive/warp-drive-without-negative-energy"
                         color="inherit"
                         target="_blank"
                         sx={{ marginBottom: 2 }}
