@@ -8,6 +8,12 @@ export const GrokCADAdrsList: AdrsList = [
         status: 'Draft',
     },
     {
+        title: 'Supported formats',
+        link: '/adrs/grok-cad-adr/supported-formats',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    {
         title: 'List of features',
         link: '/adrs/grok-cad-adr/list-of-features',
         date: 'April 2026',

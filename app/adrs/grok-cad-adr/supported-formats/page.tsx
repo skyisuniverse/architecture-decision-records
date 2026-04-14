@@ -42,17 +42,16 @@ export default async function Page() {
                 </Typography>
 
                 <Typography variant="h6" gutterBottom marginTop={5}>
-                    Consider using <MuiNextLink href="https://dev.opencascade.org">Open CASCADE (OCCT)</MuiNextLink> for 
+                    Consider supporting formats listed in <MuiNextLink href="https://dev.opencascade.org">Open CASCADE (OCCT)</MuiNextLink> for 
                     CAD Geometry Kernel.
                 </Typography>
 
                 <Typography variant="body1" gutterBottom marginTop={5}>
-                    <MuiNextLink href="https://ocjs.org">OpenCascade.js (ocjs.org)</MuiNextLink>
+                    <b>B-Rep:</b> STEP (ISO 10303), IGES, BREP (native)
                 </Typography>
 
                 <Typography variant="body1" gutterBottom marginTop={5}>
-                    Full industrial CAD kernel (BREP, NURBS, booleans, fillets, STEP/IGES import/export) 
-                    compiled to WASM. Runs near-native speed + multi-threading.
+                    <b>Mesh:</b> glTF, VRML (ISO 14772), OBJ Wavefront, STL
                 </Typography>
             </Box>
         </>
