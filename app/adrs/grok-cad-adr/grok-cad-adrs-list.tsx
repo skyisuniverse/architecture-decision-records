@@ -2,15 +2,53 @@ import { AdrsList } from "@/app/types/adr";
 
 export const GrokCADAdrsList: AdrsList = [
     {
-        title: 'decision-record-1',
-        link: '/adrs/grok-cad-adr/decision-record-1',
-        date: 'March 2026',
+        title: 'CAD Geometry Kernel',
+        link: '/adrs/grok-cad-adr/cad-geometry-kernel',
+        date: 'April 2026',
         status: 'Draft',
     },
     {
-        title: 'decision-record-2',
-        link: '/adrs/grok-cad-adr/decision-record-2',
-        date: 'March 2026',
+        title: 'List of features',
+        link: '/adrs/grok-cad-adr/list-of-features',
+        date: 'April 2026',
         status: 'Draft',
     },
+    {
+        title: 'MUI for User Interface',
+        link: '/adrs/grok-cad-adr/mui-for-ui',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'File menu features',
+        link: '/adrs/grok-cad-adr/file-menu-features',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Edit features',
+        link: '/adrs/grok-cad-adr/edit-features',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'View features',
+        link: '/adrs/grok-cad-adr/view-features',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Drawer sidebar features',
+        link: '/adrs/grok-cad-adr/drawer-sidebar-features',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    
+    {
+        title: 'Toolbar features',
+        link: '/adrs/grok-cad-adr/toolbar-features',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+    
 ];
