@@ -93,6 +93,19 @@ export default function ResponsiveDrawer(props: Props) {
     }
   };
 
+  // NEW: Click on the ADR header (the "category button")
+  // - Always navigates to the ADR category list page
+  // - Expands the list if it was collapsed
+  // - Does NOT collapse if already expanded (even if a nested decision is selected)
+  const handleAdrHeaderClick = (slug: string) => {
+    router.push(`/adrs/${slug}`);
+
+    if (expandedAdrSlug !== slug) {
+      setExpandedAdrSlug(slug);
+    }
+  };
+
+  // Toggle via the chevron icon only (no navigation)
   const handleToggle = (slug: string) => {
     setExpandedAdrSlug((prev) => (prev === slug ? null : slug));
   };
@@ -143,14 +156,25 @@ export default function ResponsiveDrawer(props: Props) {
           return (
             <React.Fragment key={adrItem.slug}>
               {/* ADR header – link to main page + collapsible (only one can be open) */}
+              {/* 
+                Updated logic (exactly as requested):
+                • Clicking the ADR header button → expand (if collapsed) + navigate to category list
+                • Clicking the icon button → collapse/expand (no navigation)
+                • If a nested decision is selected and the header is clicked again → keep expanded + navigate
+              */}
               <ListItemButton
-                component={Link}
-                href={`/adrs/${adrItem.slug}`}
                 selected={pathname === `/adrs/${adrItem.slug}`}
-                onClick={() => handleToggle(adrItem.slug)}
+                onClick={() => handleAdrHeaderClick(adrItem.slug)}
               >
                 <ListItemText primary={adrItem.label} />
-                {isOpen ? <ExpandLess /> : <ExpandMore />}
+                <IconButton
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    e.stopPropagation(); // Prevent triggering the header navigation
+                    handleToggle(adrItem.slug);
+                  }}
+                >
+                  {isOpen ? <ExpandLess /> : <ExpandMore />}
+                </IconButton>
               </ListItemButton>
 
               {/* Nested decisions */}
