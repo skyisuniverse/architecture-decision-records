@@ -14,6 +14,7 @@ import ResponsiveDrawer from './components/ResponsiveDrawer';
 import ADRTopBar from './components/ADRTopBar';
 import { StyledMain } from './components/StyledMain';
 import { DrawerHeader } from './components/ResponsiveDrawer';
+import ADRBottomNav from './components/ADRBottomNav';
 
 
 const roboto = Roboto({
@@ -66,6 +67,8 @@ export default function RootLayout({
                 <StyledMain open={open}>
                   <DrawerHeader />
                   {children}
+
+                  <ADRBottomNav />
                 </StyledMain>
 
               </Box>

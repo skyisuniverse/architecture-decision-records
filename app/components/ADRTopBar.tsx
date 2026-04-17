@@ -5,7 +5,7 @@ import {
   IconButton,
   Typography,
   Box,
-  Grid,
+  Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
@@ -55,10 +55,12 @@ export default function ADRTopBar({
 }: ADRTopBarProps) {
   const theme = useTheme();
 
+  const pages = ['Companies', 'Products', 'Services'];
+
   return (
     <StyledAppBar position="fixed" open={open}>
       <Toolbar>
-        {/* Mobile button */}
+        {/* Mobile drawer toggle (xs only) */}
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -69,7 +71,7 @@ export default function ADRTopBar({
           <MenuIcon />
         </IconButton>
 
-        {/* Desktop button (only when closed) */}
+        {/* Desktop drawer toggle (sm+ only when drawer is closed) */}
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -83,29 +85,48 @@ export default function ADRTopBar({
           <MenuIcon />
         </IconButton>
 
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={3} alignItems="center">
-            <Grid size="grow">
-              <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-                <Link href="/" color="inherit">
-                  Architecture Decision Records
-                </Link>
-              </Typography>
-            </Grid>
+        {/* Logo / Title */}
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ mr: 2, flexGrow: 0 }}
+        >
+          <Link href="/" color="inherit" style={{ textDecoration: 'none' }}>
+            Architecture Decision Records
+          </Link>
+        </Typography>
 
-            <Grid size="grow">
-              <Typography variant="h6" noWrap component="div" align="right">
-                <Link
-                  href="https://rd-center.vercel.app/"
-                  color="inherit"
-                  target="_blank"
-                >
-                  R&amp;D Center
-                </Link>
-              </Typography>
-            </Grid>
-          </Grid>
+        {/* Desktop navigation (sm and up) – exactly like MUI responsive menu example */}
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
+          {pages.map((page) => (
+            <Button
+              key={page}
+              component={Link}
+              href={`/${page.toLowerCase()}`}
+              sx={{ my: 2, color: 'inherit', display: 'block', mx: 1 }}
+            >
+              {page}
+            </Button>
+          ))}
         </Box>
+
+        {/* R&amp;D Center link (always on the right) */}
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ ml: 'auto' }}
+        >
+          <Link
+            href="https://rd-center.vercel.app/"
+            color="inherit"
+            target="_blank"
+            style={{ textDecoration: 'none' }}
+          >
+            R&amp;D Center
+          </Link>
+        </Typography>
       </Toolbar>
     </StyledAppBar>
   );
