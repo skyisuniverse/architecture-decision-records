@@ -14,19 +14,20 @@ export const ADRHeader = () => {
 
   return (
     <Box sx={{ mb: 4 }}>
-      {/* Title, StatusChip & Date on the same line */}
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
-        <Typography variant="h4" component="h1">
-          {currentAdr.title}
-        </Typography>
-        <StatusChip status={currentAdr.status} />
+      {/* Title on its own line */}
+      <Typography variant="h4" component="h1" gutterBottom>
+        {currentAdr.title}
+      </Typography>
 
+      {/* Status + Date on a separate line, side by side */}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <StatusChip status={currentAdr.status} />
         <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ fontWeight: 500 }}
+          variant="body2"
+          color="text.secondary"
+          sx={{ fontWeight: 500 }}
         >
-            {currentAdr.date}
+          {currentAdr.date}
         </Typography>
       </Box>
     </Box>
