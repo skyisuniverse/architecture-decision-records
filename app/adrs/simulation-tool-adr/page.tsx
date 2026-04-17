@@ -10,6 +10,17 @@ export default async function Page() {
             Simulation tool ADR
         </Typography>
 
+        <Typography variant="h6" sx={{ marginBottom: 2 }}>
+            <Link 
+                href="https://rd-center.vercel.app/xai/simulation-tool"
+                color="inherit"
+                target="_blank"
+                sx={{ marginBottom: 2 }}
+                >
+                Simulation Tool
+            </Link>
+        </Typography>
+
         <Typography variant="body1" gutterBottom marginTop={5}>
             Develop a simulation tool with realistic physics, for simulations
             of a 3D-object across multiple domains (physics, chemistry, etc).
