@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
-import ADRSelect from './ADRSelect';
 import MuiAppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import { drawerWidth } from './ResponsiveDrawer';
@@ -92,10 +91,6 @@ export default function ADRTopBar({
                   Architecture Decision Records
                 </Link>
               </Typography>
-            </Grid>
-
-            <Grid size={4}>
-              <ADRSelect />
             </Grid>
 
             <Grid size="grow">

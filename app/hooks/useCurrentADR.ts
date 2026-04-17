@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { adrsListMap, type AdrSlug } from '@/app/config/adrs-lists';
+import { adrsListMap, type AdrSlug, categories, getCategoryBySlug } from '@/app/config/adrs-lists';
 import { ADRItem } from '../types/adr';
 
 export function useCurrentADR() {
@@ -12,13 +12,13 @@ export function useCurrentADR() {
   );
 
   const currentAdrsList = slug ? adrsListMap[slug] : [];
-
-  // automatically find the exact ADR for this page
   const currentAdr = currentAdrsList.find((adr: ADRItem) => adr.link === pathname);
+  const currentCategory = slug ? getCategoryBySlug(slug) : undefined;
 
   return {
     currentAdrsList,
     currentSlug: slug ?? '',
     currentAdr,
+    currentCategory,
   } as const;
 }

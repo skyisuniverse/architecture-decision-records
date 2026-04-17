@@ -103,3 +103,142 @@ export const adrsListMap: Record<string, any> = {
 } as const;
 
 export type AdrSlug = keyof typeof adrsListMap;
+
+// ──────────────────────────────────────────────────────────────
+// CATEGORY CONFIG (new)
+// ──────────────────────────────────────────────────────────────
+export interface Category {
+  id: string;
+  name: string;
+  mainPageSlug?: AdrSlug;
+  adrs: { slug: AdrSlug; label: string }[];
+}
+
+export const categories: Category[] = [
+  {
+    id: 'rd-center',
+    name: 'R&D Center ADRs',
+    mainPageSlug: 'generic-r&d-center-adr',
+    adrs: [
+      { slug: 'generic-r&d-center-adr', label: 'Generic R&D Center ADR' },
+      { slug: 'nano-assembly-adr', label: 'Nano-assembly ADR' },
+      { slug: 'nano-assembler-adr', label: 'Nano-assembler ADR' },
+      { slug: '3d-printing-adr', label: '3D-Printing ADR' },
+      { slug: '3d-printer-adr', label: '3D-Printer ADR' },
+      { slug: 'automated-design-manufacturing-pipeline-adr', label: 'Automated Design-Manufacturing Pipeline ADR' },
+    ],
+  },
+  {
+    id: 'spacex-falcon',
+    name: 'SpaceX Falcon ADRs',
+    mainPageSlug: 'falcon-9-and-heavy-nano-assembly-adr',
+    adrs: [
+      { slug: 'falcon-9-and-heavy-nano-assembly-adr', label: 'Falcon 9 & Heavy Nano-Assembly ADR' },
+    ],
+  },
+  {
+    id: 'spacex-starship',
+    name: 'SpaceX Starship ADRs',
+    mainPageSlug: 'starship-nano-assembly-adr',
+    adrs: [
+      { slug: 'starship-instant-reusability-adr', label: 'Starship Instant Reusability ADR' },
+      { slug: 'starship-nano-assembly-adr', label: 'Starship Nano-assembly ADR' },
+      { slug: 'nano-assembled-orbital-heat-shield-adr', label: 'Nano-Assembled Orbital Heat Shield ADR' },
+      { slug: '3d-printer-for-starships-adr', label: '3D Printer for Starships ADR' },
+      { slug: '3d-printing-starships-adr', label: '3D Printing Starships ADR' },
+      { slug: 'starship-forge-ai-adr', label: 'Starship Forge-AI ADR' },
+      { slug: 'starship-with-a-fusion-engine-adr', label: 'Starship with a Fusion engine ADR' },
+      { slug: 'fusion-starship-adr', label: 'Fusion Starship ADR' },
+    ],
+  },
+  {
+    id: 'spacex-starbase',
+    name: 'SpaceX Starbase Infra ADRs',
+    mainPageSlug: 'instantly-reusable-launchpad-adr',
+    adrs: [
+      { slug: 'instantly-reusable-launchpad-adr', label: 'Instantly Reusable Launchpad ADR' },
+      { slug: 'nano-assembled-mechazilla-adr', label: 'Nano-Assembled Mechazilla ADR' },
+      { slug: 'nanoassembly-boosted-spacex-adr', label: 'Nanoassembly-boosted SpaceX ADR' },
+      { slug: 'spacex-automated-with-optimi-adr', label: 'SpaceX automated with Optimi ADR' },
+      { slug: 'air-separation-adr', label: 'Air Separation ADR' },
+      { slug: 'fusion-power-plant-adr', label: 'Fusion Power Plant ADR' },
+      { slug: 'nano-assembled-ground-works-adr', label: 'Nano-Assembled Ground Works ADR' },
+      { slug: 'propellant-generation-adr', label: 'Propellant Generation ADR' },
+      { slug: 'smart-starbase-adr', label: 'Smart Starbase ADR' },
+    ],
+  },
+  {
+    id: 'spacex-planet',
+    name: 'SpaceX Planet Colonization ADRs',
+    mainPageSlug: 'terraforming-mars-adr',
+    adrs: [
+      { slug: 'terraforming-mars-adr', label: 'Terraforming Mars ADR' },
+      { slug: 'compressing-mars-terraforming', label: 'Compressing Mars Terraforming from 100,000+ to 10 years' },
+      { slug: 'mass-driver-adr', label: 'Mass Driver ADR' },
+      { slug: 'solar-system-colonization-adr', label: 'Solar System Colonization ADR' },
+    ],
+  },
+  {
+    id: 'spacex-starlink',
+    name: 'SpaceX Starlink ADRs',
+    mainPageSlug: 'nano-assembled-starlink-adr',
+    adrs: [
+      { slug: 'nano-assembled-starlink-adr', label: 'Nano-Assembled Starlink ADR' },
+    ],
+  },
+  {
+    id: 'spacex-warp',
+    name: 'SpaceX Warp Drive ADRs',
+    mainPageSlug: 'warp-drive-without-negative-energy-adr',
+    adrs: [
+      { slug: 'warp-drive-without-negative-energy-adr', label: 'Warp Drive Without Negative Energy ADR' },
+      { slug: 'superluminal-effective-warp-drive-adr', label: 'Superluminal-Effective Warp Drive ADR' },
+    ],
+  },
+  {
+    id: 'tesla',
+    name: 'Tesla ADRs',
+    mainPageSlug: 'nano-assembled-optimus-adr',
+    adrs: [
+      { slug: 'nano-assembled-optimus-adr', label: 'Nano-assembled Optimus ADR' },
+      { slug: 'nano-assembled-cybercab-adr', label: 'Nano-assembled Cybercab ADR' },
+      { slug: 'nano-assembled-semi-adr', label: 'Nano-assembled Semi ADR' },
+      { slug: '80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adr', label: '80%-Faster 60%-Cheaper Factories With Optimus Semi Cybercab ADR' },
+      { slug: 'solar-powered-tesla-adr', label: 'Solar-powered Tesla ADR' },
+      { slug: 'tesla-automated-with-optimi-adr', label: 'Tesla automated with Optimi ADR' },
+    ],
+  },
+  {
+    id: 'xai',
+    name: 'xAI ADRs',
+    mainPageSlug: 'alternative-hardware-for-ai-training-adr',
+    adrs: [
+      { slug: 'alternative-hardware-for-ai-training-adr', label: 'Alternative hardware for AI Training ADR' },
+      { slug: 'neuromorphic-computing-adr', label: 'Neuromorphic Computing ADR' },
+      { slug: 'photonic-computing-adr', label: 'Photonic Computing ADR' },
+      { slug: 'quantum-computing-adr', label: 'Quantum Computing ADR' },
+      { slug: 'grok-cad-adr', label: 'Grok CAD ADR' },
+      { slug: 'chip-design-tool-adr', label: 'Chip Design Tool ADR' },
+      { slug: 'simulation-tool-adr', label: 'Simulation Tool ADR' },
+      { slug: 'direct-binary-code-generation-adr', label: 'Direct Bbinary Code Generation ADR' },
+      { slug: 'train-6t-parameter-models-in-minutes-adr', label: 'Train 6t parameter models in minutes ADR' },
+      { slug: 'xai-powered-entirely-with-solar-adr', label: 'xAI powered entirely with solar ADR' },
+      { slug: 'xais-100m-rubin-equivalent-compute-adr', label: 'xAIs 100M Rubin equivalent compute ADR' },
+    ],
+  },
+  {
+    id: 'neuralink',
+    name: 'NeuraLink ADRs',
+    mainPageSlug: 'healing-autism-perspective-neuralink-bcis-adr',
+    adrs: [
+      { slug: 'healing-autism-perspective-neuralink-bcis-adr', label: 'Healing Autism & Perspective Neuralink BCIs ADR' },
+      { slug: 'neuralink-bci-overcoming-serial-attention-limitation-adr', label: '[NeuraLink] [BCI] Overcoming serial attention limitation' },
+    ],
+  },
+];
+
+export function getCategoryBySlug(slug: AdrSlug | ''): Category | undefined {
+  return categories.find((cat) =>
+    cat.adrs.some((item) => item.slug === slug)
+  );
+}
