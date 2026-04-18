@@ -1,15 +1,21 @@
-import { Link } from '@mui/material';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { ADRCategoryPage } from '@/app/components/ADRCategoryPage';
+import { QuantumComputingAdrsList } from './quantum-computing-adrs-list';
 
 export default async function Page() {
-    return(
-        
-    <Box>
-        <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Quantum Computing ADR
-        </Typography>
-    </Box>
-    
-    )
+  return (
+    <ADRCategoryPage
+      title="Quantum Computing ADR"
+      publishedDate="Published April 2026"
+      description={
+        <>
+            
+        </>
+      }
+      //   imageSrc={}
+      adrsList={QuantumComputingAdrsList}
+      // children slot is available here if you want to insert anything between description and ADR list
+      // Example usage:
+    //   children={}
+    />
+  );
 }

@@ -1,15 +1,21 @@
-import { Link } from '@mui/material';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { ADRCategoryPage } from '@/app/components/ADRCategoryPage';
+import { WarpDriveWithoutNegativeEnergyAdrsList } from './warp-drive-without-negative-energy-adrs-list';
 
 export default async function Page() {
-    return(
-        
-    <Box>
-        <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Warp Drives Without Negative Energy ADR
-        </Typography>
-    </Box>
-    
-    )
+  return (
+    <ADRCategoryPage
+      title="Warp Drives Without Negative Energy ADR"
+      publishedDate="Published April 2026"
+      description={
+        <>
+            
+        </>
+      }
+      //   imageSrc={}
+      adrsList={WarpDriveWithoutNegativeEnergyAdrsList}
+      // children slot is available here if you want to insert anything between description and ADR list
+      // Example usage:
+    //   children={}
+    />
+  );
 }

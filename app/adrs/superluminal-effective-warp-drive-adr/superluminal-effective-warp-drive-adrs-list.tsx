@@ -86,12 +86,6 @@ export const SuperluminalEffectiveWarpDriveAdrsList: AdrsList = [
         status: 'Draft',
     },
     {
-        title: 'hyper-fast-solitons',
-        link: '/adrs/superluminal-effective-warp-drive-adr/hyper-fast-solitons',
-        date: 'April 2026',
-        status: 'Draft',
-    },
-    {
         title: 'manipulating-the-stress-energy-tensor',
         link: '/adrs/superluminal-effective-warp-drive-adr/manipulating-the-stress-energy-tensor',
         date: 'April 2026',
@@ -116,20 +110,8 @@ export const SuperluminalEffectiveWarpDriveAdrsList: AdrsList = [
         status: 'Draft',
     },
     {
-        title: 'refined-alcubierre-inspired-designs',
-        link: '/adrs/superluminal-effective-warp-drive-adr/refined-alcubierre-inspired-designs',
-        date: 'April 2026',
-        status: 'Draft',
-    },
-    {
         title: 'shortening-the-effective-distance',
         link: '/adrs/superluminal-effective-warp-drive-adr/shortening-the-effective-distance',
-        date: 'April 2026',
-        status: 'Draft',
-    },
-    {
-        title: 'stable-self-reinforcing-energy-configurations-in-spacetime',
-        link: '/adrs/superluminal-effective-warp-drive-adr/stable-self-reinforcing-energy-configurations-in-spacetime',
         date: 'April 2026',
         status: 'Draft',
     },
@@ -154,12 +136,6 @@ export const SuperluminalEffectiveWarpDriveAdrsList: AdrsList = [
     {
         title: 'vacuum-energy-extraction',
         link: '/adrs/superluminal-effective-warp-drive-adr/vacuum-energy-extraction',
-        date: 'April 2026',
-        status: 'Draft',
-    },
-    {
-        title: 'velocities-of-10c-or-more',
-        link: '/adrs/superluminal-effective-warp-drive-adr/velocities-of-10c-or-more',
         date: 'April 2026',
         status: 'Draft',
     },

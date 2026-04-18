@@ -11,6 +11,7 @@ export type AdrStatus = (typeof ADR_STATUSES)[number];
 
 export type ADRItem = {
   title: string;
+  description?: string;
   date: string;
   link: string;
   status: AdrStatus;

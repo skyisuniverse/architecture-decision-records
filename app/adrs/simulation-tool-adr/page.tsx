@@ -1,39 +1,22 @@
-import { Link } from '@mui/material';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { ADRCategoryPage } from '@/app/components/ADRCategoryPage';
+import StarshipImage from './starship.jpg';
+import { SimulationToolAdrsList } from './simulation-tool-adrs-list';
 
 export default async function Page() {
-    return(
-        
-    <Box>
-        <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Simulation tool ADR
-        </Typography>
-
-        <Typography variant="h6" sx={{ marginBottom: 2 }}>
-            <Link 
-                href="https://rd-center.vercel.app/xai/simulation-tool"
-                color="inherit"
-                target="_blank"
-                sx={{ marginBottom: 2 }}
-                >
-                Simulation Tool
-            </Link>
-        </Typography>
-
-        <Typography variant="body1" gutterBottom marginTop={5}>
-            Develop a simulation tool with realistic physics, for simulations
-            of a 3D-object across multiple domains (physics, chemistry, etc).
-        </Typography>
-
-        <Typography variant="body1" gutterBottom marginTop={5}>
-            What do we want the tool to be able to simulate?
-        </Typography>
-
-        <Typography variant="body1" gutterBottom marginTop={5}>
-            How do we implement it?
-        </Typography>
-    </Box>
-    
-    )
+  return (
+    <ADRCategoryPage
+      title="Simulation Tool ADR"
+      publishedDate="Published April 2026"
+      description="
+        Develop a simulation tool with realistic physics, 
+        for simulations of a 3D-object across multiple domains (physics, 
+        chemistry, etc).
+        "
+      imageSrc={StarshipImage}
+      adrsList={SimulationToolAdrsList}
+      // children slot is available here if you want to insert anything between description and ADR list
+      // Example usage:
+      // children={<YourCustomComponentOrMarkdown />}
+    />
+  );
 }

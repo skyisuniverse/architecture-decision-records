@@ -1,15 +1,21 @@
-import { Link } from '@mui/material';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { ADRCategoryPage } from '@/app/components/ADRCategoryPage';
+import { AlternativeHardwareForAITrainingAdrsList } from './alternative-hardware-for-ai-training-adrs-list';
 
 export default async function Page() {
-    return(
-        
-    <Box>
-        <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Alternative Hardware for AI Training ADR
-        </Typography>
-    </Box>
-    
-    )
+  return (
+    <ADRCategoryPage
+      title="Alternative Hardware for AI Training ADR"
+      publishedDate="Published April 2026"
+      description={
+        <>
+            
+        </>
+      }
+      //   imageSrc={}
+      adrsList={AlternativeHardwareForAITrainingAdrsList}
+      // children slot is available here if you want to insert anything between description and ADR list
+      // Example usage:
+    //   children={}
+    />
+  );
 }

@@ -1,15 +1,21 @@
-import { Link } from '@mui/material';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { ADRCategoryPage } from '@/app/components/ADRCategoryPage';
+import { TerraformingMarsAdrsList } from './terraforming-mars-adrs-list';
 
 export default async function Page() {
-    return(
-        
-    <Box>
-        <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Terraforming Mars ADR
-        </Typography>
-    </Box>
-    
-    )
+  return (
+    <ADRCategoryPage
+      title="Terraforming Mars ADR"
+      publishedDate="Published April 2026"
+      description={
+        <>
+            
+        </>
+      }
+      //   imageSrc={}
+      adrsList={TerraformingMarsAdrsList}
+      // children slot is available here if you want to insert anything between description and ADR list
+      // Example usage:
+    //   children={}
+    />
+  );
 }
