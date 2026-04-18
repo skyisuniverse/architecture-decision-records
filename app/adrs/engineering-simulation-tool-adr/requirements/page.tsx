@@ -1,6 +1,5 @@
 import { ADRHeader } from '@/app/components/ADRHeader';
-import { Link } from '@mui/material';
-import Box from '@mui/material/Box';
+import { Box, Link } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 export default async function Page() {
@@ -10,12 +9,12 @@ export default async function Page() {
             <Box>
                 <Typography variant="h6" sx={{ marginBottom: 2 }}>
                     <Link 
-                        href="https://rd-center.vercel.app/xai/simulation-tool/physics-engine"
+                        href="https://rd-center.vercel.app/xai/simulation-tool/requirements"
                         color="inherit"
                         target="_blank"
                         sx={{ marginBottom: 2 }}
                         >
-                        Simulation Tool: Physics Engine
+                        Engineering Simulation Tool: Requirements
                     </Link>
                 </Typography>
             </Box>

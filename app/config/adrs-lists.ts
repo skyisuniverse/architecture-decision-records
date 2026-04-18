@@ -44,7 +44,7 @@ import { ThreeDPrintingAdrsList } from '../adrs/3d-printing-adr/3d-printing-adrs
 import { NanoAssemblerAdrsList } from '../adrs/nano-assembler-adr/nano-assembler-adrs-list';
 import { ThreeDPrinterAdrsList } from '../adrs/3d-printer-adr/3d-printer-adrs-list';
 import { ChipDesignToolAdrsList } from '../adrs/chip-design-tool-adr/chip-design-tool-adrs-list';
-import { SimulationToolAdrsList } from '../adrs/simulation-tool-adr/simulation-tool-adrs-list';
+import { EngineeringSimulationToolAdrsList } from '../adrs/engineering-simulation-tool-adr/simulation-tool-adrs-list';
 import { AutomatedDesignManufacturingPipelineAdrsList } from '../adrs/automated-design-manufacturing-pipeline-adr/automated-design-manufacturing-pipeline-adrs-list';
 import { WarpDriveWithoutNegativeEnergyAdrsList } from '../adrs/warp-drive-without-negative-energy-adr/warp-drive-without-negative-energy-adrs-list';
 import { SuperluminalEffectiveWarpDriveAdrsList } from '../adrs/superluminal-effective-warp-drive-adr/superluminal-effective-warp-drive-adrs-list';
@@ -55,7 +55,7 @@ export const adrsListMap: Record<string, any> = {
     '3d-printing-adr': ThreeDPrintingAdrsList,
     '3d-printer-adr': ThreeDPrinterAdrsList,
     'chip-design-tool-adr': ChipDesignToolAdrsList,
-    'simulation-tool-adr': SimulationToolAdrsList,
+    'engineering-simulation-tool-adr': EngineeringSimulationToolAdrsList,
     'automated-design-manufacturing-pipeline-adr': AutomatedDesignManufacturingPipelineAdrsList,
     'instantly-reusable-launchpad-adr': InstantlyReusableLaunchpadAdrsList,
     'starship-nano-assembly-adr': StarshipNanoassemblyAdrsList,
@@ -219,7 +219,7 @@ export const categories: Category[] = [
       { slug: 'quantum-computing-adr', label: 'Quantum Computing ADR' },
       { slug: 'grok-cad-adr', label: 'Grok CAD ADR' },
       { slug: 'chip-design-tool-adr', label: 'Chip Design Tool ADR' },
-      { slug: 'simulation-tool-adr', label: 'Simulation Tool ADR' },
+      { slug: 'engineering-simulation-tool-adr', label: 'Engineering Simulation Tool ADR' },
       { slug: 'direct-binary-code-generation-adr', label: 'Direct Bbinary Code Generation ADR' },
       { slug: 'train-6t-parameter-models-in-minutes-adr', label: 'Train 6t parameter models in minutes ADR' },
       { slug: 'xai-powered-entirely-with-solar-adr', label: 'xAI powered entirely with solar ADR' },

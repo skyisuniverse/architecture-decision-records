@@ -9,12 +9,12 @@ export default async function Page() {
             <Box>
                 <Typography variant="h6" sx={{ marginBottom: 2 }}>
                     <Link 
-                        href="https://rd-center.vercel.app/xai/simulation-tool/requirements"
+                        href="https://rd-center.vercel.app/xai/simulation-tool/engineering-simulation/features"
                         color="inherit"
                         target="_blank"
                         sx={{ marginBottom: 2 }}
                         >
-                        Simulation Tool: Requirements
+                        Engineering Simulation Tool: Features
                     </Link>
                 </Typography>
             </Box>
