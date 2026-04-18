@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:changelog": "./node_modules/.bin/git-cliff --config changelog-template.toml --output CHANGELOG.md"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -26,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
+    "git-cliff": "^2.12.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
