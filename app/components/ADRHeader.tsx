@@ -2,10 +2,10 @@
 
 import { Box, Typography } from '@mui/material';
 import { StatusChip } from './StatusChip';
-import { useCurrentADR } from '@/app/hooks/useCurrentADR';
+import { useNavigation } from '@/app/contexts/navigation-context';
 
 export const ADRHeader = () => {
-  const { currentAdr } = useCurrentADR();
+  const { currentAdr } = useNavigation();
 
   // Safety guard (in case you're on a list page, not a detail page)
   if (!currentAdr) {

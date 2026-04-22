@@ -16,6 +16,8 @@ import { StyledMain } from './components/StyledMain';
 import { DrawerHeader } from './components/ResponsiveDrawer';
 import ADRBottomNav from './components/ADRBottomNav';
 
+// NEW: Import the provider
+import { NavigationProvider } from './contexts/navigation-context';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -44,11 +46,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.variable}>
       <body className="min-h-full flex flex-col">
-        <AppRouterCacheProvider
-            options={{ key: 'css' }}
-          >
+        <AppRouterCacheProvider options={{ key: 'css' }}>
           <ThemeProvider theme={theme}>
-              <CssBaseline />
+            <CssBaseline />
+
+            {/* NavigationProvider wraps everything that needs drawer state */}
+            <NavigationProvider>
               <Box sx={{ display: 'flex' }}>
                 
                 <ADRTopBar
@@ -67,13 +70,14 @@ export default function RootLayout({
                 <StyledMain open={open}>
                   <DrawerHeader />
                   {children}
-
                   <ADRBottomNav />
                 </StyledMain>
 
               </Box>
-            </ThemeProvider>
-          </AppRouterCacheProvider>
+            </NavigationProvider>
+
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

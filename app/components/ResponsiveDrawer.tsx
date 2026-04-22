@@ -20,9 +20,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useCurrentADR } from '@/app/hooks/useCurrentADR';
-import { categories, type Category } from '@/app/config/adrs-lists';
+import { usePathname } from 'next/navigation';
+import { useNavigation } from '@/app/contexts/navigation-context';
+import { categories } from '@/app/config/adrs-lists';
 import { adrsListMap } from '@/app/config/adrs-lists';
 import { ADRItem } from '../types/adr';
 import Stack from '@mui/material/Stack';
@@ -56,58 +56,29 @@ export default function ResponsiveDrawer(props: Props) {
     onMobileDrawerClose,
   } = props;
 
-  const { currentCategory } = useCurrentADR();
   const pathname = usePathname();
-  const router = useRouter();
-
-  // Selected category (synced with URL)
-  const [selectedCategoryId, setSelectedCategoryId] = React.useState<string>(
-    currentCategory?.id || categories[0].id
-  );
-
-  // Only ONE ADR can be expanded at a time inside the current category
-  const [expandedAdrSlug, setExpandedAdrSlug] = React.useState<string | null>(null);
-
-  // Sync selected category from URL
-  React.useEffect(() => {
-    if (currentCategory?.id && currentCategory.id !== selectedCategoryId) {
-      setSelectedCategoryId(currentCategory.id);
-    }
-  }, [currentCategory?.id, selectedCategoryId]);
-
-  // When category changes → collapse everything (only one can be active)
-  React.useEffect(() => {
-    setExpandedAdrSlug(null);
-  }, [selectedCategoryId]);
+  const {
+    selectedCategoryId,
+    expandedAdrSlug,
+    currentSlug,
+    selectCategory,
+    navigateToAdr,
+    toggleExpanded,
+  } = useNavigation();
 
   const selectedCategory =
     categories.find((cat) => cat.id === selectedCategoryId) || categories[0];
 
   const handleCategoryChange = (event: SelectChangeEvent) => {
-    const newId = event.target.value as string;
-    setSelectedCategoryId(newId);
-
-    const cat = categories.find((c) => c.id === newId);
-    if (cat?.mainPageSlug) {
-      router.push(`/adrs/${cat.mainPageSlug}`);
-    }
+    selectCategory(event.target.value as string);
   };
 
-  // NEW: Click on the ADR header (the "category button")
-  // - Always navigates to the ADR category list page
-  // - Expands the list if it was collapsed
-  // - Does NOT collapse if already expanded (even if a nested decision is selected)
   const handleAdrHeaderClick = (slug: string) => {
-    router.push(`/adrs/${slug}`);
-
-    if (expandedAdrSlug !== slug) {
-      setExpandedAdrSlug(slug);
-    }
+    navigateToAdr(slug);
   };
 
-  // Toggle via the chevron icon only (no navigation)
   const handleToggle = (slug: string) => {
-    setExpandedAdrSlug((prev) => (prev === slug ? null : slug));
+    toggleExpanded(slug);
   };
 
   const drawerContent = (onClose: () => void) => (
@@ -142,9 +113,8 @@ export default function ResponsiveDrawer(props: Props) {
 
       <Divider />
 
-      {/* === NESTED LIST: Category caption + collapsible ADRs (single active) === */}
+      {/* === NESTED LIST === */}
       <List>
-        {/* Category caption (non-clickable, exactly like MUI example) */}
         <ListSubheader component="div" id="nested-list-subheader">
           {selectedCategory.name}
         </ListSubheader>
@@ -155,21 +125,15 @@ export default function ResponsiveDrawer(props: Props) {
 
           return (
             <React.Fragment key={adrItem.slug}>
-              {/* ADR header – link to main page + collapsible (only one can be open) */}
-              {/* 
-                Updated logic (exactly as requested):
-                • Clicking the ADR header button → expand (if collapsed) + navigate to category list
-                • Clicking the icon button → collapse/expand (no navigation)
-                • If a nested decision is selected and the header is clicked again → keep expanded + navigate
-              */}
+              {/* ADR header */}
               <ListItemButton
-                selected={pathname === `/adrs/${adrItem.slug}`}
+                selected={currentSlug === adrItem.slug}
                 onClick={() => handleAdrHeaderClick(adrItem.slug)}
               >
                 <ListItemText primary={adrItem.label} />
                 <IconButton
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                    e.stopPropagation(); // Prevent triggering the header navigation
+                    e.stopPropagation();
                     handleToggle(adrItem.slug);
                   }}
                 >
