@@ -15,6 +15,7 @@ import ADRTopBar from './components/ADRTopBar';
 import { StyledMain } from './components/StyledMain';
 import { DrawerHeader } from './components/ResponsiveDrawer';
 import ADRBottomNav from './components/ADRBottomNav';
+import ADRBreadcrumbs from './components/ADRBreadcrumbs';   // ← NEW
 
 // NEW: Import the provider
 import { NavigationProvider } from './contexts/navigation-context';
@@ -50,7 +51,6 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <CssBaseline />
 
-            {/* NavigationProvider wraps everything that needs drawer state */}
             <NavigationProvider>
               <Box sx={{ display: 'flex' }}>
                 
@@ -69,7 +69,12 @@ export default function RootLayout({
 
                 <StyledMain open={open}>
                   <DrawerHeader />
+                  
+                  {/* ← BREADCRUMBS: placed at the very beginning of every page content */}
+                  <ADRBreadcrumbs />
+
                   {children}
+
                   <ADRBottomNav />
                 </StyledMain>
 
