@@ -41,13 +41,13 @@ export default function ProductsPage() {
         >
           Products
         </Typography>
-        <Typography
+        {/* <Typography
           variant="body1"
           color="text.secondary"
           sx={{ textAlign: "center", maxWidth: 600, mx: "auto" }}
         >
-          Explore our breakthrough technologies shaping the future of humanity
-        </Typography>
+          Explore our breakthrough technologies
+        </Typography> */}
       </Box>
 
       <ImageList

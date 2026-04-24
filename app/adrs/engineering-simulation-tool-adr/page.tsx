@@ -15,7 +15,7 @@ export default async function Page() {
       //   "
       description={
         <>
-          Should be one application with: {' '}
+          Can be integrated with: {' '}
           <MuiNextLink href="/adrs/grok-cad-adr">Grok CAD</MuiNextLink>, {' '}
           <MuiNextLink href="/adrs/starship-forge-ai-adr">Starship Forge AI</MuiNextLink>, {' '}
           <MuiNextLink href="/adrs/chip-design-tool-adr">Chip Design Tool</MuiNextLink>

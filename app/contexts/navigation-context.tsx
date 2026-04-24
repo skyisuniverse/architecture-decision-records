@@ -9,8 +9,19 @@ import {
   getCategoryBySlug,
   type Category,
 } from '@/app/config/adrs-lists';
+import { itemData as productItems } from '@/app/products/products-list';
+import { itemData as companyItems } from '@/app/companies/companies-list';
+import { itemData as serviceItems } from '@/app/services/services-list';
 import { ADRItem } from '@/app/types/adr';
 import React from 'react';
+
+// ──────────────────────────────────────────────────────────────
+// Minimal reusable type for list items (title + slug only)
+// ──────────────────────────────────────────────────────────────
+export type ListItem = {
+  title: string;
+  slug: string;
+};
 
 type NavigationState = {
   selectedCategoryId: string;
@@ -46,8 +57,12 @@ type NavigationContextValue = {
   expandedAdrSlug: string | null;
   currentSlug: string;
   currentCategory: Category | undefined;
+  activeCategory: Category | undefined;
   currentAdrsList: ADRItem[];
   currentAdr: ADRItem | undefined;
+  currentProduct: ListItem | undefined;
+  currentCompany: ListItem | undefined;
+  currentService: ListItem | undefined;
   selectCategory: (id: string) => void;
   navigateToAdr: (slug: string) => void;
   toggleExpanded: (slug: string) => void;
@@ -59,9 +74,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  // ──────────────────────────────────────────────────────────────
-  // All URL-derived state (replaces useCurrentADR completely)
-  // ──────────────────────────────────────────────────────────────
+  // URL-derived ADR state
   const slug = useMemo(() => {
     return (Object.keys(adrsListMap) as AdrSlug[]).find((key) =>
       pathname.includes(`/${key}`)
@@ -80,31 +93,51 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     return slug ? getCategoryBySlug(slug) : undefined;
   }, [slug]);
 
-  // Default fallback for homepage (or any non-ADR page)
-  const defaultCategoryId = categories[0].id; // 'rd-center'
+  // Reusable current-item logic for all sections
+  const currentProduct = useMemo(() => {
+    if (!pathname.startsWith('/products/')) return undefined;
+    const itemSlug = pathname.split('/products/')[1];
+    return productItems.find((item) => item.slug === itemSlug);
+  }, [pathname]);
 
-  // ──────────────────────────────────────────────────────────────
-  // Reducer + initial state (already correct for homepage)
-  // ──────────────────────────────────────────────────────────────
+  const currentCompany = useMemo(() => {
+    if (!pathname.startsWith('/companies/')) return undefined;
+    const itemSlug = pathname.split('/companies/')[1];
+    return companyItems.find((item) => item.slug === itemSlug);
+  }, [pathname]);
+
+  const currentService = useMemo(() => {
+    if (!pathname.startsWith('/services/')) return undefined;
+    const itemSlug = pathname.split('/services/')[1];
+    return serviceItems.find((item) => item.slug === itemSlug);
+  }, [pathname]);
+
+  const defaultCategoryId = categories[0].id;
+
   const [state, dispatch] = useReducer(navigationReducer, {
     selectedCategoryId: currentCategory?.id || defaultCategoryId,
     expandedAdrSlug: slug || null,
   });
 
-  // ──────────────────────────────────────────────────────────────
-  // URL → UI sync (handles homepage + direct navigation + refresh)
-  // ──────────────────────────────────────────────────────────────
   React.useEffect(() => {
-    dispatch({
-      type: 'SYNC_FROM_URL',
-      payload: {
-        // On homepage → force R&D Center category
-        categoryId: currentCategory?.id || defaultCategoryId,
-        // On homepage → collapse everything
-        slug: slug || null,
-      },
-    });
-  }, [currentCategory?.id, slug, defaultCategoryId]);
+    if (currentCategory) {
+      dispatch({
+        type: 'SYNC_FROM_URL',
+        payload: {
+          categoryId: currentCategory.id,
+          slug: slug || null,
+        },
+      });
+    } else if (pathname === '/') {
+      dispatch({
+        type: 'SYNC_FROM_URL',
+        payload: {
+          categoryId: defaultCategoryId,
+          slug: null,
+        },
+      });
+    }
+  }, [currentCategory, slug, pathname, defaultCategoryId]);
 
   const selectCategory = (id: string) => {
     dispatch({ type: 'SET_CATEGORY', payload: id });
@@ -126,13 +159,21 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     });
   };
 
+  const activeCategory = useMemo(() => {
+    return currentCategory ?? categories.find((c) => c.id === state.selectedCategoryId);
+  }, [currentCategory, state.selectedCategoryId]);
+
   const value: NavigationContextValue = {
     selectedCategoryId: state.selectedCategoryId,
     expandedAdrSlug: state.expandedAdrSlug,
     currentSlug: slug || '',
     currentCategory,
+    activeCategory,
     currentAdrsList,
     currentAdr,
+    currentProduct,
+    currentCompany,
+    currentService,
     selectCategory,
     navigateToAdr,
     toggleExpanded,

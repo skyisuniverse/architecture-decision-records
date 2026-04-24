@@ -8,11 +8,18 @@ import {
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useNavigation } from '@/app/contexts/navigation-context';
+import { useNavigation, type ListItem } from '@/app/contexts/navigation-context';
 
 export default function ADRBreadcrumbs() {
   const pathname = usePathname();
-  const { currentCategory, currentAdr, currentSlug } = useNavigation();
+  const {
+    activeCategory,
+    currentAdr,
+    currentSlug,
+    currentProduct,
+    currentCompany,
+    currentService,
+  } = useNavigation();
 
   const breadcrumbItems: React.ReactNode[] = [
     <MuiLink
@@ -26,31 +33,84 @@ export default function ADRBreadcrumbs() {
     </MuiLink>,
   ];
 
-  // === NEW: Handle top-level non-ADR pages ===
-  if (pathname === '/companies') {
-    breadcrumbItems.push(
-      <Typography key="companies" color="text.primary">
-        Companies
-      </Typography>
-    );
-  } else if (pathname === '/products') {
-    breadcrumbItems.push(
-      <Typography key="products" color="text.primary">
-        Products
-      </Typography>
-    );
-  } else if (pathname === '/services') {
-    breadcrumbItems.push(
-      <Typography key="services" color="text.primary">
-        Services
-      </Typography>
-    );
-  }
-  // === Existing ADR logic (category list + detail pages) ===
-  else if (currentCategory) {
+  // ──────────────────────────────────────────────────────────────
+  // Reusable section config (single source of truth)
+  // ──────────────────────────────────────────────────────────────
+  type Section = {
+    prefix: string;
+    listHref: string;
+    listTitle: string;
+    currentItem: ListItem | undefined;
+    itemKey: string;
+  };
+
+  const sections: Section[] = [
+    {
+      prefix: '/companies',
+      listHref: '/companies',
+      listTitle: 'Companies',
+      currentItem: currentCompany,
+      itemKey: 'company',
+    },
+    {
+      prefix: '/services',
+      listHref: '/services',
+      listTitle: 'Services',
+      currentItem: currentService,
+      itemKey: 'service',
+    },
+    {
+      prefix: '/products',
+      listHref: '/products',
+      listTitle: 'Products',
+      currentItem: currentProduct,
+      itemKey: 'product',
+    },
+  ];
+
+  const getSectionBreadcrumbs = (): React.ReactNode[] => {
+    const section = sections.find((s) => pathname.startsWith(s.prefix));
+    if (!section) return [];
+
+    const { listHref, listTitle, currentItem, itemKey } = section;
+    const isDetailPage = pathname !== listHref && !!currentItem;
+
+    if (isDetailPage) {
+      return [
+        <MuiLink
+          key={`${itemKey}-list`}
+          component={Link}
+          href={listHref}
+          underline="hover"
+          color="inherit"
+        >
+          {listTitle}
+        </MuiLink>,
+        <Typography key={`${itemKey}-item`} color="text.primary">
+          {currentItem!.title}
+        </Typography>,
+      ];
+    }
+
+    return [
+      <Typography key={itemKey} color="text.primary">
+        {listTitle}
+      </Typography>,
+    ];
+  };
+
+  breadcrumbItems.push(...getSectionBreadcrumbs());
+
+  // ──────────────────────────────────────────────────────────────
+  // ADR category + decision ONLY on ADR pages
+  // ──────────────────────────────────────────────────────────────
+  const isNonADRSection = sections.some((s) => pathname.startsWith(s.prefix));
+
+  if (!isNonADRSection && activeCategory) {
     const isDetailPage = !!currentAdr;
-    const categoryHref = currentCategory.mainPageSlug
-      ? `/adrs/${currentCategory.mainPageSlug}`
+
+    const categoryHref = activeCategory.mainPageSlug
+      ? `/adrs/${activeCategory.mainPageSlug}`
       : currentSlug
         ? `/adrs/${currentSlug}`
         : '/';
@@ -64,7 +124,7 @@ export default function ADRBreadcrumbs() {
           underline="hover"
           color="inherit"
         >
-          {currentCategory.name}
+          {activeCategory.name}
         </MuiLink>
       );
       breadcrumbItems.push(
@@ -75,7 +135,7 @@ export default function ADRBreadcrumbs() {
     } else {
       breadcrumbItems.push(
         <Typography key="category" color="text.primary">
-          {currentCategory.name}
+          {activeCategory.name}
         </Typography>
       );
     }

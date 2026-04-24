@@ -9,7 +9,7 @@ export default async function Page() {
       publishedDate="Published April 2026"
       description={
         <>
-          Should be one application with {' '}
+          Can be integrated with/into {' '}
           <MuiNextLink href="/adrs/engineering-simulation-tool-adr">Engineering Simulation Tool</MuiNextLink>
         </>
       }
