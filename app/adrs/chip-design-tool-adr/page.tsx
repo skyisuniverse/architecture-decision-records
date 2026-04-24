@@ -1,5 +1,6 @@
 import { ADRCategoryPage } from '@/app/components/ADRCategoryPage';
 import { ChipDesignToolAdrsList } from './chip-design-tool-adrs-list';
+import MuiNextLink from '@/app/components/MuiNextLink';
 
 export default async function Page() {
   return (
@@ -8,7 +9,8 @@ export default async function Page() {
       publishedDate="Published April 2026"
       description={
         <>
-            
+          Should be one application with {' '}
+          <MuiNextLink href="/adrs/engineering-simulation-tool-adr">Engineering Simulation Tool</MuiNextLink>
         </>
       }
       //   imageSrc={}

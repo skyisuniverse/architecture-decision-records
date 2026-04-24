@@ -1,5 +1,6 @@
 import { ADRCategoryPage } from '@/app/components/ADRCategoryPage';
 import { GrokCADAdrsList } from './grok-cad-adrs-list';
+import MuiNextLink from '@/app/components/MuiNextLink';
 
 export default async function Page() {
   return (
@@ -8,14 +9,19 @@ export default async function Page() {
       publishedDate="Published April 2026"
       description={
         <>
-            
+          Should be one application with {' '}
+          <MuiNextLink href="/adrs/engineering-simulation-tool-adr">Engineering Simulation Tool</MuiNextLink>
         </>
       }
       //   imageSrc={}
       adrsList={GrokCADAdrsList}
       // children slot is available here if you want to insert anything between description and ADR list
       // Example usage:
-    //   children={}
+      // children={
+      //   <>
+
+      //   </>
+      // }
     />
   );
 }
