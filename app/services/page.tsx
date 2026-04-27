@@ -104,7 +104,6 @@ export default function ServicesPage() {
                     const target = e.target as HTMLImageElement;
                     target.src = "/images/adr-placeholder.png";
                   }}
-                  unoptimized
                 />
               </Link>
             </ImageListItem>

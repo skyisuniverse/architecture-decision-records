@@ -21,23 +21,27 @@ interface AppBarProps {
 const StyledAppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open
-    ? {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: `${drawerWidth}px`,
-        transition: theme.transitions.create(['margin', 'width'], {
-          easing: theme.transitions.easing.easeOut,
-          duration: theme.transitions.duration.enteringScreen,
+  // ✅ Transition is now defined ONLY inside the sm+ breakpoint
+  // This eliminates the duplicate-key error while keeping perfect animations
+  [theme.breakpoints.up('sm')]: {
+    ...(open
+      ? {
+          width: `calc(100% - ${drawerWidth}px)`,
+          marginLeft: `${drawerWidth}px`,
+          transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+          }),
+        }
+      : {
+          width: '100%',
+          marginLeft: 0,
+          transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+          }),
         }),
-      }
-    : {
-        width: '100%',
-        marginLeft: 0,
-      }),
+  },
 }));
 
 interface ADRTopBarProps {
@@ -100,18 +104,28 @@ export default function ADRTopBar({
         <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
           {pages.map((page) => {
             const href = `/${page.toLowerCase()}`;
-            // Active when on the exact list page OR any sub-page (e.g. /products or /products/any-slug)
-            // const isActive =
-            //   pathname === href || pathname.startsWith(`${href}/`);
+            // Active when on the exact list page OR any sub-page
+            const isActive =
+              pathname === href || pathname.startsWith(`${href}/`);
 
             return (
               <Button
                 key={page}
                 component={Link}
                 href={href}
-                color={'inherit'}
-                // color={isActive ? 'secondary' : 'inherit'}
-                sx={{ my: 2, display: 'block', mx: 1 }}
+                color="inherit"
+                sx={{
+                  my: 2,
+                  display: 'block',
+                  mx: 1,
+                  ...(isActive && {
+                    // borderBottom: '3px solid',
+                    // borderColor: 'white',
+                    // pb: '4px',
+                    backgroundColor: 'white',
+                    color: 'primary.dark'
+                  }),
+                }}
               >
                 {page}
               </Button>
