@@ -34,7 +34,7 @@ import { SmartStarbaseAdrsList } from '../adrs/smart-starbase-adr/smart-starbase
 import { SolarSystemColonizationAdrsList } from '../adrs/solar-system-colonization-adr/solar-system-colonization-adrs-list';
 import { StarshipInstantReusabilityAdrsList } from '../adrs/starship-instant-reusability-adr/starship-instant-reusability-adrs-list';
 import { TerraformingMarsAdrsList } from '../adrs/terraforming-mars-adr/terraforming-mars-adrs-list';
-import { CompressingMarsTerraformingAdrsList } from '../adrs/compressing-mars-terraforming/compressing-mars-terraforming-adrs-list';
+import { CompressingMarsTerraformingAdrsList } from '../adrs/compressing-mars-terraforming-adr/compressing-mars-terraforming-adrs-list';
 import { HealingAutismPerspectiveNeuralinkBCIsAdrsList } from '../adrs/healing-autism-perspective-neuralink-bcis-adr/healing-autism-perspective-neuralink-bcis-adrs-list';
 import { NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList } from '../adrs/neuralink-bci-overcoming-serial-attention-limitation-adr/neuralink-bci-overcoming-serial-attention-limitation-adrs-list';
 import { NeuromorphicComputingAdrsList } from '../adrs/neuromorphic-computing-adr/neuromorphic-computing-adrs-list';

@@ -16,6 +16,7 @@ export default function ADRBreadcrumbs() {
     activeCategory,
     currentAdr,
     currentSlug,
+    currentAdrCategoryName,
     currentProduct,
     currentCompany,
     currentService,
@@ -102,42 +103,49 @@ export default function ADRBreadcrumbs() {
   breadcrumbItems.push(...getSectionBreadcrumbs());
 
   // ──────────────────────────────────────────────────────────────
-  // ADR category + decision ONLY on ADR pages
+  // ADR breadcrumbs: Group > ADR Category > (Decision)
   // ──────────────────────────────────────────────────────────────
   const isNonADRSection = sections.some((s) => pathname.startsWith(s.prefix));
 
   if (!isNonADRSection && activeCategory) {
+    // 1. Group (e.g. "R&D Center ADRs") – always plain text
+    breadcrumbItems.push(
+      <Typography key="adr-group" color="text.primary">
+        {activeCategory.name}
+      </Typography>
+    );
+
     const isDetailPage = !!currentAdr;
 
-    const categoryHref = activeCategory.mainPageSlug
-      ? `/adrs/${activeCategory.mainPageSlug}`
-      : currentSlug
-        ? `/adrs/${currentSlug}`
-        : '/';
+    if (currentSlug && currentAdrCategoryName) {
+      const categoryHref = `/adrs/${currentSlug}`;
 
-    if (isDetailPage) {
-      breadcrumbItems.push(
-        <MuiLink
-          key="category"
-          component={Link}
-          href={categoryHref}
-          underline="hover"
-          color="inherit"
-        >
-          {activeCategory.name}
-        </MuiLink>
-      );
-      breadcrumbItems.push(
-        <Typography key="adr" color="text.primary">
-          {currentAdr!.title}
-        </Typography>
-      );
-    } else {
-      breadcrumbItems.push(
-        <Typography key="category" color="text.primary">
-          {activeCategory.name}
-        </Typography>
-      );
+      if (isDetailPage) {
+        // 2. Specific ADR category (clickable) + decision title
+        breadcrumbItems.push(
+          <MuiLink
+            key="category"
+            component={Link}
+            href={categoryHref}
+            underline="hover"
+            color="inherit"
+          >
+            {currentAdrCategoryName}
+          </MuiLink>
+        );
+        breadcrumbItems.push(
+          <Typography key="adr" color="text.primary">
+            {currentAdr!.title}
+          </Typography>
+        );
+      } else {
+        // 2. Specific ADR category (plain text on category page)
+        breadcrumbItems.push(
+          <Typography key="category" color="text.primary">
+            {currentAdrCategoryName}
+          </Typography>
+        );
+      }
     }
   }
 

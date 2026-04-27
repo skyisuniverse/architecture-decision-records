@@ -63,6 +63,7 @@ type NavigationContextValue = {
   currentProduct: ListItem | undefined;
   currentCompany: ListItem | undefined;
   currentService: ListItem | undefined;
+  currentAdrCategoryName: string;   // ← NEW (derived from categories config)
   selectCategory: (id: string) => void;
   navigateToAdr: (slug: string) => void;
   toggleExpanded: (slug: string) => void;
@@ -92,6 +93,16 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const currentCategory = useMemo(() => {
     return slug ? getCategoryBySlug(slug) : undefined;
   }, [slug]);
+
+  // ──────────────────────────────────────────────────────────────
+  // NEW: Specific ADR label from the official categories config
+  // (single source of truth – no more duplicated map)
+  // ──────────────────────────────────────────────────────────────
+  const currentAdrCategoryName = useMemo(() => {
+    if (!slug || !currentCategory) return '';
+    const item = currentCategory.adrs.find((item) => item.slug === slug);
+    return item?.label ?? slug;
+  }, [slug, currentCategory]);
 
   // Reusable current-item logic for all sections
   const currentProduct = useMemo(() => {
@@ -174,6 +185,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     currentProduct,
     currentCompany,
     currentService,
+    currentAdrCategoryName,   // ← exposed
     selectCategory,
     navigateToAdr,
     toggleExpanded,

@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import MuiAppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import { drawerWidth } from './ResponsiveDrawer';
@@ -24,22 +25,19 @@ const StyledAppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-
-  [theme.breakpoints.up('sm')]: {
-    ...(open
-      ? {
-          width: `calc(100% - ${drawerWidth}px)`,
-          marginLeft: `${drawerWidth}px`,
-          transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-          }),
-        }
-      : {
-          width: '100%',
-          marginLeft: 0,
+  ...(open
+    ? {
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: `${drawerWidth}px`,
+        transition: theme.transitions.create(['margin', 'width'], {
+          easing: theme.transitions.easing.easeOut,
+          duration: theme.transitions.duration.enteringScreen,
         }),
-  },
+      }
+    : {
+        width: '100%',
+        marginLeft: 0,
+      }),
 }));
 
 interface ADRTopBarProps {
@@ -54,6 +52,7 @@ export default function ADRTopBar({
   onMobileDrawerToggle,
 }: ADRTopBarProps) {
   const theme = useTheme();
+  const pathname = usePathname();
 
   const pages = ['Companies', 'Products', 'Services'];
 
@@ -97,21 +96,30 @@ export default function ADRTopBar({
           </Link>
         </Typography>
 
-        {/* Desktop navigation (sm and up) – exactly like MUI responsive menu example */}
+        {/* Desktop navigation (sm and up) – with active page highlighting */}
         <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
-          {pages.map((page) => (
-            <Button
-              key={page}
-              component={Link}
-              href={`/${page.toLowerCase()}`}
-              sx={{ my: 2, color: 'inherit', display: 'block', mx: 1 }}
-            >
-              {page}
-            </Button>
-          ))}
+          {pages.map((page) => {
+            const href = `/${page.toLowerCase()}`;
+            // Active when on the exact list page OR any sub-page (e.g. /products or /products/any-slug)
+            // const isActive =
+            //   pathname === href || pathname.startsWith(`${href}/`);
+
+            return (
+              <Button
+                key={page}
+                component={Link}
+                href={href}
+                color={'inherit'}
+                // color={isActive ? 'secondary' : 'inherit'}
+                sx={{ my: 2, display: 'block', mx: 1 }}
+              >
+                {page}
+              </Button>
+            );
+          })}
         </Box>
 
-        {/* R&amp;D Center link (always on the right) */}
+        {/* R&D Center link (always on the right) */}
         <Typography
           variant="h6"
           noWrap
@@ -124,7 +132,7 @@ export default function ADRTopBar({
             target="_blank"
             style={{ textDecoration: 'none' }}
           >
-            R&amp;D Center
+            R&D Center
           </Link>
         </Typography>
       </Toolbar>

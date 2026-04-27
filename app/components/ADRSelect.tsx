@@ -95,7 +95,7 @@ export default function ADRSelect() {
 
         <ListSubheader>SpaceX Planet Colonization ADRs</ListSubheader>
         <MenuItem value="terraforming-mars-adr">Terraforming Mars ADR</MenuItem>
-        <MenuItem value="compressing-mars-terraforming">
+        <MenuItem value="compressing-mars-terraforming-adr">
           Compressing Mars Terraforming from 100,000+ to 10 years
         </MenuItem>
         <MenuItem value="mass-driver-adr">Mass Driver ADR</MenuItem>
