@@ -1,8 +1,3 @@
-// Updated product list (exactly as you provided)
-// + Carefully chosen width/height for each product to create the exact beautiful,
-// organic masonry look from the official MUI Masonry Image List demo.
-// Varied aspect ratios (tall + wide) ensure the layout stays stunning no matter
-// how many products you add/remove later.
 export const itemData = [
   {
     title: "Nano-assembler",
@@ -111,12 +106,6 @@ export const itemData = [
     slug: "photonic-computing",
     width: 600,
     height: 900,
-  },
-  {
-    title: "Quantum Computing",
-    slug: "quantum-computing",
-    width: 1000,
-    height: 700,
   },
   {
     title: "Engineering Simulation Tool",
