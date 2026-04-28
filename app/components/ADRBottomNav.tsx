@@ -2,6 +2,7 @@
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
 import BusinessIcon from '@mui/icons-material/Business';
 import InventoryIcon from '@mui/icons-material/Inventory';
+import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -21,6 +22,11 @@ const navItems = [
     label: 'Services',
     path: '/services',
     icon: <MiscellaneousServicesIcon />,
+  },
+  {
+    label: 'Apps',
+    path: '/apps',
+    icon: <AppShortcutIcon />,
   },
 ];
 
