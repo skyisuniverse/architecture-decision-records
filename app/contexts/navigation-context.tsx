@@ -12,6 +12,7 @@ import {
 import { itemData as productItems } from '@/app/products/products-list';
 import { itemData as companyItems } from '@/app/companies/companies-list';
 import { itemData as serviceItems } from '@/app/services/services-list';
+import { itemData as appItems } from '@/app/apps/applications-list';
 import { ADRItem } from '@/app/types/adr';
 import React from 'react';
 
@@ -63,7 +64,8 @@ type NavigationContextValue = {
   currentProduct: ListItem | undefined;
   currentCompany: ListItem | undefined;
   currentService: ListItem | undefined;
-  currentAdrCategoryName: string;   // ← NEW (derived from categories config)
+  currentApp: ListItem | undefined;           // ← NEW
+  currentAdrCategoryName: string;
   selectCategory: (id: string) => void;
   navigateToAdr: (slug: string) => void;
   toggleExpanded: (slug: string) => void;
@@ -94,10 +96,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     return slug ? getCategoryBySlug(slug) : undefined;
   }, [slug]);
 
-  // ──────────────────────────────────────────────────────────────
-  // NEW: Specific ADR label from the official categories config
-  // (single source of truth – no more duplicated map)
-  // ──────────────────────────────────────────────────────────────
+  // Specific ADR label from the official categories config
   const currentAdrCategoryName = useMemo(() => {
     if (!slug || !currentCategory) return '';
     const item = currentCategory.adrs.find((item) => item.slug === slug);
@@ -121,6 +120,15 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     if (!pathname.startsWith('/services/')) return undefined;
     const itemSlug = pathname.split('/services/')[1];
     return serviceItems.find((item) => item.slug === itemSlug);
+  }, [pathname]);
+
+  // ──────────────────────────────────────────────────────────────
+  // NEW: Support for /apps/* pages (exactly like products/companies/services)
+  // ──────────────────────────────────────────────────────────────
+  const currentApp = useMemo(() => {
+    if (!pathname.startsWith('/apps/')) return undefined;
+    const itemSlug = pathname.split('/apps/')[1];
+    return appItems.find((item) => item.slug === itemSlug);
   }, [pathname]);
 
   const defaultCategoryId = categories[0].id;
@@ -185,7 +193,8 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     currentProduct,
     currentCompany,
     currentService,
-    currentAdrCategoryName,   // ← exposed
+    currentApp,                     // ← exposed
+    currentAdrCategoryName,
     selectCategory,
     navigateToAdr,
     toggleExpanded,

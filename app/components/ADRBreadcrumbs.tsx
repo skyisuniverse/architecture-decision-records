@@ -20,6 +20,7 @@ export default function ADRBreadcrumbs() {
     currentProduct,
     currentCompany,
     currentService,
+    currentApp,                // ← NEW: supports /apps/* detail pages
   } = useNavigation();
 
   const breadcrumbItems: React.ReactNode[] = [
@@ -66,6 +67,13 @@ export default function ADRBreadcrumbs() {
       listTitle: 'Products',
       currentItem: currentProduct,
       itemKey: 'product',
+    },
+    {
+      prefix: '/apps',                    // ← NEW SECTION
+      listHref: '/apps',
+      listTitle: 'Applications',
+      currentItem: currentApp,
+      itemKey: 'app',
     },
   ];
 
