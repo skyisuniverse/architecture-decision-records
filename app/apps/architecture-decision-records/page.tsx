@@ -1,4 +1,6 @@
 import { Typography, Box } from '@mui/material';
+import Image from 'next/image';
+import localImage from '../../../public/images/apps/architecture-decision-records.jpg';
 
 export default function ADRPage() {
   return (
@@ -9,6 +11,17 @@ export default function ADRPage() {
       <Typography variant="body1">
         This is the Architecture Decision Records page.
       </Typography>
+      <br />
+      <br />
+      <Image
+        src={localImage} // Static imports automatically provide width/height
+        alt="Full width image"
+        sizes="100vw"
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
+      />
     </Box>
   );
 }

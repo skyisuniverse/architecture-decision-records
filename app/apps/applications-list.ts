@@ -83,4 +83,10 @@ export const itemData = [
     width: 950,
     height: 650,
   },
+  {
+    title: "Art Spaces",
+    slug: "art-spaces",
+    width: 1200,
+    height: 800,
+  },
 ];

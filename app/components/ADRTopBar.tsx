@@ -120,6 +120,7 @@ export default function ADRTopBar({
                     backgroundColor: 'white',
                     color: 'primary.dark'
                   }),
+                  textAlign: 'center'
                 }}
               >
                 {page}
