@@ -10,8 +10,9 @@
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "e2e:test": "playwright test",
+    "e2e:show:report": "playwright show-report",
     "e2e:test:ui": "playwright test --ui",
-    "e2e:playwright:record": "playwright codegen localhost:3000",
+    "e2e:playwright:record": "playwright codegen http://localhost:3000",
     "generate:changelog": "./node_modules/.bin/git-cliff --config changelog-template.toml --output CHANGELOG.md"
   },
   "dependencies": {

@@ -5,6 +5,7 @@
 ## Development documentation
 
 - [Unit Testing](./development-docs/unit-tesing.md)
+- [End-to-end Testing](./development-docs/e2e-testing.md)
 - [Changelog generation](./development-docs/changelog-generation.md)
 - [Release strategy](./development-docs/release-strategy.md)
 

@@ -5,6 +5,12 @@ Runs the end-to-end tests:
 npx playwright test
 ```
 
+To open last HTML report run:
+
+```shell
+npx playwright show-report
+```
+
 Starts the interactive UI mode.
 ```shell
 npx playwright test --ui
@@ -33,12 +39,4 @@ npx playwright codegen
 We suggest that you begin by typing:
 ```shell
 npx playwright test
-```
-
----
-
-To open last HTML report run:
-
-```shell
-npx playwright show-report
 ```
