@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import {
   Box,
   Container,
@@ -10,10 +9,10 @@ import {
   useTheme,
 } from "@mui/material";
 import Link from "next/link";
-import { itemData } from "./products-list";
+import { itemData } from "./applications-list";
 import { AdrImage } from "../components/ADRImage";
 
-export default function ProductsPage() {
+export default function ServicesPage() {
   const theme = useTheme();
 
   const isXl = useMediaQuery(theme.breakpoints.up("xl"));
@@ -40,15 +39,15 @@ export default function ProductsPage() {
             mb: 1,
           }}
         >
-          Products
+          Applications
         </Typography>
-        {/* <Typography
+        <Typography
           variant="body1"
           color="text.secondary"
           sx={{ textAlign: "center", maxWidth: 600, mx: "auto" }}
         >
-          Explore our breakthrough technologies
-        </Typography> */}
+          Explore our applications
+        </Typography>
       </Box>
 
       <ImageList
@@ -65,7 +64,7 @@ export default function ProductsPage() {
         }}
       >
         {itemData.map((item, index) => {
-          const imageSrc = `/images/products/${item.slug}.jpg`;
+          const imageSrc = `/images/apps/${item.slug}.jpg`;
 
           return (
             <ImageListItem
@@ -80,7 +79,7 @@ export default function ProductsPage() {
               }}
             >
               <Link
-                href={`/products/${item.slug}`}
+                href={`/apps/${item.slug}`}
                 style={{
                   display: "block",
                   textDecoration: "none",

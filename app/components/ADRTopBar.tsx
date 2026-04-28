@@ -21,8 +21,6 @@ interface AppBarProps {
 const StyledAppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
-  // ✅ Transition is now defined ONLY inside the sm+ breakpoint
-  // This eliminates the duplicate-key error while keeping perfect animations
   [theme.breakpoints.up('sm')]: {
     ...(open
       ? {
@@ -58,7 +56,7 @@ export default function ADRTopBar({
   const theme = useTheme();
   const pathname = usePathname();
 
-  const pages = ['Companies', 'Products', 'Services'];
+  const pages = ['Companies', 'Products', 'Services', 'Apps'];
 
   return (
     <StyledAppBar position="fixed" open={open}>
@@ -119,9 +117,6 @@ export default function ADRTopBar({
                   display: 'block',
                   mx: 1,
                   ...(isActive && {
-                    // borderBottom: '3px solid',
-                    // borderColor: 'white',
-                    // pb: '4px',
                     backgroundColor: 'white',
                     color: 'primary.dark'
                   }),

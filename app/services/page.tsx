@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { itemData } from "./services-list";
+import { AdrImage } from "../components/ADRImage";
 
 export default function ServicesPage() {
   const theme = useTheme();
@@ -86,24 +87,11 @@ export default function ServicesPage() {
                   color: "inherit",
                 }}
               >
-                <Image
+                <AdrImage
                   src={imageSrc}
                   alt={item.title}
                   width={item.width}
                   height={item.height}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 280px"
-                  priority={index < 3}
-                  loading={index < 3 ? "eager" : "lazy"}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    objectFit: "cover",
-                  }}
-                  // Placeholder logic (exactly like Products page)
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/adr-placeholder.png";
-                  }}
                 />
               </Link>
             </ImageListItem>
