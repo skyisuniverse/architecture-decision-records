@@ -96,7 +96,9 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   const currentAdrsList: ADRItem[] = useMemo(() => {
-    return slug ? (adrsListMap[slug] as ADRItem[]) : [];
+    if (!slug) return [];
+    const list = adrsListMap[slug];
+    return Array.isArray(list) ? (list as ADRItem[]) : [];
   }, [slug]);
 
   const currentAdr: ADRItem | undefined = useMemo(() => {
@@ -111,7 +113,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
 
   const currentAdrCategoryName = useMemo(() => {
     if (!slug || !currentCategory) return '';
-    const item = currentCategory.adrs.find((item) => item.slug === slug);
+    const item = currentCategory.adrs?.find((item) => item.slug === slug);
     return item?.label ?? slug;
   }, [slug, currentCategory]);
 
