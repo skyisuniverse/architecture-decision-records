@@ -1,0 +1,37 @@
+import { ADRHeader } from '@/app/[lang]/components/ADRHeader';
+import { Box, Link } from '@mui/material';
+import Typography from '@mui/material/Typography';
+
+export default async function Page() {
+    return(
+        <>
+            <ADRHeader />
+            <Box>
+                <Typography variant="h6" sx={{ marginBottom: 2 }}>
+                    <Link 
+                        href="https://rd-center.vercel.app/spacex/nano-assembly-starship/starship-nano-assembly"
+                        color="inherit"
+                        target="_blank"
+                        sx={{ marginBottom: 2 }}
+                        >
+                        Starship Nano-Assembly
+                    </Link>
+                </Typography>
+
+                <Typography variant="h6" sx={{ marginBottom: 2 }}>
+                    2. Nanobot Replication and Swarm Formation
+                </Typography>
+
+                {/* <Typography sx={{ marginBottom: 2 }}>
+                    Assembly at atomic scales is energy-intensive.
+                </Typography> */}
+
+                <Typography sx={{ marginBottom: 2 }}>
+                    - Site Preparation: A subset of bots clears and levels the assembly area, perhaps 
+                    building a temporary scaffold from self-assembling polymers to support the growing 
+                    structure.
+                </Typography>
+            </Box>
+        </>
+    )
+}

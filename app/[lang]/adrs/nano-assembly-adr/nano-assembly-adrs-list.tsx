@@ -1,0 +1,155 @@
+import { AdrsList } from "@/app/[lang]/types/adr";
+
+export const NanoassemblyAdrsList: AdrsList = [
+    {
+        title: 'Use advanced manipulation and imaging tools',
+        link: '/adrs/nano-assembly-adr/use-advanced-manipulation-and-imaging-tools',
+        date: 'March 2026',
+        status: 'Draft',
+        
+    },
+    {
+        title: 'Use AI-driven system design',
+        link: '/adrs/nano-assembly-adr/use-ai-driven-system-design',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use atomic resolution imaging in dynamic environments',
+        link: '/adrs/nano-assembly-adr/use-atomic-resolution-imaging-in-dynamic-environments',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use bio-nano interfaces and safety',
+        link: '/adrs/nano-assembly-adr/use-bio-nano-interfaces-and-safety',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use computing and AI breakthroughs',
+        link: '/adrs/nano-assembly-adr/use-computing-and-ai-breakthroughs',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use diamondoid and stiff nanostructures',
+        link: '/adrs/nano-assembly-adr/use-diamondoid-and-stiff-nanostructures',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use efficient nano energy sources',
+        link: '/adrs/nano-assembly-adr/use-efficient-nano-energy-sources',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use energy and sustainability advances',
+        link: '/adrs/nano-assembly-adr/use-energy-and-sustainability-advances',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use fundamental understanding of nanoscale physics and chemistry',
+        link: '/adrs/nano-assembly-adr/use-fundamental-understanding-of-nanoscale-physics-and-chemistry',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use hierarchical assembly protocols',
+        link: '/adrs/nano-assembly-adr/use-hierarchical-assembly-protocols',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use high-throughput nanomanipulation',
+        link: '/adrs/nano-assembly-adr/use-high-throughput-nanomanipulation',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use integration with biological systems',
+        link: '/adrs/nano-assembly-adr/use-integration-with-biological-systems',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use materials science innovations',
+        link: '/adrs/nano-assembly-adr/use-materials-science-innovations',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use mechanosynthesis mastery',
+        link: '/adrs/nano-assembly-adr/use-mechanosynthesis-mastery',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use novel feedstock processing',
+        link: '/adrs/nano-assembly-adr/use-novel-feedstock-processing',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use quantum computing for simulations',
+        link: '/adrs/nano-assembly-adr/use-quantum-computing-for-simulations',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use quantum effects at macro scales',
+        link: '/adrs/nano-assembly-adr/use-quantum-effects-at-macro-scales',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use reliable self-replication',
+        link: '/adrs/nano-assembly-adr/use-reliable-self-replication',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use safety protocols for bio-nano interfaces',
+        link: '/adrs/nano-assembly-adr/use-safety-protocols-for-bio-nano-interfaces',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use self-healing and adaptive materials',
+        link: '/adrs/nano-assembly-adr/use-self-healing-and-adaptive-materials',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use self-replication and scaling mechanisms',
+        link: '/adrs/nano-assembly-adr/use-self-replication-and-scaling-mechanisms',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use swarm intelligence algorithms',
+        link: '/adrs/nano-assembly-adr/use-swarm-intelligence-algorithms',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use unified nanotheory',
+        link: '/adrs/nano-assembly-adr/use-unified-nanotheory',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Use zero waste recycling',
+        link: '/adrs/nano-assembly-adr/use-zero-waste-recycling',
+        date: 'March 2026',
+        status: 'Draft',
+    },
+    {
+        title: 'Define hardware sufficient for nano-assembly computing tasks',
+        link: '/adrs/nano-assembly-adr/define-hardware-sufficient-for-nano-assembly-computing',
+        date: 'April 2026',
+        status: 'Draft',
+    },
+];
