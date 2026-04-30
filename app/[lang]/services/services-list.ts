@@ -131,4 +131,34 @@ export const itemData = [
     width: 900,
     height: 600,
   },
+  {
+    title: "Space-based Web Hosting",
+    slug: "space-based-web-hosting",
+    width: 920,
+    height: 780,
+  },
+  {
+    title: "Space-based Web Development Platform",
+    slug: "space-based-web-development-platform",
+    width: 1100,
+    height: 650,
+  },
+  {
+    title: "Space Launching Services",
+    slug: "space-launching-services",
+    width: 1100,
+    height: 650,
+  },
+  {
+    title: "Satellite Operation Services",
+    slug: "satellite-operation-services",
+    width: 650,
+    height: 920,
+  },
+  {
+    title: "Automation",
+    slug: "automation",
+    width: 850,
+    height: 1150,
+  },
 ];

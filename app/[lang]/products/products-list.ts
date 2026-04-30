@@ -119,4 +119,22 @@ export const itemData = [
     width: 900,
     height: 600,
   },
+  {
+    title: "Hardware",
+    slug: "hardware",
+    width: 800,
+    height: 1100,
+  },
+  {
+    title: "Regular & AI Data Centers in Space",
+    slug: "regular-and-ai-data-centers-in-space",
+    width: 1100,
+    height: 650,
+  },
+  {
+    title: "Quantum Data Centers in Space",
+    slug: "quantum-data-centers-in-space",
+    width: 1100,
+    height: 650,
+  },
 ];
