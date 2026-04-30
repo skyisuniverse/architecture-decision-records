@@ -48,6 +48,7 @@ import { EngineeringSimulationToolAdrsList } from '../adrs/engineering-simulatio
 import { AutomatedDesignManufacturingPipelineAdrsList } from '../adrs/automated-design-manufacturing-pipeline-adr/automated-design-manufacturing-pipeline-adrs-list';
 import { WarpDriveWithoutNegativeEnergyAdrsList } from '../adrs/warp-drive-without-negative-energy-adr/warp-drive-without-negative-energy-adrs-list';
 import { SuperluminalEffectiveWarpDriveAdrsList } from '../adrs/superluminal-effective-warp-drive-adr/superluminal-effective-warp-drive-adrs-list';
+import { OptimusAdrsList } from '../adrs/optimus-adr/optimus-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
   'nano-assembly-adr': NanoassemblyAdrsList,
@@ -100,6 +101,7 @@ export const adrsListMap: Record<string, any> = {
   'quantum-computing-adr': QuantumComputingAdrsList,
   'warp-drive-without-negative-energy-adr': WarpDriveWithoutNegativeEnergyAdrsList,
   'superluminal-effective-warp-drive-adr': SuperluminalEffectiveWarpDriveAdrsList,
+  'optimus-adr': OptimusAdrsList
 } as const;
 
 export type AdrSlug = keyof typeof adrsListMap;
@@ -203,6 +205,7 @@ export const categories: Category[] = [
       { slug: 'faster-factories-with-optimus-semi-cybercab-adr', label: 'Faster Factories With Optimus Semi Cybercab ADR' },
       { slug: 'solar-powered-tesla-adr', label: 'Solar-powered Tesla ADR' },
       { slug: 'tesla-automated-with-optimi-adr', label: 'Tesla automated with Optimi ADR' },
+      { slug: 'optimus-adr', label: 'Optimus ADR' },
     ],
   },
   {

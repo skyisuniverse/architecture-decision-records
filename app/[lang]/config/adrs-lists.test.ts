@@ -27,7 +27,7 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
   it('adrsListMap contains all expected keys and non-empty values', () => {
     // WHAT: Verify the map has every slug referenced by categories.
     // WHY:  This is the single source of truth for all ADR data. Missing entries break navigation and sidebar.
-    expect(Object.keys(adrsListMap)).toHaveLength(50);
+    expect(Object.keys(adrsListMap)).toHaveLength(51); // Updated: now includes 'optimus-adr'
 
     expect(adrsListMap['nano-assembly-adr']).toBeDefined();
     expect(adrsListMap['terraforming-mars-adr']).toBeDefined();
@@ -35,6 +35,7 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
     expect(adrsListMap['superluminal-effective-warp-drive-adr']).toBeDefined();
     // Clean key (no % characters) after folder rename
     expect(adrsListMap['faster-factories-with-optimus-semi-cybercab-adr']).toBeDefined();
+    expect(adrsListMap['optimus-adr']).toBeDefined(); // ← new entry
   });
 
   // ---------------------------------------------------------------------------
@@ -62,6 +63,7 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
     expect(getCategoryBySlug('nano-assembly-adr')?.id).toBe('rd-center');
     expect(getCategoryBySlug('terraforming-mars-adr')?.id).toBe('spacex-planet');
     expect(getCategoryBySlug('faster-factories-with-optimus-semi-cybercab-adr')?.id).toBe('tesla');
+    expect(getCategoryBySlug('optimus-adr')?.id).toBe('tesla'); // ← new
   });
 
   // ---------------------------------------------------------------------------
@@ -155,7 +157,7 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
 // WHAT THIS TEST FILE COVERS
 // =============================================================================
 // • All public exports of adrs-lists.ts:
-//   - adrsListMap structure and completeness (50 entries)
+//   - adrsListMap structure and completeness (51 entries)
 //   - categories array shape and consistency
 //   - getCategoryBySlug (happy path + defensive cases)
 //   - getAdrSelectOptions helper
