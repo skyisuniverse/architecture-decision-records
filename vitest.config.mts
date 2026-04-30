@@ -1,10 +1,21 @@
 // vitest.config.mts
-import { defineConfig, configDefaults } from 'vitest/config'
-import react from '@vitejs/plugin-react'
-import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineConfig, configDefaults } from 'vitest/config';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [tsconfigPaths(), react()],
+  // =====================================================================
+  // NATIVE TSCONFIG PATHS SUPPORT (Vite 5.1+ / Vitest 1.6+)
+  // =====================================================================
+  // Vite now resolves `paths` from tsconfig.json natively.
+  // We no longer need the "vite-tsconfig-paths" plugin.
+  resolve: {
+    tsconfigPaths: true,
+  },
+
+  // =====================================================================
+  // PLUGINS
+  // =====================================================================
+  plugins: [react()],
 
   test: {
     environment: 'jsdom',
@@ -13,10 +24,10 @@ export default defineConfig({
     reporters: ['html'],
 
     // =====================================================================
-    // EXCLUDE E2E TESTS + PRESERVE DEFAULTS (node_modules, dist, etc.)
+    // EXCLUDE E2E TESTS + PRESERVE DEFAULTS
     // =====================================================================
     exclude: [
-      ...configDefaults.exclude,   // ← This is the important fix
+      ...configDefaults.exclude,   // preserves all default Vitest exclusions
       'e2e/**',                    // everything in e2e/ folder
       '**/*.e2e.{ts,tsx}',         // any .e2e test files
       '**/*.e2e.spec.{ts,tsx}',    // any .e2e.spec files
@@ -31,7 +42,8 @@ export default defineConfig({
     },
 
     alias: {
+      // Keep this if you still need a mock for server-only
       'server-only': './__mocks__/server-only.ts',
     },
   },
-})
+});

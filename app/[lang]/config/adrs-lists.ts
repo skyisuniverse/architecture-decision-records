@@ -5,7 +5,7 @@ import { ThreeDPrinterForStarshipsAdrsList } from '../adrs/3d-printer-for-starsh
 import { ThreeDPrintingStarshipsAdrsList } from '../adrs/3d-printing-starships-adr/3d-printing-starships-adrs-list';
 import { AlternativeHardwareForAITrainingAdrsList } from '../adrs/alternative-hardware-for-ai-training-adr/alternative-hardware-for-ai-training-adrs-list';
 import { DirectBinaryCodeGenerationAdrsList } from '../adrs/direct-binary-code-generation-adr/direct-binary-code-generation-adrs-list';
-import { FasterFactoriesWithOptimusSemiCybercabAdrsList } from '../adrs/80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adr/80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adrs-list';
+import { FasterFactoriesWithOptimusSemiCybercabAdrsList } from '../adrs/faster-factories-with-optimus-semi-cybercab-adr/faster-factories-with-optimus-semi-cybercab-adrs-list';
 import { NanoAssembledCybercabAdrsList } from '../adrs/nano-assembled-cybercab-adr/nano-assembled-cybercab-adrs-list';
 import { NanoAssembledOptimusAdrsList } from '../adrs/nano-assembled-optimus-adr/nano-assembled-optimus-adrs-list';
 import { NanoAssembledSemiAdrsList } from '../adrs/nano-assembled-semi-adr/nano-assembled-semis-list';
@@ -63,7 +63,7 @@ export const adrsListMap: Record<string, any> = {
   '3d-printing-starships-adr': ThreeDPrintingStarshipsAdrsList,
   'alternative-hardware-for-ai-training-adr': AlternativeHardwareForAITrainingAdrsList,
   'direct-binary-code-generation-adr': DirectBinaryCodeGenerationAdrsList,
-  '80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adr': FasterFactoriesWithOptimusSemiCybercabAdrsList,
+  'faster-factories-with-optimus-semi-cybercab-adr': FasterFactoriesWithOptimusSemiCybercabAdrsList,
   'nano-assembled-cybercab-adr': NanoAssembledCybercabAdrsList,
   'nano-assembled-optimus-adr': NanoAssembledOptimusAdrsList,
   'nano-assembled-semi-adr': NanoAssembledSemiAdrsList,
@@ -200,7 +200,7 @@ export const categories: Category[] = [
       { slug: 'nano-assembled-optimus-adr', label: 'Nano-assembled Optimus ADR' },
       { slug: 'nano-assembled-cybercab-adr', label: 'Nano-assembled Cybercab ADR' },
       { slug: 'nano-assembled-semi-adr', label: 'Nano-assembled Semi ADR' },
-      { slug: '80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adr', label: '80%-Faster 60%-Cheaper Factories With Optimus Semi Cybercab ADR' },
+      { slug: 'faster-factories-with-optimus-semi-cybercab-adr', label: 'Faster Factories With Optimus Semi Cybercab ADR' },
       { slug: 'solar-powered-tesla-adr', label: 'Solar-powered Tesla ADR' },
       { slug: 'tesla-automated-with-optimi-adr', label: 'Tesla automated with Optimi ADR' },
     ],

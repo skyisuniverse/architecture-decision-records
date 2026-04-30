@@ -1,5 +1,5 @@
 import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
-import { FasterFactoriesWithOptimusSemiCybercabAdrsList } from './80%-faster-60%-cheaper-factories-with-optimus-semi-cybercab-adrs-list';
+import { FasterFactoriesWithOptimusSemiCybercabAdrsList } from './faster-factories-with-optimus-semi-cybercab-adrs-list';
 
 export default async function Page() {
   return (
