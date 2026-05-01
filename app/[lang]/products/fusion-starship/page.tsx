@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import FusionStarshipClient from './FusionStarshipClient';
 
-export default function FusionStarshipPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Fusion Starship
-      </Typography>
-      <Typography variant="body1">
-        This is the Fusion Starship page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <FusionStarshipClient dict={dict} />}
+    </WithDictionary>
   );
 }

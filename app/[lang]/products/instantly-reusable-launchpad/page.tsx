@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import InstantlyReusableLaunchpadClient from './InstantlyReusableLaunchpadClient';
 
-export default function InstantlyReusableLaunchpadPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Instantly Reusable Launchpad
-      </Typography>
-      <Typography variant="body1">
-        This is the Instantly Reusable Launchpad page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <InstantlyReusableLaunchpadClient dict={dict} />}
+    </WithDictionary>
   );
 }

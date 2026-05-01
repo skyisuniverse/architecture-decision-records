@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import HealingAutismClient from './HealingAutismClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Healing Autism
-      </Typography>
-      <Typography variant="body1">
-        This is the Healing Autism page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <HealingAutismClient dict={dict} />}
+    </WithDictionary>
   );
 }

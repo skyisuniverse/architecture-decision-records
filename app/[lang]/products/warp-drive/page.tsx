@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import WarpDriveClient from './WarpDriveClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Warp Drive
-      </Typography>
-      <Typography variant="body1">
-        This is the Warp Drive page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <WarpDriveClient dict={dict} />}
+    </WithDictionary>
   );
 }

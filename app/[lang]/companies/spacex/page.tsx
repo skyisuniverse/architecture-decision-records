@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import SpacexClient from './SpacexClient';
 
-export default function SpacexPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        SpaceX
-      </Typography>
-      <Typography variant="body1">
-        This is the SpaceX page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <SpacexClient dict={dict} />}
+    </WithDictionary>
   );
 }

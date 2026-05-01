@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import NanoAssembledOrbitalHeatShieldClient from './NanoAssembledOrbitalHeatShieldClient';
 
-export default function NanoAssembledOrbitalHeatShieldPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Nano-assembled Orbital Heat Shield
-      </Typography>
-      <Typography variant="body1">
-        This is the Nano-assembled Orbital Heat Shield page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <NanoAssembledOrbitalHeatShieldClient dict={dict} />}
+    </WithDictionary>
   );
 }

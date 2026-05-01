@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import OvercomingSerialAttentionLimitationClient from './OvercomingSerialAttentionLimitationClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Overcoming serial attention limitation
-      </Typography>
-      <Typography variant="body1">
-        This is the Overcoming serial attention limitation page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <OvercomingSerialAttentionLimitationClient dict={dict} />}
+    </WithDictionary>
   );
 }

@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import NanoAssembledStarshipClient from './NanoAssembledStarshipClient';
 
-export default function NanoAssembledStarshipPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Nano-assembled Starship
-      </Typography>
-      <Typography variant="body1">
-        This is the Nano-assembled Starship page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <NanoAssembledStarshipClient dict={dict} />}
+    </WithDictionary>
   );
 }

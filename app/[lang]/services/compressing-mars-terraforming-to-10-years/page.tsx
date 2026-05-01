@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import CompressingMarsTerraformingClient from './CompressingMarsTerraformingClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Compressing Mars Terraforming to 10 years
-      </Typography>
-      <Typography variant="body1">
-        This is the Compressing Mars Terraforming to 10 years page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <CompressingMarsTerraformingClient dict={dict} />}
+    </WithDictionary>
   );
 }

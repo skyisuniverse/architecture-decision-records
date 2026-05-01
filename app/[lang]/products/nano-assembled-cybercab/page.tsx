@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import NanoAssembledCybercabClient from './NanoAssembledCybercabClient';
 
-export default function NanoAssembledCybercabPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Nano-assembled Cybercab
-      </Typography>
-      <Typography variant="body1">
-        This is the Nano-assembled Cybercab page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <NanoAssembledCybercabClient dict={dict} />}
+    </WithDictionary>
   );
 }

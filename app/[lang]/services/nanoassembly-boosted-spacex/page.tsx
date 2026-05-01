@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import NanoassemblyBoostedSpacexClient from './NanoassemblyBoostedSpacexClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Nanoassembly-boosted SpaceX
-      </Typography>
-      <Typography variant="body1">
-        This is the Nanoassembly-boosted SpaceX page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <NanoassemblyBoostedSpacexClient dict={dict} />}
+    </WithDictionary>
   );
 }

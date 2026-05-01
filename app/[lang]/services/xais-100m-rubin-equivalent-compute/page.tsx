@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import Xais100MRubinEquivalentComputeClient from './Xais100MRubinEquivalentComputeClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        xAIs 100M Rubin equivalent compute
-      </Typography>
-      <Typography variant="body1">
-        This is the xAIs 100M Rubin equivalent compute page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <Xais100MRubinEquivalentComputeClient dict={dict} />}
+    </WithDictionary>
   );
 }

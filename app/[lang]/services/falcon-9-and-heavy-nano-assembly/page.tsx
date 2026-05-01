@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import Falcon9HeavyNanoAssemblyClient from './Falcon9HeavyNanoAssemblyClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Falcon 9 & Heavy Nano-Assembly
-      </Typography>
-      <Typography variant="body1">
-        This is the Falcon 9 & Heavy Nano-Assembly page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <Falcon9HeavyNanoAssemblyClient dict={dict} />}
+    </WithDictionary>
   );
 }

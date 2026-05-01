@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import FasterFactoriesClient from './FasterFactoriesClient';
 
-export default function FasterFactoriesPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Faster Factories
-      </Typography>
-      <Typography variant="body1">
-        This is the Faster Factories page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <FasterFactoriesClient dict={dict} />}
+    </WithDictionary>
   );
 }

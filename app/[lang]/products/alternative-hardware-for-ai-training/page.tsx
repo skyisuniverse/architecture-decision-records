@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import AlternativeHardwareForAiTrainingClient from './AlternativeHardwareForAiTrainingClient';
 
-export default function AlternativeHardwareForAiTrainingPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Alternative Hardware For AI Training Page
-      </Typography>
-      <Typography variant="body1">
-        This is the Alternative Hardware For AI Training Page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <AlternativeHardwareForAiTrainingClient dict={dict} />}
+    </WithDictionary>
   );
 }

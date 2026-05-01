@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import ThreeDPrintingStarshipsClient from './ThreeDPrintingStarshipsClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        3D Printing Starships
-      </Typography>
-      <Typography variant="body1">
-        This is the 3D Printing Starships page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <ThreeDPrintingStarshipsClient dict={dict} />}
+    </WithDictionary>
   );
 }

@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import PerspectiveNeuralinkBCIsClient from './PerspectiveNeuralinkBCIsClient';
 
-export default function PerspectiveNeuralinkBCIsPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Perspective Neuralink BCIs
-      </Typography>
-      <Typography variant="body1">
-        This is the Perspective Neuralink BCIs page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <PerspectiveNeuralinkBCIsClient dict={dict} />}
+    </WithDictionary>
   );
 }

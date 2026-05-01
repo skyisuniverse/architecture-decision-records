@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import NanoAssembledMechazillaClient from './NanoAssembledMechazillaClient';
 
-export default function NanoAssembledMechazillaPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Nano-assembled Mechazilla
-      </Typography>
-      <Typography variant="body1">
-        This is the Nano-assembled Mechazilla page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <NanoAssembledMechazillaClient dict={dict} />}
+    </WithDictionary>
   );
 }

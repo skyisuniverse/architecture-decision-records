@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import MassDriverClient from './MassDriverClient';
 
-export default function MassDriverPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Mass Driver
-      </Typography>
-      <Typography variant="body1">
-        This is the Mass Driver page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <MassDriverClient dict={dict} />}
+    </WithDictionary>
   );
 }

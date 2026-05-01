@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import TeslaClient from './TeslaClient';
 
-export default function TeslaPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Tesla
-      </Typography>
-      <Typography variant="body1">
-        This is the Tesla page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <TeslaClient dict={dict} />}
+    </WithDictionary>
   );
 }

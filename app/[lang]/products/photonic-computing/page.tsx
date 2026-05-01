@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import PhotonicComputingClient from './PhotonicComputingClient';
 
-export default function PhotonicComputingPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Photonic Computing
-      </Typography>
-      <Typography variant="body1">
-        This is the Photonic Computing page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <PhotonicComputingClient dict={dict} />}
+    </WithDictionary>
   );
 }

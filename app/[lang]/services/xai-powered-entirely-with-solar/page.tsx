@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import XaiPoweredEntirelyWithSolarClient from './XaiPoweredEntirelyWithSolarClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        xAI powered entirely with solar
-      </Typography>
-      <Typography variant="body1">
-        This is the xAI powered entirely with solar page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <XaiPoweredEntirelyWithSolarClient dict={dict} />}
+    </WithDictionary>
   );
 }

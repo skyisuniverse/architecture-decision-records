@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import SolarSystemHabitationClient from './SolarSystemHabitationClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Solar System Habitation
-      </Typography>
-      <Typography variant="body1">
-        This is the Solar System Habitation page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <SolarSystemHabitationClient dict={dict} />}
+    </WithDictionary>
   );
 }

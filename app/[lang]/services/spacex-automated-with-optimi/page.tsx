@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import SpacexAutomatedWithOptimiClient from './SpacexAutomatedWithOptimiClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        SpaceX automated with Optimi
-      </Typography>
-      <Typography variant="body1">
-        This is the SpaceX automated with Optimi page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <SpacexAutomatedWithOptimiClient dict={dict} />}
+    </WithDictionary>
   );
 }

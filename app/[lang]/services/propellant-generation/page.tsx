@@ -1,14 +1,10 @@
-import { Typography, Box } from '@mui/material';
+import WithDictionary from '../../components/WithDictionary';
+import PropellantGenerationClient from './PropellantGenerationClient';
 
-export default function WarpDrivePage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Propellant Generation
-      </Typography>
-      <Typography variant="body1">
-        This is the Propellant Generation page.
-      </Typography>
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <PropellantGenerationClient dict={dict} />}
+    </WithDictionary>
   );
 }
