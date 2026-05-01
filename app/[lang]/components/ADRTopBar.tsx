@@ -13,6 +13,10 @@ import { usePathname, useParams } from 'next/navigation';
 import MuiAppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import { drawerWidth } from './ResponsiveDrawer';
+import LanguageSwitcher from './LanguageSwitcher';
+
+// New import for the language switcher
+// import LanguageSwitcher from './components/LanguageSwitcher';
 
 interface AppBarProps {
   open?: boolean;
@@ -87,7 +91,7 @@ export default function ADRTopBar({
           <MenuIcon />
         </IconButton>
 
-        {/* Logo / Title – now locale-aware */}
+        {/* Logo / Title – locale-aware */}
         <Typography
           variant="h6"
           noWrap
@@ -134,22 +138,27 @@ export default function ADRTopBar({
           })}
         </Box>
 
-        {/* R&D Center link (always on the right) */}
-        <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{ ml: 'auto' }}
-        >
-          <Link
-            href="https://rd-center.vercel.app/"
-            color="inherit"
-            target="_blank"
-            style={{ textDecoration: 'none' }}
+        {/* Right side: Language switcher + R&D Center link */}
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
+          <LanguageSwitcher />
+
+          {/* R&D Center link (always on the far right) */}
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ ml: 2 }}
           >
-            R&D Center
-          </Link>
-        </Typography>
+            <Link
+              href="https://rd-center.vercel.app/"
+              color="inherit"
+              target="_blank"
+              style={{ textDecoration: 'none' }}
+            >
+              R&D Center
+            </Link>
+          </Typography>
+        </Box>
       </Toolbar>
     </StyledAppBar>
   );
