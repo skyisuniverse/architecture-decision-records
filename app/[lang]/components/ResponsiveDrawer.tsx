@@ -1,4 +1,5 @@
 'use client';
+
 import {
   Box,
   Drawer,
@@ -22,7 +23,6 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import Link from 'next/link';
 import { usePathname, useParams } from 'next/navigation';
 import { useNavigation } from '@/app/[lang]/contexts/navigation-context';
-import { categories } from '@/app/[lang]/config/adrs-lists';
 import { adrsListMap } from '@/app/[lang]/config/adrs-lists';
 import { ADRItem } from '../types/adr';
 import Stack from '@mui/material/Stack';
@@ -66,10 +66,11 @@ export default function ResponsiveDrawer(props: Props) {
     selectCategory,
     navigateToAdr,
     toggleExpanded,
+    localizedCategories,
+    decisionDict,        // ← merged dict with status.* keys
   } = useNavigation();
 
-  const selectedCategory =
-    categories.find((cat) => cat.id === selectedCategoryId) || categories[0];
+  const selectedCategory = localizedCategories.find((cat) => cat.id === selectedCategoryId) || localizedCategories[0];
 
   const getLocalizedHref = (href: string): string => {
     if (!href.startsWith('/')) href = '/' + href;
@@ -82,7 +83,7 @@ export default function ResponsiveDrawer(props: Props) {
   };
 
   const handleAdrHeaderClick = (slug: string) => {
-    navigateToAdr(slug, true);   // navigate + expand
+    navigateToAdr(slug, true);
   };
 
   const handleToggle = (slug: string) => {
@@ -99,7 +100,6 @@ export default function ResponsiveDrawer(props: Props) {
 
       <Divider />
 
-      {/* Category Select */}
       <Box sx={{ p: 2 }}>
         <FormControl fullWidth>
           <InputLabel id="category-select-label">Select Category</InputLabel>
@@ -110,7 +110,7 @@ export default function ResponsiveDrawer(props: Props) {
             label="Select Category"
             onChange={handleCategoryChange}
           >
-            {categories.map((category) => (
+            {localizedCategories.map((category) => (
               <MenuItem key={category.id} value={category.id}>
                 {category.name}
               </MenuItem>
@@ -121,7 +121,6 @@ export default function ResponsiveDrawer(props: Props) {
 
       <Divider />
 
-      {/* Nested ADR List */}
       <List>
         <ListSubheader component="div" id="nested-list-subheader">
           {selectedCategory.name}
@@ -152,6 +151,9 @@ export default function ResponsiveDrawer(props: Props) {
                 <List component="div" disablePadding>
                   {decisions.map((decision: ADRItem) => {
                     const localizedHref = getLocalizedHref(decision.link);
+
+                    const translatedTitle = decisionDict[decision.title] ?? decision.title;
+
                     return (
                       <ListItemButton
                         key={decision.link}
@@ -162,10 +164,13 @@ export default function ResponsiveDrawer(props: Props) {
                       >
                         <Stack spacing={2} sx={{ width: '100%' }}>
                           <ListItemText
-                            primary={decision.title}
+                            primary={translatedTitle}
                             secondary={decision.date}
                           />
-                          <StatusChip status={decision.status} />
+                          <StatusChip 
+                            status={decision.status} 
+                            dict={decisionDict}
+                          />
                         </Stack>
                       </ListItemButton>
                     );
@@ -187,7 +192,6 @@ export default function ResponsiveDrawer(props: Props) {
       sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
       aria-label="ADR navigation"
     >
-      {/* Mobile drawer */}
       <Drawer
         container={container}
         variant="temporary"
@@ -202,7 +206,6 @@ export default function ResponsiveDrawer(props: Props) {
         {drawerContent(onMobileDrawerClose)}
       </Drawer>
 
-      {/* Desktop drawer */}
       <Drawer
         variant="persistent"
         open={open}

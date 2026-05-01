@@ -1,13 +1,13 @@
 'use client';
 
-import { createContext, useContext, useReducer, useMemo, type ReactNode } from 'react';
+import { createContext, useContext, useReducer, useMemo, useState, useEffect, type ReactNode } from 'react';
 import { usePathname, useRouter, useParams } from 'next/navigation';
 import {
   adrsListMap,
   type AdrSlug,
-  categories,
   getCategoryBySlug,
   type Category,
+  getLocalizedCategories,
 } from '@/app/[lang]/config/adrs-lists';
 import { itemData as productItems } from '@/app/[lang]/products/products-list';
 import { itemData as companyItems } from '@/app/[lang]/companies/companies-list';
@@ -16,10 +16,9 @@ import { itemData as appItems } from '@/app/[lang]/apps/applications-list';
 import { ADRItem } from '@/app/[lang]/types/adr';
 import React from 'react';
 
-export type ListItem = {
-  title: string;
-  slug: string;
-};
+type Dictionary = Record<string, string>;
+
+export type ListItem = { title: string; slug: string };
 
 type NavigationState = {
   selectedCategoryId: string;
@@ -41,8 +40,6 @@ const navigationReducer = (
     case 'SET_EXPANDED':
       return { ...state, expandedAdrSlug: action.payload };
     case 'SYNC_FROM_URL':
-      // When navigating directly via URL (deep link, refresh, browser navigation)
-      // we expand the category so the active decision is visible and highlighted.
       return {
         selectedCategoryId: action.payload.categoryId,
         expandedAdrSlug: action.payload.slug || null,
@@ -65,19 +62,29 @@ type NavigationContextValue = {
   currentService: ListItem | undefined;
   currentApp: ListItem | undefined;
   currentAdrCategoryName: string;
+  localizedCategories: Category[];
   selectCategory: (id: string) => void;
   navigateToAdr: (slug: string, shouldExpand?: boolean) => void;
   toggleExpanded: (slug: string) => void;
   setExpanded: (slug: string | null) => void;
   localize: (href: string) => string;
+  decisionDict: Dictionary;
 };
 
 const NavigationContext = createContext<NavigationContextValue | null>(null);
 
-export function NavigationProvider({ children }: { children: ReactNode }) {
+export function NavigationProvider({
+  children,
+  dict,          // ← this is the global/root dictionary
+}: {
+  children: ReactNode;
+  dict: Dictionary;
+}) {
   const pathname = usePathname();
   const router = useRouter();
   const { lang } = useParams() as { lang: string };
+
+  const [decisionDict, setDecisionDict] = useState<Dictionary>({});
 
   const getLocalizedHref = (href: string): string => {
     if (href === '/') return `/${lang}`;
@@ -95,27 +102,66 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     return undefined;
   }, [pathname]);
 
+  const localizedCategories = useMemo(() => getLocalizedCategories(dict), [dict]);
+
+  const [state, dispatch] = useReducer(navigationReducer, {
+    selectedCategoryId: localizedCategories[0]?.id || 'rd-center',
+    expandedAdrSlug: null,
+  });
+
+  const currentCategory = useMemo(() => (slug ? getCategoryBySlug(slug) : undefined), [slug]);
+
+  const activeCategory = useMemo(() => {
+    return currentCategory ?? localizedCategories.find((c) => c.id === state.selectedCategoryId);
+  }, [currentCategory, localizedCategories, state.selectedCategoryId]);
+
+  // Load colocated decision translations AND merge with global dict (status keys)
+  useEffect(() => {
+    const categorySlug = slug || state.expandedAdrSlug || activeCategory?.mainPageSlug;
+
+    if (!categorySlug) {
+      setDecisionDict(dict); // fallback to global dict only
+      return;
+    }
+
+    const loadDecisions = async () => {
+      try {
+        const module = await import(
+          `@/app/[lang]/adrs/${categorySlug}/decisions-dictionaries/${lang}.json`
+        );
+        const colocated = module.default || module;
+        // Merge global + colocated (status.* keys + decision titles)
+        setDecisionDict({ ...dict, ...colocated });
+      } catch (e) {
+        console.warn(`No decision translations found for ${categorySlug}/${lang}`);
+        setDecisionDict(dict); // fallback to global dict
+      }
+    };
+
+    loadDecisions();
+  }, [slug, state.expandedAdrSlug, activeCategory, lang, dict]);
+
+  // Translated decision titles
   const currentAdrsList: ADRItem[] = useMemo(() => {
     if (!slug) return [];
-    const list = adrsListMap[slug];
-    return Array.isArray(list) ? (list as ADRItem[]) : [];
-  }, [slug]);
+    const rawList = adrsListMap[slug];
+    if (!Array.isArray(rawList)) return [];
+    return rawList.map((item: ADRItem) => ({
+      ...item,
+      title: decisionDict[item.title] ?? item.title,
+    }));
+  }, [slug, decisionDict]);
 
   const currentAdr: ADRItem | undefined = useMemo(() => {
-    return currentAdrsList.find((adr) => 
-      getLocalizedHref(adr.link) === pathname
-    );
+    return currentAdrsList.find((adr) => getLocalizedHref(adr.link) === pathname);
   }, [currentAdrsList, pathname, lang]);
 
-  const currentCategory = useMemo(() => {
-    return slug ? getCategoryBySlug(slug) : undefined;
-  }, [slug]);
-
   const currentAdrCategoryName = useMemo(() => {
-    if (!slug || !currentCategory) return '';
-    const item = currentCategory.adrs?.find((item) => item.slug === slug);
+    if (!slug) return '';
+    const cat = localizedCategories.find((c) => c.adrs.some((item) => item.slug === slug));
+    const item = cat?.adrs.find((item) => item.slug === slug);
     return item?.label ?? slug;
-  }, [slug, currentCategory]);
+  }, [slug, localizedCategories]);
 
   const currentProduct = useMemo(() => {
     if (!pathname.includes('/products/')) return undefined;
@@ -141,13 +187,6 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     return appItems.find((item) => item.slug === itemSlug);
   }, [pathname]);
 
-  const defaultCategoryId = categories[0].id;
-
-  const [state, dispatch] = useReducer(navigationReducer, {
-    selectedCategoryId: defaultCategoryId,
-    expandedAdrSlug: null,
-  });
-
   React.useEffect(() => {
     if (currentCategory) {
       dispatch({
@@ -157,18 +196,19 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     } else if (pathname === `/${lang}` || pathname === '/') {
       dispatch({
         type: 'SYNC_FROM_URL',
-        payload: { categoryId: defaultCategoryId, slug: null },
+        payload: { categoryId: localizedCategories[0]?.id || 'rd-center', slug: null },
       });
     }
-  }, [currentCategory, slug, pathname, defaultCategoryId, lang]);
+  }, [currentCategory, slug, pathname, localizedCategories, lang]);
 
   const selectCategory = (id: string) => {
     dispatch({ type: 'SET_CATEGORY', payload: id });
-    // Force collapsed when the user selects a category from a <select> / dropdown
-    dispatch({ type: 'SET_EXPANDED', payload: null });
-    const cat = categories.find((c) => c.id === id);
+    const cat = localizedCategories.find((c) => c.id === id);
     if (cat?.mainPageSlug) {
+      dispatch({ type: 'SET_EXPANDED', payload: cat.mainPageSlug });
       router.push(`/${lang}/adrs/${cat.mainPageSlug}`);
+    } else {
+      dispatch({ type: 'SET_EXPANDED', payload: null });
     }
   };
 
@@ -190,10 +230,6 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'SET_EXPANDED', payload: slug });
   };
 
-  const activeCategory = useMemo(() => {
-    return currentCategory ?? categories.find((c) => c.id === state.selectedCategoryId);
-  }, [currentCategory, state.selectedCategoryId]);
-
   const value: NavigationContextValue = {
     selectedCategoryId: state.selectedCategoryId,
     expandedAdrSlug: state.expandedAdrSlug,
@@ -207,11 +243,13 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     currentService,
     currentApp,
     currentAdrCategoryName,
+    localizedCategories,
     selectCategory,
     navigateToAdr,
     toggleExpanded,
     setExpanded,
     localize: getLocalizedHref,
+    decisionDict,
   };
 
   return (

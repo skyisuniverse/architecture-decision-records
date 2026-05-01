@@ -1,27 +1,10 @@
-import { Typography, Box } from '@mui/material';
-import Image from 'next/image';
-import localImage from '../../../../public/images/apps/delivery-spaces.jpg';
+import WithDictionary from '../../components/WithDictionary';
+import DeliverySpacesClient from './DeliverySpacesClient';
 
-export default function DeliverySpacesPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Delivery Spaces
-      </Typography>
-      <Typography variant="body1">
-        This is the Delivery Spaces page.
-      </Typography>
-      <br />
-      <br />
-      <Image
-        src={localImage} // Static imports automatically provide width/height
-        alt="Full width image"
-        sizes="100vw"
-        style={{
-          width: '100%',
-          height: 'auto',
-        }}
-      />
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <DeliverySpacesClient dict={dict} />}
+    </WithDictionary>
   );
 }

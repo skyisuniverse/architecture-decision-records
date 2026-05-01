@@ -18,6 +18,8 @@ import ADRBreadcrumbs from '@/app/[lang]/components/ADRBreadcrumbs';
 
 import { NavigationProvider } from '@/app/[lang]/contexts/navigation-context';
 
+type Dictionary = Record<string, string>;
+
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
@@ -27,8 +29,10 @@ const roboto = Roboto({
 
 export default function ClientRootLayout({
   children,
+  dict
 }: Readonly<{
   children: React.ReactNode;
+  dict: Dictionary;
 }>) {
   // ← your existing logic stays exactly the same (state, handlers, MUI providers, etc.)
   const theme = useTheme();
@@ -45,12 +49,13 @@ export default function ClientRootLayout({
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        <NavigationProvider>
+        <NavigationProvider dict={dict}>
           <Box sx={{ display: 'flex' }}>
             <ADRTopBar
               open={open}
               onDrawerOpen={handleDrawerOpen}
               onMobileDrawerToggle={handleMobileDrawerToggle}
+              dict={dict}
             />
 
             <ResponsiveDrawer
@@ -62,7 +67,7 @@ export default function ClientRootLayout({
 
             <StyledMain open={open}>
               <DrawerHeader />
-              <ADRBreadcrumbs />
+              <ADRBreadcrumbs dict={dict} />
               {children}
               <ADRBottomNav />
             </StyledMain>

@@ -1,5 +1,5 @@
 import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
-import { SolarSystemColonizationAdrsList } from './solar-system-colonization-adrs-list';
+import { SolarSystemHabitationAdrsList } from './solar-system-habitation-adrs-list';
 
 export default async function Page() {
   return (
@@ -12,7 +12,7 @@ export default async function Page() {
         </>
       }
       //   imageSrc={}
-      adrsList={SolarSystemColonizationAdrsList}
+      adrsList={SolarSystemHabitationAdrsList}
       // children slot is available here if you want to insert anything between description and ADR list
       // Example usage:
     //   children={}

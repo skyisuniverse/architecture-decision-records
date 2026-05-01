@@ -9,17 +9,14 @@ import {
   type SelectChangeEvent,
 } from '@mui/material';
 import { useNavigation } from '@/app/[lang]/contexts/navigation-context';
-import { getAdrSelectOptions } from '@/app/[lang]/config/adrs-lists';
 import React from 'react';
 
 export default function ADRSelect() {
-  const { currentSlug, navigateToAdr } = useNavigation();
+  const { currentSlug, navigateToAdr, localizedCategories } = useNavigation();
 
   const handleChange = (event: SelectChangeEvent) => {
-    navigateToAdr(event.target.value as string, false); // collapse by default
+    navigateToAdr(event.target.value as string, false);
   };
-
-  const options = getAdrSelectOptions();
 
   return (
     <FormControl fullWidth>
@@ -40,21 +37,13 @@ export default function ADRSelect() {
         onChange={handleChange}
         sx={{
           color: 'white',
-          '.MuiOutlinedInput-notchedOutline': {
-            borderColor: 'white',
-          },
-          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'white',
-          },
-          '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'white',
-          },
-          '.MuiSvgIcon-root ': {
-            fill: 'white !important',
-          },
+          '.MuiOutlinedInput-notchedOutline': { borderColor: 'white' },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: 'white' },
+          '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'white' },
+          '.MuiSvgIcon-root ': { fill: 'white !important' },
         }}
       >
-        {options.map((category) => (
+        {localizedCategories.map((category) => (
           <React.Fragment key={category.id}>
             <ListSubheader>{category.name}</ListSubheader>
             {category.adrs.map((adr) => (

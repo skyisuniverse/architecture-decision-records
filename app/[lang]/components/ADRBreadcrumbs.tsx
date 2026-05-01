@@ -10,7 +10,9 @@ import Link from 'next/link';
 import { usePathname, useParams } from 'next/navigation';
 import { useNavigation, type ListItem } from '@/app/[lang]/contexts/navigation-context';
 
-export default function ADRBreadcrumbs() {
+type Dictionary = Record<string, string>;
+
+export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
   const pathname = usePathname();
   const { lang } = useParams() as { lang: string };
 
@@ -25,7 +27,6 @@ export default function ADRBreadcrumbs() {
     currentApp,
   } = useNavigation();
 
-  // Helper to make any internal link locale-aware
   const getLocalizedHref = (href: string): string => {
     if (href === '/') return `/${lang}`;
     if (!href.startsWith('/')) href = '/' + href;
@@ -45,9 +46,6 @@ export default function ADRBreadcrumbs() {
     </MuiLink>,
   ];
 
-  // ──────────────────────────────────────────────────────────────
-  // Companies / Products / Services / Apps section
-  // ──────────────────────────────────────────────────────────────
   type Section = {
     prefix: string;
     listHref: string;
@@ -60,28 +58,28 @@ export default function ADRBreadcrumbs() {
     {
       prefix: '/companies',
       listHref: '/companies',
-      listTitle: 'Companies',
+      listTitle: dict.companies,
       currentItem: currentCompany,
       itemKey: 'company',
     },
     {
       prefix: '/services',
       listHref: '/services',
-      listTitle: 'Services',
+      listTitle: dict.services,
       currentItem: currentService,
       itemKey: 'service',
     },
     {
       prefix: '/products',
       listHref: '/products',
-      listTitle: 'Products',
+      listTitle: dict.products,
       currentItem: currentProduct,
       itemKey: 'product',
     },
     {
       prefix: '/apps',
       listHref: '/apps',
-      listTitle: 'Applications',
+      listTitle: dict.applications,
       currentItem: currentApp,
       itemKey: 'app',
     },
@@ -123,18 +121,14 @@ export default function ADRBreadcrumbs() {
 
   breadcrumbItems.push(...getSectionBreadcrumbs());
 
-  // ──────────────────────────────────────────────────────────────
-  // ADR breadcrumbs: Group > Category > Decision (now simple again)
-  // ──────────────────────────────────────────────────────────────
   const isNonADRSection = sections.some((s) =>
     pathname.startsWith(getLocalizedHref(s.prefix))
   );
 
   if (!isNonADRSection && activeCategory) {
-    // 1. Group name (always plain text)
     breadcrumbItems.push(
       <Typography key="adr-group" color="text.primary">
-        {activeCategory.name}
+        {dict[activeCategory.name] ?? activeCategory.name}   {/* ← FIXED */}
       </Typography>
     );
 
@@ -143,7 +137,6 @@ export default function ADRBreadcrumbs() {
       const localizedCategoryHref = getLocalizedHref(categoryHref);
 
       if (currentAdr) {
-        // Decision page → clickable category + decision title
         breadcrumbItems.push(
           <MuiLink
             key="category"
@@ -161,7 +154,6 @@ export default function ADRBreadcrumbs() {
           </Typography>
         );
       } else {
-        // Main ADR category page
         breadcrumbItems.push(
           <Typography key="category" color="text.primary">
             {currentAdrCategoryName}

@@ -2,10 +2,11 @@
 
 import { Chip, ChipProps } from '@mui/material';
 import React from 'react';
-import type { AdrStatus } from '@/app/[lang]/types/adr';   // ← central import
+import type { AdrStatus } from '@/app/[lang]/types/adr';
 
 interface StatusChipProps extends Omit<ChipProps, 'color' | 'label'> {
-  status: AdrStatus | string;   // string fallback still useful
+  status: AdrStatus | string;
+  dict?: Record<string, string>;   // ← translation support (root or colocated dictionary)
   label?: string;
 }
 
@@ -24,12 +25,16 @@ const getStatusColor = (status: string): ChipProps['color'] => {
 export const StatusChip: React.FC<StatusChipProps> = ({
   status,
   label,
+  dict,
   variant = 'filled',
   ...chipProps
 }) => {
+  // Use translation from dictionary (no fallback as requested)
+  const translatedLabel = dict?.[`status.${status.toLowerCase()}`] ?? label ?? status;
+
   return (
     <Chip
-      label={label ?? status}
+      label={translatedLabel}
       color={getStatusColor(status)}
       variant={variant}
       {...chipProps}

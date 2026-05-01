@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { i18n, type Locale } from '@/i18n-config';
 import ClientRootLayout from './ClientRootLayout';
+import { getDictionary } from '@/get-dictionary';
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -11,18 +12,22 @@ export default async function RootLayout({
   params,
 }: {
   children: ReactNode;
-  // ↓ This was the problematic line
-  params: Promise<{ lang: string }>;   // ← Change here
+  // Next.js expects string here — we cast safely below
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
 
-  // Optional: cast back to your strict Locale type if you need it later
-  // const locale = lang as Locale;
+  // Safe cast — generateStaticParams guarantees only "en" | "de"
+  const locale = lang as Locale;
+
+  const dict = await getDictionary(locale);
 
   return (
-    <html lang={lang}>
+    <html lang={locale}>
       <body>
-        <ClientRootLayout>{children}</ClientRootLayout>
+        <ClientRootLayout dict={dict}>
+          {children}
+        </ClientRootLayout>
       </body>
     </html>
   );

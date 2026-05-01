@@ -15,8 +15,7 @@ import { styled } from '@mui/material/styles';
 import { drawerWidth } from './ResponsiveDrawer';
 import LanguageSwitcher from './LanguageSwitcher';
 
-// New import for the language switcher
-// import LanguageSwitcher from './components/LanguageSwitcher';
+type Dictionary = Record<string, string>;
 
 interface AppBarProps {
   open?: boolean;
@@ -50,18 +49,27 @@ interface ADRTopBarProps {
   open: boolean;
   onDrawerOpen: () => void;
   onMobileDrawerToggle: () => void;
+  dict: Dictionary;
 }
 
 export default function ADRTopBar({
   open,
   onDrawerOpen,
   onMobileDrawerToggle,
+  dict
 }: ADRTopBarProps) {
   const theme = useTheme();
   const pathname = usePathname();
   const { lang } = useParams() as { lang: string };
 
-  const pages = ['Companies', 'Products', 'Services', 'Apps'];
+  const navItems = [
+    { title: dict.companies, href: 'companies' },
+    { title: dict.products, href: 'products' },
+    { title: dict.services, href: 'services' },
+    { title: dict.applications, href: 'apps' },   // uses /apps route + translated label
+  ];
+
+  // const pages = ['Companies', 'Products', 'Services', 'Apps'];
 
   return (
     <StyledAppBar position="fixed" open={open}>
@@ -109,15 +117,14 @@ export default function ADRTopBar({
 
         {/* Desktop navigation (sm and up) – locale-aware links */}
         <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
-          {pages.map((page) => {
-            const href = `/${lang}/${page.toLowerCase()}`;
-            // Active when on the exact list page OR any sub-page
+          {navItems.map((item) => {
+            const href = `/${lang}/${item.href}`;
             const isActive =
               pathname === href || pathname.startsWith(`${href}/`);
 
             return (
               <Button
-                key={page}
+                key={item.href}
                 component={Link}
                 href={href}
                 color="inherit"
@@ -132,7 +139,7 @@ export default function ADRTopBar({
                   textAlign: 'center',
                 }}
               >
-                {page}
+                {item.title}
               </Button>
             );
           })}

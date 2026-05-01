@@ -5,7 +5,7 @@ import { StatusChip } from './StatusChip';
 import { useNavigation } from '@/app/[lang]/contexts/navigation-context';
 
 export const ADRHeader = () => {
-  const { currentAdr } = useNavigation();
+  const { currentAdr, decisionDict } = useNavigation();
 
   // Safety guard (in case you're on a list page, not a detail page)
   if (!currentAdr) {
@@ -21,7 +21,10 @@ export const ADRHeader = () => {
 
       {/* Status + Date on a separate line, side by side */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <StatusChip status={currentAdr.status} />
+        <StatusChip 
+          status={currentAdr.status} 
+          dict={decisionDict}
+        />
         <Typography
           variant="body2"
           color="text.secondary"

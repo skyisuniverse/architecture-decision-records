@@ -1,27 +1,10 @@
-import { Typography, Box } from '@mui/material';
-import Image from 'next/image';
-import localImage from '../../../../public/images/apps/trade-spaces.jpg';
+import WithDictionary from '../../components/WithDictionary';
+import TradeSpacesClient from './TradeSpacesClient';
 
-export default function TradeSpacesPage() {
+export default function Page(props: any) {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Trade Spaces
-      </Typography>
-      <Typography variant="body1">
-        This is the Trade Spaces page.
-      </Typography>
-      <br />
-      <br />
-      <Image
-        src={localImage} // Static imports automatically provide width/height
-        alt="Full width image"
-        sizes="100vw"
-        style={{
-          width: '100%',
-          height: 'auto',
-        }}
-      />
-    </Box>
+    <WithDictionary {...props}>
+      {(dict) => <TradeSpacesClient dict={dict} />}
+    </WithDictionary>
   );
 }
