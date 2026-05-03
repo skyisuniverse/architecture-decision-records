@@ -5,11 +5,7 @@ import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
 import { GenericRandDCenterAdrsList } from './generic-r&d-center-adrs-list';
 import MuiNextLink from '@/app/[lang]/components/MuiNextLink';
 
-type Props = {
-  params: Promise<{ lang: Locale }>;
-};
-
-export default async function Page({ params }: Props) {
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
 
   const globalDict = await getDictionary(lang);
@@ -28,8 +24,8 @@ export default async function Page({ params }: Props) {
 
   return (
     <ADRCategoryPage
-      title={globalDict['generic-r-and-d-center-adr'] ?? 'Generic R&D Center ADR'}
-      publishedDate={globalDict['generic-r-and-d-center-adr.published'] ?? 'Published April 2026'}
+      title={globalDict['generic-r&d-center-adr'] ?? 'Generic R&D Center ADR'}
+      publishedDate={globalDict['generic-r&d-center-adr.published'] ?? 'Published April 2026'}
       description={
         <>
           This page is dedicated for architecture decisions &amp; technologies that

@@ -1,3 +1,10 @@
 {
-  
+  "use-grok-cad": "Use Grok CAD",
+  "use-starship-forge-ai": "Use Starship Forge-AI",
+  "use-chip-design-tool": "Use Chip Design Tool",
+  "use-simulation-tool": "Use Simulation Tool",
+  "use-nano-assembly": "Use Nano-Assembly",
+  "use-nano-assembler": "Use Nano-Assembler",
+  "use-3D-printing": "Use 3D Printing",
+  "use-3D-printer": "Use 3D-Printer"
 }

@@ -1,3 +1,14 @@
 {
-  
+  "easier-ai-training-with-quantum-computer-for-problems-intractable-on-classical-hardware": "Einfacheres KI-Training mit Quantencomputer für auf klassischer Hardware unlösbare Probleme",
+  "exponential-speedups-for-tasks-like-gradient-descent": "Exponentielle Beschleunigungen für Aufgaben wie Gradientenabstieg",
+  "fault-tolerant-quantum-computers": "Fehlertolerante Quantencomputer",
+  "fine-tuning-models-faster-than-classical-methods": "Feinabstimmung von Modellen schneller als klassische Methoden",
+  "handling-exponentially-larger-datasets": "Handhabung exponentiell größerer Datensätze",
+  "hybrid-quantum-ai-approaches": "Hybride Quanten-KI-Ansätze",
+  "parallel-processing-of-matrix-operations-in-deep-learning": "Parallele Verarbeitung von Matrix-Operationen im Deep Learning",
+  "pre-processing-data-for-classical-ml-with-quantum-processors": "Vorverarbeitung von Daten für klassisches ML mit Quantenprozessoren",
+  "quantum-approximate-optimization-qaoa": "Quantum Approximate Optimization (QAOA)",
+  "quantum-computer": "Quantencomputer",
+  "reducing-training-data-needs": "Reduktion des Trainingsdatenbedarfs und Beschleunigung der Konvergenz mit Quantenprozessoren",
+  "variational-quantum-eigensolvers-vqe": "Variational Quantum Eigensolvers (VQE)"
 }

@@ -2,37 +2,37 @@ import { AdrsList } from "@/app/[lang]/types/adr";
 
 export const WarpDriveWithoutNegativeEnergyAdrsList: AdrsList = [
     {
-        translationKey: 'Constant-Velocity Subluminal Warp Drive',
+        translationKey: 'constant-velocity-subluminal-warp-drive',
         link: '/adrs/warp-drive-without-negative-energy-adr/decisions/constant-velocity-subluminal-warp-drive',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Solitonic Positive-Energy Warp',
+        translationKey: 'solitonic-positive-energy-warp',
         link: '/adrs/warp-drive-without-negative-energy-adr/decisions/solitonic-positive-energy-warp',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Physical Warp Drives',
+        translationKey: 'physical-warp-drives',
         link: '/adrs/warp-drive-without-negative-energy-adr/decisions/physical-warp-drives',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Solar System Travel',
+        translationKey: 'solar-system-travel',
         link: '/adrs/warp-drive-without-negative-energy-adr/decisions/solar-system-travel',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Interstellar Exploration',
+        translationKey: 'interstellar-exploration',
         link: '/adrs/warp-drive-without-negative-energy-adr/decisions/interstellar-exploration',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Broader Implications',
+        translationKey: 'broader-implications',
         link: '/adrs/warp-drive-without-negative-energy-adr/decisions/broader-implications',
         date: 'April 2026',
         status: 'Draft',

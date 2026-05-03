@@ -2,59 +2,57 @@ import { AdrsList } from "@/app/[lang]/types/adr";
 
 export const GrokCADAdrsList: AdrsList = [
     {
-        translationKey: 'CAD Geometry Kernel',
+        translationKey: 'cad-geometry-kernel',
         link: '/adrs/grok-cad-adr/decisions/cad-geometry-kernel',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Supported formats',
+        translationKey: 'supported-formats',
         link: '/adrs/grok-cad-adr/decisions/supported-formats',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'List of features',
+        translationKey: 'list-of-features',
         link: '/adrs/grok-cad-adr/decisions/list-of-features',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'MUI for User Interface',
+        translationKey: 'mui-for-ui',
         link: '/adrs/grok-cad-adr/decisions/mui-for-ui',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'File menu features',
+        translationKey: 'file-menu-features',
         link: '/adrs/grok-cad-adr/decisions/file-menu-features',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Edit features',
+        translationKey: 'edit-features',
         link: '/adrs/grok-cad-adr/decisions/edit-features',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'View features',
+        translationKey: 'view-features',
         link: '/adrs/grok-cad-adr/decisions/view-features',
         date: 'April 2026',
         status: 'Draft',
     },
     {
-        translationKey: 'Drawer sidebar features',
+        translationKey: 'drawer-sidebar-features',
         link: '/adrs/grok-cad-adr/decisions/drawer-sidebar-features',
         date: 'April 2026',
         status: 'Draft',
     },
-    
     {
-        translationKey: 'Toolbar features',
+        translationKey: 'toolbar-features',
         link: '/adrs/grok-cad-adr/decisions/toolbar-features',
         date: 'April 2026',
         status: 'Draft',
     },
-    
 ];

@@ -1,3 +1,5 @@
 {
-  
+  "use-nano-assembly-for-production" : "Nutzung der Nano-Montage für die Produktion",
+  "use-3d-printing-for-production" : "Nutzung von 3D-Druck für die Produktion",
+  "build-automated-design-manufacturing-pipeline" : "Aufbau eines automatisierten Design- und Fertigungspipelines"
 }

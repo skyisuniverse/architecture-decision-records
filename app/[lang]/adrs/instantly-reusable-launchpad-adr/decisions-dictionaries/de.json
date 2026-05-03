@@ -1,3 +1,20 @@
 {
-  
+  "use-advanced-materials": "Fortgeschrittene Materialien verwenden",
+  "use-ai-and-swarm-intelligence-for-control-and-evolution": "KI und Schwarmintelligenz für Steuerung und Evolution verwenden",
+  "use-autonomic-evolution-algorithms": "Autonome Evolutionsalgorithmen verwenden",
+  "use-controlled-self-replication-mechanisms": "Kontrollierte Selbstreplizierungsmechanismen verwenden",
+  "use-defect-free-diamondoid-synthesis-and-self-assembly": "Fehlerfreie diamantoide Synthese und Selbstassemblierung verwenden",
+  "use-emergent-ai-for-nanoscale-decision-making": "Emergente KI für nanoskalige Entscheidungsfindung verwenden",
+  "use-high-efficiency-multi-modal-harvesters": "Hocheffiziente multimodale Energieernter verwenden",
+  "use-high-resolution-ambient-quantum-sensors": "Hochauflösende Umgebungs-Quanten-Sensoren verwenden",
+  "use-in-situ-resource-utilization-at-atomic-scale": "In-situ-Ressourcennutzung auf atomarer Skala verwenden",
+  "use-integration-of-quantum-sensors-with-swarms": "Integration von Quanten-Sensoren mit Schwärmen verwenden",
+  "use-mechanosynthesis-and-atomic-scale-assembly": "Mechanosynthese und atomare Skalen-Assemblierung verwenden",
+  "use-nanoscale-energy-harvesting-for-swarm-power": "Nanoskalige Energieernte für Schwarmenergie verwenden",
+  "use-phonon-engineered-metamaterials-for-thermal-management": "Phonon-engineered Metamaterialien für thermisches Management verwenden",
+  "use-quantum-enhanced-harvesting": "Quantenverstärkte Energieernte verwenden",
+  "use-quantum-sensors-for-nanoscale-monitoring-and-feedback": "Quanten-Sensoren für nanoskalige Überwachung und Rückkopplung verwenden",
+  "use-scalable-high-throughput-mnt-tools": "Skalierbare Hochdurchsatz-MNT-Werkzeuge verwenden",
+  "use-self-replicating-nanobot-swarms": "Selbstreplizierende Nanobot-Schwärme verwenden",
+  "use-swarm-coordination-in-harsh-environments": "Schwarmkoordination in rauen Umgebungen verwenden"
 }

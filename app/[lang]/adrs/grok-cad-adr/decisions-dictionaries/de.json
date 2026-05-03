@@ -1,3 +1,11 @@
 {
-  
+  "cad-geometry-kernel": "CAD-Geometrie-Kernel",
+  "supported-formats": "Unterstützte Formate",
+  "list-of-features": "Liste der Funktionen",
+  "mui-for-ui": "MUI für die Benutzeroberfläche",
+  "file-menu-features": "Dateimenü-Funktionen",
+  "edit-features": "Bearbeitungsfunktionen",
+  "view-features": "Ansichtsfunktionen",
+  "drawer-sidebar-features": "Schubladen-Seitenleisten-Funktionen",
+  "toolbar-features": "Werkzeugleisten-Funktionen"
 }

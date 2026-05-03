@@ -1,3 +1,5 @@
 {
-  
+  "use-nano-assembly-for-production" : "Use nano-assembly for production",
+  "use-3d-printing-for-production" : "Use 3D printing for production",
+  "build-automated-design-manufacturing-pipeline" : "Build automated design and manufacturing pipeline"
 }

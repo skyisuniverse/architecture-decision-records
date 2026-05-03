@@ -1,3 +1,19 @@
 {
-  
+  "photonic-computing": "Photonic (Light-Based) Computing",
+  "neuromorphic-computing": "Neuromorphic Computing",
+  "quantum-computing": "Quantum Computing",
+  "algorithmic-and-methodological-advances": "Algorithmic and Methodological Advances",
+  "baseline-for-grok-5-training": "Baseline for Grok 5 Training",
+  "resources-with-photonic-computing": "Resources with Photonic Computing",
+  "resources-with-neuromorphic-computing": "Resources with Neuromorphic Computing",
+  "resources-with-quantum-computing": "Resources with Quantum Computing",
+  "resources-with-probability-based-training-methods": "Resources with Probability-Based Training Methods",
+  "enhancing-photonic-computing": "Enhancing Photonic Computing",
+  "enhancing-neuromorphic-computing": "Enhancing Neuromorphic Computing",
+  "enhancing-quantum-computing": "Enhancing Quantum Computing",
+  "enhancing-probability-based-training-methods": "Enhancing Probability-Based Training Methods",
+  "in-house-prod-cost-timeline-photonic-w-pommm-lightgen-3d-platforms": "Costs & timeline based on in-house hardware production: Photonic Computing (Enhanced with POMMM, LightGen, 3D Platforms)",
+  "in-house-prod-cost-timeline-neuromorphic-w-loihi-akida-molecular-devices": "Costs & timeline based on in-house hardware production: Neuromorphic Computing (Enhanced with Loihi 3, Akida 2.0, Molecular Devices)",
+  "in-house-prod-cost-timeline-quantum-w-logical-qubits-hybrids": "Costs & timeline based on in-house hardware production: Quantum Computing (Enhanced with Logical Qubits, Hybrids)",
+  "in-house-prod-cost-timeline-probability-based-training-w-uncertainty-targeting": "Costs & timeline based on in-house hardware production: Probability-Based Training Methods (Enhanced with Uncertainty Targeting)"
 }

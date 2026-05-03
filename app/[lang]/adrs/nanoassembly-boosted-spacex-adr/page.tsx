@@ -1,7 +1,8 @@
 import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
-import { NanoAssemblyBoostedSpaceXAdrsList } from './nanoassembly-boosted-spacex-adrs-list';
+
 import { getDictionary } from '@/get-dictionary';
 import type { Locale } from '@/i18n-config';
+import { NanoAssemblyBoostedSpaceXAdrsList } from './nanoassembly-boosted-spacex-adrs-list';
 
 export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
@@ -22,7 +23,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
 
   return (
     <ADRCategoryPage
-      title={globalDict['nano-assembly-boosted-spacex-adr'] ?? 'Nano-assembly-boosted SpaceX ADR'}
+      title={globalDict['nanoassembly-boosted-spacex-adr'] ?? 'Nano-assembly-boosted SpaceX ADR'}
       publishedDate={globalDict['nano-assembly-boosted-spacex-adr.published'] ?? 'Published April 2026'}
       description={<></>}
       adrsList={NanoAssemblyBoostedSpaceXAdrsList}

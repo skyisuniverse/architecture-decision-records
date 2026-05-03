@@ -14,9 +14,9 @@ export const ADRHeader = () => {
 
   return (
     <Box sx={{ mb: 4 }}>
-      {/* Title on its own line */}
+      {/* Title – resolved directly from decisionDict using translationKey */}
       <Typography variant="h4" component="h1" gutterBottom>
-        {currentAdr.translationKey}
+        {decisionDict[currentAdr.translationKey] ?? currentAdr.translationKey}
       </Typography>
 
       {/* Status + Date on a separate line, side by side */}

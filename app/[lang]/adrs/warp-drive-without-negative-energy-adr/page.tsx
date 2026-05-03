@@ -22,11 +22,11 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
 
   return (
     <ADRCategoryPage
-      title={globalDict['warp-drives-without-negative-energy-adr'] ?? 'Warp Drives Without Negative Energy ADR'}
-      publishedDate={globalDict['warp-drives-without-negative-energy-adr.published'] ?? 'Published April 2026'}
+      title={globalDict['warp-drive-without-negative-energy-adr'] ?? 'Warp Drive Without Negative Energy ADR'}
+      publishedDate={globalDict['warp-drive-without-negative-energy-adr.published'] ?? 'Published April 2026'}
       description={<></>}
       adrsList={WarpDriveWithoutNegativeEnergyAdrsList}
-      dict={dict}                    // ← single dict now
+      dict={dict}
     />
   );
 }

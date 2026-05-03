@@ -223,7 +223,7 @@
   "quantum-computing-adr": "Quanten-Computing ADR",
   "grok-cad-adr": "Grok CAD ADR",
   "chip-design-tool-adr": "Chip-Design-Tool ADR",
-  "engineering-simulation-tool-adr": "Engineering-Simulations-Tool ADR",
+  "engineering-simulation-tool-adr": "Simulationstool für den Ingenieurbereich ADR",
   "direct-binary-code-generation-adr": "Direkte Binärcode-Generierung ADR",
   "train-6t-parameter-models-in-minutes-adr": "6T-Parameter-Modelle in Minuten trainieren ADR",
   "xai-powered-entirely-with-solar-adr": "xAI vollständig solarbetrieben ADR",

@@ -148,7 +148,7 @@ export function NavigationProvider({
     if (!Array.isArray(rawList)) return [];
     return rawList.map((item: ADRItem) => ({
       ...item,
-      title: decisionDict[item.title] ?? item.title,
+      title: decisionDict[item.translationKey] ?? item.translationKey,
     }));
   }, [slug, decisionDict]);
 

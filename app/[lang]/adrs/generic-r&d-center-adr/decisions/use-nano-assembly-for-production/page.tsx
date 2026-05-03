@@ -1,17 +1,23 @@
-'use client';
 import { ADRHeader } from '@/app/[lang]/components/ADRHeader';
-import { Grid, Link as MuiLink } from '@mui/material';
-import Link from 'next/link';
+import { Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
-import { NanoAssemblableDomains, NanoAssemblablyTools } from './nano-assembly-for-production';
-import { useNavigation } from '@/app/[lang]/contexts/navigation-context';
 
-export default function Page() {
-  const { localize } = useNavigation();   // ← now available everywhere
+import { NanoAssemblableDomains, NanoAssemblablyTools } from './nano-assembly-for-production';
+
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  const localize = (href: string): string => {
+    if (href === '/') return `/${lang}`;
+    if (!href.startsWith('/')) href = '/' + href;
+    if (href.startsWith(`/${lang}/`)) return href;
+    return `/${lang}${href}`;
+  };
 
   return (
     <>
@@ -36,7 +42,7 @@ export default function Page() {
               >
                 <CardActionArea
                   component={Link}
-                  href={localize(item.href)}   // ← localized!
+                  href={localize(item.href)}
                   sx={{ height: '100%' }}
                 >
                   <CardContent sx={{ p: 3, height: '100%', display: 'flex', alignItems: 'center' }}>

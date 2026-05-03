@@ -1,3 +1,13 @@
 {
-  
+  "3d-neuromorphic-architectures": "3D Neuromorphic Architectures",
+  "3d-neuromorphic-architectures-with-conditional-computing-in-large-models": "3D neuromorphic architectures with conditional computing in large models",
+  "conditional-computing-in-large-models": "Conditional computing in large models",
+  "leveraging-device-randomness": "Leveraging device randomness for efficient random number generation in probabilistic algorithms",
+  "memristor-arrays-for-vector-matrix-multiplications": "Memristor arrays for vector-matrix multiplications",
+  "mimicking-neural-structures-with-integrated-memory-and-processing-in-memory-computing": "Mimicking neural structures w/ integrated memory and processing (in-memory computing)",
+  "modeling-gray-and-white-matter-of-the-brain-in-compute": "Modeling gray and white matter of the brain in compute",
+  "neuromorphic-chips": "Neuromorphic Chips",
+  "real-time-training-of-ai-models-on-edge-devices": "Real-time training of AI models on edge devices",
+  "reduction-of-data-movement-latency-power-use-compared-to-GPUs": "Reduction of data movement, latency & power use compared to GPUs",
+  "scaling-computing-to-brain-like-efficiency-with-sparse-connectivity": "Scaling computing to brain-like efficiency with sparse connectivity"
 }
