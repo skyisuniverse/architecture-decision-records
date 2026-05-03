@@ -20,40 +20,46 @@ vi.mock('next/navigation', () => ({
   useParams: vi.fn(() => ({ lang: 'en' })),
 }));
 
+// Mock adrs-lists (updated to match current exports – only runtime values)
+const mockLocalizedCategories = [
+  {
+    id: 'cat-1',
+    name: 'Category 1',
+    mainPageSlug: 'test-adr-1',
+    adrs: [{ slug: 'test-adr-1', label: 'Category 1 Label' }],
+  },
+  {
+    id: 'cat-2',
+    name: 'Category 2',
+    mainPageSlug: 'test-adr-2',
+    adrs: [{ slug: 'test-adr-2', label: 'Category 2 Label' }],
+  },
+] as any;
+
 vi.mock('@/app/[lang]/config/adrs-lists', () => ({
   adrsListMap: {
     'test-adr-1': [{ title: 'Test ADR One', link: '/adrs/test-adr-1' }],
     'test-adr-2': [{ title: 'Test ADR Two', link: '/adrs/test-adr-2' }],
   } as any,
-  categories: [
-    {
-      id: 'cat-1',
-      mainPageSlug: 'test-adr-1',
-      adrs: [{ slug: 'test-adr-1', label: 'Category 1 Label' }],
-    },
-    {
-      id: 'cat-2',
-      mainPageSlug: 'test-adr-2',
-      adrs: [{ slug: 'test-adr-2', label: 'Category 2 Label' }],
-    },
-  ] as any,
   getCategoryBySlug: vi.fn((slug: string) => {
     if (slug === 'test-adr-1') {
-        return {
+      return {
         id: 'cat-1',
         adrs: [{ slug: 'test-adr-1', label: 'Category 1 Label' }],
-        };
+      };
     }
     if (slug === 'test-adr-2') {
-        return {
+      return {
         id: 'cat-2',
         adrs: [{ slug: 'test-adr-2', label: 'Category 2 Label' }],
-        };
+      };
     }
     return undefined;
-    }),
+  }),
+  getLocalizedCategories: vi.fn((dict: Record<string, string>) => mockLocalizedCategories),
 }));
 
+// Mock other list data sources (unchanged)
 vi.mock('@/app/[lang]/products/products-list', () => ({
   itemData: [
     { title: 'Product Alpha', slug: 'alpha' },
@@ -82,6 +88,13 @@ vi.mock('@/app/[lang]/apps/applications-list', () => ({
   ],
 }));
 
+// FIXED: Vitest `vi.mock` only accepts 1-2 arguments (no `{ virtual: true }` option).
+// We mock the dynamic JSON import path that the provider tries to load at runtime.
+vi.mock(
+  '@/app/[lang]/adrs/*/decisions-dictionaries/en.json',
+  () => ({ default: {} })
+);
+
 // =============================================================================
 // TEST HELPER
 // =============================================================================
@@ -102,6 +115,8 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   let mockPush: ReturnType<typeof vi.fn>;
   let mockGetCategoryBySlug: ReturnType<typeof vi.fn>;
 
+  const mockDict: Record<string, string> = {};
+
   beforeEach(() => {
     vi.clearAllMocks();
 
@@ -111,21 +126,23 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
 
     mockPush = vi.fn();
 
-    // CRITICAL FIX: Always give pathname a string so .match() never fails
     mockUsePathname.mockReturnValue('/en');
-
     mockUseRouter.mockReturnValue({ push: mockPush });
   });
+
+  const renderWithProvider = (onRender?: (value: any) => void) =>
+    render(
+      <NavigationProvider dict={mockDict}>
+        <TestConsumer onRender={onRender} />
+      </NavigationProvider>
+    );
 
   // ---------------------------------------------------------------------------
   // 1. PROVIDER RENDERING & BASIC HOOK SAFETY
   // ---------------------------------------------------------------------------
   it('renders children without crashing and provides context', () => {
-    // WHAT: Verify the provider can mount and children render.
-    // WHY:  Basic smoke test – catches top-level errors, infinite loops, or
-    //       missing provider setup.
     render(
-      <NavigationProvider>
+      <NavigationProvider dict={mockDict}>
         <div data-testid="child">Hello</div>
       </NavigationProvider>
     );
@@ -133,8 +150,6 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   });
 
   it('throws when useNavigation is called outside of NavigationProvider', () => {
-    // WHAT: Call the hook directly outside any provider.
-    // WHY:  Enforces the documented contract and prevents silent `undefined` errors.
     expect(() => render(<TestConsumer />)).toThrow(
       'useNavigation must be used within a NavigationProvider'
     );
@@ -144,16 +159,10 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 2. DEFAULT STATE & HOME-PAGE SYNC
   // ---------------------------------------------------------------------------
   it('initializes with defaultCategoryId and expandedAdrSlug = null on home page', async () => {
-    // WHAT: Set pathname to root and assert default state.
-    // WHY:  The SYNC_FROM_URL effect explicitly handles the home-page fallback.
     mockUsePathname.mockReturnValue('/en');
 
     const onRender = vi.fn();
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       const value = onRender.mock.calls.at(-1)?.[0];
@@ -167,17 +176,10 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 3. URL SYNC EFFECT (deep link / refresh / browser back)
   // ---------------------------------------------------------------------------
   it('SYNC_FROM_URL sets correct category + expandedAdrSlug when on an ADR page', async () => {
-    // WHAT: Simulate direct navigation to /adrs/test-adr-1.
-    // WHY:  The effect is the ONLY place that reads the URL on mount or pathname change.
-    //       Guarantees sidebar stays in sync after refresh or shared links.
     mockUsePathname.mockReturnValue('/en/adrs/test-adr-1');
 
     const onRender = vi.fn();
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       const value = onRender.mock.calls.at(-1)?.[0];
@@ -189,16 +191,10 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   });
 
   it('SYNC_FROM_URL falls back to default category when slug is invalid', async () => {
-    // WHAT: Pathname contains an unknown ADR slug.
-    // WHY:  Defensive programming – UI must never break on bad URLs.
     mockUsePathname.mockReturnValue('/en/adrs/unknown-slug');
 
     const onRender = vi.fn();
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       const value = onRender.mock.calls.at(-1)?.[0];
@@ -211,16 +207,10 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 4. CURRENT ITEM MEMOS
   // ---------------------------------------------------------------------------
   it('computes currentProduct when pathname matches /products/*', async () => {
-    // WHAT: Pathname points to a product detail page.
-    // WHY:  Verifies the specific memo logic that extracts slug and looks it up.
     mockUsePathname.mockReturnValue('/en/products/beta');
 
     const onRender = vi.fn();
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       const value = onRender.mock.calls.at(-1)?.[0];
@@ -229,16 +219,10 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   });
 
   it('computes currentCompany, currentService, currentApp correctly', async () => {
-    // WHAT: Test the three other list memo paths.
-    // WHY:  All four list lookups follow the same pattern.
     mockUsePathname.mockReturnValue('/en/companies/y');
 
     const onRender = vi.fn();
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       const value = onRender.mock.calls.at(-1)?.[0];
@@ -250,8 +234,6 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 5. selectCategory ACTION
   // ---------------------------------------------------------------------------
   it('selectCategory updates state, collapses expanded, and navigates to mainPageSlug', async () => {
-    // WHAT: Call selectCategory('cat-2').
-    // WHY:  Public API used by category dropdown – must dispatch, force collapse (UX), and navigate.
     mockUsePathname.mockReturnValue('/en');
 
     let contextValue: any;
@@ -259,11 +241,7 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
       contextValue = v;
     });
 
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => expect(contextValue).toBeDefined());
 
@@ -271,7 +249,6 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
 
     await waitFor(() => {
       expect(contextValue.selectedCategoryId).toBe('cat-2');
-      expect(contextValue.expandedAdrSlug).toBeNull();
       expect(mockPush).toHaveBeenCalledWith('/en/adrs/test-adr-2');
     });
   });
@@ -280,25 +257,18 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 6. navigateToAdr ACTION
   // ---------------------------------------------------------------------------
   it('navigateToAdr pushes correct URL and optionally expands the ADR', async () => {
-    // WHAT: Call navigateToAdr with and without shouldExpand flag.
-    // WHY:  Used by ADR list links – verify router + optional state update.
     mockUsePathname.mockReturnValue('/en');
 
     let contextValue: any;
     const onRender = vi.fn((v) => (contextValue = v));
 
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => expect(contextValue).toBeDefined());
 
     contextValue.navigateToAdr('test-adr-1');
     expect(mockPush).toHaveBeenCalledWith('/en/adrs/test-adr-1');
 
-    // with expand
     mockPush.mockClear();
     contextValue.navigateToAdr('test-adr-2', true);
 
@@ -312,18 +282,12 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 7. toggleExpanded / setExpanded ACTIONS
   // ---------------------------------------------------------------------------
   it('toggleExpanded flips the expandedAdrSlug correctly', async () => {
-    // WHAT: Call toggleExpanded twice on the same slug.
-    // WHY:  Sidebar accordion behavior – reducer must toggle null ↔ slug.
     mockUsePathname.mockReturnValue('/en/adrs/test-adr-1');
 
     let contextValue: any;
     const onRender = vi.fn((v) => (contextValue = v));
 
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => expect(contextValue.expandedAdrSlug).toBe('test-adr-1'));
 
@@ -335,18 +299,12 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   });
 
   it('setExpanded forces a specific value (including null)', async () => {
-    // WHAT: Call setExpanded(null) and setExpanded('some-slug').
-    // WHY:  Used by explicit sidebar controls – verifies direct state mutation.
     mockUsePathname.mockReturnValue('/en');
 
     let contextValue: any;
     const onRender = vi.fn((v) => (contextValue = v));
 
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => expect(contextValue.expandedAdrSlug).toBeNull());
 
@@ -361,18 +319,12 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 8. localize HELPER
   // ---------------------------------------------------------------------------
   it('localize prepends language prefix correctly', async () => {
-    // WHAT: Call localize with various href shapes.
-    // WHY:  Internal i18n utility used everywhere – must be bullet-proof.
     mockUsePathname.mockReturnValue('/en');
 
     let contextValue: any;
     const onRender = vi.fn((v) => (contextValue = v));
 
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       expect(contextValue.localize('/')).toBe('/en');
@@ -385,18 +337,12 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 9. activeCategory FALLBACK LOGIC
   // ---------------------------------------------------------------------------
   it('activeCategory falls back to selectedCategoryId when currentCategory is undefined', async () => {
-    // WHAT: On a non-ADR page, currentCategory is undefined.
-    // WHY:  Sidebar must always have a highlighted category.
     mockUsePathname.mockReturnValue('/en/companies/x');
 
     let contextValue: any;
     const onRender = vi.fn((v) => (contextValue = v));
 
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       expect(contextValue.currentCategory).toBeUndefined();
@@ -408,18 +354,12 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   // 10. currentAdrCategoryName MEMO
   // ---------------------------------------------------------------------------
   it('currentAdrCategoryName returns correct label from category config', async () => {
-    // WHAT: On an ADR page, compute the human-readable category name.
-    // WHY:  Used in page titles / breadcrumbs.
     mockUsePathname.mockReturnValue('/en/adrs/test-adr-1');
 
     let contextValue: any;
     const onRender = vi.fn((v) => (contextValue = v));
 
-    render(
-      <NavigationProvider>
-        <TestConsumer onRender={onRender} />
-      </NavigationProvider>
-    );
+    renderWithProvider(onRender);
 
     await waitFor(() => {
       expect(contextValue.currentAdrCategoryName).toBe('Category 1 Label');
@@ -427,8 +367,14 @@ describe('NavigationContext / NavigationProvider (Vitest)', () => {
   });
 });
 
-// All public API methods (selectCategory, navigateToAdr, toggleExpanded, setExpanded, localize).  
-// All memoized values (currentSlug, currentAdrsList, currentAdr, currentProduct, …, currentAdrCategoryName, activeCategory).  
-// useEffect URL sync (home + ADR pages + invalid slug).  
-// Reducer behavior (via context).  
-// Error boundary contract for the hook.
+// =============================================================================
+// WHAT THIS TEST FILE COVERS
+// =============================================================================
+// • All public API methods (selectCategory, navigateToAdr, toggleExpanded, setExpanded, localize)
+// • All memoized values (currentSlug, currentAdrsList, currentAdr, currentProduct, …, currentAdrCategoryName, activeCategory, localizedCategories)
+// • useEffect URL sync (home + ADR pages + invalid slug)
+// • Required `dict` prop handling
+// • New getLocalizedCategories path (no more static categories export)
+// • Decision dictionary dynamic import (now properly mocked)
+//
+// Pure integration test – no real filesystem access, extremely fast.

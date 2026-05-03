@@ -150,7 +150,7 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
         );
         breadcrumbItems.push(
           <Typography key="decision" color="text.primary">
-            {currentAdr.title}
+            {currentAdr.translationKey}
           </Typography>
         );
       } else {

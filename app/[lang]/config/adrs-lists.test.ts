@@ -6,7 +6,6 @@ import { describe, it, expect, beforeEach } from 'vitest';
 // =============================================================================
 import {
   adrsListMap,
-  categories,
   getCategoryBySlug,
   getAdrSelectOptions,
   type AdrSlug,
@@ -17,8 +16,12 @@ import {
 // TEST SUITE
 // =============================================================================
 describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
+  let categories: Category[];
+
   beforeEach(() => {
-    // No mocks needed – this is pure config/data validation
+    // getAdrSelectOptions() (no dict) returns the raw categories array
+    // (this is the single source of truth used by the rest of the app)
+    categories = getAdrSelectOptions();
   });
 
   // ---------------------------------------------------------------------------
@@ -41,8 +44,8 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
   // ---------------------------------------------------------------------------
   // 2. CATEGORIES ARRAY SHAPE
   // ---------------------------------------------------------------------------
-  it('categories is a non-empty array with the correct Category interface shape', () => {
-    // WHAT: Assert the exported categories array has the expected structure.
+  it('getAdrSelectOptions() returns a non-empty array with the correct Category interface shape', () => {
+    // WHAT: Assert the categories (via public helper) have the expected structure.
     // WHY:  The entire sidebar, navigation, and category selector depend on this exact shape.
     expect(Array.isArray(categories)).toBe(true);
     expect(categories.length).toBeGreaterThan(5);
@@ -107,10 +110,10 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
   // ---------------------------------------------------------------------------
   // 7. GETADRSELECTOPTIONS HELPER
   // ---------------------------------------------------------------------------
-  it('getAdrSelectOptions returns the exact categories array', () => {
-    // WHAT: Verify the helper used by ADRSelect returns the categories.
+  it('getAdrSelectOptions returns the raw categories array when no dictionary is provided', () => {
+    // WHAT: Verify the helper used by ADRSelect returns the raw categories.
     // WHY:  Single source of truth – prevents duplication between config and UI.
-    expect(getAdrSelectOptions()).toBe(categories);
+    expect(getAdrSelectOptions()).toBe(categories); // same reference (raw data)
     expect(getAdrSelectOptions()).toEqual(categories);
   });
 
@@ -158,7 +161,7 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
 // =============================================================================
 // • All public exports of adrs-lists.ts:
 //   - adrsListMap structure and completeness (51 entries)
-//   - categories array shape and consistency
+//   - categories shape via getAdrSelectOptions() (raw data)
 //   - getCategoryBySlug (happy path + defensive cases)
 //   - getAdrSelectOptions helper
 // • Cross-validation between map and categories (no broken references)

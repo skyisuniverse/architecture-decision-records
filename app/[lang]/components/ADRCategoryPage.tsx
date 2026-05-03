@@ -38,7 +38,7 @@ const ADRCard = ({
 
   const localizedLink = getLocalizedHref(link);
 
-  const translatedTitle = dict[titleKey];
+  const translatedTitle = dict[titleKey] ?? titleKey;  // ← use the key to get the translated title
 
   return (
     <Link
@@ -182,7 +182,7 @@ export function ADRCategoryPage({
         {adrsList.map((adr: ADRItem) => (
           <Grid size={{ xs: 12, sm: 6, md: 4 }} key={adr.link}>
             <ADRCard
-              titleKey={adr.title}
+              titleKey={adr.translationKey}
               date={adr.date}
               status={adr.status}
               link={adr.link}

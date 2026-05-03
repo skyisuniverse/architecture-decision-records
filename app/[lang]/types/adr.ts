@@ -10,7 +10,7 @@ export const ADR_STATUSES = [
 export type AdrStatus = (typeof ADR_STATUSES)[number];
 
 export type ADRItem = {
-  title: string;
+  translationKey: string;
   description?: string;
   date: string;
   link: string;

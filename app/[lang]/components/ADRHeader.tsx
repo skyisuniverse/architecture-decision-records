@@ -16,7 +16,7 @@ export const ADRHeader = () => {
     <Box sx={{ mb: 4 }}>
       {/* Title on its own line */}
       <Typography variant="h4" component="h1" gutterBottom>
-        {currentAdr.title}
+        {currentAdr.translationKey}
       </Typography>
 
       {/* Status + Date on a separate line, side by side */}

@@ -152,7 +152,7 @@ export default function ResponsiveDrawer(props: Props) {
                   {decisions.map((decision: ADRItem) => {
                     const localizedHref = getLocalizedHref(decision.link);
 
-                    const translatedTitle = decisionDict[decision.title] ?? decision.title;
+                    const translatedTitle = decisionDict[decision.translationKey] ?? decision.translationKey;  // Fallback to key if translation is missing
 
                     return (
                       <ListItemButton

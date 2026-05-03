@@ -2,17 +2,30 @@ import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
 import StarshipImage from './starship.jpg';
 import { EngineeringSimulationToolAdrsList } from './simulation-tool-adrs-list';
 import MuiNextLink from '@/app/[lang]/components/MuiNextLink';
+import { getDictionary } from '@/get-dictionary';
+import type { Locale } from '@/i18n-config';
 
-export default async function Page() {
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+
+  const globalDict = await getDictionary(lang);
+
+  // Load colocated dictionary
+  let decisionDict: Record<string, string> = {};
+  try {
+    const module = await import(`./decisions-dictionaries/${lang}.json`);
+    decisionDict = module.default || module;
+  } catch (err) {
+    console.warn('Could not load colocated decision dictionary');
+  }
+
+  // Merge both into ONE dict (this eliminates all the double-passing)
+  const dict = { ...globalDict, ...decisionDict };
+
   return (
     <ADRCategoryPage
-      title="Engineering Simulation Tool ADR"
-      publishedDate="Published April 2026"
-      // description="
-      //   Develop a simulation tool with realistic physics, 
-      //   for simulations of a 3D-object across multiple domains (physics, 
-      //   chemistry, etc).
-      //   "
+      title={globalDict['engineering-simulation-tool-adr'] ?? 'Engineering Simulation Tool ADR'}
+      publishedDate={globalDict['engineering-simulation-tool-adr.published'] ?? 'Published April 2026'}
       description={
         <>
           Can be integrated with: {' '}
@@ -27,9 +40,7 @@ export default async function Page() {
       }
       imageSrc={StarshipImage}
       adrsList={EngineeringSimulationToolAdrsList}
-      // children slot is available here if you want to insert anything between description and ADR list
-      // Example usage:
-      // children={<YourCustomComponentOrMarkdown />}
+      dict={dict}                    // ← single dict now
     />
   );
 }

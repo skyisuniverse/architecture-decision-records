@@ -11,12 +11,25 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   const { lang } = await params;
-  // const dict = await getDictionary(lang);   // ← ready for future i18n
+
+  const globalDict = await getDictionary(lang);
+
+  // Load colocated dictionary
+  let decisionDict: Record<string, string> = {};
+  try {
+    const module = await import(`./decisions-dictionaries/${lang}.json`);
+    decisionDict = module.default || module;
+  } catch (err) {
+    console.warn('Could not load colocated decision dictionary');
+  }
+
+  // Merge both into ONE dict (this eliminates all the double-passing)
+  const dict = { ...globalDict, ...decisionDict };
 
   return (
     <ADRCategoryPage
-      title="Generic R&D Center ADR"
-      publishedDate="Published April 2026"
+      title={globalDict['generic-r-and-d-center-adr'] ?? 'Generic R&D Center ADR'}
+      publishedDate={globalDict['generic-r-and-d-center-adr.published'] ?? 'Published April 2026'}
       description={
         <>
           This page is dedicated for architecture decisions &amp; technologies that
@@ -36,8 +49,7 @@ export default async function Page({ params }: Props) {
         </>
       }
       adrsList={GenericRandDCenterAdrsList}
-      // children slot is available here if you want to insert anything between
-      // description and ADR list
+      dict={dict}                    // ← single dict now
     />
   );
 }

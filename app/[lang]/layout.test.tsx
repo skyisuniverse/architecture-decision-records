@@ -21,9 +21,12 @@ vi.mock('@/i18n-config', () => ({
   },
 }));
 
-// Mock the dictionary module (even though layout doesn't use it)
-// This prevents the require('@/get-dictionary') in test #8 from failing
-const mockGetDictionary = vi.fn();
+// Mock getDictionary – the layout now calls it (passes dict to ClientRootLayout)
+const mockGetDictionary = vi.fn(async (locale: Locale) => ({
+  // Minimal dictionary shape expected by ClientRootLayout + NavigationProvider
+  navigation: { title: 'Navigation' },
+  common: { hello: 'Hello' },
+}));
 vi.mock('@/get-dictionary', () => ({
   getDictionary: mockGetDictionary,
 }));
@@ -57,9 +60,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 1. GENERATE STATIC PARAMS
   // ---------------------------------------------------------------------------
   it('generateStaticParams returns an array for every supported locale', async () => {
-    // WHAT: Call the static generateStaticParams function exported by the layout.
-    // WHY:  Next.js App Router uses this to pre-generate static pages for each language
-    //       at build time. Must return the exact shape expected by the framework.
     const { generateStaticParams } = await loadLayout();
     const params = await generateStaticParams();
 
@@ -75,9 +75,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 2. BASIC RENDERING & SMOKE TEST
   // ---------------------------------------------------------------------------
   it('renders without crashing and wraps children with ClientRootLayout', async () => {
-    // WHAT: Render the layout with a simple child and assert the full tree exists.
-    // WHY:  Basic smoke test – catches top-level errors, missing async params handling,
-    //       or issues with the html/body structure in a server component.
     const { RootLayout } = await loadLayout();
     const params = Promise.resolve({ lang: 'en' as Locale });
 
@@ -96,9 +93,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 3. HTML LANG ATTRIBUTE
   // ---------------------------------------------------------------------------
   it('sets the correct lang attribute on the <html> tag from awaited params', async () => {
-    // WHAT: Verify <html lang={lang}> uses the value extracted from the params Promise.
-    // WHY:  Critical for accessibility, SEO, and i18n – screen readers and search engines
-    //       rely on the correct language declaration at the document root.
     const { RootLayout } = await loadLayout();
     const params = Promise.resolve({ lang: 'de' as Locale });
 
@@ -112,9 +106,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 4. ASYNC PARAMS HANDLING (Next.js 15+ contract)
   // ---------------------------------------------------------------------------
   it('correctly awaits the params Promise before using lang', async () => {
-    // WHAT: Pass a pending Promise for params and ensure the layout awaits it.
-    // WHY:  Next.js 15+ makes params a Promise in server components/layouts for
-    //       streaming and dynamic rendering support. Failing to await would break the page.
     const { RootLayout } = await loadLayout();
     const params = Promise.resolve({ lang: 'fr' as Locale });
 
@@ -128,8 +119,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 5. LOCALE AGNOSTIC BEHAVIOR – ENGLISH
   // ---------------------------------------------------------------------------
   it('renders correctly for English (en)', async () => {
-    // WHAT: Render layout with lang='en' and confirm lang attribute and child wrapper.
-    // WHY:  English is the default locale – must work as the baseline for all testing.
     const { RootLayout } = await loadLayout();
     const params = Promise.resolve({ lang: 'en' as Locale });
 
@@ -148,8 +137,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 6. LOCALE AGNOSTIC BEHAVIOR – GERMAN
   // ---------------------------------------------------------------------------
   it('renders correctly for German (de)', async () => {
-    // WHAT: Render layout with lang='de' and confirm lang attribute and child wrapper.
-    // WHY:  Verifies the layout behaves identically for non-default locales (i18n parity).
     const { RootLayout } = await loadLayout();
     const params = Promise.resolve({ lang: 'de' as Locale });
 
@@ -168,9 +155,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 7. CLIENT ROOT LAYOUT PROP PASSING
   // ---------------------------------------------------------------------------
   it('passes children unchanged to the mocked ClientRootLayout', async () => {
-    // WHAT: Render the layout and verify that children appear inside the mocked ClientRootLayout wrapper.
-    // WHY:  The layout’s only job is to delegate the entire page tree to ClientRootLayout.
-    //       This test confirms children are not dropped or transformed.
     const { RootLayout } = await loadLayout();
 
     const params = Promise.resolve({ lang: 'en' as Locale });
@@ -185,27 +169,25 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   });
 
   // ---------------------------------------------------------------------------
-  // 8. NO UNEXPECTED SIDE EFFECTS
+  // 8. DICTIONARY LOOKUP (UPDATED – layout now calls it)
   // ---------------------------------------------------------------------------
-  it('does not call any external services or dictionaries', async () => {
-    // WHAT: Ensure the layout performs no dictionary lookup or async data fetching.
-    // WHY:  Layouts should stay lightweight. Any hidden side effects would hurt
-    //       performance and make static generation impossible.
+  it('calls getDictionary exactly once with the resolved locale', async () => {
+    // WHAT: The RootLayout now awaits getDictionary(locale) and passes `dict`
+    //       to ClientRootLayout. This test verifies the expected call.
+    // WHY:  Dictionary is required for i18n in ClientRootLayout/NavigationProvider.
     const { RootLayout } = await loadLayout();
     const params = Promise.resolve({ lang: 'en' as Locale });
 
     await RootLayout({ children: <div />, params });
 
-    // Dictionary mock should never have been called
-    expect(mockGetDictionary).not.toHaveBeenCalled();
+    expect(mockGetDictionary).toHaveBeenCalledTimes(1);
+    expect(mockGetDictionary).toHaveBeenCalledWith('en');
   });
 
   // ---------------------------------------------------------------------------
   // 9. TYPE SAFETY CONTRACT
   // ---------------------------------------------------------------------------
   it('accepts the correct TypeScript shape for params (Promise<{ lang: Locale }>)', async () => {
-    // WHAT: Verify the layout function signature matches Next.js expectations.
-    // WHY:  Ensures future refactors or Next.js upgrades won’t break the component.
     const { RootLayout } = await loadLayout();
 
     const params = Promise.resolve({ lang: 'fr' as Locale });
@@ -216,8 +198,6 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
   // 10. FULL RENDER PATH (html → body → ClientRootLayout)
   // ---------------------------------------------------------------------------
   it('produces the complete document structure (html > body > ClientRootLayout)', async () => {
-    // WHAT: Render the full layout and inspect the outermost DOM nodes.
-    // WHY:  Guarantees the exact hierarchy required by Next.js and browsers.
     const { RootLayout } = await loadLayout();
     const params = Promise.resolve({ lang: 'en' as Locale });
 
@@ -243,8 +223,8 @@ describe('RootLayout (app/[lang]/layout.tsx) (Vitest)', () => {
 //   - generateStaticParams for static generation of every locale
 //   - Proper <html lang={lang}> and <body> structure
 //   - Clean delegation of children to ClientRootLayout
+//   - Correct call to getDictionary(locale) (new behavior)
 // • Locale-agnostic behavior across all supported languages
-// • No side effects or hidden dictionary calls
 // • TypeScript contract safety for the params prop
 //
 // Uses Vitest + React Testing Library for fast, isolated, realistic server-component testing.
