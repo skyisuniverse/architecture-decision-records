@@ -25,6 +25,7 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
     currentCompany,
     currentService,
     currentApp,
+    decisionDict
   } = useNavigation();
 
   const getLocalizedHref = (href: string): string => {
@@ -128,7 +129,7 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
   if (!isNonADRSection && activeCategory) {
     breadcrumbItems.push(
       <Typography key="adr-group" color="text.primary">
-        {dict[activeCategory.name] ?? activeCategory.name}   {/* ← FIXED */}
+        {dict[activeCategory.name] ?? activeCategory.name}
       </Typography>
     );
 
@@ -150,7 +151,7 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
         );
         breadcrumbItems.push(
           <Typography key="decision" color="text.primary">
-            {currentAdr.translationKey}
+            {decisionDict[currentAdr.translationKey] ?? currentAdr.translationKey}
           </Typography>
         );
       } else {

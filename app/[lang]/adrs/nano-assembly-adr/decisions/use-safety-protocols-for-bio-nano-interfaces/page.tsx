@@ -19,15 +19,7 @@ export default async function Page() {
                 </Typography>
 
                 <Typography variant="h6" sx={{ marginBottom: 2 }}>
-                    7. Bio-Nano Interfaces and Safety
-                </Typography>
-
-                <Typography sx={{ marginBottom: 2 }}>
-                    While not core to Starship, these ensure viability.
-                </Typography>
-
-                <Typography sx={{ marginBottom: 2 }}>
-                    - Safety Protocols: Prevent "gray goo" scenarios. Breakthrough: Intrinsic kill switches and containment fields in nanobots.
+                    7. Bio-Nano Interfaces
                 </Typography>
             </Box>
         </>
