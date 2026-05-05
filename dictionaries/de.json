@@ -1,7 +1,4 @@
 {
-  "title": "Markdown Architectural Decision Records verwenden",
-  "contextTitle": "Kontext und Problemstellung",
-  "description": "Wir möchten die architektonischen Entscheidungen in diesem Projekt aufzeichnen.",
   "companies": "Unternehmen",
   "services": "Dienstleistungen",
   "products": "Produkte",
@@ -9,6 +6,18 @@
   "products.subtitle": "Entdecken Sie unsere bahnbrechenden Technologien",
   "services.subtitle": "Entdecken Sie unsere Dienstleistungen",
   "applications.subtitle": "Entdecken Sie unsere Anwendungen",
+
+  "title": "Architektur-Entscheidungsprotokolle",
+  "welcome": "Willkommen bei den Architekturentscheidungsprotokollen des Forschungs- und Entwicklungszentrums. Hier finden Sie die Architekturentscheidungsprotokolle (ADR) des Projekts.",
+  "definition-title": "Begriffsbestimmung und Zweck",
+  "definition-description": "Eine Architekturentscheidung ist eine Designentscheidung, die eine funktionale oder nicht-funktionale Anforderung berücksichtigt, die für die Architektur von Bedeutung ist. Ein Architekturentscheidungsprotokoll (ADR) beschreibt eine einzelne Architekturentscheidung; die Gesamtheit der in einem Projekt erstellten und gepflegten ADRs bildet das Entscheidungsprotokoll des Projekts.",
+  "definition-description-2": "Sie können sich mit dem Aufbau des Projekts vertraut machen, indem Sie das Entscheidungsprotokoll in chronologischer Reihenfolge durchlesen. Darüber hinaus verfolgt die Pflege dieser Dokumentation folgende Ziele:",
+  "purpose-1": "Die Begründung des Designs leicht zugänglich machen",
+  "purpose-2": "die Erleichterung besserer Designentscheidungen",
+  "purpose-3": "die Verbesserung und Beschleunigung der Einarbeitung neuer Teammitglieder",
+  "purpose-4": "die Vermeidung einer blinden Übernahme/Rücknahme einer früheren Entscheidung",
+  "purpose-5": "die Formalisierung des Entscheidungsprozesses des Teams",
+  "purpose-6": "die Bereitstellung wertvoller Inputs für KI-Automatisierungszwecke",
 
   "category.rd-center": "F&E-Zentrum ADRs",
   "category.spacex-falcon": "SpaceX Falcon ADRs",

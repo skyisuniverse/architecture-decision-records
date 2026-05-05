@@ -1,7 +1,4 @@
 {
-  "title": "Use Markdown Architectural Decision Records",
-  "contextTitle": "Context and Problem Statement",
-  "description": "We want to record architectural decisions made in this project.",
   "companies": "Companies",
   "services": "Services",
   "products": "Products",
@@ -9,6 +6,18 @@
   "products.subtitle": "Explore our breakthrough technologies",
   "services.subtitle": "Explore our services",
   "applications.subtitle": "Explore our applications",
+
+  "title": "Architecture Decision Records",
+  "welcome": "Welcome to the Architecture Decision Records of the R&D Center. Here you can find Architecture Decision Records (ADR) of the project.",
+  "definition-title": "Definition and purpose",
+  "definition-description": "An Architecture Decision is a design choice that addresses a functional or non-functional requirement that is architecturally significant. An Architecture Decision Record (ADR) describes a single Architecture Decision; the collection of ADRs created and maintained in a project constitutes its decision log.",
+  "definition-description-2": "You can become familiar with the design of the project by reading its decision log in chronological order. Moreover, maintaining this documentation aims at:",
+  "purpose-1": "Making reasoning about design easily accessible",
+  "purpose-2": "Making better design choices easier",
+  "purpose-3": "Improving and speeding up the onboarding of new team members",
+  "purpose-4": "Avoiding blind acceptance/reversal of a past decision",
+  "purpose-5": "Formalizing the decision process of the team",
+  "purpose-6": "Serving as a valuable input for AI for automation purposes",
 
   "category.rd-center": "R&D Center ADRs",
   "category.spacex-falcon": "SpaceX Falcon ADRs",
