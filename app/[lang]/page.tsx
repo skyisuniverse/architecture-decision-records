@@ -24,8 +24,8 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             md: 'h2',   // h2 on desktop and up (md = 900px+)
           },
           fontWeight: {
-            xs: 100,     // lighter on mobile (optional)
-            md: 100,     // very thin on desktop
+            xs: 100,
+            md: 100,
           },
         }}
         gutterBottom

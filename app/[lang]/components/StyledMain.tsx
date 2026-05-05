@@ -10,6 +10,12 @@ export const StyledMain = styled('main', {
 }>(({ theme, open }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
+  // Responsive bottom padding to fix overlap with bottom nav on mobile
+  paddingBottom: theme.spacing(2),           // default
+
+  [theme.breakpoints.down('sm')]: {          // Only on mobile (xs)
+    paddingBottom: '70px',                   // Adjust this value based on your bottom nav height
+  },
   marginLeft: 0,
 
   [theme.breakpoints.up('sm')]: {
