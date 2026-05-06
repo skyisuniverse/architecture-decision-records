@@ -17,6 +17,20 @@ vi.mock('@/get-dictionary', () => ({
   getDictionary: mockGetDictionary,
 }));
 
+// ←←← ADD THIS MOCK FOR NEXT/IMAGE ←←←
+vi.mock('next/image', () => ({
+  default: ({ src, alt, ...props }: any) => {
+    // Handle both static import object and string src
+    const srcStr =
+      typeof src === 'string'
+        ? src
+        : src?.src ?? src?.default?.src ?? '/placeholder.jpg';
+    
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={srcStr} alt={alt || ''} {...props} data-testid="adr-logo" />;
+  },
+}));
+
 // =============================================================================
 // TEST SUITE
 // =============================================================================
@@ -37,8 +51,16 @@ describe('Home Page (app/[lang]/page.tsx) (Vitest)', () => {
   it('renders children inside a Box without crashing', async () => {
     const mockDict = {
       title: 'Test Title',
-      contextTitle: 'Test Context',
-      description: 'Test Description',
+      welcome: 'Welcome text here',
+      'definition-title': 'Definition Title',
+      'definition-description': 'First description paragraph',
+      'definition-description-2': 'Second description paragraph',
+      'purpose-1': 'Purpose one',
+      'purpose-2': 'Purpose two',
+      'purpose-3': 'Purpose three',
+      'purpose-4': 'Purpose four',
+      'purpose-5': 'Purpose five',
+      'purpose-6': 'Purpose six',
     };
     mockGetDictionary.mockResolvedValue(mockDict);
 
@@ -53,12 +75,21 @@ describe('Home Page (app/[lang]/page.tsx) (Vitest)', () => {
   // ---------------------------------------------------------------------------
   // 2. DICTIONARY CONTENT RENDERING
   // ---------------------------------------------------------------------------
-  it('renders the title, contextTitle, and description from the dictionary', async () => {
+  it('renders all dictionary content correctly', async () => {
     const mockDict = {
-      title: 'Home Title',
-      contextTitle: 'Context Section',
-      description: 'Full page description text here.',
+      title: 'Architecture Decision Records',
+      welcome: 'Welcome to the ADR documentation',
+      'definition-title': 'What is an ADR?',
+      'definition-description': 'An Architecture Decision Record...',
+      'definition-description-2': 'Second paragraph of definition.',
+      'purpose-1': 'Capture important decisions',
+      'purpose-2': 'Document design rationale',
+      'purpose-3': 'Facilitate team communication',
+      'purpose-4': 'Support knowledge sharing',
+      'purpose-5': 'Maintain architectural consistency',
+      'purpose-6': 'Track decision evolution',
     };
+
     mockGetDictionary.mockResolvedValue(mockDict);
 
     const params = Promise.resolve({ lang: 'en' as Locale });
@@ -67,8 +98,12 @@ describe('Home Page (app/[lang]/page.tsx) (Vitest)', () => {
     render(page);
 
     expect(screen.getByText(mockDict.title)).toBeInTheDocument();
-    expect(screen.getByText(mockDict.contextTitle)).toBeInTheDocument();
-    expect(screen.getByText(mockDict.description)).toBeInTheDocument();
+    expect(screen.getByText(mockDict.welcome)).toBeInTheDocument();
+    expect(screen.getByText(mockDict['definition-title'])).toBeInTheDocument();
+    expect(screen.getByText(mockDict['definition-description'])).toBeInTheDocument();
+    expect(screen.getByText(mockDict['definition-description-2'])).toBeInTheDocument();
+    expect(screen.getByText(mockDict['purpose-1'])).toBeInTheDocument();
+    expect(screen.getByText(mockDict['purpose-6'])).toBeInTheDocument();
   });
 
   // ---------------------------------------------------------------------------
@@ -80,8 +115,16 @@ describe('Home Page (app/[lang]/page.tsx) (Vitest)', () => {
 
     mockGetDictionary.mockResolvedValue({
       title: 'a',
-      contextTitle: 'b',
-      description: 'c',
+      welcome: 'b',
+      'definition-title': 'c',
+      'definition-description': 'd',
+      'definition-description-2': 'e',
+      'purpose-1': 'f',
+      'purpose-2': 'g',
+      'purpose-3': 'h',
+      'purpose-4': 'i',
+      'purpose-5': 'j',
+      'purpose-6': 'k',
     });
 
     await loadHome(params);
@@ -93,12 +136,21 @@ describe('Home Page (app/[lang]/page.tsx) (Vitest)', () => {
   // ---------------------------------------------------------------------------
   // 4. LOCALE AGNOSTIC BEHAVIOR
   // ---------------------------------------------------------------------------
-  it('handles different locales correctly (German)', async () => {
+  it('handles German locale correctly', async () => {
     const mockDictDe = {
-      title: 'Startseite',
-      contextTitle: 'Kontext',
-      description: 'Vollständige Seitenbeschreibung auf Deutsch.',
+      title: 'Architektur Entscheidungsprotokolle',
+      welcome: 'Willkommen bei ADR',
+      'definition-title': 'Was ist ein ADR?',
+      'definition-description': 'Erster Absatz auf Deutsch.',
+      'definition-description-2': 'Zweiter Absatz auf Deutsch.',
+      'purpose-1': 'Wichtige Entscheidungen erfassen',
+      'purpose-2': 'Designbegründung dokumentieren',
+      'purpose-3': 'Teamkommunikation fördern',
+      'purpose-4': 'Wissensaustausch unterstützen',
+      'purpose-5': 'Architektonische Konsistenz wahren',
+      'purpose-6': 'Entwicklungsverlauf nachverfolgen',
     };
+
     mockGetDictionary.mockResolvedValue(mockDictDe);
 
     const params = Promise.resolve({ lang: 'de' as Locale });
@@ -106,9 +158,8 @@ describe('Home Page (app/[lang]/page.tsx) (Vitest)', () => {
 
     render(page);
 
-    expect(screen.getByText('Startseite')).toBeInTheDocument();
-    expect(screen.getByText('Kontext')).toBeInTheDocument();
-    expect(screen.getByText('Vollständige Seitenbeschreibung auf Deutsch.')).toBeInTheDocument();
+    expect(screen.getByText('Architektur Entscheidungsprotokolle')).toBeInTheDocument();
+    expect(screen.getByText('Willkommen bei ADR')).toBeInTheDocument();
   });
 });
 

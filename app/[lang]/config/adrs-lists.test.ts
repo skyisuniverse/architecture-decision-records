@@ -30,7 +30,7 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
   it('adrsListMap contains all expected keys and non-empty values', () => {
     // WHAT: Verify the map has every slug referenced by categories.
     // WHY:  This is the single source of truth for all ADR data. Missing entries break navigation and sidebar.
-    expect(Object.keys(adrsListMap)).toHaveLength(51); // Updated: now includes 'optimus-adr'
+    expect(Object.keys(adrsListMap)).toHaveLength(52); // Updated: now includes 'optimus-adr'
 
     expect(adrsListMap['nano-assembly-adr']).toBeDefined();
     expect(adrsListMap['terraforming-mars-adr']).toBeDefined();
@@ -38,7 +38,8 @@ describe('adrs-lists config (app/[lang]/config/adrs-lists.ts)', () => {
     expect(adrsListMap['superluminal-effective-warp-drive-adr']).toBeDefined();
     // Clean key (no % characters) after folder rename
     expect(adrsListMap['faster-factories-with-optimus-semi-cybercab-adr']).toBeDefined();
-    expect(adrsListMap['optimus-adr']).toBeDefined(); // ← new entry
+    expect(adrsListMap['optimus-adr']).toBeDefined();
+    expect(adrsListMap['open-source-cnc-machine-adr']).toBeDefined();
   });
 
   // ---------------------------------------------------------------------------
