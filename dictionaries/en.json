@@ -226,6 +226,7 @@
   "solar-powered-tesla-adr": "Solar-powered Tesla ADR",
   "tesla-automated-with-optimi-adr": "Tesla automated with Optimi ADR",
   "optimus-adr": "Optimus ADR",
+  "open-source-cnc-machine-adr": "Open Source CNC Machine ADR",
   "alternative-hardware-for-ai-training-adr": "Alternative hardware for AI Training ADR",
   "neuromorphic-computing-adr": "Neuromorphic Computing ADR",
   "photonic-computing-adr": "Photonic Computing ADR",

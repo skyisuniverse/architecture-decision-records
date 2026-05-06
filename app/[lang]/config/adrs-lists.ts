@@ -51,6 +51,7 @@ import { AutomatedDesignManufacturingPipelineAdrsList } from '../adrs/automated-
 import { WarpDriveWithoutNegativeEnergyAdrsList } from '../adrs/warp-drive-without-negative-energy-adr/warp-drive-without-negative-energy-adrs-list';
 import { SuperluminalEffectiveWarpDriveAdrsList } from '../adrs/superluminal-effective-warp-drive-adr/superluminal-effective-warp-drive-adrs-list';
 import { OptimusAdrsList } from '../adrs/optimus-adr/optimus-adrs-list';
+import { OpenSourceCNCMachineAdrsList } from '../adrs/open-source-cnc-machine-adr/open-source-cnc-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
   'nano-assembly-adr': NanoassemblyAdrsList,
@@ -104,6 +105,7 @@ export const adrsListMap: Record<string, any> = {
   'warp-drive-without-negative-energy-adr': WarpDriveWithoutNegativeEnergyAdrsList,
   'superluminal-effective-warp-drive-adr': SuperluminalEffectiveWarpDriveAdrsList,
   'optimus-adr': OptimusAdrsList,
+  'open-source-cnc-machine-adr': OpenSourceCNCMachineAdrsList,
 } as const;
 
 export type AdrSlug = keyof typeof adrsListMap;
@@ -209,6 +211,7 @@ const rawCategories: Category[] = [
       { slug: 'solar-powered-tesla-adr', label: 'solar-powered-tesla-adr' },
       { slug: 'tesla-automated-with-optimi-adr', label: 'tesla-automated-with-optimi-adr' },
       { slug: 'optimus-adr', label: 'optimus-adr' },
+      { slug: 'open-source-cnc-machine-adr', label: 'open-source-cnc-machine-adr' },
     ],
   },
   {

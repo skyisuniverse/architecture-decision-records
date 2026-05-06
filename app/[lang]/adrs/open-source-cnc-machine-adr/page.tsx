@@ -1,0 +1,32 @@
+import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
+import { OpenSourceCNCMachineAdrsList } from './open-source-cnc-adrs-list';
+import { getDictionary } from '@/get-dictionary';
+import type { Locale } from '@/i18n-config';
+
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+
+  const globalDict = await getDictionary(lang);
+
+  // Load colocated dictionary
+  let decisionDict: Record<string, string> = {};
+  try {
+    const module = await import(`./decisions-dictionaries/${lang}.json`);
+    decisionDict = module.default || module;
+  } catch (err) {
+    console.warn('Could not load colocated decision dictionary');
+  }
+
+  // Merge both into ONE dict (this eliminates all the double-passing)
+  const dict = { ...globalDict, ...decisionDict };
+
+  return (
+    <ADRCategoryPage
+      title={globalDict['open-source-cnc-machine-adr'] ?? 'Open Source CNC ADR'}
+      publishedDate={globalDict['open-source-cnc-adr.published'] ?? 'Published May 2026'}
+      description={<></>}
+      adrsList={OpenSourceCNCMachineAdrsList}
+      dict={dict}
+    />
+  );
+}

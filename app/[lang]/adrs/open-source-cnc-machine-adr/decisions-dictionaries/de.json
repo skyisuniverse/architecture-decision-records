@@ -1,0 +1,20 @@
+{
+  "use-cases": "Anwendungsfälle",
+  "axes-and-configuration": "Achsen und Konfiguration",
+  "work-envelope-travel": "Arbeitsraum/Verfahrwege",
+  "spindle": "Spindel",
+  "accuracy-and-repeatability": "Genauigkeit und Wiederholgenauigkeit",
+  "feed-rates-and-rigidity": "Vorschubgeschwindigkeiten und Steifigkeit",
+  "cooling": "Kühlung",
+  "hardware-software": "Hardware und Software",
+  "in-machine-measurement-zeroing": "In-Maschinen-Messung/Nullung",
+  "footprint-power": "Stellfläche/Leistungsaufnahme",
+  "cnc-lathe-parameters": "CNC-Drehmaschinen-Parameter",
+  "optimus-production": "Optimus-Produktion",
+  "machining-full-structural-skeleton": "Bearbeitung des vollständigen strukturellen Skeletts",
+  "precision-parts": "Präzise Gelenkgehäuse, Motorhalterungen, Getriebe-/Reduziergehäuse und Aktuator-Integrationspunkte",
+  "end-effectors": "Endeffektoren",
+  "hand-components": "Handkomponenten",
+  "fixtures-jigs-assembly-tooling": "Vorrichtungen, Lehren und Montagewerkzeuge für den Roboter",
+  "prototyping-iterations": "Prototypen-Iterationen"
+}
