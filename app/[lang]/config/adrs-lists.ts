@@ -51,7 +51,7 @@ import { AutomatedDesignManufacturingPipelineAdrsList } from '../adrs/automated-
 import { WarpDriveWithoutNegativeEnergyAdrsList } from '../adrs/warp-drive-without-negative-energy-adr/warp-drive-without-negative-energy-adrs-list';
 import { SuperluminalEffectiveWarpDriveAdrsList } from '../adrs/superluminal-effective-warp-drive-adr/superluminal-effective-warp-drive-adrs-list';
 import { OptimusAdrsList } from '../adrs/optimus-adr/optimus-adrs-list';
-import { OpenSourceCNCMachineAdrsList } from '../adrs/open-source-cnc-machine-adr/open-source-cnc-adrs-list';
+import { OpenSourceCNCMachineAdrsList } from '../adrs/open-source-cnc-machine-adr/open-source-cnc-machine-adrs-list';
 
 export const adrsListMap: Record<string, any> = {
   'nano-assembly-adr': NanoassemblyAdrsList,

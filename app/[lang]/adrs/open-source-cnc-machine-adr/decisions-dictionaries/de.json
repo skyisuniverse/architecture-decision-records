@@ -1,5 +1,11 @@
 {
   "use-cases": "Anwendungsfälle",
+  "specifications": "Technische Daten",
+  "machine-design": "Maschinendesign",
+  "machine-composition": "Maschinenzusammensetzung",
+  "electronic-enclosure": "Elektrogehäuse",
+  "wiring": "Verkabelung",
+  "software": "Software",
   "axes-and-configuration": "Achsen und Konfiguration",
   "work-envelope-travel": "Arbeitsraum/Verfahrwege",
   "spindle": "Spindel",

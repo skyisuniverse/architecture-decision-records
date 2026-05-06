@@ -1,5 +1,11 @@
 {
   "use-cases": "Use Cases",
+  "specifications": "Specifications",
+  "machine-design": "Machine Design",
+  "machine-composition": "Machine Composition",
+  "electronic-enclosure": "Electronic Enclosure",
+  "wiring": "Wiring",
+  "software": "Software",
   "axes-and-configuration": "Axes and Configuration",
   "work-envelope-travel": "Work Envelope/Travel",
   "spindle": "Spindle",
