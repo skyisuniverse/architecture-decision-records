@@ -8,6 +8,7 @@ import {
   ImageListItemBar,
   useMediaQuery,
   useTheme,
+  Container,
 } from '@mui/material';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -33,36 +34,61 @@ export default function CompaniesPage({ dict }: { dict: Dictionary }) {
   };
 
   return (
-    <Box sx={{ py: 2 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
-        {dict.companies}
-      </Typography>
+    <Container
+      maxWidth={false}
+      disableGutters
+      sx={{
+        px: { xs: 2, sm: 4, md: 6 },
+        py: { xs: 6, md: 0 },
+      }}
+    >
+      <Box sx={{ mb: 6 }}>
+        <Typography
+          variant="h3"
+          component="h1"
+          sx={{
+            fontWeight: 100,
+            textAlign: "center",
+            mb: 1,
+          }}
+        >
+          {dict.companies}
+        </Typography>
 
-      <ImageList sx={{ width: '100%', mb: 0.7 }} cols={1} rowHeight={isMobile ? 220 : 340}>
-        <ImageListItem component={Link} href={getLocalizedHref(companies[0].href)}>
-          <img
-            src={companies[0].img}
-            alt={companies[0].title}
-            loading="lazy"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
-          />
-          <ImageListItemBar title={companies[0].title} position="bottom" />
-        </ImageListItem>
-      </ImageList>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{ textAlign: "center", maxWidth: 600, mx: "auto" }}
+        >
+          {dict['companies.subtitle']}
+        </Typography>
+      </Box>
 
-      <ImageList sx={{ width: '100%' }} cols={isMobile ? 1 : 3} rowHeight={isMobile ? 180 : 220}>
-        {companies.slice(1).map((item) => (
-          <ImageListItem key={item.title} component={Link} href={getLocalizedHref(item.href)}>
+        <ImageList sx={{ width: '100%', mb: 0.7 }} cols={1} rowHeight={isMobile ? 220 : 340}>
+          <ImageListItem component={Link} href={getLocalizedHref(companies[0].href)}>
             <img
-              src={item.img}
-              alt={item.title}
+              src={companies[0].img}
+              alt={companies[0].title}
               loading="lazy"
               style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
             />
-            <ImageListItemBar title={item.title} position="bottom" />
+            <ImageListItemBar title={companies[0].title} position="bottom" />
           </ImageListItem>
-        ))}
-      </ImageList>
-    </Box>
+        </ImageList>
+
+        <ImageList sx={{ width: '100%' }} cols={isMobile ? 1 : 3} rowHeight={isMobile ? 180 : 220}>
+          {companies.slice(1).map((item) => (
+            <ImageListItem key={item.title} component={Link} href={getLocalizedHref(item.href)}>
+              <img
+                src={item.img}
+                alt={item.title}
+                loading="lazy"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+              />
+              <ImageListItemBar title={item.title} position="bottom" />
+            </ImageListItem>
+          ))}
+        </ImageList>
+    </Container>
   );
 }

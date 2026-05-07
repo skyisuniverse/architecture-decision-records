@@ -67,6 +67,7 @@ export default function ADRTopBar({
     { title: dict.products, href: 'products' },
     { title: dict.services, href: 'services' },
     { title: dict.applications, href: 'apps' },   // uses /apps route + translated label
+    { title: dict.glossary, href: 'glossary' },
   ];
 
   // const pages = ['Companies', 'Products', 'Services', 'Apps'];

@@ -37,8 +37,8 @@ export default function ServicesPage({ dict }: { dict: Dictionary }) {
       maxWidth={false}
       disableGutters
       sx={{
-        px: { xs: 2, sm: 4, md: 6 },
-        py: { xs: 6, md: 8 },
+        px: { xs: 2, sm: 4, md: 0 },
+        py: { xs: 6, md: 0 },
       }}
     >
       <Box sx={{ mb: 6 }}>
@@ -46,12 +46,12 @@ export default function ServicesPage({ dict }: { dict: Dictionary }) {
           variant="h3"
           component="h1"
           sx={{
-            fontWeight: 700,
+            fontWeight: 100,
             textAlign: "center",
             mb: 1,
           }}
         >
-          {dict.services}
+          {dict.services} 
         </Typography>
         <Typography
           variant="body1"

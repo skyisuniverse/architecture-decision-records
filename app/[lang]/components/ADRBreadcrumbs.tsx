@@ -84,6 +84,13 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
       currentItem: currentApp,
       itemKey: 'app',
     },
+    {
+      prefix: '/glossary',
+      listHref: '/glossary',
+      listTitle: dict.glossary ?? 'Glossary',
+      currentItem: undefined,           // Glossary is a single static page (no detail view yet)
+      itemKey: 'glossary',
+    },
   ];
 
   const getSectionBreadcrumbs = (): React.ReactNode[] => {
