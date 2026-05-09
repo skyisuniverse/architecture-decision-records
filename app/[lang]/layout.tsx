@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react';
-import { i18n, type Locale } from '@/i18n-config';
-import ClientRootLayout from './ClientRootLayout';
-import { getDictionary } from '@/get-dictionary';
+import type { ReactNode } from "react";
+import { i18n, type Locale } from "@/i18n-config";
+import ClientRootLayout from "./ClientRootLayout";
+import { getDictionary } from "@/app/[lang]/components/WithDictionary";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -25,9 +25,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <ClientRootLayout dict={dict}>
-          {children}
-        </ClientRootLayout>
+        <ClientRootLayout dict={dict}>{children}</ClientRootLayout>
       </body>
     </html>
   );

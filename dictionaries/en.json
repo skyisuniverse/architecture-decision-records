@@ -7,7 +7,11 @@
   "products.subtitle": "Explore our breakthrough technologies",
   "applications": "Applications",
   "applications.subtitle": "Explore our applications",
-  
+
+  "mdx.page.title": "This is a test title text",
+  "mdx.page.subtitle": "Subtitle text for MDX in en locale",
+  "some.other.key": "Testing MDX with translations",
+
   "glossary": "Glossary",
   "glossary.subtitle": "Key terms and concepts explained",
   "glossary.searchPlaceholder": "Search terms or definitions...",

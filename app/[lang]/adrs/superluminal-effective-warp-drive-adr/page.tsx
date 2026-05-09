@@ -1,9 +1,13 @@
-import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
-import { SuperluminalEffectiveWarpDriveAdrsList } from './superluminal-effective-warp-drive-adrs-list';
-import { getDictionary } from '@/get-dictionary';
-import type { Locale } from '@/i18n-config';
+import { ADRCategoryPage } from "@/app/[lang]/components/ADRCategoryPage";
+import { SuperluminalEffectiveWarpDriveAdrsList } from "./superluminal-effective-warp-drive-adrs-list";
+import { getDictionary } from "@/app/[lang]/components/WithDictionary";
+import type { Locale } from "@/i18n-config";
 
-export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
   const { lang } = await params;
 
   const globalDict = await getDictionary(lang);
@@ -14,7 +18,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
     const module = await import(`./decisions-dictionaries/${lang}.json`);
     decisionDict = module.default || module;
   } catch (err) {
-    console.warn('Could not load colocated decision dictionary');
+    console.warn("Could not load colocated decision dictionary");
   }
 
   // Merge both into ONE dict (this eliminates all the double-passing)
@@ -22,11 +26,17 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
 
   return (
     <ADRCategoryPage
-      title={globalDict['superluminal-effective-warp-drive-adr'] ?? 'Superluminal-Effective Warp Drive ADR'}
-      publishedDate={globalDict['superluminal-effective-warp-drive-adr.published'] ?? 'Published April 2026'}
+      title={
+        globalDict["superluminal-effective-warp-drive-adr"] ??
+        "Superluminal-Effective Warp Drive ADR"
+      }
+      publishedDate={
+        globalDict["superluminal-effective-warp-drive-adr.published"] ??
+        "Published April 2026"
+      }
       description={<></>}
       adrsList={SuperluminalEffectiveWarpDriveAdrsList}
-      dict={dict}                    // ← single dict now
+      dict={dict} // ← single dict now
     />
   );
 }

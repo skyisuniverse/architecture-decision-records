@@ -1,9 +1,13 @@
-import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
-import { NanoAssemblerAdrsList } from './nano-assembler-adrs-list';
-import { getDictionary } from '@/get-dictionary';
-import type { Locale } from '@/i18n-config';
+import { ADRCategoryPage } from "@/app/[lang]/components/ADRCategoryPage";
+import { NanoAssemblerAdrsList } from "./nano-assembler-adrs-list";
+import { getDictionary } from "@/app/[lang]/components/WithDictionary";
+import type { Locale } from "@/i18n-config";
 
-export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
   const { lang } = await params;
 
   const globalDict = await getDictionary(lang);
@@ -14,7 +18,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
     const module = await import(`./decisions-dictionaries/${lang}.json`);
     decisionDict = module.default || module;
   } catch (err) {
-    console.warn('Could not load colocated decision dictionary');
+    console.warn("Could not load colocated decision dictionary");
   }
 
   // Merge both into ONE dict (this eliminates all the double-passing)
@@ -22,16 +26,19 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
 
   return (
     <ADRCategoryPage
-      title={globalDict['nano-assembler-adr'] ?? 'Nano-assembler ADR'}
-      publishedDate={globalDict['nano-assembler-adr.published'] ?? 'Published April 2026'}
+      title={globalDict["nano-assembler-adr"] ?? "Nano-assembler ADR"}
+      publishedDate={
+        globalDict["nano-assembler-adr.published"] ?? "Published April 2026"
+      }
       description={
         <>
-          Device (e.g. similar to a 3D-Printer but for Nano-Assembly) for nano-assembling
-          of products. (is it a packaging for seed nanobots-swarm (nanofactory)) ?
+          Device (e.g. similar to a 3D-Printer but for Nano-Assembly) for
+          nano-assembling of products. (is it a packaging for seed
+          nanobots-swarm (nanofactory)) ?
         </>
       }
       adrsList={NanoAssemblerAdrsList}
-      dict={dict}                    // ← single dict now
+      dict={dict} // ← single dict now
     />
   );
 }

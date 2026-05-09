@@ -6,7 +6,11 @@
   "products.subtitle": "Entdecken Sie unsere bahnbrechenden Technologien",
   "applications": "Anwendungen",
   "applications.subtitle": "Entdecken Sie unsere Anwendungen",
-  
+
+  "mdx.page.title": "Dies ist ein Testtext",
+  "mdx.page.subtitle": "Untertiteltext für MDX in der Sprachumgebung „en“",
+  "some.other.key": "MDX mit Übersetzungen testen",
+
   "glossary": "Glossar",
   "glossary.subtitle": "Erläuterung wichtiger Begriffe und Konzepte",
   "glossary.searchPlaceholder": "Suchbegriffe oder Definitionen...",
@@ -26,7 +30,7 @@
   "glossary.definition.neuralink": "Brain-Computer-Interface-Technologie, die eine direkte Kommunikation zwischen dem menschlichen Gehirn und Computern ermöglichen soll.",
   "glossary.definition.fusion": "Eine nukleare Reaktion, bei der zwei leichte Atomkerne zu einem schwereren Kern verschmelzen und dabei enorme Energie freisetzen.",
   "glossary.definition.terraforming": "Der hypothetische Prozess der gezielten Veränderung der Atmosphäre, Temperatur und Ökologie eines Planeten, um ihn für Menschen bewohnbar zu machen.",
-  
+
   "title": "Architektur-Entscheidungsprotokolle",
   "welcome": "Willkommen bei den Architekturentscheidungsprotokollen des Forschungs- und Entwicklungszentrums. Hier finden Sie die Architekturentscheidungsprotokolle (ADR) des Projekts.",
   "definition-title": "Begriffsbestimmung und Zweck",

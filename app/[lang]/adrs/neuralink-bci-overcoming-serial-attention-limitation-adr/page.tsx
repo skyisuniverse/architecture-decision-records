@@ -1,10 +1,14 @@
-import { ADRCategoryPage } from '@/app/[lang]/components/ADRCategoryPage';
-import { NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList } from './neuralink-bci-overcoming-serial-attention-limitation-adrs-list';
-import { Link, Typography } from '@mui/material';
-import { getDictionary } from '@/get-dictionary';
-import type { Locale } from '@/i18n-config';
+import { ADRCategoryPage } from "@/app/[lang]/components/ADRCategoryPage";
+import { NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList } from "./neuralink-bci-overcoming-serial-attention-limitation-adrs-list";
+import { Link, Typography } from "@mui/material";
+import { getDictionary } from "@/app/[lang]/components/WithDictionary";
+import type { Locale } from "@/i18n-config";
 
-export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
   const { lang } = await params;
 
   const globalDict = await getDictionary(lang);
@@ -15,7 +19,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
     const module = await import(`./decisions-dictionaries/${lang}.json`);
     decisionDict = module.default || module;
   } catch (err) {
-    console.warn('Could not load colocated decision dictionary');
+    console.warn("Could not load colocated decision dictionary");
   }
 
   // Merge both into ONE dict (this eliminates all the double-passing)
@@ -23,12 +27,20 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
 
   return (
     <ADRCategoryPage
-      title={globalDict['neuralink-bci-overcoming-serial-attention-limitation-adr'] ?? '[NeuraLink] [BCI] Overcoming serial attention limitation'}
-      publishedDate={globalDict['neuralink-bci-overcoming-serial-attention-limitation-adr.published'] ?? 'Published April 2026'}
+      title={
+        globalDict[
+          "neuralink-bci-overcoming-serial-attention-limitation-adr"
+        ] ?? "[NeuraLink] [BCI] Overcoming serial attention limitation"
+      }
+      publishedDate={
+        globalDict[
+          "neuralink-bci-overcoming-serial-attention-limitation-adr.published"
+        ] ?? "Published April 2026"
+      }
       description={
         <>
           <Typography variant="h6" sx={{ marginBottom: 2 }}>
-            <Link 
+            <Link
               href="https://rd-center.vercel.app/neuralink/neuralink-bci-overcoming-serial-attention-limitation"
               color="inherit"
               target="_blank"
@@ -40,7 +52,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale 
         </>
       }
       adrsList={NeuralinkBCIOvercomingSerialAttentionLimitationAdrsList}
-      dict={dict}                    // ← single dict now
+      dict={dict} // ← single dict now
     />
   );
 }
