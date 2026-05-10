@@ -100,6 +100,46 @@ export default function CodeBlock(props: any) {
             backgroundColor: "#212126 !important",
             width: "100% !important",
             maxWidth: "100% !important",
+
+            /* === LINE NUMBERS === */
+            "&[data-line-numbers]": {
+              counterReset: "line",
+            },
+            "&[data-line-numbers] > [data-line]::before": {
+              counterIncrement: "line",
+              content: "counter(line)",
+              display: "inline-block",
+              width: "2.5rem",
+              marginRight: "2rem",
+              textAlign: "right",
+              color: "#9499b3", // light gray – clearly visible on #212126
+              opacity: 0.75,
+              userSelect: "none",
+              fontSize: "0.9em",
+            },
+            // Auto-adjust width for 3+ digit line numbers
+            "&[data-line-numbers-max-digits='2'] > [data-line]::before": {
+              width: "3rem",
+            },
+            "&[data-line-numbers-max-digits='3'] > [data-line]::before": {
+              width: "3.5rem",
+            },
+
+            /* === HIGHLIGHTED LINE ({4}) === */
+            "& [data-highlighted-line]": {
+              backgroundColor: "rgba(134, 179, 255, 0.18)", // soft blue tint that pops on Moonlight dark bg
+              borderLeft: "3px solid #569cd6",
+              borderRadius: "2px",
+            },
+
+            /* WORD HIGHLIGHTING (new) */
+            "& [data-highlighted-chars]": {
+              backgroundColor: "rgba(134, 179, 255, 0.25)",
+              padding: "2px 6px",
+              borderRadius: "4px",
+              color: "#c5d4ff",
+              boxShadow: "0 0 0 1px rgba(134, 179, 255, 0.15)",
+            },
           },
         }}
       >
