@@ -1,20 +1,29 @@
-'use client';
+// app/[lang]/contexts/navigation-context.tsx
+"use client";
 
-import { createContext, useContext, useReducer, useMemo, useState, useEffect, type ReactNode } from 'react';
-import { usePathname, useRouter, useParams } from 'next/navigation';
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useMemo,
+  useState,
+  useEffect,
+  type ReactNode,
+} from "react";
+import { usePathname, useRouter, useParams } from "next/navigation";
 import {
   adrsListMap,
   type AdrSlug,
   getCategoryBySlug,
   type Category,
   getLocalizedCategories,
-} from '@/app/[lang]/config/adrs-lists';
-import { itemData as productItems } from '@/app/[lang]/products/products-list';
-import { itemData as companyItems } from '@/app/[lang]/companies/companies-list';
-import { itemData as serviceItems } from '@/app/[lang]/services/services-list';
-import { itemData as appItems } from '@/app/[lang]/apps/applications-list';
-import { ADRItem } from '@/app/[lang]/types/adr';
-import React from 'react';
+} from "@/app/[lang]/config/adrs-lists";
+import { itemData as productItems } from "@/app/[lang]/products/products-list";
+import { itemData as companyItems } from "@/app/[lang]/companies/companies-list";
+import { itemData as serviceItems } from "@/app/[lang]/services/services-list";
+import { itemData as appItems } from "@/app/[lang]/apps/applications-list";
+import { ADRItem } from "@/app/[lang]/types/adr";
+import React from "react";
 
 type Dictionary = Record<string, string>;
 
@@ -26,20 +35,23 @@ type NavigationState = {
 };
 
 type NavigationAction =
-  | { type: 'SET_CATEGORY'; payload: string }
-  | { type: 'SET_EXPANDED'; payload: string | null }
-  | { type: 'SYNC_FROM_URL'; payload: { categoryId: string; slug: string | null } };
+  | { type: "SET_CATEGORY"; payload: string }
+  | { type: "SET_EXPANDED"; payload: string | null }
+  | {
+      type: "SYNC_FROM_URL";
+      payload: { categoryId: string; slug: string | null };
+    };
 
 const navigationReducer = (
   state: NavigationState,
-  action: NavigationAction
+  action: NavigationAction,
 ): NavigationState => {
   switch (action.type) {
-    case 'SET_CATEGORY':
+    case "SET_CATEGORY":
       return { ...state, selectedCategoryId: action.payload };
-    case 'SET_EXPANDED':
+    case "SET_EXPANDED":
       return { ...state, expandedAdrSlug: action.payload };
-    case 'SYNC_FROM_URL':
+    case "SYNC_FROM_URL":
       return {
         selectedCategoryId: action.payload.categoryId,
         expandedAdrSlug: action.payload.slug || null,
@@ -75,7 +87,7 @@ const NavigationContext = createContext<NavigationContextValue | null>(null);
 
 export function NavigationProvider({
   children,
-  dict,          // ← this is the global/root dictionary
+  dict, // ← this is the global/root dictionary
 }: {
   children: ReactNode;
   dict: Dictionary;
@@ -87,8 +99,8 @@ export function NavigationProvider({
   const [decisionDict, setDecisionDict] = useState<Dictionary>({});
 
   const getLocalizedHref = (href: string): string => {
-    if (href === '/') return `/${lang}`;
-    if (!href.startsWith('/')) href = '/' + href;
+    if (href === "/") return `/${lang}`;
+    if (!href.startsWith("/")) href = "/" + href;
     if (href.startsWith(`/${lang}/`)) return href;
     return `/${lang}${href}`;
   };
@@ -102,22 +114,32 @@ export function NavigationProvider({
     return undefined;
   }, [pathname]);
 
-  const localizedCategories = useMemo(() => getLocalizedCategories(dict), [dict]);
+  const localizedCategories = useMemo(
+    () => getLocalizedCategories(dict),
+    [dict],
+  );
 
   const [state, dispatch] = useReducer(navigationReducer, {
-    selectedCategoryId: localizedCategories[0]?.id || 'rd-center',
+    selectedCategoryId: localizedCategories[0]?.id || "rd-center",
     expandedAdrSlug: null,
   });
 
-  const currentCategory = useMemo(() => (slug ? getCategoryBySlug(slug) : undefined), [slug]);
+  const currentCategory = useMemo(
+    () => (slug ? getCategoryBySlug(slug) : undefined),
+    [slug],
+  );
 
   const activeCategory = useMemo(() => {
-    return currentCategory ?? localizedCategories.find((c) => c.id === state.selectedCategoryId);
+    return (
+      currentCategory ??
+      localizedCategories.find((c) => c.id === state.selectedCategoryId)
+    );
   }, [currentCategory, localizedCategories, state.selectedCategoryId]);
 
   // Load colocated decision translations AND merge with global dict (status keys)
   useEffect(() => {
-    const categorySlug = slug || state.expandedAdrSlug || activeCategory?.mainPageSlug;
+    const categorySlug =
+      slug || state.expandedAdrSlug || activeCategory?.mainPageSlug;
 
     if (!categorySlug) {
       setDecisionDict(dict); // fallback to global dict only
@@ -133,7 +155,9 @@ export function NavigationProvider({
         // Merge global + colocated (status.* keys + decision titles)
         setDecisionDict({ ...dict, ...colocated });
       } catch (e) {
-        console.warn(`No decision translations found for ${categorySlug}/${lang}`);
+        console.warn(
+          `No decision translations found for ${categorySlug}/${lang}`,
+        );
         setDecisionDict(dict); // fallback to global dict
       }
     };
@@ -153,87 +177,94 @@ export function NavigationProvider({
   }, [slug, decisionDict]);
 
   const currentAdr: ADRItem | undefined = useMemo(() => {
-    return currentAdrsList.find((adr) => getLocalizedHref(adr.link) === pathname);
+    return currentAdrsList.find(
+      (adr) => getLocalizedHref(adr.link) === pathname,
+    );
   }, [currentAdrsList, pathname, lang]);
 
   const currentAdrCategoryName = useMemo(() => {
-    if (!slug) return '';
-    const cat = localizedCategories.find((c) => c.adrs.some((item) => item.slug === slug));
+    if (!slug) return "";
+    const cat = localizedCategories.find((c) =>
+      c.adrs.some((item) => item.slug === slug),
+    );
     const item = cat?.adrs.find((item) => item.slug === slug);
     return item?.label ?? slug;
   }, [slug, localizedCategories]);
 
   const currentProduct = useMemo(() => {
-    if (!pathname.includes('/products/')) return undefined;
-    const itemSlug = pathname.split('/products/')[1];
+    if (!pathname.includes("/products/")) return undefined;
+    const itemSlug = pathname.split("/products/")[1];
     return productItems.find((item) => item.slug === itemSlug);
   }, [pathname]);
 
   const currentCompany = useMemo(() => {
-    if (!pathname.includes('/companies/')) return undefined;
-    const itemSlug = pathname.split('/companies/')[1];
+    if (!pathname.includes("/companies/")) return undefined;
+    const itemSlug = pathname.split("/companies/")[1];
     return companyItems.find((item) => item.slug === itemSlug);
   }, [pathname]);
 
   const currentService = useMemo(() => {
-    if (!pathname.includes('/services/')) return undefined;
-    const itemSlug = pathname.split('/services/')[1];
+    if (!pathname.includes("/services/")) return undefined;
+    const itemSlug = pathname.split("/services/")[1];
     return serviceItems.find((item) => item.slug === itemSlug);
   }, [pathname]);
 
   const currentApp = useMemo(() => {
-    if (!pathname.includes('/apps/')) return undefined;
-    const itemSlug = pathname.split('/apps/')[1];
+    if (!pathname.includes("/apps/")) return undefined;
+    const itemSlug = pathname.split("/apps/")[1];
     return appItems.find((item) => item.slug === itemSlug);
   }, [pathname]);
 
   React.useEffect(() => {
     if (currentCategory) {
       dispatch({
-        type: 'SYNC_FROM_URL',
+        type: "SYNC_FROM_URL",
         payload: { categoryId: currentCategory.id, slug: slug || null },
       });
-    } else if (pathname === `/${lang}` || pathname === '/') {
+    } else if (pathname === `/${lang}` || pathname === "/") {
       dispatch({
-        type: 'SYNC_FROM_URL',
-        payload: { categoryId: localizedCategories[0]?.id || 'rd-center', slug: null },
+        type: "SYNC_FROM_URL",
+        payload: {
+          categoryId: localizedCategories[0]?.id || "rd-center",
+          slug: null,
+        },
       });
     }
   }, [currentCategory, slug, pathname, localizedCategories, lang]);
 
   const selectCategory = (id: string) => {
-    dispatch({ type: 'SET_CATEGORY', payload: id });
+    dispatch({ type: "SET_CATEGORY", payload: id });
     const cat = localizedCategories.find((c) => c.id === id);
     if (cat?.mainPageSlug) {
-      dispatch({ type: 'SET_EXPANDED', payload: cat.mainPageSlug });
+      dispatch({ type: "SET_EXPANDED", payload: cat.mainPageSlug });
       router.push(`/${lang}/adrs/${cat.mainPageSlug}`);
     } else {
-      dispatch({ type: 'SET_EXPANDED', payload: null });
+      dispatch({ type: "SET_EXPANDED", payload: null });
     }
   };
 
   const navigateToAdr = (slug: string, shouldExpand = false) => {
     router.push(`/${lang}/adrs/${slug}`);
     if (shouldExpand) {
-      dispatch({ type: 'SET_EXPANDED', payload: slug });
+      dispatch({ type: "SET_EXPANDED", payload: slug });
     }
   };
 
   const toggleExpanded = (slug: string) => {
     dispatch({
-      type: 'SET_EXPANDED',
+      type: "SET_EXPANDED",
       payload: state.expandedAdrSlug === slug ? null : slug,
     });
   };
 
   const setExpanded = (slug: string | null) => {
-    dispatch({ type: 'SET_EXPANDED', payload: slug });
+    dispatch({ type: "SET_EXPANDED", payload: slug });
   };
 
   const value: NavigationContextValue = {
     selectedCategoryId: state.selectedCategoryId,
     expandedAdrSlug: state.expandedAdrSlug,
-    currentSlug: slug || '',
+    currentSlug: slug || "",
     currentCategory,
     activeCategory,
     currentAdrsList,
@@ -262,7 +293,7 @@ export function NavigationProvider({
 export const useNavigation = () => {
   const context = useContext(NavigationContext);
   if (!context) {
-    throw new Error('useNavigation must be used within a NavigationProvider');
+    throw new Error("useNavigation must be used within a NavigationProvider");
   }
   return context;
 };

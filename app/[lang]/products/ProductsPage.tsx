@@ -1,4 +1,5 @@
-'use client';
+// app/[lang]/products/ProductsPage.tsx
+"use client";
 
 import Image from "next/image";
 import {
@@ -27,7 +28,7 @@ export default function ProductsPage({ dict }: { dict: Dictionary }) {
   const cols = isXl ? 6 : isLg ? 5 : isMd ? 4 : 3;
 
   const getLocalizedHref = (href: string): string => {
-    if (!href.startsWith('/')) href = '/' + href;
+    if (!href.startsWith("/")) href = "/" + href;
     if (href.startsWith(`/${lang}/`)) return href;
     return `/${lang}${href}`;
   };
@@ -58,7 +59,7 @@ export default function ProductsPage({ dict }: { dict: Dictionary }) {
           color="text.secondary"
           sx={{ textAlign: "center", maxWidth: 600, mx: "auto" }}
         >
-          {dict['products.subtitle']}
+          {dict["products.subtitle"]}
         </Typography>
       </Box>
 
