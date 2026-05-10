@@ -1,3 +1,4 @@
+// app/[lang]/layout.tsx
 import type { ReactNode } from "react";
 import { i18n, type Locale } from "@/i18n-config";
 import ClientRootLayout from "./ClientRootLayout";

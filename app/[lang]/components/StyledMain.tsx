@@ -1,26 +1,34 @@
-'use client';
+"use client";
 
-import { styled } from '@mui/material/styles';
-import { drawerWidth } from './ResponsiveDrawer';
+import { styled } from "@mui/material/styles";
+import { drawerWidth } from "./ResponsiveDrawer";
 
-export const StyledMain = styled('main', {
-  shouldForwardProp: (prop) => prop !== 'open',
+export const StyledMain = styled("main", {
+  shouldForwardProp: (prop) => prop !== "open",
 })<{
   open?: boolean;
 }>(({ theme, open }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
   // Responsive bottom padding to fix overlap with bottom nav on mobile
-  paddingBottom: theme.spacing(2),           // default
+  paddingBottom: theme.spacing(2), // default
 
-  [theme.breakpoints.down('sm')]: {          // Only on mobile (xs)
-    paddingBottom: '70px',                   // Adjust this value based on your bottom nav height
+  // ← THESE LINES FIX THE MOBILE OVERFLOW (exactly what you tested manually)
+  width: "100%",
+  maxWidth: "100%",
+  boxSizing: "border-box",
+
+  [theme.breakpoints.down("sm")]: {
+    // Only on mobile (xs)
+    paddingBottom: "70px", // Adjust this value based on your bottom nav height
+    width: "100% !important", // ← matches your manual fix
+    maxWidth: "100% !important",
   },
   marginLeft: 0,
 
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up("sm")]: {
     marginLeft: `-${drawerWidth}px`,
-    transition: theme.transitions.create('margin', {
+    transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
@@ -30,8 +38,8 @@ export const StyledMain = styled('main', {
     {
       props: ({ open }) => open,
       style: {
-        [theme.breakpoints.up('sm')]: {
-          transition: theme.transitions.create('margin', {
+        [theme.breakpoints.up("sm")]: {
+          transition: theme.transitions.create("margin", {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
           }),

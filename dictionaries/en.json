@@ -1,4 +1,6 @@
 {
+  "contextTitle": "Context and Problem Statement",
+  "description": "We want to record architectural decisions made in this project.",
   "companies": "Companies",
   "companies.subtitle": "Our companies",
   "services": "Services",
