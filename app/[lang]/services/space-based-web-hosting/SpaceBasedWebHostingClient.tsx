@@ -1,22 +1,43 @@
-'use client';
+"use client";
 
-import { Typography, Box } from '@mui/material';
-import Image from 'next/image';
-import localImage from '../../../../public/images/services/full-size/space-based-web-hosting.jpg';
+import { Typography, Box } from "@mui/material";
+import Image from "next/image";
+import { Link } from "@mui/material";
+import localImage from "../../../../public/images/services/full-size/space-based-web-hosting.jpg";
 
 type Dictionary = Record<string, string>;
 
-export default function SpaceBasedWebHostingClient({ dict }: { dict: Dictionary }) {
+export default function SpaceBasedWebHostingClient({
+  dict,
+}: {
+  dict: Dictionary;
+}) {
   return (
     <Box sx={{ p: 4 }}>
       <Typography variant="h4" gutterBottom>
-        {dict['space-based-web-hosting.title']}
+        {dict["space-based-web-hosting.title"]}
       </Typography>
       <Typography variant="body1">
-        {dict['space-based-web-hosting.description']}
+        {dict["space-based-web-hosting.description"]}
       </Typography>
       <br />
-      <Image src={localImage} alt="Space-based Web Hosting" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+      <Typography variant="h6" sx={{ marginBottom: 2 }}>
+        <Link
+          href="https://web-hosting-spaces.vercel.app/en"
+          color="inherit"
+          target="_blank"
+          sx={{ marginBottom: 2 }}
+        >
+          Web Hosting Spaces
+        </Link>
+      </Typography>
+      <br />
+      <Image
+        src={localImage}
+        alt="Space-based Web Hosting"
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+      />
     </Box>
   );
 }
