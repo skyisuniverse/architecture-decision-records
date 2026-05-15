@@ -18,6 +18,7 @@ import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
 import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
+import Search from "./components/Search";
 
 export default async function Home({
   params,
@@ -29,6 +30,12 @@ export default async function Home({
 
   return (
     <Box>
+      <Divider sx={{ width: "100%", my: 1 }} />
+      {/* Central Search Box Component Container */}
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <Search />
+      </Box>
+      <Divider sx={{ width: "100%", my: 1 }} />
       <Typography
         variant="h2"
         sx={{

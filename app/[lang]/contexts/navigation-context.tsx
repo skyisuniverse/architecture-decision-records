@@ -23,11 +23,20 @@ import { itemData as companyItems } from "@/app/[lang]/companies/companies-list"
 import { itemData as serviceItems } from "@/app/[lang]/services/services-list";
 import { itemData as appItems } from "@/app/[lang]/apps/applications-list";
 import { ADRItem } from "@/app/[lang]/types/adr";
+import { create, insertMultiple, search } from "@orama/orama";
+// Import your generated static code bundle module directly
+import { staticSearchDataset } from "@/app/[lang]/components/SearchData";
 import React from "react";
 
 type Dictionary = Record<string, string>;
 
 export type ListItem = { title: string; slug: string };
+
+interface SearchItem {
+  title: string;
+  url: string;
+  content: string;
+}
 
 type NavigationState = {
   selectedCategoryId: string;
@@ -81,6 +90,13 @@ type NavigationContextValue = {
   setExpanded: (slug: string | null) => void;
   localize: (href: string) => string;
   decisionDict: Dictionary;
+  // Integrated Orama Search State Extensions:
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+  searchResults: any[];
+  isSearchOpen: boolean;
+  setIsSearchOpen: (open: boolean) => void;
+  isSearchReady: boolean;
 };
 
 const NavigationContext = createContext<NavigationContextValue | null>(null);
@@ -95,8 +111,14 @@ export function NavigationProvider({
   const pathname = usePathname();
   const router = useRouter();
   const { lang } = useParams() as { lang: string };
-
   const [decisionDict, setDecisionDict] = useState<Dictionary>({});
+
+  // Unified Orama Search Engine States
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSearchReady, setIsSearchReady] = useState(false);
+  const [oramaDb, setOramaDb] = useState<any>(null);
 
   const getLocalizedHref = (href: string): string => {
     if (href === "/") return `/${lang}`;
@@ -164,6 +186,52 @@ export function NavigationProvider({
 
     loadDecisions();
   }, [slug, state.expandedAdrSlug, activeCategory, lang, dict]);
+
+  // Fetch and instantiate the client-side Orama dictionary database on context mount
+  useEffect(() => {
+    async function initOramaSearch() {
+      try {
+        setIsSearchReady(false);
+
+        // Fix: Read directly from our local module array instead of fetching a remote JSON route
+        const dataset = staticSearchDataset[lang] || [];
+
+        const db = await create({
+          schema: { title: "string", url: "string", content: "string" },
+        });
+
+        await insertMultiple(db, dataset);
+        setOramaDb(db);
+        setIsSearchReady(true);
+      } catch (err) {
+        console.error(
+          "Failed initializing Orama inside Provider context:",
+          err,
+        );
+      }
+    }
+    initOramaSearch();
+  }, [lang]);
+
+  // Reactive Debounced Execution Pipeline running Orama Search queries
+  useEffect(() => {
+    if (!oramaDb || searchQuery.trim() === "") {
+      setSearchResults([]);
+      return;
+    }
+
+    const triggerQuery = async () => {
+      const searchOutput = await search(oramaDb, {
+        term: searchQuery,
+        properties: ["title", "content"],
+        tolerance: 1,
+      });
+      setSearchResults(searchOutput.hits.map((hit) => hit.document));
+    };
+
+    const debounceTimer = setTimeout(triggerQuery, 150);
+    return () => clearTimeout(debounceTimer);
+  }, [searchQuery, oramaDb]);
 
   // Translated decision titles
   const currentAdrsList: ADRItem[] = useMemo(() => {
@@ -281,6 +349,13 @@ export function NavigationProvider({
     setExpanded,
     localize: getLocalizedHref,
     decisionDict,
+    // Provide state properties to search endpoints
+    searchQuery,
+    setSearchQuery,
+    searchResults,
+    isSearchOpen,
+    setIsSearchOpen,
+    isSearchReady,
   };
 
   return (

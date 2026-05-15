@@ -22,17 +22,18 @@
    # Example: c981e35
    ```
 
-- Create a `git tag` for that commit hash with
+3. Update the version in package.json
 
-  ```shell
-  git tag <tag-name> <commit-hash>
-
-  # Example: git tag v0.0.1 c981e35
-  ```
+4. Create a `git tag` for that commit hash with
+    ```shell
+    git tag <tag-name> <commit-hash>
+  
+    # Example: git tag v0.0.1 c981e35
+    ```
 
   Depending on the specific release type you're making, can be of shape `v0.2.0-alpha.1` or `v1.0.0-beta.3`, etc.
 
-- Generate a changelog with [git-cliff](https://git-cliff.org/)
+5. Generate a changelog with [git-cliff](https://git-cliff.org/)
     - by running a cli command:
         ```shell
         git cliff --config changelog-template.toml --output CHANGELOG.md
@@ -41,20 +42,21 @@
         ```shell
         npm run generate:changelog
         ```  
-- Commit changelog files (following [conventional commits format](https://www.conventionalcommits.org/en/v1.0.0/)):
-  ```shell
-  git add .
-  git commit -m "chore(release): <release-version>"
-      # Example: git commit -m "chore(release): v0.0.1"
-      ```
+6. Commit changelog files (following [conventional commits format](https://www.conventionalcommits.org/en/v1.0.0/)):
+    ```shell
+    git add .
+    git commit -m "chore(release): <release-version>"
+    # Example: git commit -m "chore(release): v0.0.1"
+    ```
   <!-- - Push the local release branch to remote repo with `git push` -->
-- Push the local branch to remote repo, including git tags `git push --tags`
+7. Push the local branch to remote repo, including git tags `git push --tags`
 <!-- - Create a Pull Request from release branch `release/<release-version>` to `main` and merge it -->
-- Go to [github.com/skyisuniverse/architecture-decision-records/releases](https://github.com/skyisuniverse/architecture-decision-records/releases)
-- Create a new release
-  - Select the `git tag` you have created (e.g. `v0.0.1`)
+
+8. Create a new release
+  - Go to [github.com/skyisuniverse/architecture-decision-records/releases](https://github.com/skyisuniverse/architecture-decision-records/releases)
+  - Select the `git tag` you have created (e.g. `v0.1.0`)
   - Select the target `main`
-  - Tick the checkbox `Set as a pre-release` if the release you are publishing is not ready for production (will get a `Pre Release` label on github)
+  - If the release you are publishing is not ready for production (will get a `Pre Release` label on github) tick the checkbox `Set as a pre-release` (otherwise don't)
   - Paste the `release title` (can be any)
   - Manually copy the markdown of the release you're going to publish from the `CHANGELOG.md` file to Github (`Write` tab)
   - Click on the `Preview` tab to verify correct rendering of the markdown of the release

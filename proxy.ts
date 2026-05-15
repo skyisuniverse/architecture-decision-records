@@ -1,21 +1,22 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-import { i18n } from './i18n-config';
+import { i18n } from "./i18n-config";
 
 function getLocale(request: NextRequest): string {
-  const acceptLanguage = request.headers.get('accept-language') || '';
+  const acceptLanguage = request.headers.get("accept-language") || "";
   const languages = acceptLanguage
-    .split(',')
-    .map((lang) => lang.split(';')[0].trim().toLowerCase())
+    .split(",")
+    .map((lang) => lang.split(";")[0].trim().toLowerCase())
     .filter(Boolean);
 
   // Simple pure matcher (no external libs)
   for (const lang of languages) {
-    const matched = i18n.locales.find((locale) =>
-      lang === locale ||
-      lang.startsWith(locale + '-') ||
-      locale.startsWith(lang)
+    const matched = i18n.locales.find(
+      (locale) =>
+        lang === locale ||
+        lang.startsWith(locale + "-") ||
+        locale.startsWith(lang),
     );
     if (matched) return matched;
   }
@@ -28,16 +29,17 @@ export function proxy(request: NextRequest) {
 
   // Skip internal paths
   if (
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/api') ||
-    pathname.startsWith('/favicon.ico') ||
-    /\.(svg|png|jpg|jpeg|gif|webp)$/.test(pathname)
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/favicon.ico") ||
+    pathname.includes("search-") || // ✅ Allow raw root asset queries to pass completely untouched
+    /\.(svg|png|jpg|jpeg|gif|webp|json)$/.test(pathname)
   ) {
     return NextResponse.next();
   }
 
   const pathnameHasLocale = i18n.locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
   if (pathnameHasLocale) {
@@ -45,11 +47,14 @@ export function proxy(request: NextRequest) {
   }
 
   const locale = getLocale(request);
-  const url = new URL(`/${locale}${pathname === '/' ? '' : pathname}`, request.url);
+  const url = new URL(
+    `/${locale}${pathname === "/" ? "" : pathname}`,
+    request.url,
+  );
 
   return NextResponse.redirect(url);
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
