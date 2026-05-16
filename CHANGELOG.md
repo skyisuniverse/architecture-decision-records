@@ -2,6 +2,69 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [0.2.0](https://github.com/skyisuniverse/architecture-decision-records/compare/v0.1.0..v0.2.0) - 2026-05-16
+
+### 🚀 Features
+
+- **(bottom-nav)**: Update bottom nav with apps button - ([9963958](https://github.com/skyisuniverse/architecture-decision-records/commit/9963958ae7d7550e448af6ac738a972fa37ad403))
+- **(breadcrumbs)**: Add rendering of adr category to breadcrumbs - ([4b2216b](https://github.com/skyisuniverse/architecture-decision-records/commit/4b2216b637078d1a01351c6726a5a329979e7172))
+- **(context-breadcrumbs)**: Update context and breadcrumb with applications logic & rendering - ([e118d19](https://github.com/skyisuniverse/architecture-decision-records/commit/e118d19d9a427a6b1cbcd4953cecfc3f8448669a))
+- **(drawer)**: Refactor state management with react context, update drawer UI on URL changes - ([cb53382](https://github.com/skyisuniverse/architecture-decision-records/commit/cb5338263f98a112bd1de006b2ec978cbf93768a))
+- **(homepage)**: Add homepage markup - ([0459ba0](https://github.com/skyisuniverse/architecture-decision-records/commit/0459ba04f30eea6a8ca51dc3fc04e6fd9d639dd4))
+- **(i18n)**: Add basic i18n setup with built-in next.js i18n - ([07586c4](https://github.com/skyisuniverse/architecture-decision-records/commit/07586c4e600c5ecf693f28208b700dffad9e35f3))
+- **(i18n)**: Implement internationalization (for simplicity for one adr: /adrs/3d-printer-adr) - ([3c80029](https://github.com/skyisuniverse/architecture-decision-records/commit/3c800290491ef12f3d9d18d5a7884b6b5ae2100c))
+- **(i18n)**: Add internationalization for content pages (companies, products, services, apps) - ([9484db3](https://github.com/skyisuniverse/architecture-decision-records/commit/9484db32db9915dbb35070e415d6d5d50665f498))
+- **(i18n)**: Add internationalization to all adrs (new /decisions/**-adr path) - ([86b0611](https://github.com/skyisuniverse/architecture-decision-records/commit/86b061128c35db1249e8a5711ad08402192729f3))
+- **(i18n)**: Add translation to locale files of adrs (en, de) - ([833a0e7](https://github.com/skyisuniverse/architecture-decision-records/commit/833a0e7cd38e9a3adddc1e0cf2660f11c3c06baf))
+- **(i18n-md-mdx)**: Add internationalization (i18n), translations to markdown and mdx pages in next.js - ([a2ed834](https://github.com/skyisuniverse/architecture-decision-records/commit/a2ed834c7577bb0a088b3023e535cf3305648cd9))
+- **(language-switcher)**: Add language switcher - ([ca9d268](https://github.com/skyisuniverse/architecture-decision-records/commit/ca9d26806177dfa268c08843d18cf4e34a214f9a))
+- **(markdown-mdx-rendering)**: Added markdown and mdx rendering in next.js - ([bbae87e](https://github.com/skyisuniverse/architecture-decision-records/commit/bbae87ef1ab9b86f83d132e8d101995d97c9b889))
+- **(mathblock)**: Add mathblock component for math rendering with mathjax, remark-math & rehype-mathjax - ([078a69b](https://github.com/skyisuniverse/architecture-decision-records/commit/078a69b51b6e034036efc2f142de995d24078064))
+- **(mdx-codeblock)**: Add codeblock component for code rendering (including from .md and .mdx files) - ([9559946](https://github.com/skyisuniverse/architecture-decision-records/commit/955994663c9a3d0645900929ad2ae1147b2b0aa1))
+- **(search)**: Add search component (with orama) - ([020b268](https://github.com/skyisuniverse/architecture-decision-records/commit/020b268d06f89525689676cc114c23436ff0bbc5))
+
+### 📚 Documentation
+
+- **(app-bar)**: Highlight active button in app bar - ([cc7efe3](https://github.com/skyisuniverse/architecture-decision-records/commit/cc7efe3b40d75dafd7e834a1c9e6f5647a11185d))
+- **(app-pages)**: Add pages for apps (spaces), e.g. knowledge base, git spaces, ticket system, etc. - ([11fb401](https://github.com/skyisuniverse/architecture-decision-records/commit/11fb4010846b8e8997779875ee4a8edf7e0a3011))
+- **(apps)**: Add apps (applications) page - ([1bba73d](https://github.com/skyisuniverse/architecture-decision-records/commit/1bba73dcebd4e15d13a1a4c2b60797d6f95ecd02))
+- **(companies)**: Add companies page (spacex, tesla, xai, neuralink) - ([dcc057f](https://github.com/skyisuniverse/architecture-decision-records/commit/dcc057fdc006092ffbc745fc2c1ea626a5bd0602))
+- **(feat)**: Added breadcrumbs to main component - ([7429f94](https://github.com/skyisuniverse/architecture-decision-records/commit/7429f94179c7af781f4d79fd9b15ed61ac03a47f))
+- **(glossary)**: Add glossary page - ([bdd10c1](https://github.com/skyisuniverse/architecture-decision-records/commit/bdd10c14f2de0635fc8774f1169a390084aedad2))
+- **(open-source-cnc-adr)**: Add open-source-cnc-adr to tesla-adrs for production of optimus and other use cases - ([731ac8b](https://github.com/skyisuniverse/architecture-decision-records/commit/731ac8b9053a025415a0c337e9e0496000156d67))
+- **(open-source-cnc-machine-adr)**: Add decisions to open-source cnc machine adr - ([2d74167](https://github.com/skyisuniverse/architecture-decision-records/commit/2d7416745778c9ba68f8ca282ebe7eafaffbc4ee))
+- **(optimus)**: Add optimus adr - ([d529180](https://github.com/skyisuniverse/architecture-decision-records/commit/d529180094b85a337c1075f72dd34a5feb1130e6))
+- **(products)**: Added products page with image list of products - ([03441b4](https://github.com/skyisuniverse/architecture-decision-records/commit/03441b444a6f8b951a2c95f76a2fee90278166c4))
+- **(services)**: Add services page - ([fc1f34e](https://github.com/skyisuniverse/architecture-decision-records/commit/fc1f34e92f2c027d4eb5547000efb2c022350959))
+- **(services)**: Add new products and services (space-based data-centers, launching, etc.) - ([78dc777](https://github.com/skyisuniverse/architecture-decision-records/commit/78dc777a12e6ea991e5f155e862bfc226ef5718d))
+- **(space-based-web-hosting)**: Added link to space-based-web-hosting service page to web hosting spaces app - ([07b00cb](https://github.com/skyisuniverse/architecture-decision-records/commit/07b00cb4e394628c64d91155820bd784f49d879a))
+
+### 💊 Bug Fixes
+
+- **(breadcrumbs)**: Use translation of adr decision title in breadcrumbs instead of hardcoded title strings - ([d2ae3d7](https://github.com/skyisuniverse/architecture-decision-records/commit/d2ae3d7f5ed79745bbd2f1da8a0b593b793fd7e8))
+- **(codeblock)**: Add styles for line numbers, line and word highlighting - ([cfd838b](https://github.com/skyisuniverse/architecture-decision-records/commit/cfd838ba965d894f43ce98def31320ee112c7c93))
+- **(layout)**: Add bottom padding to layout to prevent interection of bottom nav and page content - ([e819152](https://github.com/skyisuniverse/architecture-decision-records/commit/e819152ed6697675215877acff44647de2f05d7f))
+
+### 🧪 Testing
+
+- **(adrs-lists)**: Add unit tests for adrs-lists and adrs content pages - ([c37c07d](https://github.com/skyisuniverse/architecture-decision-records/commit/c37c07dcab14d7a43f02cfb739cceaade8edcba5))
+- **(config,homepage)**: Fix broken unit tests - ([d691c13](https://github.com/skyisuniverse/architecture-decision-records/commit/d691c130dea56101e725c829babfb083dad7f11b))
+- **(e2e)**: Add end-to-end tests with playwright - ([8972b45](https://github.com/skyisuniverse/architecture-decision-records/commit/8972b45b0e3e768991c01ffcf74d9f6f2078de40))
+- **(e2e)**: Add basic e2e-test (use adr select, navigate to pages) - ([930b805](https://github.com/skyisuniverse/architecture-decision-records/commit/930b805f6888078cfb0b1814beb1953edcf89d2d))
+- **(homepage)**: Add unit tests for homepage including locales - ([8650366](https://github.com/skyisuniverse/architecture-decision-records/commit/86503663be263e6fb5cf3209f2d8642133caeefa))
+- **(layout)**: Add unit tests for ui layout - ([59f1dde](https://github.com/skyisuniverse/architecture-decision-records/commit/59f1dde7922cdadd628e94fcda6d6986aabdbf20))
+- **(navigation-context)**: Add unit tests for state management (navigation context) - ([31b2519](https://github.com/skyisuniverse/architecture-decision-records/commit/31b2519bb6a644e4ff5e688a65b1a59e5fdc1bee))
+- **(root-layout)**: Add unit tests for client root layout - ([aadf2ff](https://github.com/skyisuniverse/architecture-decision-records/commit/aadf2ff44ab8155778f5bbc8fdc0fa2e1fa8e73e))
+- **(vitest)**: Add unit tests with vitest (w/ html report, coverage & watch mode) - ([d76d082](https://github.com/skyisuniverse/architecture-decision-records/commit/d76d082f138d24f5ccb8d982c88039736a01cdf9))
+
+### ⚙️  Chore
+
+- **(bottom-nav)**: Add active status to buttons in bottom navigation component - ([a7de44c](https://github.com/skyisuniverse/architecture-decision-records/commit/a7de44ca32c6353ab13cb75a9655bb8eba747609))
+- **(breadcrumbs)**: Add breadcrumbs to companies, products & services - ([516abed](https://github.com/skyisuniverse/architecture-decision-records/commit/516abed0e04497d8da4b5318357d00a5ecae1691))
+- **(favicon)**: Add favicon - ([4268f9c](https://github.com/skyisuniverse/architecture-decision-records/commit/4268f9c1578baf9c67876544ccd779f6b24cb984))
+- **(readme)**: Update readme with release strategy - ([475f0c3](https://github.com/skyisuniverse/architecture-decision-records/commit/475f0c31f1df89de600125b63feeb39ca679317b))
+- **(release)**: V0.1.0 - ([1230244](https://github.com/skyisuniverse/architecture-decision-records/commit/1230244ba90c4b753188fb48978412a732be027e))
 ## [0.1.0] - 2026-04-18
 
 ### 🚀 Features
