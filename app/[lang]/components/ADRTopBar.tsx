@@ -8,6 +8,7 @@ import MuiAppBar from "@mui/material/AppBar";
 import { styled } from "@mui/material/styles";
 import { drawerWidth } from "./ResponsiveDrawer";
 // import LanguageSwitcher from "./LanguageSwitcher";
+import Search from "./Search";
 
 type Dictionary = Record<string, string>;
 
@@ -140,21 +141,31 @@ export default function ADRTopBar({
           })}
         </Box>
 
-        {/* Right side: Language switcher + R&D Center link */}
-        <Box sx={{ display: "flex", alignItems: "center", ml: "auto" }}>
-          {/*<LanguageSwitcher />*/}
+        {/* Right side: Search + R&D Center link */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            ml: "auto",
+            gap: 2, // clean spacing between Search and R&D Center
+          }}
+        >
+          {/* Search component (Paper + InputBase style) */}
+          <Search />
 
-          {/* R&D Center link (always on the far right) */}
-          <Typography variant="h6" noWrap component="div" sx={{ ml: 2 }}>
-            <Link
-              href="https://rd-center.vercel.app/"
-              color="inherit"
-              target="_blank"
-              style={{ textDecoration: "none" }}
-            >
-              R&D Center
-            </Link>
-          </Typography>
+          {/* R&D Center – fixed to NEVER truncate */}
+          <Box sx={{ flexShrink: 0 }}>
+            <Typography variant="h6" noWrap component="div">
+              <Link
+                href="https://rd-center.vercel.app/"
+                color="inherit"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                R&D Center
+              </Link>
+            </Typography>
+          </Box>
         </Box>
       </Toolbar>
     </StyledAppBar>

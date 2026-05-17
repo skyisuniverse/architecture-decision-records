@@ -1,14 +1,13 @@
-'use client';
+"use client";
 
+import { Breadcrumbs, Typography, Link as MuiLink } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import Link from "next/link";
+import { usePathname, useParams } from "next/navigation";
 import {
-  Breadcrumbs,
-  Typography,
-  Link as MuiLink,
-} from '@mui/material';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import Link from 'next/link';
-import { usePathname, useParams } from 'next/navigation';
-import { useNavigation, type ListItem } from '@/app/[lang]/contexts/navigation-context';
+  useNavigation,
+  type ListItem,
+} from "@/app/[lang]/contexts/navigation-context";
 
 type Dictionary = Record<string, string>;
 
@@ -22,15 +21,15 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
     currentSlug,
     currentAdrCategoryName,
     currentProduct,
-    currentCompany,
+    // currentCompany,
     currentService,
     currentApp,
-    decisionDict
+    decisionDict,
   } = useNavigation();
 
   const getLocalizedHref = (href: string): string => {
-    if (href === '/') return `/${lang}`;
-    if (!href.startsWith('/')) href = '/' + href;
+    if (href === "/") return `/${lang}`;
+    if (!href.startsWith("/")) href = "/" + href;
     if (href.startsWith(`/${lang}/`)) return href;
     return `/${lang}${href}`;
   };
@@ -39,7 +38,7 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
     <MuiLink
       key="home"
       component={Link}
-      href={getLocalizedHref('/')}
+      href={getLocalizedHref("/")}
       underline="hover"
       color="inherit"
     >
@@ -56,46 +55,46 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
   };
 
   const sections: Section[] = [
+    // {
+    //   prefix: "/companies",
+    //   listHref: "/companies",
+    //   listTitle: dict.companies,
+    //   currentItem: currentCompany,
+    //   itemKey: "company",
+    // },
     {
-      prefix: '/companies',
-      listHref: '/companies',
-      listTitle: dict.companies,
-      currentItem: currentCompany,
-      itemKey: 'company',
-    },
-    {
-      prefix: '/services',
-      listHref: '/services',
+      prefix: "/services",
+      listHref: "/services",
       listTitle: dict.services,
       currentItem: currentService,
-      itemKey: 'service',
+      itemKey: "service",
     },
     {
-      prefix: '/products',
-      listHref: '/products',
+      prefix: "/products",
+      listHref: "/products",
       listTitle: dict.products,
       currentItem: currentProduct,
-      itemKey: 'product',
+      itemKey: "product",
     },
     {
-      prefix: '/apps',
-      listHref: '/apps',
+      prefix: "/apps",
+      listHref: "/apps",
       listTitle: dict.applications,
       currentItem: currentApp,
-      itemKey: 'app',
+      itemKey: "app",
     },
     {
-      prefix: '/glossary',
-      listHref: '/glossary',
-      listTitle: dict.glossary ?? 'Glossary',
-      currentItem: undefined,           // Glossary is a single static page (no detail view yet)
-      itemKey: 'glossary',
+      prefix: "/glossary",
+      listHref: "/glossary",
+      listTitle: dict.glossary ?? "Glossary",
+      currentItem: undefined, // Glossary is a single static page (no detail view yet)
+      itemKey: "glossary",
     },
   ];
 
   const getSectionBreadcrumbs = (): React.ReactNode[] => {
     const section = sections.find((s) =>
-      pathname.startsWith(getLocalizedHref(s.prefix))
+      pathname.startsWith(getLocalizedHref(s.prefix)),
     );
     if (!section) return [];
 
@@ -130,14 +129,14 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
   breadcrumbItems.push(...getSectionBreadcrumbs());
 
   const isNonADRSection = sections.some((s) =>
-    pathname.startsWith(getLocalizedHref(s.prefix))
+    pathname.startsWith(getLocalizedHref(s.prefix)),
   );
 
   if (!isNonADRSection && activeCategory) {
     breadcrumbItems.push(
       <Typography key="adr-group" color="text.primary">
         {dict[activeCategory.name] ?? activeCategory.name}
-      </Typography>
+      </Typography>,
     );
 
     if (currentSlug && currentAdrCategoryName) {
@@ -154,18 +153,19 @@ export default function ADRBreadcrumbs({ dict }: { dict: Dictionary }) {
             color="inherit"
           >
             {currentAdrCategoryName}
-          </MuiLink>
+          </MuiLink>,
         );
         breadcrumbItems.push(
           <Typography key="decision" color="text.primary">
-            {decisionDict[currentAdr.translationKey] ?? currentAdr.translationKey}
-          </Typography>
+            {decisionDict[currentAdr.translationKey] ??
+              currentAdr.translationKey}
+          </Typography>,
         );
       } else {
         breadcrumbItems.push(
           <Typography key="category" color="text.primary">
             {currentAdrCategoryName}
-          </Typography>
+          </Typography>,
         );
       }
     }

@@ -30,12 +30,12 @@ export default async function Home({
 
   return (
     <Box>
-      <Divider sx={{ width: "100%", my: 1 }} />
+      {/*<Divider sx={{ width: "100%", my: 1 }} />*/}
       {/* Central Search Box Component Container */}
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      {/*<Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <Search />
-      </Box>
-      <Divider sx={{ width: "100%", my: 1 }} />
+      </Box>*/}
+      {/*<Divider sx={{ width: "100%", my: 1 }} />*/}
       <Typography
         variant="h2"
         sx={{
