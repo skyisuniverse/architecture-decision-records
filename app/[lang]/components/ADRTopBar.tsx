@@ -1,19 +1,13 @@
-'use client';
-import { useTheme } from '@mui/material/styles';
-import {
-  Toolbar,
-  IconButton,
-  Typography,
-  Box,
-  Button,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Link from 'next/link';
-import { usePathname, useParams } from 'next/navigation';
-import MuiAppBar from '@mui/material/AppBar';
-import { styled } from '@mui/material/styles';
-import { drawerWidth } from './ResponsiveDrawer';
-import LanguageSwitcher from './LanguageSwitcher';
+"use client";
+import { useTheme } from "@mui/material/styles";
+import { Toolbar, IconButton, Typography, Box, Button } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
+import { usePathname, useParams } from "next/navigation";
+import MuiAppBar from "@mui/material/AppBar";
+import { styled } from "@mui/material/styles";
+import { drawerWidth } from "./ResponsiveDrawer";
+// import LanguageSwitcher from "./LanguageSwitcher";
 
 type Dictionary = Record<string, string>;
 
@@ -22,22 +16,22 @@ interface AppBarProps {
 }
 
 const StyledAppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
+  shouldForwardProp: (prop) => prop !== "open",
 })<AppBarProps>(({ theme, open }) => ({
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up("sm")]: {
     ...(open
       ? {
           width: `calc(100% - ${drawerWidth}px)`,
           marginLeft: `${drawerWidth}px`,
-          transition: theme.transitions.create(['margin', 'width'], {
+          transition: theme.transitions.create(["margin", "width"], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
           }),
         }
       : {
-          width: '100%',
+          width: "100%",
           marginLeft: 0,
-          transition: theme.transitions.create(['margin', 'width'], {
+          transition: theme.transitions.create(["margin", "width"], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
           }),
@@ -56,18 +50,18 @@ export default function ADRTopBar({
   open,
   onDrawerOpen,
   onMobileDrawerToggle,
-  dict
+  dict,
 }: ADRTopBarProps) {
   const theme = useTheme();
   const pathname = usePathname();
   const { lang } = useParams() as { lang: string };
 
   const navItems = [
-    { title: dict.companies, href: 'companies' },
-    { title: dict.products, href: 'products' },
-    { title: dict.services, href: 'services' },
-    { title: dict.applications, href: 'apps' },   // uses /apps route + translated label
-    { title: dict.glossary, href: 'glossary' },
+    // { title: dict.companies, href: 'companies' },
+    { title: dict.products, href: "products" },
+    { title: dict.services, href: "services" },
+    { title: dict.applications, href: "apps" }, // uses /apps route + translated label
+    { title: dict.glossary, href: "glossary" },
   ];
 
   // const pages = ['Companies', 'Products', 'Services', 'Apps'];
@@ -81,7 +75,7 @@ export default function ADRTopBar({
           aria-label="open drawer"
           onClick={onMobileDrawerToggle}
           edge="start"
-          sx={{ mr: 2, display: { xs: 'block', sm: 'none' } }}
+          sx={{ mr: 2, display: { xs: "block", sm: "none" } }}
         >
           <MenuIcon />
         </IconButton>
@@ -94,7 +88,7 @@ export default function ADRTopBar({
           edge="start"
           sx={{
             mr: 2,
-            display: { xs: 'none', sm: open ? 'none' : 'block' },
+            display: { xs: "none", sm: open ? "none" : "block" },
           }}
         >
           <MenuIcon />
@@ -110,14 +104,14 @@ export default function ADRTopBar({
           <Link
             href={`/${lang}`}
             color="inherit"
-            style={{ textDecoration: 'none' }}
+            style={{ textDecoration: "none" }}
           >
             Architecture Decision Records
           </Link>
         </Typography>
 
         {/* Desktop navigation (sm and up) – locale-aware links */}
-        <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
           {navItems.map((item) => {
             const href = `/${lang}/${item.href}`;
             const isActive =
@@ -131,13 +125,13 @@ export default function ADRTopBar({
                 color="inherit"
                 sx={{
                   my: 2,
-                  display: 'block',
+                  display: "block",
                   mx: 1,
                   ...(isActive && {
-                    backgroundColor: 'white',
-                    color: 'primary.dark',
+                    backgroundColor: "white",
+                    color: "primary.dark",
                   }),
-                  textAlign: 'center',
+                  textAlign: "center",
                 }}
               >
                 {item.title}
@@ -147,21 +141,16 @@ export default function ADRTopBar({
         </Box>
 
         {/* Right side: Language switcher + R&D Center link */}
-        <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
-          <LanguageSwitcher />
+        <Box sx={{ display: "flex", alignItems: "center", ml: "auto" }}>
+          {/*<LanguageSwitcher />*/}
 
           {/* R&D Center link (always on the far right) */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ ml: 2 }}
-          >
+          <Typography variant="h6" noWrap component="div" sx={{ ml: 2 }}>
             <Link
               href="https://rd-center.vercel.app/"
               color="inherit"
               target="_blank"
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: "none" }}
             >
               R&D Center
             </Link>

@@ -1,10 +1,10 @@
-import WithDictionary from '../../components/WithDictionary';
-import XaiClient from './XaiClient';
+// import WithDictionary from "../../components/WithDictionary";
+// import XaiPage from "./XaiPage";
 
-export default function Page(props: any) {
-  return (
-    <WithDictionary {...props}>
-      {(dict) => <XaiClient dict={dict} />}
-    </WithDictionary>
-  );
-}
+// export default function Page(props: any) {
+//   return (
+//     <WithDictionary {...props}>
+//       {(dict) => <XaiPage dict={dict} />}
+//     </WithDictionary>
+//   );
+// }

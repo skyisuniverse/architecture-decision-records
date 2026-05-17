@@ -1,7 +1,7 @@
 // app/[lang]/components/ADRBottomNav.tsx
 "use client";
 import { BottomNavigation, BottomNavigationAction, Box } from "@mui/material";
-import BusinessIcon from "@mui/icons-material/Business";
+// import BusinessIcon from "@mui/icons-material/Business";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import AppShortcutIcon from "@mui/icons-material/AppShortcut";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
@@ -13,7 +13,7 @@ import { useNavigation } from "../contexts/navigation-context";
 export default function ADRBottomNav() {
   const pathname = usePathname();
   const {
-    currentCompany,
+    // currentCompany,
     currentProduct,
     currentService,
     currentApp,
@@ -23,11 +23,11 @@ export default function ADRBottomNav() {
 
   const navItems = useMemo(
     () => [
-      {
-        label: dict.companies ?? "Companies",
-        path: "/companies",
-        icon: <BusinessIcon />,
-      },
+      // {
+      //   label: dict.companies ?? "Companies",
+      //   path: "/companies",
+      //   icon: <BusinessIcon />,
+      // },
       {
         label: dict.products ?? "Products",
         path: "/products",
@@ -48,9 +48,9 @@ export default function ADRBottomNav() {
   );
 
   const activeValue = useMemo(() => {
-    if (currentCompany || pathname?.includes("/companies")) {
-      return "/companies";
-    }
+    // if (currentCompany || pathname?.includes("/companies")) {
+    //   return "/companies";
+    // }
     if (currentProduct || pathname?.includes("/products")) {
       return "/products";
     }
@@ -61,7 +61,13 @@ export default function ADRBottomNav() {
       return "/apps";
     }
     return false;
-  }, [currentCompany, currentProduct, currentService, currentApp, pathname]);
+  }, [
+    // currentCompany,
+    currentProduct,
+    currentService,
+    currentApp,
+    pathname,
+  ]);
 
   return (
     <Box

@@ -19,7 +19,7 @@ import {
   getLocalizedCategories,
 } from "@/app/[lang]/config/adrs-lists";
 import { itemData as productItems } from "@/app/[lang]/products/products-list";
-import { itemData as companyItems } from "@/app/[lang]/companies/companies-list";
+// import { itemData as companyItems } from "@/app/[lang]/companies/companies-list";
 import { itemData as serviceItems } from "@/app/[lang]/services/services-list";
 import { itemData as appItems } from "@/app/[lang]/apps/applications-list";
 import { ADRItem } from "@/app/[lang]/types/adr";
@@ -79,7 +79,7 @@ type NavigationContextValue = {
   currentAdrsList: ADRItem[];
   currentAdr: ADRItem | undefined;
   currentProduct: ListItem | undefined;
-  currentCompany: ListItem | undefined;
+  // currentCompany: ListItem | undefined;
   currentService: ListItem | undefined;
   currentApp: ListItem | undefined;
   currentAdrCategoryName: string;
@@ -265,11 +265,11 @@ export function NavigationProvider({
     return productItems.find((item) => item.slug === itemSlug);
   }, [pathname]);
 
-  const currentCompany = useMemo(() => {
-    if (!pathname.includes("/companies/")) return undefined;
-    const itemSlug = pathname.split("/companies/")[1];
-    return companyItems.find((item) => item.slug === itemSlug);
-  }, [pathname]);
+  // const currentCompany = useMemo(() => {
+  //   if (!pathname.includes("/companies/")) return undefined;
+  //   const itemSlug = pathname.split("/companies/")[1];
+  //   return companyItems.find((item) => item.slug === itemSlug);
+  // }, [pathname]);
 
   const currentService = useMemo(() => {
     if (!pathname.includes("/services/")) return undefined;
@@ -338,7 +338,7 @@ export function NavigationProvider({
     currentAdrsList,
     currentAdr,
     currentProduct,
-    currentCompany,
+    // currentCompany,
     currentService,
     currentApp,
     currentAdrCategoryName,

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Box,
@@ -16,27 +16,28 @@ import {
   MenuItem,
   type SelectChangeEvent,
   Collapse,
-} from '@mui/material';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import Link from 'next/link';
-import { usePathname, useParams } from 'next/navigation';
-import { useNavigation } from '@/app/[lang]/contexts/navigation-context';
-import { adrsListMap } from '@/app/[lang]/config/adrs-lists';
-import { ADRItem } from '../types/adr';
-import Stack from '@mui/material/Stack';
-import { StatusChip } from './StatusChip';
-import * as React from 'react';
+} from "@mui/material";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Link from "next/link";
+import { usePathname, useParams } from "next/navigation";
+import { useNavigation } from "@/app/[lang]/contexts/navigation-context";
+import { adrsListMap } from "@/app/[lang]/config/adrs-lists";
+import { ADRItem } from "../types/adr";
+import Stack from "@mui/material/Stack";
+import { StatusChip } from "./StatusChip";
+import * as React from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export const drawerWidth = 240;
 
-export const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
+export const DrawerHeader = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
+  justifyContent: "flex-end",
 }));
 
 interface Props {
@@ -67,13 +68,15 @@ export default function ResponsiveDrawer(props: Props) {
     navigateToAdr,
     toggleExpanded,
     localizedCategories,
-    decisionDict,        // ← merged dict with status.* keys
+    decisionDict, // ← merged dict with status.* keys
   } = useNavigation();
 
-  const selectedCategory = localizedCategories.find((cat) => cat.id === selectedCategoryId) || localizedCategories[0];
+  const selectedCategory =
+    localizedCategories.find((cat) => cat.id === selectedCategoryId) ||
+    localizedCategories[0];
 
   const getLocalizedHref = (href: string): string => {
-    if (!href.startsWith('/')) href = '/' + href;
+    if (!href.startsWith("/")) href = "/" + href;
     if (href.startsWith(`/${lang}/`)) return href;
     return `/${lang}${href}`;
   };
@@ -90,8 +93,109 @@ export default function ResponsiveDrawer(props: Props) {
     toggleExpanded(slug);
   };
 
+  // const drawerContent = (onClose: () => void) => (
+  //   <div>
+  //     <DrawerHeader>
+  //       <IconButton onClick={onClose}>
+  //         <ChevronLeftIcon />
+  //       </IconButton>
+  //     </DrawerHeader>
+
+  //     <Divider />
+
+  //     <Box sx={{ p: 2 }}>
+  //       <FormControl fullWidth>
+  //         <InputLabel id="category-select-label">Select Category</InputLabel>
+  //         <Select
+  //           labelId="category-select-label"
+  //           id="category-select"
+  //           value={selectedCategoryId}
+  //           label="Select Category"
+  //           onChange={handleCategoryChange}
+  //         >
+  //           {localizedCategories.map((category) => (
+  //             <MenuItem key={category.id} value={category.id}>
+  //               {category.name}
+  //             </MenuItem>
+  //           ))}
+  //         </Select>
+  //       </FormControl>
+  //     </Box>
+
+  //     <Divider />
+
+  //     <List>
+  //       <ListSubheader component="div" id="nested-list-subheader">
+  //         {selectedCategory.name}
+  //       </ListSubheader>
+
+  //       {selectedCategory.adrs.map((adrItem) => {
+  //         const decisions: ADRItem[] = adrsListMap[adrItem.slug] || [];
+  //         const isOpen = expandedAdrSlug === adrItem.slug;
+
+  //         return (
+  //           <React.Fragment key={adrItem.slug}>
+  //             <ListItemButton
+  //               selected={currentSlug === adrItem.slug}
+  //               onClick={() => handleAdrHeaderClick(adrItem.slug)}
+  //             >
+  //               <ListItemText primary={adrItem.label} />
+  //               <IconButton
+  //                 onClick={(e) => {
+  //                   e.stopPropagation();
+  //                   handleToggle(adrItem.slug);
+  //                 }}
+  //               >
+  //                 {isOpen ? <ExpandLess /> : <ExpandMore />}
+  //               </IconButton>
+  //             </ListItemButton>
+
+  //             <Collapse in={isOpen} timeout="auto" unmountOnExit>
+  //               <List component="div" disablePadding>
+  //                 {decisions.map((decision: ADRItem) => {
+  //                   const localizedHref = getLocalizedHref(decision.link);
+
+  //                   const translatedTitle = decisionDict[decision.translationKey] ?? decision.translationKey;  // Fallback to key if translation is missing
+
+  //                   return (
+  //                     <ListItemButton
+  //                       key={decision.link}
+  //                       component={Link}
+  //                       href={localizedHref}
+  //                       selected={pathname === localizedHref}
+  //                       sx={{ pl: 4 }}
+  //                     >
+  //                       <Stack spacing={2} sx={{ width: '100%' }}>
+  //                         <ListItemText
+  //                           primary={translatedTitle}
+  //                           secondary={decision.date}
+  //                         />
+  //                         <StatusChip
+  //                           status={decision.status}
+  //                           dict={decisionDict}
+  //                         />
+  //                       </Stack>
+  //                     </ListItemButton>
+  //                   );
+  //                 })}
+  //               </List>
+  //             </Collapse>
+  //           </React.Fragment>
+  //         );
+  //       })}
+  //     </List>
+  //   </div>
+  // );
   const drawerContent = (onClose: () => void) => (
-    <div>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100%",
+        height: "100%",
+      }}
+    >
+      {/* Top Controls Content */}
       <DrawerHeader>
         <IconButton onClick={onClose}>
           <ChevronLeftIcon />
@@ -100,91 +204,107 @@ export default function ResponsiveDrawer(props: Props) {
 
       <Divider />
 
-      <Box sx={{ p: 2 }}>
-        <FormControl fullWidth>
-          <InputLabel id="category-select-label">Select Category</InputLabel>
-          <Select
-            labelId="category-select-label"
-            id="category-select"
-            value={selectedCategoryId}
-            label="Select Category"
-            onChange={handleCategoryChange}
-          >
-            {localizedCategories.map((category) => (
-              <MenuItem key={category.id} value={category.id}>
-                {category.name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+      {/* Scrollable Mid-section holding Category select and ADR items */}
+      <Box sx={{ flexGrow: 1, overflowY: "auto" }}>
+        <Box sx={{ p: 2 }}>
+          <FormControl fullWidth>
+            <InputLabel id="category-select-label">Select Category</InputLabel>
+            <Select
+              labelId="category-select-label"
+              id="category-select"
+              value={selectedCategoryId}
+              label="Select Category"
+              onChange={handleCategoryChange}
+            >
+              {localizedCategories.map((category) => (
+                <MenuItem key={category.id} value={category.id}>
+                  {category.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+
+        <Divider />
+
+        <List>
+          <ListSubheader component="div" id="nested-list-subheader">
+            {selectedCategory.name}
+          </ListSubheader>
+          {selectedCategory.adrs.map((adrItem) => {
+            const decisions: ADRItem[] = adrsListMap[adrItem.slug] || [];
+            const isOpen = expandedAdrSlug === adrItem.slug;
+            return (
+              <React.Fragment key={adrItem.slug}>
+                <ListItemButton
+                  selected={currentSlug === adrItem.slug}
+                  onClick={() => handleAdrHeaderClick(adrItem.slug)}
+                >
+                  <ListItemText primary={adrItem.label} />
+                  <IconButton
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleToggle(adrItem.slug);
+                    }}
+                  >
+                    {isOpen ? <ExpandLess /> : <ExpandMore />}
+                  </IconButton>
+                </ListItemButton>
+
+                <Collapse in={isOpen} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    {decisions.map((decision: ADRItem) => {
+                      const localizedHref = getLocalizedHref(decision.link);
+                      const translatedTitle =
+                        decisionDict[decision.translationKey] ??
+                        decision.translationKey;
+                      return (
+                        <ListItemButton
+                          key={decision.link}
+                          component={Link}
+                          href={localizedHref}
+                          selected={pathname === localizedHref}
+                          sx={{ pl: 4 }}
+                        >
+                          <Stack spacing={2} sx={{ width: "100%" }}>
+                            <ListItemText
+                              primary={translatedTitle}
+                              secondary={decision.date}
+                            />
+                            <StatusChip
+                              status={decision.status}
+                              dict={decisionDict}
+                            />
+                          </Stack>
+                        </ListItemButton>
+                      );
+                    })}
+                  </List>
+                </Collapse>
+              </React.Fragment>
+            );
+          })}
+        </List>
       </Box>
 
+      {/* Persistent Bottom Content Block */}
       <Divider />
-
-      <List>
-        <ListSubheader component="div" id="nested-list-subheader">
-          {selectedCategory.name}
-        </ListSubheader>
-
-        {selectedCategory.adrs.map((adrItem) => {
-          const decisions: ADRItem[] = adrsListMap[adrItem.slug] || [];
-          const isOpen = expandedAdrSlug === adrItem.slug;
-
-          return (
-            <React.Fragment key={adrItem.slug}>
-              <ListItemButton
-                selected={currentSlug === adrItem.slug}
-                onClick={() => handleAdrHeaderClick(adrItem.slug)}
-              >
-                <ListItemText primary={adrItem.label} />
-                <IconButton
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleToggle(adrItem.slug);
-                  }}
-                >
-                  {isOpen ? <ExpandLess /> : <ExpandMore />}
-                </IconButton>
-              </ListItemButton>
-
-              <Collapse in={isOpen} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  {decisions.map((decision: ADRItem) => {
-                    const localizedHref = getLocalizedHref(decision.link);
-
-                    const translatedTitle = decisionDict[decision.translationKey] ?? decision.translationKey;  // Fallback to key if translation is missing
-
-                    return (
-                      <ListItemButton
-                        key={decision.link}
-                        component={Link}
-                        href={localizedHref}
-                        selected={pathname === localizedHref}
-                        sx={{ pl: 4 }}
-                      >
-                        <Stack spacing={2} sx={{ width: '100%' }}>
-                          <ListItemText
-                            primary={translatedTitle}
-                            secondary={decision.date}
-                          />
-                          <StatusChip 
-                            status={decision.status} 
-                            dict={decisionDict}
-                          />
-                        </Stack>
-                      </ListItemButton>
-                    );
-                  })}
-                </List>
-              </Collapse>
-            </React.Fragment>
-          );
-        })}
-      </List>
-    </div>
+      <Box
+        sx={{
+          p: 2,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "background.paper",
+        }}
+      >
+        <LanguageSwitcher />
+      </Box>
+    </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box
@@ -198,8 +318,8 @@ export default function ResponsiveDrawer(props: Props) {
         open={mobileOpen}
         onClose={onMobileDrawerClose}
         sx={{
-          display: { xs: 'block', sm: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          display: { xs: "block", sm: "none" },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
         }}
         slotProps={{ root: { keepMounted: true } }}
       >
@@ -210,8 +330,8 @@ export default function ResponsiveDrawer(props: Props) {
         variant="persistent"
         open={open}
         sx={{
-          display: { xs: 'none', sm: 'block' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          display: { xs: "none", sm: "block" },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
         }}
       >
         {drawerContent(onDesktopDrawerClose)}

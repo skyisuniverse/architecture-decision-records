@@ -4236,31 +4236,31 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "title": "Neuralink",
       "category": "",
       "url": "/en/companies/neuralink",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Companies",
       "category": "",
       "url": "/en/companies",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Spacex",
       "category": "",
       "url": "/en/companies/spacex",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Tesla",
       "category": "",
       "url": "/en/companies/tesla",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Xai",
       "category": "",
       "url": "/en/companies/xai",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Glossary",
@@ -8882,31 +8882,31 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "title": "Neuralink",
       "category": "",
       "url": "/de/companies/neuralink",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Unternehmen",
       "category": "",
       "url": "/de/companies",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Spacex",
       "category": "",
       "url": "/de/companies/spacex",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Tesla",
       "category": "",
       "url": "/de/companies/tesla",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Xai",
       "category": "",
       "url": "/de/companies/xai",
-      "content": ";"
+      "content": ""
     },
     {
       "title": "Glossar",
