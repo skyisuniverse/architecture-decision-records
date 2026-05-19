@@ -357,6 +357,24 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "adrsList= dict= / ;"
     },
     {
+      "title": "Computer Decision Record 1",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/computer-decision-record-1",
+      "content": ""
+    },
+    {
+      "title": "Computer Decision Record 2",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/computer-decision-record-2",
+      "content": ""
+    },
+    {
+      "title": "Computer ADR",
+      "category": "",
+      "url": "/en/adrs/computer-adr",
+      "content": "adrsList= dict= / ;"
+    },
+    {
       "title": "Scientific breakthroughs for Nano-Assembly",
       "category": "",
       "url": "/en/adrs/direct-binary-code-generation-adr/decisions/decision-record-1",
@@ -4970,6 +4988,24 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "title": "Mars-Terraforming von 100.000+ auf 10 Jahre komprimieren",
       "category": "",
       "url": "/de/adrs/compressing-mars-terraforming-adr",
+      "content": "adrsList= dict= / ;"
+    },
+    {
+      "title": "Computer Decision Record 1",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/computer-decision-record-1",
+      "content": ""
+    },
+    {
+      "title": "Computer Decision Record 2",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/computer-decision-record-2",
+      "content": ""
+    },
+    {
+      "title": "Computer ADR",
+      "category": "",
+      "url": "/de/adrs/computer-adr",
       "content": "adrsList= dict= / ;"
     },
     {

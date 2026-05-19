@@ -52,12 +52,14 @@ import { WarpDriveWithoutNegativeEnergyAdrsList } from "../adrs/warp-drive-witho
 import { SuperluminalEffectiveWarpDriveAdrsList } from "../adrs/superluminal-effective-warp-drive-adr/superluminal-effective-warp-drive-adrs-list";
 import { OptimusAdrsList } from "../adrs/optimus-adr/optimus-adrs-list";
 import { OpenSourceCNCMachineAdrsList } from "../adrs/open-source-cnc-machine-adr/open-source-cnc-machine-adrs-list";
+import { ComputerAdrsList } from "../adrs/computer-adr/computer-adrs-list";
 
 export const adrsListMap: Record<string, any> = {
   "nano-assembly-adr": NanoassemblyAdrsList,
   "nano-assembler-adr": NanoAssemblerAdrsList,
   "3d-printing-adr": ThreeDPrintingAdrsList,
   "3d-printer-adr": ThreeDPrinterAdrsList,
+  "computer-adr": ComputerAdrsList,
   "chip-design-tool-adr": ChipDesignToolAdrsList,
   "engineering-simulation-tool-adr": EngineeringSimulationToolAdrsList,
   "automated-design-manufacturing-pipeline-adr":
@@ -147,6 +149,7 @@ const rawCategories: Category[] = [
         slug: "automated-design-manufacturing-pipeline-adr",
         label: "automated-design-manufacturing-pipeline-adr",
       },
+      { slug: "computer-adr", label: "computer-adr" },
     ],
   },
   {

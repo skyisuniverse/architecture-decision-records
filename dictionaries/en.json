@@ -56,6 +56,7 @@
   "category.electric-cars-and-robots": "Electric Cars & Robots ADRs",
   "category.ai-datacenter": "AI Datacenter ADRs",
   "category.neurotechnology": "Neurotechnology ADRs",
+  "computer-adr": "Computer ADR",
 
   "status.draft": "Draft",
   "status.proposed": "Proposed",
