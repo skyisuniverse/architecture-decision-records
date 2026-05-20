@@ -4,6 +4,7 @@ import { BottomNavigation, BottomNavigationAction, Box } from "@mui/material";
 // import BusinessIcon from "@mui/icons-material/Business";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import AppShortcutIcon from "@mui/icons-material/AppShortcut";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -42,6 +43,11 @@ export default function ADRBottomNav() {
         label: dict.applications ?? "Applications",
         path: "/apps",
         icon: <AppShortcutIcon />,
+      },
+      {
+        label: dict.glossary ?? "Glossary",
+        path: "/glossary",
+        icon: <LibraryBooksIcon />,
       },
     ],
     [dict],

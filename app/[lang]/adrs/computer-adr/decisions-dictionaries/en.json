@@ -1,4 +1,19 @@
 {
-  "computer-decision-record-1": "Computer Decision Record 1",
-  "computer-decision-record-2": "Computer Decision Record 2"
+  "materials": "Materials",
+  "materials-for-computer-electronics-components": "Materials used in key computer electronics components",
+  "production-methods-of-materials-for-computer-electronics": "Production methods of materials for computer electronics",
+  "equipment": "Equipment",
+  "equipment-for-production-of-computer-components": "Equipment for production of computer components",
+  "equipment-examples": "Equipment examples",
+  "key-equipment-for-production-stages": "Key equipment for production stages",
+  "compute-blade": "Compute Blade",
+  "components-for-compute-blade": "Components for Compute Blade",
+  "equipment-for-production-of-compute-blade": "Equipment for production of a Compute Blade",
+  "components-for-equipment-producton-compute-blade": "Components for equipment production (for production of Compute Blade)",
+  "minimization-of-costs-for-equipment-for-production-of-compute-blades": "Minimization of costs for equipment for production of Compute Blades",
+  "monitors": "Monitors",
+  "equipment-for-production-of-monitors": "Equipment for production of monitors",
+  "equipment-for-production-of-lcd-panels": "Equipment for production of LCD Panels",
+  "minimization-of-costs-for-equipment-for-production-of-monitors": "Minimization of costs for equipment for production of monitors",
+  "minimization-of-costs-for-equipment-for-production-of-laptops": "Minimization of costs for equipment for production of Laptops"
 }

@@ -357,16 +357,106 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "adrsList= dict= / ;"
     },
     {
-      "title": "Computer Decision Record 1",
+      "title": "Components For Compute Blade",
       "category": "",
-      "url": "/en/adrs/computer-adr/decisions/computer-decision-record-1",
-      "content": ""
+      "url": "/en/adrs/computer-adr/decisions/components-for-compute-blade",
+      "content": ";"
     },
     {
-      "title": "Computer Decision Record 2",
+      "title": "Components For Equipment Producton Compute Blade",
       "category": "",
-      "url": "/en/adrs/computer-adr/decisions/computer-decision-record-2",
-      "content": ""
+      "url": "/en/adrs/computer-adr/decisions/components-for-equipment-producton-compute-blade",
+      "content": ";"
+    },
+    {
+      "title": "Compute Blade",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/compute-blade",
+      "content": ";"
+    },
+    {
+      "title": "Equipment",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/equipment",
+      "content": ";"
+    },
+    {
+      "title": "Equipment Examples",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/equipment-examples",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Compute Blade",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/equipment-for-production-of-compute-blade",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Computer Components",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/equipment-for-production-of-computer-components",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Lcd Panels",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/equipment-for-production-of-lcd-panels",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Monitors",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/equipment-for-production-of-monitors",
+      "content": ";"
+    },
+    {
+      "title": "Key Equipment For Production Stages",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/key-equipment-for-production-stages",
+      "content": ";"
+    },
+    {
+      "title": "Materials",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/materials",
+      "content": ";"
+    },
+    {
+      "title": "Materials For Computer Electronics Components",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/materials-for-computer-electronics-components",
+      "content": ";"
+    },
+    {
+      "title": "Minimization Of Costs For Equipment For Production Of Compute Blades",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/minimization-of-costs-for-equipment-for-production-of-compute-blades",
+      "content": ";"
+    },
+    {
+      "title": "Minimization Of Costs For Equipment For Production Of Laptops",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/minimization-of-costs-for-equipment-for-production-of-laptops",
+      "content": ";"
+    },
+    {
+      "title": "Minimization Of Costs For Equipment For Production Of Monitors",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/minimization-of-costs-for-equipment-for-production-of-monitors",
+      "content": ";"
+    },
+    {
+      "title": "Monitors",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/monitors",
+      "content": ";"
+    },
+    {
+      "title": "Production Methods Of Materials For Computer Electronics",
+      "category": "",
+      "url": "/en/adrs/computer-adr/decisions/production-methods-of-materials-for-computer-electronics",
+      "content": ";"
     },
     {
       "title": "Computer ADR",
@@ -4991,16 +5081,106 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "adrsList= dict= / ;"
     },
     {
-      "title": "Computer Decision Record 1",
+      "title": "Components For Compute Blade",
       "category": "",
-      "url": "/de/adrs/computer-adr/decisions/computer-decision-record-1",
-      "content": ""
+      "url": "/de/adrs/computer-adr/decisions/components-for-compute-blade",
+      "content": ";"
     },
     {
-      "title": "Computer Decision Record 2",
+      "title": "Components For Equipment Producton Compute Blade",
       "category": "",
-      "url": "/de/adrs/computer-adr/decisions/computer-decision-record-2",
-      "content": ""
+      "url": "/de/adrs/computer-adr/decisions/components-for-equipment-producton-compute-blade",
+      "content": ";"
+    },
+    {
+      "title": "Compute Blade",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/compute-blade",
+      "content": ";"
+    },
+    {
+      "title": "Equipment",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/equipment",
+      "content": ";"
+    },
+    {
+      "title": "Equipment Examples",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/equipment-examples",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Compute Blade",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/equipment-for-production-of-compute-blade",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Computer Components",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/equipment-for-production-of-computer-components",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Lcd Panels",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/equipment-for-production-of-lcd-panels",
+      "content": ";"
+    },
+    {
+      "title": "Equipment For Production Of Monitors",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/equipment-for-production-of-monitors",
+      "content": ";"
+    },
+    {
+      "title": "Key Equipment For Production Stages",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/key-equipment-for-production-stages",
+      "content": ";"
+    },
+    {
+      "title": "Materials",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/materials",
+      "content": ";"
+    },
+    {
+      "title": "Materials For Computer Electronics Components",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/materials-for-computer-electronics-components",
+      "content": ";"
+    },
+    {
+      "title": "Minimization Of Costs For Equipment For Production Of Compute Blades",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/minimization-of-costs-for-equipment-for-production-of-compute-blades",
+      "content": ";"
+    },
+    {
+      "title": "Minimization Of Costs For Equipment For Production Of Laptops",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/minimization-of-costs-for-equipment-for-production-of-laptops",
+      "content": ";"
+    },
+    {
+      "title": "Minimization Of Costs For Equipment For Production Of Monitors",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/minimization-of-costs-for-equipment-for-production-of-monitors",
+      "content": ";"
+    },
+    {
+      "title": "Monitors",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/monitors",
+      "content": ";"
+    },
+    {
+      "title": "Production Methods Of Materials For Computer Electronics",
+      "category": "",
+      "url": "/de/adrs/computer-adr/decisions/production-methods-of-materials-for-computer-electronics",
+      "content": ";"
     },
     {
       "title": "Computer ADR",

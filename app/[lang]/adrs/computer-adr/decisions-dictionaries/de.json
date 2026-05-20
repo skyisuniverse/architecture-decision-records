@@ -1,4 +1,19 @@
 {
-  "computer-decision-record-1": "Computer Entscheidungsprotokoll 1",
-  "computer-decision-record-2": "Computer Entscheidungsprotokoll 2"
+  "materials": "Materialien",
+  "materials-for-computer-electronics-components": "Materialien, die in wichtigen Computer-Elektronikkomponenten verwendet werden",
+  "production-methods-of-materials-for-computer-electronics": "Produktionsmethoden von Materialien für die Computer-Elektronik",
+  "equipment": "Ausrüstung",
+  "equipment-for-production-of-computer-components": "Ausrüstung für die Produktion von Computerkomponenten",
+  "equipment-examples": "Beispiele für Ausrüstung",
+  "key-equipment-for-production-stages": "Wichtige Ausrüstung für Produktionsstufen",
+  "compute-blade": "Compute Blade",
+  "components-for-compute-blade": "Komponenten für Compute Blade",
+  "equipment-for-production-of-compute-blade": "Ausrüstung für die Produktion eines Compute Blade",
+  "components-for-equipment-producton-compute-blade": "Komponenten für die Ausrüstungsproduktion (für die Produktion von Compute Blades)",
+  "minimization-of-costs-for-equipment-for-production-of-compute-blades": "Kostenminimierung für Ausrüstung zur Produktion von Compute Blades",
+  "monitors": "Monitore",
+  "equipment-for-production-of-monitors": "Ausrüstung für die Produktion von Monitoren",
+  "equipment-for-production-of-lcd-panels": "Ausrüstung für die Produktion von LCD-Panels",
+  "minimization-of-costs-for-equipment-for-production-of-monitors": "Kostenminimierung für Ausrüstung zur Produktion von Monitoren",
+  "minimization-of-costs-for-equipment-for-production-of-laptops": "Kostenminimierung für Ausrüstung zur Produktion von Laptops"
 }
