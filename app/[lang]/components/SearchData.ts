@@ -771,28 +771,28 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "adrsList= dict= / ;"
     },
     {
-      "title": "Automated pipeline from design to manufacturing could possibly include:",
+      "title": "//           Automated pipeline from design to manufacturing could possibly\n//           include:\n//",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/build-automated-design-manufacturing-pipeline",
-      "content": "Automated pipeline from design to manufacturing could possibly include: sx= and possibly enable automated production of products: sx= etc. 1. Manual flow 2. Agentic flow 1. Manual flow Design 3D Model of an object in Grok CAD Design 3D Model of a Starship in Starship Forge AI Design 3D Model / Circuits / Die of a chip in Chip Design Tool Run simulations of a 3D model in Simulation Tool Define manufacturing process for Nano Assembly / 3D Printing Assemble physical object with Nano Assembler / printed with 3D Printer 2. Agentic flow Write a text prompt Watch design of a 3D Model of an object done in Grok CAD with AI Agents Design 3D Model / Circuits / Die of a chip done in Chip Design Tool with AI Agents Run simulations of a 3D model done in Simulation Tool with AI Agents Definition selection? of manufacturing process for Nano Assembly / 3D Printing done in tool with AI Agents Get physical object assembled with Nano Assembler / printed with 3D Printer ;"
+      "content": "\"use client\"; export default function Page sx= sx= ;"
     },
     {
-      "title": "//           Commoditization of Physical & Digital Products\n//",
+      "title": "{dict[\"enable-commoditization.title\"]}",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/enable-commoditization",
-      "content": "export default async function Page : ; try catch err return , , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
+      "content": ", , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
     },
     {
-      "title": "Use 3D-Printing for production",
+      "title": "//                     Use 3D-Printing for production\n//",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/use-3d-printing-for-production",
-      "content": ""
+      "content": "\"use client\"; export default function Page sx= ;"
     },
     {
-      "title": "Use nano-assembly for production of:",
+      "title": "//           Use nano-assembly for production of:\n//",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/use-nano-assembly-for-production",
-      "content": "Use nano assembly for production of: sx= with devices / tools: sx= ;"
+      "content": "\"use client\"; export default function Page , , , , , , .map item = , .map item = ;"
     },
     {
       "title": "Generic R&D Center ADR",
@@ -5501,28 +5501,28 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "adrsList= dict= / ;"
     },
     {
-      "title": "Automated pipeline from design to manufacturing could possibly include:",
+      "title": "//           Automated pipeline from design to manufacturing could possibly\n//           include:\n//",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/build-automated-design-manufacturing-pipeline",
-      "content": "Automated pipeline from design to manufacturing could possibly include: sx= and possibly enable automated production of products: sx= etc. 1. Manual flow 2. Agentic flow 1. Manual flow Design 3D Model of an object in Grok CAD Design 3D Model of a Starship in Starship Forge AI Design 3D Model / Circuits / Die of a chip in Chip Design Tool Run simulations of a 3D model in Simulation Tool Define manufacturing process for Nano Assembly / 3D Printing Assemble physical object with Nano Assembler / printed with 3D Printer 2. Agentic flow Write a text prompt Watch design of a 3D Model of an object done in Grok CAD with AI Agents Design 3D Model / Circuits / Die of a chip done in Chip Design Tool with AI Agents Run simulations of a 3D model done in Simulation Tool with AI Agents Definition selection? of manufacturing process for Nano Assembly / 3D Printing done in tool with AI Agents Get physical object assembled with Nano Assembler / printed with 3D Printer ;"
+      "content": "\"use client\"; export default function Page sx= sx= ;"
     },
     {
-      "title": "//           Commoditization of Physical & Digital Products\n//",
+      "title": "{dict[\"enable-commoditization.title\"]}",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/enable-commoditization",
-      "content": "export default async function Page : ; try catch err return , , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
+      "content": ", , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
     },
     {
-      "title": "Use 3D-Printing for production",
+      "title": "//                     Use 3D-Printing for production\n//",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/use-3d-printing-for-production",
-      "content": ""
+      "content": "\"use client\"; export default function Page sx= ;"
     },
     {
-      "title": "Use nano-assembly for production of:",
+      "title": "//           Use nano-assembly for production of:\n//",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/use-nano-assembly-for-production",
-      "content": "Use nano assembly for production of: sx= with devices / tools: sx= ;"
+      "content": "\"use client\"; export default function Page , , , , , , .map item = , .map item = ;"
     },
     {
       "title": "Allgemeines F&E-Zentrum ADR",
