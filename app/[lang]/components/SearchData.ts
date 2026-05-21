@@ -777,10 +777,10 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "sx= sx= ;"
     },
     {
-      "title": "{dict[\"enable-commoditization.title\"]}",
+      "title": "//           {dict[\"enable-commoditization.title\"]}\n//",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/enable-commoditization",
-      "content": ", , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
+      "content": "export default async function Page : ; try catch err return , , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / primaryTypographyProps= / ;"
     },
     {
       "title": "Use 3D-Printing for production",
@@ -5507,10 +5507,10 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "sx= sx= ;"
     },
     {
-      "title": "{dict[\"enable-commoditization.title\"]}",
+      "title": "//           {dict[\"enable-commoditization.title\"]}\n//",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/enable-commoditization",
-      "content": ", , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
+      "content": "export default async function Page : ; try catch err return , , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / primaryTypographyProps= / ;"
     },
     {
       "title": "Use 3D-Printing for production",

@@ -1,3 +1,5 @@
+// app/[lang]/products/products-list.ts
+
 export const itemData = [
   {
     title: "Nano-assembler",
