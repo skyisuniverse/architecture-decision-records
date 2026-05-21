@@ -1,3 +1,4 @@
+// app/[lang]/components/ADRTopBar.tsx
 "use client";
 import { useTheme } from "@mui/material/styles";
 import { Toolbar, IconButton, Typography, Box, Button } from "@mui/material";
@@ -9,6 +10,7 @@ import { styled } from "@mui/material/styles";
 import { drawerWidth } from "./ResponsiveDrawer";
 // import LanguageSwitcher from "./LanguageSwitcher";
 import Search from "./Search";
+import { useRouter } from "next/navigation";
 
 type Dictionary = Record<string, string>;
 
@@ -64,6 +66,7 @@ export default function ADRTopBar({
     { title: dict.applications, href: "apps" }, // uses /apps route + translated label
     { title: dict.glossary, href: "glossary" },
   ];
+  const router = useRouter();
 
   // const pages = ['Companies', 'Products', 'Services', 'Apps'];
 
@@ -118,6 +121,30 @@ export default function ADRTopBar({
             const isActive =
               pathname === href || pathname.startsWith(`${href}/`);
 
+            // Special handling for Glossary: always clear any hash
+            if (item.href === "glossary") {
+              return (
+                <Button
+                  key={item.href}
+                  color="inherit"
+                  sx={{
+                    my: 2,
+                    display: "block",
+                    mx: 1,
+                    ...(isActive && {
+                      backgroundColor: "white",
+                      color: "primary.dark",
+                    }),
+                    textAlign: "center",
+                  }}
+                  onClick={() => router.replace(`/${lang}/glossary`)} // ← clears hash
+                >
+                  {item.title}
+                </Button>
+              );
+            }
+
+            // Normal Link for all other nav items
             return (
               <Button
                 key={item.href}

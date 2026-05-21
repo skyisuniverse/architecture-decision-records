@@ -32,6 +32,12 @@
   "glossary.definition.neuralink": "Brain-Computer-Interface-Technologie, die eine direkte Kommunikation zwischen dem menschlichen Gehirn und Computern ermöglichen soll.",
   "glossary.definition.fusion": "Eine nukleare Reaktion, bei der zwei leichte Atomkerne zu einem schwereren Kern verschmelzen und dabei enorme Energie freisetzen.",
   "glossary.definition.terraforming": "Der hypothetische Prozess der gezielten Veränderung der Atmosphäre, Temperatur und Ökologie eines Planeten, um ihn für Menschen bewohnbar zu machen.",
+  "glossary.term.commoditization": "Kommodifizierung",
+  "glossary.term.commodity": "Commodity",
+  "glossary.term.fungibility": "Fungibilität",
+  "glossary.definition.commoditization": "Der Prozess, durch den Güter, die einen wirtschaftlichen Wert haben und sich durch Attribute (Einzigartigkeit oder Marke) unterscheiden, in den Augen des Marktes oder der Verbraucher zu einfachen Commodities werden und der Wettbewerb sich von differenzierten Merkmalen hin zu reiner Preis-Konkurrenz verschiebt.",
+  "glossary.definition.commodity": "Ein Wirtschaftsgut oder Rohstoff, dessen Einheiten vollständig austauschbar sind, unabhängig vom Hersteller und hauptsächlich über den Preis gehandelt werden.",
+  "glossary.definition.fungibility": "Die Eigenschaft eines Gutes, Vermögenswerts oder einer Währung, bei der einzelne Einheiten vollständig austauschbar und ununterscheidbar voneinander sind.",
 
   "title": "Architektur-Entscheidungsprotokolle",
   "welcome": "Willkommen bei den Architekturentscheidungsprotokollen des Forschungs- und Entwicklungszentrums. Hier finden Sie die Architekturentscheidungsprotokolle (ADR) des Projekts.",

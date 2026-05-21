@@ -33,6 +33,12 @@
   "glossary.definition.neuralink": "Brain-computer interface technology that aims to enable direct communication between the human brain and computers.",
   "glossary.definition.fusion": "A nuclear reaction in which two light atomic nuclei combine to form a heavier nucleus, releasing enormous energy.",
   "glossary.definition.terraforming": "The hypothetical process of deliberately modifying a planet’s atmosphere, temperature, and ecology to make it habitable for humans.",
+  "glossary.term.commoditization": "Commoditization",
+  "glossary.term.commodity": "Commodity",
+  "glossary.term.fungibility": "Fungibility",
+  "glossary.definition.commoditization": "The process by which goods that have economic value and are distinguishable by attributes (uniqueness or brand) become simple commodities in the eyes of the market or consumers, shifting competition from differentiated features to price alone.",
+  "glossary.definition.commodity": "An economic good or resource that is fully interchangeable with others of the same type, with no regard to who produced it and typically traded on price.",
+  "glossary.definition.fungibility": "The property of a good, asset, or currency whose individual units are completely interchangeable and indistinguishable from one another.",
 
   "title": "Architecture Decision Records",
   "welcome": "Welcome to the Architecture Decision Records of the R&D Center. Here you can find Architecture Decision Records (ADR) of the project.",

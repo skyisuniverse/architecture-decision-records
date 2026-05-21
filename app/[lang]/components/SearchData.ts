@@ -771,10 +771,10 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "adrsList= dict= / ;"
     },
     {
-      "title": "//           Automated pipeline from design to manufacturing could possibly\n//           include:\n//",
+      "title": "{dict[\"build-automated-design-manufacturing-pipeline.intro1\"]}",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/build-automated-design-manufacturing-pipeline",
-      "content": "\"use client\"; export default function Page sx= sx= ;"
+      "content": "sx= sx= ;"
     },
     {
       "title": "{dict[\"enable-commoditization.title\"]}",
@@ -783,16 +783,16 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": ", , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
     },
     {
-      "title": "//                     Use 3D-Printing for production\n//",
+      "title": "Use 3D-Printing for production",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/use-3d-printing-for-production",
-      "content": "\"use client\"; export default function Page sx= ;"
+      "content": "sx= ;"
     },
     {
-      "title": "//           Use nano-assembly for production of:\n//",
+      "title": "{dict[\"use-nano-assembly-for-production.intro1\"]}",
       "category": "",
       "url": "/en/adrs/generic-r&d-center-adr/decisions/use-nano-assembly-for-production",
-      "content": "\"use client\"; export default function Page , , , , , , .map item = , .map item = ;"
+      "content": ", , , , , , .map item = , .map item = ;"
     },
     {
       "title": "Generic R&D Center ADR",
@@ -5501,10 +5501,10 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": "adrsList= dict= / ;"
     },
     {
-      "title": "//           Automated pipeline from design to manufacturing could possibly\n//           include:\n//",
+      "title": "{dict[\"build-automated-design-manufacturing-pipeline.intro1\"]}",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/build-automated-design-manufacturing-pipeline",
-      "content": "\"use client\"; export default function Page sx= sx= ;"
+      "content": "sx= sx= ;"
     },
     {
       "title": "{dict[\"enable-commoditization.title\"]}",
@@ -5513,16 +5513,16 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": ", , , .map item = primaryTypographyProps= / MIT License Wiki primaryTypographyProps= / ;"
     },
     {
-      "title": "//                     Use 3D-Printing for production\n//",
+      "title": "Use 3D-Printing for production",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/use-3d-printing-for-production",
-      "content": "\"use client\"; export default function Page sx= ;"
+      "content": "sx= ;"
     },
     {
-      "title": "//           Use nano-assembly for production of:\n//",
+      "title": "{dict[\"use-nano-assembly-for-production.intro1\"]}",
       "category": "",
       "url": "/de/adrs/generic-r&d-center-adr/decisions/use-nano-assembly-for-production",
-      "content": "\"use client\"; export default function Page , , , , , , .map item = , .map item = ;"
+      "content": ", , , , , , .map item = , .map item = ;"
     },
     {
       "title": "Allgemeines F&E-Zentrum ADR",
