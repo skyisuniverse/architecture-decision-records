@@ -2100,7 +2100,7 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "title": "Software selection",
       "category": "R&D Center ADRs",
       "url": "/en/adrs/llm-training-adr/decisions/software-selection",
-      "content": ""
+      "content": "Modular"
     },
     {
       "title": "Software setup",
@@ -6038,7 +6038,7 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "title": "Software-Auswahl",
       "category": "F&E-Zentrum ADRs",
       "url": "/de/adrs/llm-training-adr/decisions/software-selection",
-      "content": ""
+      "content": "Modular"
     },
     {
       "title": "Software-Einrichtung",

@@ -2,6 +2,90 @@
   "label_what": "Was",
   "label_why": "Warum",
 
+  "section_title_software": "Software",
+  "section_title_modular_stack": "Infrastruktur & Laufzeit-Stack",
+
+  "tensorflow_title": "TensorFlow",
+  "tensorflow_desc": "Eine End-to-End-Open-Source-Plattform für maschinelles Lernen, die umfassende Ökosysteme aus Werkzeugen, Bibliotheken und Community-Ressourcen bietet, um ML-gestützte Anwendungen zu erstellen und bereitzustellen.",
+  "tensorflow_link_github": "GitHub-Repository",
+  "tensorflow_link_doc": "Offizielle Dokumentation",
+
+  "jax_title": "JAX",
+  "jax_desc": "Eine Open-Source-Bibliothek für numerische Berechnungen mit hoher Leistung und maschinelle Lernforschung, die Hardwarebeschleunigung für nativen Python- und NumPy-Code über automatische Differenzierung und Kompilierungs-Wrapper bereitstellt.",
+  "jax_link_doc": "Offizielle Dokumentation",
+
+  "flax_title": "Flax",
+  "flax_desc": "Ein flexibles und leistungsstarkes Ökosystem für neuronale Netzwerkbibliotheken, das speziell für JAX entwickelt wurde, um Entwicklern klare, modifizierbare Pfade für das Zustands- und Parametermanagement zu bieten.",
+  "flax_link_github": "GitHub-Repository",
+  "flax_link_doc": "Flax ReadTheDocs",
+
+  "modularTitle": "Modular",
+  "modularDesc": "Inferenz neu gedacht, vom Kernel bis zur Cloud. Ein einheitlicher Stack.\nIhre Modelle, jede Rechenleistung, eine Plattform. Führen Sie KI über GPUs und CPUs hinweg aus – entwickelt für die anspruchsvollsten Inferenz-Workloads, vom Kernel bis zur Cloud.",
+  "modularLinkHome": "Modular",
+
+  "servingTitle": "Serving",
+  "servingDesc": "Unser leistungsstarkes, hardwareunabhängiges Serving-Framework, MAX, optimiert Kernel und die Ausführung von Abfragen automatisch über Beschleuniger hinweg. 2-fache Leistungssteigerung gegenüber vLLM auf unterschiedlichster Hardware durch einen einzigen Container und eine OpenAI-kompatible API.",
+
+  "modelingTitle": "Modellierung",
+  "modelingDesc": "Führen Sie über 1000 Modelle wie DeepSeek und Kimi direkt mit MAX aus. PyTorch-ähnliche Modell-APIs und KI-Codierungsfunktionen machen es einfach, maßgeschneiderte Modelle in wenigen Minuten zu portieren.",
+
+  "gpuKernelsTitle": "GPU-Kernel",
+  "gpuKernelsDesc": "Hunderte von hochmodernen, kombinierbaren Kerneln, geschrieben in unserer leistungsstarken System-Programmiersprache Mojo. Erweitern oder schreiben Sie benutzerdefinierte GPU-Kernel für maximale Leistung auf allen Beschleunigern.",
+
+  "hardwareCompatibilityTitle": "Hardware-Kompatibilität",
+  "hardwareCompatibilityDesc": "Modular wurde von Grund auf so entwickelt, dass es nativ heterogen ist. Führen Sie Workloads nahtlos auf NVIDIA-, AMD- und Apple-GPUs sowie auf Intel-, AMD- und ARM-CPUs aus.",
+
+  "mojoTitle": "Mojo",
+  "mojoDesc": "Schreiben wie in Python, ausführen wie in C++.\nSchreiben Sie schnellen Code für unterschiedlichste Hardware, von CPUs bis zu GPUs, ohne Vendor-Lock-in – in einer Sprache, die sowohl benutzerfreundlich als auch speichersicher ist.",
+  "mojoLinkSite": "Mojo",
+
+  "maxTitle": "MAX",
+  "maxDesc": "GenAI-natives Serving und Modellierung, gebaut für Performance.\nEinmal entwickeln, überall bereitstellen mit einem einzigen programmierbaren Stack für hochperformante GenAI auf jeder Hardware.",
+  "maxLinkOss": "MAX",
+
+  "selfHostedTitle": "Selbstgehostetes MAX + Mojo",
+  "selfHostedDesc": "Offene Infrastruktur. Volle Kontrolle, völlig kostenlos.\nStellen Sie MAX und Mojo auf Ihrer eigenen Infrastruktur bereit – ein einziger Open-Source-Container unter 700 MB, der auf NVIDIA, AMD, Apple und weiteren Plattformen läuft. Schreiben Sie eigene Serving-Layer, Modelle und Kernel, profilieren Sie Workloads und optimieren Sie jede Ebene. Werden Sie noch heute Teil unserer Open-Source-KI-Community.",
+  "selfHostedLinkGuide": "Selbstgehostetes MAX + Mojo",
+
+  "modular-infra_title": "Modular-Infrastruktur-Ökosystem",
+  "modular-infra_desc": "Eine einheitliche Systemausführungsebene, die für die komplexe Modellkompilierung und -verarbeitung entwickelt wurde. Sie führt Modellbewertungs-Workflows nahtlos über heterogene Verarbeitungsknoten hinweg aus einer einzigen lokalen Quellcodebasis aus.",
+  "modular-infra_link_home": "Modular Homepage",
+
+  "serving-engine_title": "Hochleistungs-Serving-Engine",
+  "serving-engine_desc": "Ein hardware-agnostisches Framework für die Bereitstellung von Anfragen, das darauf ausgelegt ist, Operations-Kernel und Ausführungswarteschlangen lokal zu optimieren. Es bedient verschiedene Modelltypen über einen standardisierten, selbstgehosteten Container unter Verwendung lokaler API-Protokolle.",
+
+  "modeling-layer_title": "Modellanpassungs- und Übersetzungsschichten",
+  "modeling-layer_desc": "Integrierte Modellprogrammierschnittstellen, mit denen benutzerdefinierte Softwarearchitekturen in wenigen Minuten in ausführbare lokale Bereitstellungsformate portiert, evaluiert und kompiliert werden können.",
+
+  "gpu-kernels_title": "Benutzerdefinierte GPU-Kompilierungen & Ausführungs-Kernel",
+  "gpu-kernels_desc": "Abstrakte, zusammensetzbare Kompilierungsschichten, die direkt auf parallelen Hardwarebeschleunigern laufen. Diese Konfiguration ermöglicht es Entwicklern, mathematische Logikgrenzen zu erweitern oder benutzerdefinierte Rechenaufgaben zu erstellen, um die Leistung zu maximieren.",
+
+  "hardware-compatibility_title": "Heterogene Hardware-Interoperabilität",
+  "hardware-compatibility_desc": "Eine strukturelle Rechenschicht, die entwickelt wurde, um Aufgaben nahtlos über verschiedene Grafikarchitekturen und Verarbeitungssysteme hinweg auszuführen, wodurch die Abhängigkeit von bestimmten Chipsatz-Anbietern eliminiert wird.",
+
+  "mojo_title": "Kompilierung von System-Programmiersprachen (Mojo)",
+  "mojo_desc": "Eine Hochleistungs-Systemprogrammiersprache, welche die Zugänglichkeit moderner Skriptsyntax mit der Geschwindigkeit, Speichersicherheit und Layoutkontrolle nativer, niedrigerer Quellcodekompilierung kombiniert.",
+  "mojo_link_site": "Mojo Lang Webseite",
+
+  "max_title": "Inferenz-Engine-Architektur (MAX)",
+  "max_desc": "Ein leistungsorientiertes Serving- und Modellierungssubsystem, das entwickelt wurde, um lokalisierte mathematische Ausführungsschritte einheitlich auf verschiedenen selbstgehosteten Setups zu erstellen und bereitzustellen.",
+  "max_link_oss": "MAX Open Source",
+
+  "self-hosted_title": "Selbstgehostete Plattform-Bereitstellungs-Engine",
+  "self-hosted_desc": "Ein isoliertes Laufzeitkonfigurationspaket unter 700 MB für selbstgehostete Datennetzwerke. Es ermöglicht lokales Profiling, die Erstellung benutzerdefinierter Schichten und die vollständige Kontrolle über Systemhardwareschichten ohne externe Verbindungen.",
+  "self-hosted_link_guide": "Leitfaden für Selbsthoster",
+
+  "section_title_gpu_compatibility": "Modular MAX GPU-Kompatibilität",
+  "link_label_gpu_packages": "GPU-Kompatibilität",
+  "link_label_nvidia_gpus": "NVIDIA-GPUs",
+  "link_label_amd_gpus": "AMD-GPUs",
+  "gpu_table_label_gpu": "GPU",
+  "gpu_table_label_architecture": "Architektur",
+  "gpu_table_group_tested": "Für Serving getestet",
+  "gpu_table_group_compatible": "Bekannt kompatibel für Entwicklung",
+  "gpu_nvidia_driver_note": "Software-Anforderung: NVIDIA-GPU-Treiber 580 oder neuer. Überprüfen Sie Ihre Version mit nvidia-smi. Informationen zur Aktualisierung finden Sie in der NVIDIA-Treiberdokumentation. Wenn Ihr Treiber älter als 580 ist, setzen Sie die Umgebungsvariable MODULAR_NVPTX_COMPILER_PATH auf eine systemeigene ptxas-Binärdatei (Beispiel: export MODULAR_NVPTX_COMPILER_PATH=/usr/local/cuda/bin/ptxas).",
+  "gpu_amd_driver_note": "Software-Anforderung: AMD-GPU-Treiber 6.3.3 oder neuer (MI355X erfordert ROCm 7.0 oder neuer). Informationen zur Installation finden Sie im nativen Ubuntu-Installationsleitfaden.",
+
   "use-cases": "Anwendungsfälle",
   "section_title_use_cases": "Generative KI",
   "section_title_agentic_ai": "Agentische KI",

@@ -2,6 +2,90 @@
   "label_what": "What",
   "label_why": "Why",
 
+  "section_title_software": "Software",
+  "section_title_modular_stack": "Infrastructure & Runtime Stack",
+
+  "tensorflow_title": "TensorFlow",
+  "tensorflow_desc": "An end-to-end open-source platform for machine learning, providing comprehensive ecosystems of tools, libraries, and community resources to build and deploy ML-powered applications.",
+  "tensorflow_link_github": "GitHub Repository",
+  "tensorflow_link_doc": "Official Documentation",
+
+  "jax_title": "JAX",
+  "jax_desc": "An open-source library designed for high-performance numerical computing and machine learning research, bringing hardware acceleration to native Python and NumPy code via automated differentiation and compilation wrappers.",
+  "jax_link_doc": "Official Documentation",
+
+  "flax_title": "Flax",
+  "flax_desc": "A flexible and high-performance neural network library ecosystem built explicitly for JAX, designed to provide developers with clear, modifiable state and parameter management paths.",
+  "flax_link_github": "GitHub Repository",
+  "flax_link_doc": "Flax ReadTheDocs",
+
+  "modularTitle": "Modular",
+  "modularDesc": "Inference reimagined, from Kernel to Cloud.One unified stack.\nYour model, any compute, one platform. Run AI across GPUs and CPUs - engineered for the most demanding inference workloads, from kernel to cloud.",
+  "modularLinkHome": "Modular",
+
+  "servingTitle": "Serving",
+  "servingDesc": "Our high-performance, hardware-agnostic serving framework, MAX, automatically optimizes kernels and request execution across accelerators. 2x performance improvement over vLLM on diverse hardware through a single container and OpenAI-compatible API.",
+
+  "modelingTitle": "Modeling",
+  "modelingDesc": "Run 1000+ models like DeepSeek and Kimi out of the box with MAX. PyTorch-like model APIs and AI coding skills make it easy to port custom models in minutes.",
+
+  "gpuKernelsTitle": "GPU Kernels",
+  "gpuKernelsDesc": "100s of SOTA, composable kernels written in our high-performance systems language, Mojo. Extend or write custom GPU kernels for maximum performance across accelerators.",
+
+  "hardwareCompatibilityTitle": "Hardware Compatibility",
+  "hardwareCompatibilityDesc": "Modular was built to be natively heterogeneous. Run workloads seamlessly across NVIDIA, AMD, and Apple GPUs as well as Intel, AMD, and ARM CPUs.",
+
+  "mojoTitle": "Mojo",
+  "mojoDesc": "Write like Python, run like C++.\nWrite fast code for diverse hardware, from CPUs to GPUs, without vendor lock-in, in a language that's both user friendly and memory safe.",
+  "mojoLinkSite": "Mojo",
+
+  "maxTitle": "MAX",
+  "maxDesc": "GenAI-native serving and modeling, built for performance.\nBuild once, deploy anywhere with a single programmable stack for high-performance GenAI on any hardware",
+  "maxLinkOss": "MAX",
+
+  "selfHostedTitle": "Self-Hosted MAX + Mojo",
+  "selfHostedDesc": "Open infrastructure. Full control, made free.\nDeploy MAX and Mojo on your infrastructure - one open-source container under 700MB that runs on NVIDIA, AMD, Apple & more. Write custom serving layers, models, kernels, profile workloads, and optimize every layer. Join our open source AI community today.",
+  "selfHostedLinkGuide": "Self-Hosted MAX + Mojo",
+
+  "modular-infra_title": "Modular Infrastructure Ecosystem",
+  "modular-infra_desc": "A unified system execution tier engineered to handle complex model compilation and processing. It runs model evaluation workflows fluidly across heterogeneous processing nodes from a single local source codebase.",
+  "modular-infra_link_home": "Modular Home",
+
+  "serving-engine_title": "High-Performance Serving Engine",
+  "serving-engine_desc": "A hardware-agnostic request serving framework built to optimize operation kernels and request execution queues locally. It serves diverse model types through a standardized self-hosted container using local API protocols.",
+
+  "modeling-layer_title": "Model Adaptability & Translation Layers",
+  "modeling-layer_desc": "Integrated model programming interfaces that allow custom software architectures to be ported, evaluated, and compiled into runnable local deployment formats within minutes.",
+
+  "gpu-kernels_title": "Custom GPU Compilations & Execution Kernels",
+  "gpu-kernels_desc": "Low-level, composable compilation layers running directly on parallel hardware accelerators. This configuration allows developers to extend mathematical logic boundaries or build custom computing tasks to maximize performance.",
+
+  "hardware-compatibility_title": "Heterogeneous Hardware Interoperability",
+  "hardware-compatibility_desc": "A structural computing layer built to execute tasks seamlessly across various graphics architectures and processing systems, eliminating dependency on specific chipset vendors.",
+
+  "mojo_title": "Systems Language Compilation (Mojo)",
+  "mojo_desc": "A high-performance systems programming language that combines the accessibility of modern scripting syntax with the speed, memory safety, and layout control of native lower-level source compilation.",
+  "mojo_link_site": "Mojo Lang Site",
+
+  "max_title": "Inference Engine Architecture (MAX)",
+  "max_desc": "A performance-focused serving and modeling subsystem designed to construct and deploy localized mathematical execution steps uniformly on diverse self-hosted setups.",
+  "max_link_oss": "MAX Open Source",
+
+  "self-hosted_title": "Self-Hosted Platform Deployment Engine",
+  "self-hosted_desc": "An isolated runtime configuration package built under 700MB for self-hosted data networks. It enables local profiling, custom layer composition, and full control over system hardware layers without external connections.",
+  "self-hosted_link_guide": "Self-Hosted Guide",
+
+  "section_title_gpu_compatibility": "Modular MAX GPU Compatibility",
+  "link_label_gpu_packages": "GPU Compatibility",
+  "link_label_nvidia_gpus": "NVIDIA GPUs",
+  "link_label_amd_gpus": "AMD GPUs",
+  "gpu_table_label_gpu": "GPU",
+  "gpu_table_label_architecture": "Architecture",
+  "gpu_table_group_tested": "Tested for serving",
+  "gpu_table_group_compatible": "Known compatible for development",
+  "gpu_nvidia_driver_note": "Software requirement: NVIDIA GPU driver 580 or later. Check your version with nvidia-smi. To update, see the NVIDIA driver docs. If your driver is older than 580, set the MODULAR_NVPTX_COMPILER_PATH environment variable to a system ptxas binary (for example, export MODULAR_NVPTX_COMPILER_PATH=/usr/local/cuda/bin/ptxas).",
+  "gpu_amd_driver_note": "Software requirement: AMD GPU driver 6.3.3 or later (MI355X requires ROCm 7.0 or later). For installation, see the Ubuntu native install guide.",
+
   "use-cases": "Use Cases",
   "section_title_use_cases": "Generative AI",
   "section_title_agentic_ai": "Agentic AI",
