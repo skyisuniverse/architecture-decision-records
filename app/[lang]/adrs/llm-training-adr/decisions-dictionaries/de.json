@@ -1,0 +1,64 @@
+{
+  "label_what": "Was",
+  "label_why": "Warum",
+
+  "hardware-selection-and-sourcing": "Hardware-Auswahl und -Beschaffung",
+  "hardware-selection-and-sourcing_what": "Die erste strategische Phase zur Bewertung und zum Kauf physischer Computerkomponenten auf der Grundlage der Workload-Anforderungen.",
+  "hardware-selection-and-sourcing_why": "Das KI-Training erfordert intensive Rechenressourcen. Die frühzeitige Auswahl der richtigen Prozessoren, Beschleuniger und schnellen Speicher verhindert Projektengpässe und vermeidet die Verschwendung von Kapital für inkompatible Komponenten.",
+
+  "hardware-setup": "Hardware-Einrichtung",
+  "hardware-setup_what": "Der Prozess des Zusammenbaus physischer Computerkomponenten, der Einrichtung geeigneter Kühlsysteme und des Anschlusses der Stromversorgung.",
+  "hardware-setup_why": "Komplexe Berechnungen erzeugen hohe Hitze und verbrauchen erhebliche Mengen an Strom. Eine ordnungsgemäße Montage verhindert physische Schäden, Überhitzung und instabile Systemabstürze während aufeinanderfolgender Tage unter Dauerlast.",
+
+  "software-selection": "Software-Auswahl",
+  "software-selection_what": "Der Schritt zur Erforschung und Auswahl von Programmiersprachen, Software-Engines und Toolchains für den Workflow.",
+  "software-selection_why": "Verschiedene Software-Werkzeuge interagieren unterschiedlich mit der Computerhardware. Die Auswahl optimierter Systeme stellt sicher, dass mathematische Operationen direkt in Hardware-Aktionen übersetzt werden, ohne Ausverzögerungen zu verursachen.",
+
+  "software-setup": "Software-Einrichtung",
+  "software-setup_what": "Der Prozess der Installation von Betriebssystemen, des Flashens von Treibern, des Abgleichs von Konfigurationspfaden und der Vorbereitung von Software-Tools.",
+  "software-setup_why": "Computer können abstrakte KI-Frameworks nicht automatisch mit roher elektronischer Hardware verbinden. Die ordnungsgemäße Einrichtung stellt die grundlegende Kommunikationsverbindung zwischen Code-Bibliotheken und Ausführungsprozessoren her.",
+
+  "llm-architecture-definition": "Definition der LLM-Architektur",
+  "llm-architecture-definition_what": "Der mathematische Blaupause und das Code-Layout, die Größe, Form, Datenpfade und die interne Struktur des Netzwerks definieren.",
+  "llm-architecture-definition_why": "Dies bestimmt die grundlegende Intelligenzkapazität des Modells. Es legt fest, wie Eingangsdaten durch die Schichten fließen, und steuert, wie Parameter Informationen verarbeiten, ohne die physischen Speichergrenzen zu überschreiten.",
+
+  "data-preparation": "Datenvorbereitung",
+  "data-preparation_what": "Die Verarbeitungspipeline zum Bereinigen von Textdaten, Entfernen von Duplikaten, Überprüfen auf Formatierungsfehler und Strukturieren von Informationen für die Verarbeitung.",
+  "data-preparation_why": "KI-Modelle sind Reflexionssysteme, welche die exakten Eigenschaften der aufgenommenen Daten erben. Saubere Daten lehren das Netzwerk logische Muster, während fehlerhafte Daten dazu führen, dass Kapazitäten für das Auswendiglernen von Rauschen verschwendet werden.",
+
+  "training-setup": "Training-Einrichtung",
+  "training-setup_what": "Konfigurieren der Parameter der Lernschleife, Auswahl der mathematischen Methoden zur Fehlerverfolgung und Einrichtung von Routinen zur Speicheroptimierung.",
+  "training-setup_why": "Die Berechnung mathematischer Änderungen über Milliarden von Punkten erfordert eine enorme Menge an Arbeitsspeicher. Eine korrekte Konfiguration schafft Optimierungsleitplanken, um den Systemhintergrundspeicher stabil zu halten.",
+
+  "pre-training": "Pre-Training",
+  "pre-training_what": "Die Brain-Lernphase, in der das Modell rohe, allgemeine Textdaten in massivem Umfang liest, um allgemeine Grammatik und grundlegende Logikmuster zu lernen.",
+  "pre-training_why": "Hier entwickelt ein untrainiertes neuronales Netzwerk sein grundlegendes Sprachverständnis. Die Verarbeitung riesiger Datenmengen ermöglicht es dem Modell, Syntax, Definitionen und allgemeine Denkmuster aufzunehmen.",
+
+  "launching-training-execution-run": "Start des Trainingslaufs",
+  "launching-training-execution-run_what": "Kompilieren des Codes, Starten der aktiven Datenladeströme und Ausführen der Live-Verarbeitungsschleife auf der Hardware.",
+  "launching-training-execution-run_why": "Dies ist der aktive Produktionsschritt, in dem der Computer die eigentlichen Lernberechnungen durchführt. Er erfordert eine reibungslose Ablaufverfolgung und einen stabilen Speicherzugriff, um die Hardware kontinuierlich auszulasten.",
+
+  "alignment-and-post-training": "Alignment und Post-Training",
+  "alignment-and-post-training_what": "Der Prozess der Feinabstimmung eines vortrainierten Modells mit gezielten Anweisungsskripten oder Sicherheitsrichtlinien, um dessen Ausgabe von Antworten zu modifizieren.",
+  "alignment-and-post-training_why": "Ein reines, vortrainiertes Basismodell beherrscht nur die Autovervollständigung von Texten. Das Alignment formt das Modell zu einem reaktionsschnellen, sicheren Assistenten, der direkte Benutzerfragen beantworten kann.",
+
+  "evaluation-and-benchmarking": "Evaluierung und Benchmarking",
+  "evaluation-and-benchmarking_what": "Testen des fertigen Netzwerks anhand standardisierter Fragensätze, um Genauigkeit, Logikgeschwindigkeit und Leistung zu verfolgen.",
+  "evaluation-and-benchmarking_why": "Dies zeigt, ob der Trainingslauf erfolgreich war. Es markiert präzise, wo das Netzwerk echtes Verständnis zeigt, und hebt Bereiche hervor, in denen Fehler oder Halluzinationen auftreten.",
+
+  "compilation": "Kompilierung",
+  "compilation_what": "Der Schritt, bei dem Software-Tools abstrakte mathematische Schichten in hocheffiziente Maschinenbefehle für eine bestimmte Chipklasse übersetzen.",
+  "compilation_why": "Der rohe Modellcode enthält einen hohen Abstraktions-Overhead. Die Kompilierung verdichtet Berechnungen in einheitliche, effiziente Schritte, welche die volle Geschwindigkeit der Zielhardware freisetzen.",
+
+  "optimization": "Optimierung",
+  "optimization_what": "Anwendung von Geschwindigkeitsverbesserungen, Komprimierungsroutinen oder spezialisierten Token-Prüfschleifen zur Beschleunigung von Antworten.",
+  "optimization_why": "Dieser Schritt maximiert die Leistungseffizienz, sodass das Modell Eingaben schneller verarbeiten und qualitativ hochwertigere Ausgaben generieren kann, ohne dass teure Hardware-Upgrades erforderlich sind.",
+
+  "deployment": "Bereitstellung",
+  "deployment_what": "Paketierung der kompilierten Modelldatei und deren Übertragung in eine Produktionsumgebung, wie einen Webserver oder eine lokale Anwendungsschnittstelle.",
+  "deployment_why": "Dies führt das Modell aus einem isolierten Entwicklungslabor in einen aktiven Zustand über, in dem es Endbenutzern dienen, Live-Fragen annehmen und auf externe Anfragen reagieren kann.",
+
+  "inference": "Inferenz",
+  "inference_what": "Der Live-Anwendungsmodus, in dem ein bereitgestelltes Modell eine eingehende Benutzereingabe verarbeitet und eine Text- oder Code-Antwort in Echtzeit generiert.",
+  "inference_why": "Dies ist das endgültige Ziel des gesamten KI-Entwicklungslebenszyklus. Da die rechenintensiven Trainingsvariablen wegfallen, verbraucht die Inferenz nur minimalen Speicher, um sofortige Antworten zu liefern."
+}

@@ -62,6 +62,7 @@
   "category.ai-datacenter": "ADRs für KI-Rechenzentren",
   "category.neurotechnology": "ADRs für Neurotechnologie",
   "computer-adr": "Computer ADR",
+  "llm-training-adr": "LLM Training ADR",
 
   "status.draft": "Entwurf",
   "status.proposed": "Vorgeschlagen",

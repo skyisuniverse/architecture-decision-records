@@ -53,6 +53,7 @@ import { SuperluminalEffectiveWarpDriveAdrsList } from "../adrs/superluminal-eff
 import { OptimusAdrsList } from "../adrs/optimus-adr/optimus-adrs-list";
 import { OpenSourceCNCMachineAdrsList } from "../adrs/open-source-cnc-machine-adr/open-source-cnc-machine-adrs-list";
 import { ComputerAdrsList } from "../adrs/computer-adr/computer-adrs-list";
+import { LLMTrainingAdrsList } from "../adrs/llm-training-adr/llm-training-adrs-list";
 
 export const adrsListMap: Record<string, any> = {
   "nano-assembly-adr": NanoassemblyAdrsList,
@@ -118,6 +119,7 @@ export const adrsListMap: Record<string, any> = {
     SuperluminalEffectiveWarpDriveAdrsList,
   "optimus-adr": OptimusAdrsList,
   "open-source-cnc-machine-adr": OpenSourceCNCMachineAdrsList,
+  "llm-training-adr": LLMTrainingAdrsList,
 } as const;
 
 export type AdrSlug = keyof typeof adrsListMap;
@@ -141,6 +143,7 @@ const rawCategories: Category[] = [
     mainPageSlug: "generic-r&d-center-adr",
     adrs: [
       { slug: "generic-r&d-center-adr", label: "generic-r&d-center-adr" },
+      { slug: "llm-training-adr", label: "llm-training-adr" },
       { slug: "nano-assembly-adr", label: "nano-assembly-adr" },
       { slug: "nano-assembler-adr", label: "nano-assembler-adr" },
       { slug: "3d-printing-adr", label: "3d-printing-adr" },

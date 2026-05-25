@@ -2055,6 +2055,72 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": ""
     },
     {
+      "title": "Alignment and post-training",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/alignment-and-post-training",
+      "content": ""
+    },
+    {
+      "title": "Evaluation and benchmarking",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/evaluation-and-benchmarking",
+      "content": ""
+    },
+    {
+      "title": "Hardware selection and sourcing",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/hardware-selection-and-sourcing",
+      "content": ""
+    },
+    {
+      "title": "Hardware setup",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/hardware-setup",
+      "content": ""
+    },
+    {
+      "title": "Launching training execution run",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/launching-training-execution-run",
+      "content": ""
+    },
+    {
+      "title": "LLM architecture definition",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/llm-architecture-definition",
+      "content": ""
+    },
+    {
+      "title": "Pre-training",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/pre-training",
+      "content": ""
+    },
+    {
+      "title": "Software selection",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/software-selection",
+      "content": ""
+    },
+    {
+      "title": "Software setup",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/software-setup",
+      "content": ""
+    },
+    {
+      "title": "Training setup",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr/decisions/training-setup",
+      "content": ""
+    },
+    {
+      "title": "LLM Training ADR",
+      "category": "R&D Center ADRs",
+      "url": "/en/adrs/llm-training-adr",
+      "content": ""
+    },
+    {
       "title": "Mass Driver ADR",
       "category": "Planet Habitation ADRs",
       "url": "/en/adrs/mass-driver-adr",
@@ -5894,6 +5960,102 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "title": "Sofort wiederverwendbare Startrampe ADR",
       "category": "ADRs für Weltraumbahnhof-Infrastruktur",
       "url": "/de/adrs/instantly-reusable-launchpad-adr",
+      "content": ""
+    },
+    {
+      "title": "Alignment und Post-Training",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/alignment-and-post-training",
+      "content": ""
+    },
+    {
+      "title": "Kompilierung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/compilation",
+      "content": ""
+    },
+    {
+      "title": "Datenvorbereitung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/data-preparation",
+      "content": ""
+    },
+    {
+      "title": "Bereitstellung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/deployment",
+      "content": ""
+    },
+    {
+      "title": "Evaluierung und Benchmarking",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/evaluation-and-benchmarking",
+      "content": ""
+    },
+    {
+      "title": "Hardware-Auswahl und -Beschaffung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/hardware-selection-and-sourcing",
+      "content": ""
+    },
+    {
+      "title": "Hardware-Einrichtung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/hardware-setup",
+      "content": ""
+    },
+    {
+      "title": "Inferenz",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/inference",
+      "content": ""
+    },
+    {
+      "title": "Start des Trainingslaufs",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/launching-training-execution-run",
+      "content": ""
+    },
+    {
+      "title": "Definition der LLM-Architektur",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/llm-architecture-definition",
+      "content": ""
+    },
+    {
+      "title": "Optimierung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/optimization",
+      "content": ""
+    },
+    {
+      "title": "Pre-Training",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/pre-training",
+      "content": ""
+    },
+    {
+      "title": "Software-Auswahl",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/software-selection",
+      "content": ""
+    },
+    {
+      "title": "Software-Einrichtung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/software-setup",
+      "content": ""
+    },
+    {
+      "title": "Training-Einrichtung",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/training-setup",
+      "content": ""
+    },
+    {
+      "title": "LLM Training ADR",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr",
       "content": ""
     },
     {

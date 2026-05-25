@@ -1,0 +1,64 @@
+{
+  "label_what": "What",
+  "label_why": "Why",
+
+  "hardware-selection-and-sourcing": "Hardware selection and sourcing",
+  "hardware-selection-and-sourcing_what": "The initial strategic phase for evaluating and purchasing physical computer components based on workload demands.",
+  "hardware-selection-and-sourcing_why": "AI training requires intense computational resources. Choosing the right processors, accelerators, and fast memory upfront prevents project bottlenecks and avoids wasting capital on incompatible components.",
+
+  "hardware-setup": "Hardware setup",
+  "hardware-setup_what": "The process of assembling physical computing parts, arranging proper cooling systems, and connecting electrical power.",
+  "hardware-setup_why": "Heavy computations generate high heat and draw significant amounts of electricity. Proper assembly prevents physical damage, overheating, and unstable system crashes during consecutive days of continuous load.",
+
+  "software-selection": "Software selection",
+  "software-selection_what": "The step for researching and selecting the programming languages, software engines, and library toolchains for the workflow.",
+  "software-selection_why": "Different code tools interact with computer hardware differently. Selecting optimized systems ensures that mathematical operations translate directly into hardware actions without introducing execution lag.",
+
+  "software-setup": "Software setup",
+  "software-setup_what": "The process of installing operating systems, flashing drivers, matching configuration paths, and preparing software tools.",
+  "software-setup_why": "Computers cannot automatically bridge abstract AI frameworks to raw electronic hardware. Proper setup establishes the foundational communication link between code libraries and execution processors.",
+
+  "llm-architecture-definition": "LLM architecture definition",
+  "llm-architecture-definition_what": "The mathematical blueprint and code layout that defines the size, shape, data pathways, and internal layout of the network.",
+  "llm-architecture-definition_why": "This dictates the raw intelligence capacity of the model. It maps how input data flows through layers and guides how parameters process information without overwhelming physical memory limits.",
+
+  "data-preparation": "Data Preparation",
+  "data-preparation_what": "The processing pipeline for cleaning text data, removing duplicates, check for formatting errors, and structuring information for ingestion.",
+  "data-preparation_why": "AI models are reflection engines that inherit the exact characteristics of the ingestion data. Clean data teaches the network logical patterns, while noisy data forces it to waste capacity memorizing clutter.",
+
+  "training-setup": "Training setup",
+  "training-setup_what": "Configuring the parameters of the learning loop, selecting error-tracking mathematics, and setting up memory-optimizing routines.",
+  "training-setup_why": "Calculating mathematical changes across billions of points requires a massive amount of working memory. Proper configuration creates optimization guardrails to keep system memory stable.",
+
+  "pre-training": "Pre-training",
+  "pre-training_what": "The primary learning phase where the model reads raw, generic text data at a massive scale to learn general grammar and foundational logic patterns.",
+  "pre-training_why": "This is where a blank neural network develops its baseline understanding of language. Processing huge volumes of data allows the model to absorb syntax, definitions, and generic reasoning patterns.",
+
+  "launching-training-execution-run": "Launching training execution run",
+  "launching-training-execution-run_what": "Compiling the code, spinning up active data loading streams, and running the live processing loop across the hardware.",
+  "launching-training-execution-run_why": "This is the active production step where the computer performs the actual learning computations. It requires smooth execution tracking and steady storage access to keep the hardware continuously saturated.",
+
+  "alignment-and-post-training": "Alignment and post-training",
+  "alignment-and-post-training_what": "The process of fine-tuning a pre-trained model with targeted instruction scripts or safety guidelines to modify its output behavior.",
+  "alignment-and-post-training_why": "A baseline pre-trained model only autocompletes text. Alignment shapes the model into a responsive, safe assistant capable of answering direct user queries.",
+
+  "evaluation-and-benchmarking": "Evaluation and benchmarking",
+  "evaluation-and-benchmarking_what": "Testing the completed network against standardized question sets to track accuracy, logic speed, and performance.",
+  "evaluation-and-benchmarking_why": "This determines if the training run was successful. It pinpoints where the network shows true understanding and highlights where it outputs mistakes or hallucinations.",
+
+  "compilation": "Compilation",
+  "compilation_what": "The step where software tools translate abstract mathematical layers into highly efficient machine instructions built for a specific chip class.",
+  "compilation_why": "Raw model code contains high abstraction overhead. Compiling condenses calculations into unified, efficient steps that unlock the full speed of the targeted hardware.",
+
+  "optimization": "Optimization",
+  "optimization_what": "Applying speed enhancements, compression routines, or specialized token checking loops to accelerate responses.",
+  "optimization_why": "This step maximizes performance efficiency, allowing the model to process inputs quickly and generate higher-quality outputs without requiring expensive hardware upgrades.",
+
+  "deployment": "Deployment",
+  "deployment_what": "Packaging the compiled model file and transferring it into a production environment, such as a web server or a local application interface.",
+  "deployment_why": "This moves the model out of an isolated development lab into an active state where it can serve end-users, accepting live questions and responding to outside requests.",
+
+  "inference": "Inference",
+  "inference_what": "The live application mode where a deployed model processes an incoming user input prompt and generates a real-time text or code response.",
+  "inference_why": "This is the final objective of the entire AI engineering lifecycle. Because the heavy training variables are dropped, inference uses minimal memory to deliver immediate answers."
+}

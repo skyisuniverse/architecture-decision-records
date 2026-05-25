@@ -62,7 +62,6 @@
   "category.electric-cars-and-robots": "Electric Cars & Robots ADRs",
   "category.ai-datacenter": "AI Datacenter ADRs",
   "category.neurotechnology": "Neurotechnology ADRs",
-  "computer-adr": "Computer ADR",
 
   "status.draft": "Draft",
   "status.proposed": "Proposed",
@@ -223,6 +222,8 @@
   "video-spaces.description": "This is the Video Spaces page.",
 
   "generic-r&d-center-adr": "Generic R&D Center ADR",
+  "computer-adr": "Computer ADR",
+  "llm-training-adr": "LLM Training ADR",
   "nano-assembly-adr": "Nano-assembly ADR",
   "nano-assembler-adr": "Nano-assembler ADR",
   "3d-printing-adr": "3D-Printing ADR",

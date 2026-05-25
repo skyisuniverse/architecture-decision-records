@@ -9,7 +9,7 @@ export const StyledMain = styled("main", {
   open?: boolean;
 }>(({ theme, open }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  padding: theme.spacing(5),
   // Responsive bottom padding to fix overlap with bottom nav on mobile
   paddingBottom: theme.spacing(2), // default
 

@@ -72,7 +72,12 @@ export default function ADRTopBar({
 
   return (
     <StyledAppBar position="fixed" open={open}>
-      <Toolbar>
+      <Toolbar
+        sx={{
+          // Overrides theme mixins & breakpoints targeting toolbar paddings
+          px: "40px !important",
+        }}
+      >
         {/* Mobile drawer toggle (xs only) */}
         <IconButton
           color="inherit"
