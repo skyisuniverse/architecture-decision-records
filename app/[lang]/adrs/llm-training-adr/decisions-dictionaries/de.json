@@ -2,6 +2,72 @@
   "label_what": "Was",
   "label_why": "Warum",
 
+  "use-cases": "Anwendungsfälle",
+  "section_title_use_cases": "Generative KI",
+  "section_title_agentic_ai": "Agentische KI",
+  "section_title_resources": "Ressourcen",
+  "btn_example": "Beispiel",
+
+  "code-generation_title": "Code-Generierung (Coding Agent)",
+  "code-generation_desc": "Automatisierte Erstellung, Überprüfung und kontinuierliche Verfeinerung von Softwarecode durch mehrstufige Modell-Evaluierungszyklen unter Nutzung optimierter Kompilierungstechniken für schnelle Ausführungsschleifen.",
+  "code-generation_badge_1": "Automatisierte Überprüfung",
+  "code-generation_badge_2": "Schnelle Ausführungsschleifen",
+
+  "image-generation_title": "Bildgenerierung",
+  "image-generation_desc": "Erstellung hochwertiger visueller Inhalte und maßgeschneiderter Grafiken aus Textbeschreibungen, optimiert für maximalen Verarbeitungsdurchsatz auf unterschiedlichen Infrastrukturen.",
+  "image-generation_badge_1": "Text-zu-Bild",
+  "image-generation_badge_2": "Hoher Durchsatz",
+
+  "video-generation_title": "Videogenerierung",
+  "video-generation_desc": "Produktion synthetisierter bewegter Videosequenzen direkt aus Open-Weight-Modellen auf Standard-Infrastrukturen, um Abhängigkeiten von proprietären externen Systemen zu eliminieren.",
+  "video-generation_badge_1": "Videosynthese",
+  "video-generation_badge_2": "Infrastruktur-Unabhängigkeit",
+
+  "text-to-speech_title": "Text-zu-Audio (Text-to-Speech)",
+  "text-to-speech_desc": "Konvertierung von geschriebenem Text in natürlich klingende Sprachaudiodaten mit minimaler Berechnungsverzögerung, was eine einheitliche Ausführung auf unterschiedlichen Host-Hardware-Setups ermöglicht.",
+  "text-to-speech_badge_1": "Natürliche Sprachausgabe",
+  "text-to-speech_badge_2": "Geringe Berechnungsverzögerung",
+
+  "agentic-ai-core_title": "Agentische KI",
+  "agentic-ai-core_desc": "Bereitstellung grundlegender Ausführungssysteme für autonome Softwareeinheiten, die zu mehrstufigem logischem Denken, struktureller Planung und programmatischer Tool-Nutzung in lokalen Umgebungen fähig sind.",
+  "agentic-ai-core_badge_1": "Autonomes Denken",
+  "agentic-ai-core_badge_2": "Tool-Integration",
+
+  "custom-models_title": "Maßgeschneiderte Modelle",
+  "custom-models_desc": "Entwicklung und Bereitstellung maßgeschneiderter Modellarchitekturen auf Kernel-Ebene über variierende Hardware-Umgebungen hinweg unter Verwendung einer einzigen, einheitlichen Codebasis zur Eliminierung von Plattformabhängigkeiten.",
+  "custom-models_badge_1": "Architektur auf Kernel-Ebene",
+  "custom-models_badge_2": "Einheitliche Codebasis",
+
+  "workflow-automation_title": "Workflow-Automatisierung",
+  "workflow-automation_desc": "Verkettung aufeinanderfolgender Systemaufrufe zur Bewältigung komplexer Backend-Automatisierungssequenzen – einschließlich Dokumentenanalyse, programmatischer Datenleitung, Validierung und Korrekturmechanismen.",
+  "workflow-automation_badge_1": "Mehrstufige Automatisierung",
+  "workflow-automation_badge_2": "Sequenzielle Validierung",
+
+  "ai-coding-agents_title": "KI-Programmieragenten",
+  "ai-coding-agents_desc": "Ausführung dichter, iterativer Programmierschleifen für das Erstellen, Testen und Debuggen von Anwendungen in Echtzeit über lokalisierte, kompilierte Verarbeitungsprotokolle.",
+  "ai-coding-agents_badge_1": "Iterative Erstellung",
+  "ai-coding-agents_badge_2": "Lokalisierte Kompilierung",
+
+  "voice-to-action_title": "Sprach-zu-Aktion-Agenten",
+  "voice-to-action_desc": "Konsolidierung von Spracherkennung, semantischem Parsing, Backend-Tool-Ausführung und Sprachausgabegenerierung in einer einheitlichen Datenverarbeitungspipeline zur Eliminierung von Übertragungsverzögerungen.",
+  "voice-to-action_badge_1": "Einheitliche Sprach-Pipeline",
+  "voice-to-action_badge_2": "Echtzeit-Interaktion",
+
+  "on-device-agents_title": "On-Device-Agenten",
+  "on-device-agents_desc": "Ausführung in sich geschlossener logischer Modelle direkt auf Endgeräten, sodass komplexe Softwareprozesse ohne externe Serverabhängigkeiten vollständig offline funktionieren können.",
+  "on-device-agents_badge_1": "Lokale Edge-Ausführung",
+  "on-device-agents_badge_2": "Offline-Funktionalität",
+
+  "multi-agent-orchestration_title": "Multi-Agenten-Orchestrierung",
+  "multi-agent-orchestration_desc": "Koordinierung von Netzwerken spezialisierter Modelle, die dynamisch kommunizieren, unter Verwendung strukturierter Systemsicherheitsgrenzen und zentraler Planungsroutinen zur Erreichung einheitlicher Ziele.",
+  "multi-agent-orchestration_badge_1": "Modellkoordination",
+  "multi-agent-orchestration_badge_2": "Zentrale Ablaufplanung",
+
+  "model-library_title": "Modellbibliothek",
+  "model-library_desc": "Zugriff auf und Bereitstellung eines kuratierten Katalogs unterstützter Open-Source-Modelle in Sekundenschnelle vor Ort, welcher als standardisiertes Evaluierungszentrum für selbstgehostete Ausführungsumgebungen dient.",
+  "model-library_badge_1": "Offene Modelle",
+  "model-library_badge_2": "Lokale Bereitstellung",
+
   "hardware-selection-and-sourcing": "Hardware-Auswahl und -Beschaffung",
   "hardware-selection-and-sourcing_what": "Die erste strategische Phase zur Bewertung und zum Kauf physischer Computerkomponenten auf der Grundlage der Workload-Anforderungen.",
   "hardware-selection-and-sourcing_why": "Das KI-Training erfordert intensive Rechenressourcen. Die frühzeitige Auswahl der richtigen Prozessoren, Beschleuniger und schnellen Speicher verhindert Projektengpässe und vermeidet die Verschwendung von Kapital für inkompatible Komponenten.",

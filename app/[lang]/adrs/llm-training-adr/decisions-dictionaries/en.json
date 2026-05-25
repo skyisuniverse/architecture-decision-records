@@ -2,6 +2,72 @@
   "label_what": "What",
   "label_why": "Why",
 
+  "use-cases": "Use Cases",
+  "section_title_use_cases": "Generative AI",
+  "section_title_agentic_ai": "Agentic AI",
+  "section_title_resources": "Resources",
+  "btn_example": "Example",
+
+  "code-generation_title": "Code Generation (Coding Agent)",
+  "code-generation_desc": "Automated generation, review, and continuous refinement of software code through multi-step model evaluation cycles, utilizing optimized compilation techniques to maintain rapid execution loops.",
+  "code-generation_badge_1": "Automated Review",
+  "code-generation_badge_2": "Fast Execution Loops",
+
+  "image-generation_title": "Image Generation",
+  "image-generation_desc": "Creation of high-quality visual assets and custom graphics from text descriptions, optimized to achieve maximum processing throughput across diverse infrastructure setups.",
+  "image-generation_badge_1": "Text-to-Image",
+  "image-generation_badge_2": "High Throughput",
+
+  "video-generation_title": "Video Generation",
+  "video-generation_desc": "Production of synthesized motion video sequences directly from open-weight models on standard infrastructure, eliminating dependencies on proprietary external systems.",
+  "video-generation_badge_1": "Motion Video Synthesis",
+  "video-generation_badge_2": "Infrastructure Independence",
+
+  "text-to-speech_title": "Text to Audio (Text-to-Speech)",
+  "text-to-speech_desc": "Conversion of written text into natural-sounding voice audio with minimal computational delay, ensuring unified execution across different host hardware setups.",
+  "text-to-speech_badge_1": "Natural Voice Audio",
+  "text-to-speech_badge_2": "Low Computational Delay",
+
+  "agentic-ai-core_title": "Agentic AI",
+  "agentic-ai-core_desc": "Deploying foundational execution systems for autonomous software units capable of multi-step logical reasoning, structural planning, and programmatic tool utilization across local environments.",
+  "agentic-ai-core_badge_1": "Autonomous Reasoning",
+  "agentic-ai-core_badge_2": "Tool Integration",
+
+  "custom-models_title": "Custom Models",
+  "custom-models_desc": "Developing and deploying bespoke, kernel-level model architectures across varying hardware environments using a single, unified codebase to eliminate vendor platform dependencies.",
+  "custom-models_badge_1": "Kernel-Level Architecture",
+  "custom-models_badge_2": "Unified Codebase",
+
+  "workflow-automation_title": "Workflow Automation",
+  "workflow-automation_desc": "Chaining successive system calls to handle complex backend automation sequences—including document analysis, programmatic data routing, validation, and correction mechanisms.",
+  "workflow-automation_badge_1": "Multi-Step Automation",
+  "workflow-automation_badge_2": "Sequential Validation",
+
+  "ai-coding-agents_title": "AI Coding Agents",
+  "ai-coding-agents_desc": "Executing dense iterative programming loops for real-time application building, testing, and debugging via localized compiled processing protocols.",
+  "ai-coding-agents_badge_1": "Iterative Building",
+  "ai-coding-agents_badge_2": "Localized Compilation",
+
+  "voice-to-action_title": "Voice to Action Agents",
+  "voice-to-action_desc": "Consolidating speech recognition, semantic parsing, backend tool execution, and voice output generation into a unified data processing pipeline to eliminate transmission latencies.",
+  "voice-to-action_badge_1": "Unified Voice Pipeline",
+  "voice-to-action_badge_2": "Real-Time Interaction",
+
+  "on-device-agents_title": "On-device Agents",
+  "on-device-agents_desc": "Running self-contained logical models locally on edge consumer devices, allowing complex software processes to function completely offline without external server dependencies.",
+  "on-device-agents_badge_1": "Local Edge Execution",
+  "on-device-agents_badge_2": "Offline Functionality",
+
+  "multi-agent-orchestration_title": "Multi-agent Orchestration",
+  "multi-agent-orchestration_desc": "Coordinating networks of specialized models that communicate dynamically, utilizing structured system safety boundaries and central scheduling routines to complete unified objectives.",
+  "multi-agent-orchestration_badge_1": "Model Coordination",
+  "multi-agent-orchestration_badge_2": "Central Scheduling",
+
+  "model-library_title": "Model Library",
+  "model-library_desc": "Accessing and deploying a curated catalog of supported open-source frontier models locally in seconds, serving as the standardized evaluation hub for self-hosted execution environments.",
+  "model-library_badge_1": "Open Models",
+  "model-library_badge_2": "Local Deployment",
+
   "hardware-selection-and-sourcing": "Hardware selection and sourcing",
   "hardware-selection-and-sourcing_what": "The initial strategic phase for evaluating and purchasing physical computer components based on workload demands.",
   "hardware-selection-and-sourcing_why": "AI training requires intense computational resources. Choosing the right processors, accelerators, and fast memory upfront prevents project bottlenecks and avoids wasting capital on incompatible components.",

@@ -2,6 +2,12 @@ import { AdrsList } from "@/app/[lang]/types/adr";
 
 export const LLMTrainingAdrsList: AdrsList = [
   {
+    translationKey: "use-cases",
+    link: "/adrs/llm-training-adr/decisions/use-cases",
+    date: "May 2026",
+    status: "Draft",
+  },
+  {
     translationKey: "hardware-selection-and-sourcing",
     link: "/adrs/llm-training-adr/decisions/hardware-selection-and-sourcing",
     date: "May 2026",

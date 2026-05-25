@@ -6053,6 +6053,12 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": ""
     },
     {
+      "title": "Anwendungsfälle",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/use-cases",
+      "content": ""
+    },
+    {
       "title": "LLM Training ADR",
       "category": "F&E-Zentrum ADRs",
       "url": "/de/adrs/llm-training-adr",
