@@ -38,6 +38,8 @@
   "glossary.definition.commoditization": "Der Prozess, durch den Güter, die einen wirtschaftlichen Wert haben und sich durch Attribute (Einzigartigkeit oder Marke) unterscheiden, in den Augen des Marktes oder der Verbraucher zu einfachen Commodities werden und der Wettbewerb sich von differenzierten Merkmalen hin zu reiner Preis-Konkurrenz verschiebt.",
   "glossary.definition.commodity": "Ein Wirtschaftsgut oder Rohstoff, dessen Einheiten vollständig austauschbar sind, unabhängig vom Hersteller und hauptsächlich über den Preis gehandelt werden.",
   "glossary.definition.fungibility": "Die Eigenschaft eines Gutes, Vermögenswerts oder einer Währung, bei der einzelne Einheiten vollständig austauschbar und ununterscheidbar voneinander sind.",
+  "glossary.domain.general": "Allgemein",
+  "glossary.domain.llm-training": "LLM Training",
 
   "title": "Architektur-Entscheidungsprotokolle",
   "welcome": "Willkommen bei den Architekturentscheidungsprotokollen des Forschungs- und Entwicklungszentrums. Hier finden Sie die Architekturentscheidungsprotokolle (ADR) des Projekts.",
