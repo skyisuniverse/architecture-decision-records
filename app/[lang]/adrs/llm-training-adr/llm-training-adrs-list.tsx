@@ -8,6 +8,12 @@ export const LLMTrainingAdrsList: AdrsList = [
     status: "Draft",
   },
   {
+    translationKey: "considerations",
+    link: "/adrs/llm-training-adr/decisions/considerations",
+    date: "May 2026",
+    status: "Draft",
+  },
+  {
     translationKey: "hardware-selection-and-sourcing",
     link: "/adrs/llm-training-adr/decisions/hardware-selection-and-sourcing",
     date: "May 2026",

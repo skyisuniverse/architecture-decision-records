@@ -5975,6 +5975,12 @@ export const staticSearchDataset: Record<string, Array<{ title: string; category
       "content": ""
     },
     {
+      "title": "Überlegungen",
+      "category": "F&E-Zentrum ADRs",
+      "url": "/de/adrs/llm-training-adr/decisions/considerations",
+      "content": ""
+    },
+    {
       "title": "Datenvorbereitung",
       "category": "F&E-Zentrum ADRs",
       "url": "/de/adrs/llm-training-adr/decisions/data-preparation",
