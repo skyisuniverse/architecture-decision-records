@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file.\n
 # https://keats.github.io/tera/docs/#introduction
 body = """
 {%- macro remote_url() -%}
-    http://localhost:3000/skyisuniverse/architecture-decision-records
+    https://github.com/skyisuniverse/architecture-decision-records
 {%- endmacro -%}
 {% macro print_commit(commit) -%}\
     - {% if commit.scope %}**({{ commit.scope }})**: {% endif %}\
