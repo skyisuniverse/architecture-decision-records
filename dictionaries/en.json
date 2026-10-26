@@ -6,7 +6,7 @@
   "services": "Services",
   "services.subtitle": "Explore our services",
   "products": "Products",
-  "products.subtitle": "Explore our breakthrough technologies",
+  "products.subtitle": "Explore our products",
   "applications": "Applications",
   "applications.subtitle": "Explore our applications",
 
@@ -54,7 +54,7 @@
   "purpose-5": "Formalizing the decision process of the team",
   "purpose-6": "Serving as a valuable input for AI for automation purposes",
 
-  "category.rd-center": "R&D Center ADRs",
+  "category.example": "Example Category",
   "category.medium-size-reusable-rocket": "Medium-size Reusable Rocket ADRs",
   "category.large-size-reusable-rocket": "Large-size Reusable Rocket ADRs",
   "category.spaceport-infra": "Spaceport Infra ADRs",
@@ -223,7 +223,7 @@
   "video-spaces.title": "Video Spaces",
   "video-spaces.description": "This is the Video Spaces page.",
 
-  "generic-r&d-center-adr": "Generic R&D Center ADR",
+  "example-adr": "Example ADR",
   "computer-adr": "Computer ADR",
   "llm-training-adr": "LLM Training ADR",
   "nano-assembly-adr": "Nano-assembly ADR",

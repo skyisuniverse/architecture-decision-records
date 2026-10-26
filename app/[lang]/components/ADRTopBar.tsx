@@ -60,7 +60,7 @@ export default function ADRTopBar({
   const { lang } = useParams() as { lang: string };
 
   const navItems = [
-    // { title: dict.companies, href: 'companies' },
+    { title: dict.companies, href: 'companies' },
     { title: dict.products, href: "products" },
     { title: dict.services, href: "services" },
     { title: dict.applications, href: "apps" }, // uses /apps route + translated label
@@ -194,7 +194,7 @@ export default function ADRTopBar({
                 target="_blank"
                 style={{ textDecoration: "none" }}
               >
-                R&D Center
+                Homepage
               </Link>
             </Typography>
           </Box>
