@@ -2,7 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+
+## [0.3.0](https://github.com/skyisuniverse/architecture-decision-records/compare/v0.2.0..v0.3.0) - 2026-10-06
 
 ### 🚀 Features
 
@@ -39,7 +40,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️  Chore
 
 - **(drawer)**: Rename entities to more generic ones - ([0b6c146](https://github.com/skyisuniverse/architecture-decision-records/commit/0b6c146d2cc97b2bd333fbff34d2293cfa8c0506))
-- **(pm2)**: Add pm2 config file for starting service (ecosystem.config.js) - ([400b5c6](https://github.com/skyisuniverse/architecture-decision-records/commit/400b5c62a8068fa94f10035fe5c0f394faa76fc9))
+- **(pm2)**: Add pm2 config file for starting service (ecosystem.config.js) - ([4ae41aa](https://github.com/skyisuniverse/architecture-decision-records/commit/4ae41aa4c1cc3914570c62667ddeb9388068791b))
 
 ## [0.2.0](https://github.com/skyisuniverse/architecture-decision-records/compare/v0.1.0..v0.2.0) - 2026-05-16
 
